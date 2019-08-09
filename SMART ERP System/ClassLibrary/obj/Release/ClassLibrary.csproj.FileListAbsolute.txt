@@ -1,0 +1,12 @@
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Release\ClassLibrary.dll.config
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Release\ClassLibrary.dll
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Release\ClassLibrary.pdb
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Release\EntityFramework.dll
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Release\EntityFramework.xml
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\obj\Release\ClassLibrary.csprojAssemblyReference.cache
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\obj\Release\ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\obj\Release\ClassLibrary.csproj.CopyComplete
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\obj\Release\ClassLibrary.dll
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\obj\Release\ClassLibrary.pdb

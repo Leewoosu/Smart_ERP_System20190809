@@ -1,0 +1,101 @@
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\SMART ERP System.exe.config
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\SMART ERP System.exe
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\SMART ERP System.pdb
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ClassLibrary.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.Data.v19.1.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.Printing.v19.1.Core.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.TreeMap.v19.1.Core.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.Utils.v19.1.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.XtraEditors.v19.1.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.XtraLayout.v19.1.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.XtraPrinting.v19.1.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.XtraTreeList.v19.1.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.XtraTreeMap.v19.1.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\EntityFramework.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\MetroFramework.Design.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\MetroFramework.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\MetroFramework.Fonts.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.Pdf.v19.1.Core.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.Sparkline.v19.1.Core.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.XtraBars.v19.1.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.RichEdit.v19.1.Core.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.Office.v19.1.Core.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.Images.v19.1.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ClassLibrary.pdb
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ClassLibrary.dll.config
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.Data.v19.1.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.Printing.v19.1.Core.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.TreeMap.v19.1.Core.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.Utils.v19.1.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.XtraEditors.v19.1.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.XtraLayout.v19.1.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.XtraPrinting.v19.1.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.XtraTreeList.v19.1.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.XtraTreeMap.v19.1.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\EntityFramework.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.Pdf.v19.1.Core.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.Sparkline.v19.1.Core.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.XtraBars.v19.1.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.RichEdit.v19.1.Core.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\DevExpress.Office.v19.1.Core.xml
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\de\DevExpress.Data.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\es\DevExpress.Data.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ja\DevExpress.Data.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ru\DevExpress.Data.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\de\DevExpress.Printing.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\es\DevExpress.Printing.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ja\DevExpress.Printing.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ru\DevExpress.Printing.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\de\DevExpress.Utils.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\es\DevExpress.Utils.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ja\DevExpress.Utils.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ru\DevExpress.Utils.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\de\DevExpress.XtraEditors.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\es\DevExpress.XtraEditors.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ja\DevExpress.XtraEditors.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ru\DevExpress.XtraEditors.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\de\DevExpress.XtraLayout.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\es\DevExpress.XtraLayout.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ja\DevExpress.XtraLayout.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ru\DevExpress.XtraLayout.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\de\DevExpress.XtraPrinting.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\es\DevExpress.XtraPrinting.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ja\DevExpress.XtraPrinting.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ru\DevExpress.XtraPrinting.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\de\DevExpress.XtraTreeList.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\es\DevExpress.XtraTreeList.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ja\DevExpress.XtraTreeList.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ru\DevExpress.XtraTreeList.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\de\DevExpress.Pdf.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\es\DevExpress.Pdf.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ja\DevExpress.Pdf.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ru\DevExpress.Pdf.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\de\DevExpress.Sparkline.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\es\DevExpress.Sparkline.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ja\DevExpress.Sparkline.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ru\DevExpress.Sparkline.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\de\DevExpress.XtraBars.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\es\DevExpress.XtraBars.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ja\DevExpress.XtraBars.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ru\DevExpress.XtraBars.v19.1.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\de\DevExpress.RichEdit.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\es\DevExpress.RichEdit.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ja\DevExpress.RichEdit.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ru\DevExpress.RichEdit.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\de\DevExpress.Office.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\es\DevExpress.Office.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ja\DevExpress.Office.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Release\ru\DevExpress.Office.v19.1.Core.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Release\SMART ERP System.csprojAssemblyReference.cache
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Release\SMART_ERP_System.LoginControl.resources
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Release\SMART_ERP_System.MainForm.resources
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Release\SMART_ERP_System.Properties.Resources.resources
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Release\SMART_ERP_System.UserControl1.resources
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Release\SMART ERP System.csproj.GenerateResource.cache
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Release\SMART ERP System.exe.licenses
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Release\SMART ERP System.csproj.CoreCompileInputs.cache
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Release\SMART ERP System.csproj.CopyComplete
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Release\SMART ERP System.exe
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Release\SMART ERP System.pdb
