@@ -5,15 +5,11 @@ using ClassLibrary.FormHelper;
 using System.Collections.Generic;
 using ClassLibrary;
 using System.Linq;
-using SMART_ERP_System.MenuUserControl;
-using ClassLibrary.EntityData;
+using SMART_ERP_System.Class;
 
 namespace SMART_ERP_System
 {
-    public static class loginMember
-    {
-        public static string Name { get; set; }
-    }
+    
     public partial class MainForm : MetroForm
     {
         LoginForm loginForm;
@@ -29,7 +25,7 @@ namespace SMART_ERP_System
         #region Event
         private void MainForm_Load(object sender, EventArgs e)
         {
-            loginMember.Name = loginForm.loginControl.txbEmployeeName.Text;
+            loginMember.EmployeeName = loginForm.loginControl.txbEmployeeName.Text;
             this.Text = loginForm.loginControl.txbEmployeeName.Text +
                 "님 환영합니다.";
         }
