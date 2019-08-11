@@ -28,7 +28,7 @@ namespace ClassLibrary
             this.작업지시리스트 = new HashSet<작업지시리스트>();
         }
     
-        public int 제품번호 { get; set; }
+        public string 제품번호 { get; set; }
         public string 제품명 { get; set; }
         public Nullable<int> 안전재고량 { get; set; }
         public Nullable<int> 재고량 { get; set; }

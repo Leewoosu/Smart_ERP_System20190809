@@ -20,9 +20,9 @@ namespace ClassLibrary
             this.생산실적현황 = new HashSet<생산실적현황>();
         }
     
-        public int 작업지시번호 { get; set; }
+        public string 작업지시번호 { get; set; }
         public int 생산계획현황번호 { get; set; }
-        public int 제품번호 { get; set; }
+        public string 제품번호 { get; set; }
         public string 수량 { get; set; }
         public string 작업장번호 { get; set; }
         public string 작업상태번호 { get; set; }

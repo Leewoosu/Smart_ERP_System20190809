@@ -393,6 +393,7 @@
             // 
             // dgv전표
             // 
+            this.dgv전표.AllowUserToAddRows = false;
             this.dgv전표.AllowUserToResizeColumns = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;

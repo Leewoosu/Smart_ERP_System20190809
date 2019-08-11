@@ -75,6 +75,8 @@
     <Compile Include="Class\InputDate.cs" />
     <Compile Include="Class\LoginMember.cs" />
     <Compile Include="Class\MenuLists.cs" />
+    <Compile Include="Class\전표단위.cs" />
+    <Compile Include="Class\전표리스트단위.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

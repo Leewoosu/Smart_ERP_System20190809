@@ -14,8 +14,8 @@ namespace ClassLibrary
     
     public partial class 발주리스트
     {
-        public int 자재번호 { get; set; }
-        public int 발주번호 { get; set; }
+        public string 자재번호 { get; set; }
+        public string 발주번호 { get; set; }
         public int 수량 { get; set; }
     
         public virtual 발주서 발주서 { get; set; }

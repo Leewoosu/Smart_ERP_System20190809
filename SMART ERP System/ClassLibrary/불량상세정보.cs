@@ -14,8 +14,8 @@ namespace ClassLibrary
     
     public partial class 불량상세정보
     {
-        public int 불량코드번호 { get; set; }
-        public int 검사번호 { get; set; }
+        public string 불량코드번호 { get; set; }
+        public string 검사번호 { get; set; }
         public Nullable<int> 불량수량 { get; set; }
     
         public virtual 불량코드내역 불량코드내역 { get; set; }

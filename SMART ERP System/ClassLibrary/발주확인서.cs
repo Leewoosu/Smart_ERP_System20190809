@@ -20,12 +20,14 @@ namespace ClassLibrary
             this.발주확인리스트 = new HashSet<발주확인리스트>();
         }
     
-        public int 발주확인서번호 { get; set; }
-        public int 공급업체번호 { get; set; }
+        public string 발주확인서번호 { get; set; }
+        public string 공급업체번호 { get; set; }
         public System.DateTime 배송날짜 { get; set; }
     
         public virtual 공급업체 공급업체 { get; set; }
+        public virtual 발주서 발주서 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<발주확인리스트> 발주확인리스트 { get; set; }
+        public virtual 자재전표 자재전표 { get; set; }
     }
 }

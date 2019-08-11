@@ -41,13 +41,13 @@
     <Property Name="입력구분" Type="nvarchar" MaxLength="10" />
     <Property Name="필수입력여부" Type="nvarchar" MaxLength="15" />
     <Property Name="비고" Type="nvarchar" MaxLength="50" />
-    <Property Name="그룹코드번호" Type="int" Nullable="false" />
+    <Property Name="그룹코드번호" Type="nvarchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="계정과목그룹">
     <Key>
       <PropertyRef Name="그룹코드번호" />
     </Key>
-    <Property Name="그룹코드번호" Type="int" Nullable="false" />
+    <Property Name="그룹코드번호" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="그룹명" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="계정과목등록">
@@ -62,7 +62,7 @@
     <Key>
       <PropertyRef Name="고정자산코드" />
     </Key>
-    <Property Name="고정자산코드" Type="int" Nullable="false" />
+    <Property Name="고정자산코드" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="고정자산명" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="취득일" Type="date" Nullable="false" />
     <Property Name="처리여부" Type="nvarchar" MaxLength="10" Nullable="false" />
@@ -90,6 +90,7 @@
     </Key>
     <Property Name="공급업체번호" Type="int" Nullable="false" />
     <Property Name="공급업체명" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="자재번호" Type="int" />
   </EntityType>
   <EntityType Name="공정">
     <Key>
@@ -284,7 +285,6 @@
     </Key>
     <Property Name="납품업체번호" Type="int" Nullable="false" />
     <Property Name="납품업체명" Type="nvarchar" MaxLength="50" />
-    <Property Name="자재번호" Type="int" />
   </EntityType>
   <EntityType Name="메뉴등록">
     <Key>
@@ -602,7 +602,7 @@
     <Key>
       <PropertyRef Name="업무용승용차코드번호" />
     </Key>
-    <Property Name="업무용승용차코드번호" Type="int" Nullable="false" />
+    <Property Name="업무용승용차코드번호" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="차량번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="차종" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="처분일자" Type="date" />
@@ -611,7 +611,7 @@
     <Property Name="임차기간시작일" Type="datetime" Nullable="false" />
     <Property Name="임차기간종료일" Type="datetime" Nullable="false" />
     <Property Name="사용구분" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="고정자산코드" Type="int" Nullable="false" />
+    <Property Name="고정자산코드" Type="nvarchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="역추적">
     <Key>
@@ -783,7 +783,7 @@
       <PropertyRef Name="입력날짜" />
       <PropertyRef Name="전표번호" />
     </Key>
-    <Property Name="입력날짜" Type="datetime" Nullable="false" />
+    <Property Name="입력날짜" Type="date" Nullable="false" />
     <Property Name="전표번호" Type="int" Nullable="false" />
     <Property Name="품의내역" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="유형" Type="nvarchar" MaxLength="10" Nullable="false" />
@@ -795,15 +795,15 @@
   </EntityType>
   <EntityType Name="전표리스트">
     <Key>
-      <PropertyRef Name="전표리스트ID" />
+      <PropertyRef Name="순번" />
     </Key>
-    <Property Name="전표리스트ID" Type="int" Nullable="false" />
+    <Property Name="순번" Type="int" Nullable="false" />
     <Property Name="구분" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="계정과목코드번호" Type="int" Nullable="false" />
     <Property Name="거래처코드번호" Type="nvarchar" MaxLength="15" />
     <Property Name="금액" Type="int" Nullable="false" />
     <Property Name="적요명" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="입력날짜" Type="datetime" Nullable="false" />
+    <Property Name="입력날짜" Type="date" Nullable="false" />
     <Property Name="전표번호" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="제품">
@@ -947,7 +947,7 @@
     <End Role="거래처" Type="Self.거래처" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="전표리스트">
-        <PropertyRef Name="전표리스트ID" />
+        <PropertyRef Name="순번" />
       </Principal>
       <Dependent Role="거래처">
         <PropertyRef Name="전표리스트ID" />
@@ -987,6 +987,18 @@
       </Principal>
       <Dependent Role="고정자산">
         <PropertyRef Name="사원코드" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_공급업체_자재">
+    <End Role="자재" Type="Self.자재" Multiplicity="0..1" />
+    <End Role="공급업체" Type="Self.공급업체" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="자재">
+        <PropertyRef Name="자재번호" />
+      </Principal>
+      <Dependent Role="공급업체">
+        <PropertyRef Name="자재번호" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1147,18 +1159,6 @@
       </Principal>
       <Dependent Role="기간비용">
         <PropertyRef Name="기간비용계산방법코드번호" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_납품업체_자재">
-    <End Role="자재" Type="Self.자재" Multiplicity="0..1" />
-    <End Role="납품업체" Type="Self.납품업체" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="자재">
-        <PropertyRef Name="자재번호" />
-      </Principal>
-      <Dependent Role="납품업체">
-        <PropertyRef Name="자재번호" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1824,6 +1824,10 @@
       <End Role="사원등록" EntitySet="사원등록" />
       <End Role="고정자산" EntitySet="고정자산" />
     </AssociationSet>
+    <AssociationSet Name="FK_공급업체_자재" Association="Self.FK_공급업체_자재">
+      <End Role="자재" EntitySet="자재" />
+      <End Role="공급업체" EntitySet="공급업체" />
+    </AssociationSet>
     <AssociationSet Name="FK_공정순서_공정" Association="Self.FK_공정순서_공정">
       <End Role="공정" EntitySet="공정" />
       <End Role="공정순서" EntitySet="공정순서" />
@@ -1875,10 +1879,6 @@
     <AssociationSet Name="FK_기간비용_기간비용계산방법1" Association="Self.FK_기간비용_기간비용계산방법1">
       <End Role="기간비용계산방법" EntitySet="기간비용계산방법" />
       <End Role="기간비용" EntitySet="기간비용" />
-    </AssociationSet>
-    <AssociationSet Name="FK_납품업체_자재" Association="Self.FK_납품업체_자재">
-      <End Role="자재" EntitySet="자재" />
-      <End Role="납품업체" EntitySet="납품업체" />
     </AssociationSet>
     <AssociationSet Name="FK_메뉴별권한설정_사용자권한설정1" Association="Self.FK_메뉴별권한설정_사용자권한설정1">
       <End Role="사용자권한설정" EntitySet="사용자권한설정" />

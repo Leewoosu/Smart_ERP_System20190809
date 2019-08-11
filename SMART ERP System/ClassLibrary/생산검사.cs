@@ -20,9 +20,9 @@ namespace ClassLibrary
             this.불량상세정보 = new HashSet<불량상세정보>();
         }
     
-        public int 생산검사번호 { get; set; }
-        public int 생산실적번호 { get; set; }
-        public int 검사유형번호 { get; set; }
+        public string 생산검사번호 { get; set; }
+        public string 생산실적번호 { get; set; }
+        public string 검사유형번호 { get; set; }
         public int 양품수량 { get; set; }
         public int 불량수량 { get; set; }
     

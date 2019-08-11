@@ -20,7 +20,7 @@ namespace ClassLibrary
             this.거래처 = new HashSet<거래처>();
         }
     
-        public int 전표리스트ID { get; set; }
+        public int 순번 { get; set; }
         public string 구분 { get; set; }
         public int 계정과목코드번호 { get; set; }
         public string 거래처코드번호 { get; set; }

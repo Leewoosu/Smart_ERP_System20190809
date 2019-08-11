@@ -20,8 +20,8 @@ namespace ClassLibrary
             this.생산검사 = new HashSet<생산검사>();
         }
     
-        public int 생산실적번호 { get; set; }
-        public int 작업지시번호 { get; set; }
+        public string 생산실적번호 { get; set; }
+        public string 작업지시번호 { get; set; }
         public string 실적일 { get; set; }
         public int 실적수량 { get; set; }
     

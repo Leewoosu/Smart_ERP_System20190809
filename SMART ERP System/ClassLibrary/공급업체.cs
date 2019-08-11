@@ -22,9 +22,11 @@ namespace ClassLibrary
             this.발주확인서 = new HashSet<발주확인서>();
         }
     
-        public int 공급업체번호 { get; set; }
+        public string 공급업체번호 { get; set; }
         public string 공급업체명 { get; set; }
+        public string 자재번호 { get; set; }
     
+        public virtual 자재 자재 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<반품처리서> 반품처리서 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

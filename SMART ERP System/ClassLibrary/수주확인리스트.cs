@@ -14,8 +14,8 @@ namespace ClassLibrary
     
     public partial class 수주확인리스트
     {
-        public int 수주확인번호 { get; set; }
-        public int 제품번호 { get; set; }
+        public string 수주확인번호 { get; set; }
+        public string 제품번호 { get; set; }
         public int 수량 { get; set; }
         public int 수주여부 { get; set; }
     

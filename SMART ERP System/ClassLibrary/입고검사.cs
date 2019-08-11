@@ -21,9 +21,9 @@ namespace ClassLibrary
             this.불량상세정보 = new HashSet<불량상세정보>();
         }
     
-        public int 입고검사번호 { get; set; }
-        public int 발주확인서번호 { get; set; }
-        public int 자재번호 { get; set; }
+        public string 입고검사번호 { get; set; }
+        public string 발주확인서번호 { get; set; }
+        public string 자재번호 { get; set; }
         public int 양품수량 { get; set; }
         public int 불량수량 { get; set; }
     

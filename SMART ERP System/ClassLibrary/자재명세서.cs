@@ -14,8 +14,8 @@ namespace ClassLibrary
     
     public partial class 자재명세서
     {
-        public int 제품번호 { get; set; }
-        public int 자재번호 { get; set; }
+        public string 제품번호 { get; set; }
+        public string 자재번호 { get; set; }
         public int 수량 { get; set; }
     
         public virtual 자재 자재 { get; set; }

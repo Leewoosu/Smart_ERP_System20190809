@@ -14,7 +14,7 @@ namespace ClassLibrary
     
     public partial class 업무용승용차_차량등록
     {
-        public int 업무용승용차코드번호 { get; set; }
+        public string 업무용승용차코드번호 { get; set; }
         public string 차량번호 { get; set; }
         public string 차종 { get; set; }
         public Nullable<System.DateTime> 처분일자 { get; set; }
@@ -23,7 +23,7 @@ namespace ClassLibrary
         public System.DateTime 임차기간시작일 { get; set; }
         public System.DateTime 임차기간종료일 { get; set; }
         public string 사용구분 { get; set; }
-        public int 고정자산코드 { get; set; }
+        public string 고정자산코드 { get; set; }
     
         public virtual 고정자산 고정자산 { get; set; }
     }

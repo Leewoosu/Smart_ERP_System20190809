@@ -58,9 +58,13 @@
     <Compile Include="DbContextFactory.cs" />
     <Compile Include="EntityData\DB.cs" />
     <Compile Include="EntityData\EntityData.cs" />
+    <Compile Include="EntityData\거래처Data.cs" />
+    <Compile Include="EntityData\계정과목Data.cs" />
     <Compile Include="EntityData\계정과목등록Data.cs" />
+    <Compile Include="EntityData\금융거래처Data.cs" />
     <Compile Include="EntityData\사원등록Data.cs" />
     <Compile Include="EntityData\수주Data.cs" />
+    <Compile Include="EntityData\일반거래처Data.cs" />
     <Compile Include="EntityData\전표Data.cs" />
     <Compile Include="EntityData\전표리스트Data.cs" />
     <Compile Include="EntityData\제품Data.cs" />

@@ -17,14 +17,14 @@ namespace ClassLibrary
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public 자재()
         {
-            this.납품업체 = new HashSet<납품업체>();
+            this.공급업체 = new HashSet<공급업체>();
             this.발주리스트 = new HashSet<발주리스트>();
             this.발주확인리스트 = new HashSet<발주확인리스트>();
             this.소요량전개 = new HashSet<소요량전개>();
             this.자재명세서 = new HashSet<자재명세서>();
         }
     
-        public int 자재번호 { get; set; }
+        public string 자재번호 { get; set; }
         public string 자재명 { get; set; }
         public int 안전재교량 { get; set; }
         public int 재고량 { get; set; }
@@ -32,7 +32,7 @@ namespace ClassLibrary
         public Nullable<int> 리드타임 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<납품업체> 납품업체 { get; set; }
+        public virtual ICollection<공급업체> 공급업체 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<발주리스트> 발주리스트 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

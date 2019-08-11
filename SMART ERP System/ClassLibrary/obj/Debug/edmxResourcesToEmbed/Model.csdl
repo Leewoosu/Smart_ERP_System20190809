@@ -46,7 +46,7 @@
     <Property Name="입력구분" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="필수입력여부" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Name="비고" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="그룹코드번호" Type="Int32" Nullable="false" />
+    <Property Name="그룹코드번호" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="계정과목그룹" Relationship="Self.FK_계정과목_계정과목그룹코드" FromRole="계정과목" ToRole="계정과목그룹" />
     <NavigationProperty Name="고정자산" Relationship="Self.FK_고정자산_계정과목" FromRole="계정과목" ToRole="고정자산" />
     <NavigationProperty Name="전표리스트" Relationship="Self.FK_전표리스트_계정과목1" FromRole="계정과목" ToRole="전표리스트" />
@@ -55,7 +55,7 @@
     <Key>
       <PropertyRef Name="그룹코드번호" />
     </Key>
-    <Property Name="그룹코드번호" Type="Int32" Nullable="false" />
+    <Property Name="그룹코드번호" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="그룹명" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="계정과목" Relationship="Self.FK_계정과목_계정과목그룹코드" FromRole="계정과목그룹" ToRole="계정과목" />
   </EntityType>
@@ -71,7 +71,7 @@
     <Key>
       <PropertyRef Name="고정자산코드" />
     </Key>
-    <Property Name="고정자산코드" Type="Int32" Nullable="false" />
+    <Property Name="고정자산코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="고정자산명" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="취득일" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="처리여부" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
@@ -102,6 +102,8 @@
     </Key>
     <Property Name="공급업체번호" Type="Int32" Nullable="false" />
     <Property Name="공급업체명" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="자재번호" Type="Int32" />
+    <NavigationProperty Name="자재" Relationship="Self.FK_공급업체_자재" FromRole="공급업체" ToRole="자재" />
     <NavigationProperty Name="반품처리서" Relationship="Self.FK_반품처리서_공급업체" FromRole="공급업체" ToRole="반품처리서" />
     <NavigationProperty Name="발주서" Relationship="Self.FK_발주서_공급업체" FromRole="공급업체" ToRole="발주서" />
     <NavigationProperty Name="발주확인서" Relationship="Self.FK_발주확인서_공급업체" FromRole="공급업체" ToRole="발주확인서" />
@@ -320,8 +322,6 @@
     </Key>
     <Property Name="납품업체번호" Type="Int32" Nullable="false" />
     <Property Name="납품업체명" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="자재번호" Type="Int32" />
-    <NavigationProperty Name="자재" Relationship="Self.FK_납품업체_자재" FromRole="납품업체" ToRole="자재" />
     <NavigationProperty Name="수주" Relationship="Self.FK_수주_납품업체" FromRole="납품업체" ToRole="수주" />
     <NavigationProperty Name="수주확인서" Relationship="Self.FK_수주확인서_납품업체" FromRole="납품업체" ToRole="수주확인서" />
   </EntityType>
@@ -683,7 +683,7 @@
     <Key>
       <PropertyRef Name="업무용승용차코드번호" />
     </Key>
-    <Property Name="업무용승용차코드번호" Type="Int32" Nullable="false" />
+    <Property Name="업무용승용차코드번호" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="차량번호" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="차종" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="처분일자" Type="DateTime" Precision="0" />
@@ -692,7 +692,7 @@
     <Property Name="임차기간시작일" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="임차기간종료일" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="사용구분" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="고정자산코드" Type="Int32" Nullable="false" />
+    <Property Name="고정자산코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="고정자산" Relationship="Self.FK_업무용승용차_차량등록_고정자산" FromRole="업무용승용차_차량등록" ToRole="고정자산" />
   </EntityType>
   <EntityType Name="역추적">
@@ -797,7 +797,7 @@
     <Property Name="재고량" Type="Int32" Nullable="false" />
     <Property Name="구매단가" Type="Int32" Nullable="false" />
     <Property Name="리드타임" Type="Int32" />
-    <NavigationProperty Name="납품업체" Relationship="Self.FK_납품업체_자재" FromRole="자재" ToRole="납품업체" />
+    <NavigationProperty Name="공급업체" Relationship="Self.FK_공급업체_자재" FromRole="자재" ToRole="공급업체" />
     <NavigationProperty Name="발주리스트" Relationship="Self.FK_발주리스트_자재" FromRole="자재" ToRole="발주리스트" />
     <NavigationProperty Name="발주확인리스트" Relationship="Self.FK_발주확인리스트_자재1" FromRole="자재" ToRole="발주확인리스트" />
     <NavigationProperty Name="소요량전개" Relationship="Self.FK_소요량전개_자재" FromRole="자재" ToRole="소요량전개" />
@@ -890,7 +890,7 @@
       <PropertyRef Name="입력날짜" />
       <PropertyRef Name="전표번호" />
     </Key>
-    <Property Name="입력날짜" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="입력날짜" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="전표번호" Type="Int32" Nullable="false" />
     <Property Name="품의내역" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="유형" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
@@ -903,15 +903,15 @@
   </EntityType>
   <EntityType Name="전표리스트">
     <Key>
-      <PropertyRef Name="전표리스트ID" />
+      <PropertyRef Name="순번" />
     </Key>
-    <Property Name="전표리스트ID" Type="Int32" Nullable="false" />
+    <Property Name="순번" Type="Int32" Nullable="false" />
     <Property Name="구분" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="계정과목코드번호" Type="Int32" Nullable="false" />
     <Property Name="거래처코드번호" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Name="금액" Type="Int32" Nullable="false" />
     <Property Name="적요명" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="입력날짜" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="입력날짜" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="전표번호" Type="Int32" Nullable="false" />
     <NavigationProperty Name="거래처" Relationship="Self.FK_거래처_전표리스트" FromRole="전표리스트" ToRole="거래처" />
     <NavigationProperty Name="계정과목" Relationship="Self.FK_전표리스트_계정과목1" FromRole="전표리스트" ToRole="계정과목" />
@@ -1054,7 +1054,7 @@
     <End Role="거래처" Type="Self.거래처" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="전표리스트">
-        <PropertyRef Name="전표리스트ID" />
+        <PropertyRef Name="순번" />
       </Principal>
       <Dependent Role="거래처">
         <PropertyRef Name="전표리스트ID" />
@@ -1154,6 +1154,18 @@
       </Principal>
       <Dependent Role="업무용승용차_차량등록">
         <PropertyRef Name="고정자산코드" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_공급업체_자재">
+    <End Role="자재" Type="Self.자재" Multiplicity="0..1" />
+    <End Role="공급업체" Type="Self.공급업체" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="자재">
+        <PropertyRef Name="자재번호" />
+      </Principal>
+      <Dependent Role="공급업체">
+        <PropertyRef Name="자재번호" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1338,18 +1350,6 @@
       </Principal>
       <Dependent Role="기간비용">
         <PropertyRef Name="기간비용계산방법코드번호" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_납품업체_자재">
-    <End Role="자재" Type="Self.자재" Multiplicity="0..1" />
-    <End Role="납품업체" Type="Self.납품업체" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="자재">
-        <PropertyRef Name="자재번호" />
-      </Principal>
-      <Dependent Role="납품업체">
-        <PropertyRef Name="자재번호" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1927,6 +1927,10 @@
       <End Role="고정자산" EntitySet="고정자산" />
       <End Role="업무용승용차_차량등록" EntitySet="업무용승용차_차량등록" />
     </AssociationSet>
+    <AssociationSet Name="FK_공급업체_자재" Association="Self.FK_공급업체_자재">
+      <End Role="자재" EntitySet="자재" />
+      <End Role="공급업체" EntitySet="공급업체" />
+    </AssociationSet>
     <AssociationSet Name="FK_반품처리서_공급업체" Association="Self.FK_반품처리서_공급업체">
       <End Role="공급업체" EntitySet="공급업체" />
       <End Role="반품처리서" EntitySet="반품처리서" />
@@ -1986,10 +1990,6 @@
     <AssociationSet Name="FK_기간비용_기간비용계산방법1" Association="Self.FK_기간비용_기간비용계산방법1">
       <End Role="기간비용계산방법" EntitySet="기간비용계산방법" />
       <End Role="기간비용" EntitySet="기간비용" />
-    </AssociationSet>
-    <AssociationSet Name="FK_납품업체_자재" Association="Self.FK_납품업체_자재">
-      <End Role="자재" EntitySet="자재" />
-      <End Role="납품업체" EntitySet="납품업체" />
     </AssociationSet>
     <AssociationSet Name="FK_수주_납품업체" Association="Self.FK_수주_납품업체">
       <End Role="납품업체" EntitySet="납품업체" />

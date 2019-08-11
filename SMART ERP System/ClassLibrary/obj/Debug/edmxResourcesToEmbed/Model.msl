@@ -97,6 +97,7 @@
         <MappingFragment StoreEntitySet="공급업체">
           <ScalarProperty Name="공급업체번호" ColumnName="공급업체번호" />
           <ScalarProperty Name="공급업체명" ColumnName="공급업체명" />
+          <ScalarProperty Name="자재번호" ColumnName="자재번호" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -304,7 +305,6 @@
         <MappingFragment StoreEntitySet="납품업체">
           <ScalarProperty Name="납품업체번호" ColumnName="납품업체번호" />
           <ScalarProperty Name="납품업체명" ColumnName="납품업체명" />
-          <ScalarProperty Name="자재번호" ColumnName="자재번호" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -843,7 +843,7 @@
     <EntitySetMapping Name="전표리스트">
       <EntityTypeMapping TypeName="ERPModel.전표리스트">
         <MappingFragment StoreEntitySet="전표리스트">
-          <ScalarProperty Name="전표리스트ID" ColumnName="전표리스트ID" />
+          <ScalarProperty Name="순번" ColumnName="순번" />
           <ScalarProperty Name="구분" ColumnName="구분" />
           <ScalarProperty Name="계정과목코드번호" ColumnName="계정과목코드번호" />
           <ScalarProperty Name="거래처코드번호" ColumnName="거래처코드번호" />

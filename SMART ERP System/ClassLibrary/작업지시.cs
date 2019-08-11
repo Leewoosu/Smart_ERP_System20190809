@@ -20,11 +20,11 @@ namespace ClassLibrary
             this.작업지시리스트 = new HashSet<작업지시리스트>();
         }
     
-        public int 작업지시번호 { get; set; }
-        public int 제품번호 { get; set; }
+        public string 작업지시번호 { get; set; }
+        public string 제품번호 { get; set; }
         public int 수량 { get; set; }
         public System.DateTime 작업지시일 { get; set; }
-        public int 작업완료일 { get; set; }
+        public System.DateTime 작업완료일 { get; set; }
     
         public virtual 제품 제품 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

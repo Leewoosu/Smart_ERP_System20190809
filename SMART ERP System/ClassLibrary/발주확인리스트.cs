@@ -20,13 +20,12 @@ namespace ClassLibrary
             this.입고검사 = new HashSet<입고검사>();
         }
     
-        public int 발주확인서번호 { get; set; }
-        public int 자재번호 { get; set; }
+        public string 발주확인서번호 { get; set; }
+        public string 자재번호 { get; set; }
         public int 수량 { get; set; }
     
         public virtual 발주확인서 발주확인서 { get; set; }
         public virtual 자재 자재 { get; set; }
-        public virtual 자재전표 자재전표 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<입고검사> 입고검사 { get; set; }
     }

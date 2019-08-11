@@ -20,7 +20,7 @@ namespace ClassLibrary
             this.업무용승용차_차량등록 = new HashSet<업무용승용차_차량등록>();
         }
     
-        public int 고정자산코드 { get; set; }
+        public string 고정자산코드 { get; set; }
         public string 고정자산명 { get; set; }
         public System.DateTime 취득일 { get; set; }
         public string 처리여부 { get; set; }
