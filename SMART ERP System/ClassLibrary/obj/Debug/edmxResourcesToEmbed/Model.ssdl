@@ -4,15 +4,15 @@
     <Key>
       <PropertyRef Name="거래처코드번호" />
     </Key>
-    <Property Name="거래처코드번호" Type="nvarchar" MaxLength="15" Nullable="false" />
-    <Property Name="전표리스트ID" Type="int" Nullable="false" />
+    <Property Name="거래처코드번호" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="순번" Type="int" Nullable="false" />
     <Property Name="일자" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="검사유형">
     <Key>
       <PropertyRef Name="검사유현번호" />
     </Key>
-    <Property Name="검사유현번호" Type="int" Nullable="false" />
+    <Property Name="검사유현번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="검사명" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="결산자료입력">
@@ -88,9 +88,9 @@
     <Key>
       <PropertyRef Name="공급업체번호" />
     </Key>
-    <Property Name="공급업체번호" Type="int" Nullable="false" />
+    <Property Name="공급업체번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="공급업체명" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="자재번호" Type="int" />
+    <Property Name="자재번호" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="공정">
     <Key>
@@ -106,7 +106,7 @@
       <PropertyRef Name="제품번호" />
     </Key>
     <Property Name="공정번호" Type="int" Nullable="false" />
-    <Property Name="제품번호" Type="int" Nullable="false" />
+    <Property Name="제품번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="후공정번호" Type="int" />
     <Property Name="최초공정번호" Type="int" />
   </EntityType>
@@ -167,7 +167,7 @@
       <PropertyRef Name="금융거래처코드" />
     </Key>
     <Property Name="금융거래처코드" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="거래처코드번호" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="거래처코드번호" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="금융거래처명" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="구분" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="계좌번호" Type="nvarchar" MaxLength="20" Nullable="false" />
@@ -283,7 +283,7 @@
     <Key>
       <PropertyRef Name="납품업체번호" />
     </Key>
-    <Property Name="납품업체번호" Type="int" Nullable="false" />
+    <Property Name="납품업체번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="납품업체명" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="메뉴등록">
@@ -310,44 +310,44 @@
     <Key>
       <PropertyRef Name="반품처리서번호" />
     </Key>
-    <Property Name="반품처리서번호" Type="int" Nullable="false" />
-    <Property Name="공급업체번호" Type="int" Nullable="false" />
-    <Property Name="입고검사서번호" Type="int" Nullable="false" />
+    <Property Name="반품처리서번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="공급업체번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="입고검사서번호" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="발주리스트">
     <Key>
       <PropertyRef Name="자재번호" />
       <PropertyRef Name="발주번호" />
     </Key>
-    <Property Name="자재번호" Type="int" Nullable="false" />
-    <Property Name="발주번호" Type="int" Nullable="false" />
+    <Property Name="자재번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="발주번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="수량" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="발주서">
     <Key>
       <PropertyRef Name="발주번호" />
     </Key>
-    <Property Name="발주번호" Type="int" Nullable="false" />
-    <Property Name="공급업체번호" Type="int" />
-    <Property Name="주문날짜" Type="nvarchar" MaxLength="50" />
-    <Property Name="납기일" Type="nvarchar" MaxLength="50" />
+    <Property Name="발주번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="공급업체번호" Type="nvarchar" MaxLength="50" />
+    <Property Name="주문날짜" Type="date" />
+    <Property Name="납기일" Type="date" />
   </EntityType>
   <EntityType Name="발주확인리스트">
     <Key>
       <PropertyRef Name="발주확인서번호" />
       <PropertyRef Name="자재번호" />
     </Key>
-    <Property Name="발주확인서번호" Type="int" Nullable="false" />
-    <Property Name="자재번호" Type="int" Nullable="false" />
+    <Property Name="발주확인서번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="자재번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="수량" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="발주확인서">
     <Key>
       <PropertyRef Name="발주확인서번호" />
     </Key>
-    <Property Name="발주확인서번호" Type="int" Nullable="false" />
-    <Property Name="공급업체번호" Type="int" Nullable="false" />
-    <Property Name="배송날짜" Type="datetime" Nullable="false" />
+    <Property Name="발주확인서번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="공급업체번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="배송날짜" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="부가세신고서">
     <Key>
@@ -394,15 +394,15 @@
       <PropertyRef Name="불량코드번호" />
       <PropertyRef Name="검사번호" />
     </Key>
-    <Property Name="불량코드번호" Type="int" Nullable="false" />
-    <Property Name="검사번호" Type="int" Nullable="false" />
+    <Property Name="불량코드번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="검사번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="불량수량" Type="int" />
   </EntityType>
   <EntityType Name="불량코드내역">
     <Key>
       <PropertyRef Name="불량코드번호" />
     </Key>
-    <Property Name="불량코드번호" Type="int" Nullable="false" />
+    <Property Name="불량코드번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="불량명" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="사업장등록">
@@ -488,9 +488,9 @@
     <Key>
       <PropertyRef Name="생산검사번호" />
     </Key>
-    <Property Name="생산검사번호" Type="int" Nullable="false" />
-    <Property Name="생산실적번호" Type="int" Nullable="false" />
-    <Property Name="검사유형번호" Type="int" Nullable="false" />
+    <Property Name="생산검사번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="생산실적번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="검사유형번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="양품수량" Type="int" Nullable="false" />
     <Property Name="불량수량" Type="int" Nullable="false" />
   </EntityType>
@@ -503,14 +503,14 @@
     <Property Name="작업예정일" Type="nvarchar" MaxLength="50" />
     <Property Name="작업확정일" Type="nvarchar" MaxLength="50" />
     <Property Name="수량" Type="int" />
-    <Property Name="제품번호" Type="int" Nullable="false" />
+    <Property Name="제품번호" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="생산실적현황">
     <Key>
       <PropertyRef Name="생산실적번호" />
     </Key>
-    <Property Name="생산실적번호" Type="int" Nullable="false" />
-    <Property Name="작업지시번호" Type="int" Nullable="false" />
+    <Property Name="생산실적번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="작업지시번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="실적일" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="실적수량" Type="int" Nullable="false" />
   </EntityType>
@@ -552,8 +552,8 @@
     <Key>
       <PropertyRef Name="소요량전개번호" />
     </Key>
-    <Property Name="소요량전개번호" Type="int" Nullable="false" />
-    <Property Name="자재번호" Type="int" Nullable="false" />
+    <Property Name="소요량전개번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="자재번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="전개수량" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="수주">
@@ -563,19 +563,19 @@
     </Key>
     <Property Name="수주번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="수주번호2" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="제품번호" Type="int" Nullable="false" />
+    <Property Name="제품번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="주문수량" Type="int" Nullable="false" />
-    <Property Name="납품업체번호" Type="int" Nullable="false" />
-    <Property Name="주문일" Type="int" />
-    <Property Name="납기일" Type="int" />
+    <Property Name="납품업체번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="주무일" Type="date" />
+    <Property Name="납기일" Type="date" />
   </EntityType>
   <EntityType Name="수주확인리스트">
     <Key>
       <PropertyRef Name="수주확인번호" />
       <PropertyRef Name="제품번호" />
     </Key>
-    <Property Name="수주확인번호" Type="int" Nullable="false" />
-    <Property Name="제품번호" Type="int" Nullable="false" />
+    <Property Name="수주확인번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="제품번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="수량" Type="int" Nullable="false" />
     <Property Name="수주여부" Type="int" Nullable="false" />
   </EntityType>
@@ -583,9 +583,9 @@
     <Key>
       <PropertyRef Name="수주확인번호" />
     </Key>
-    <Property Name="수주확인번호" Type="int" Nullable="false" />
+    <Property Name="수주확인번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="배달날짜" Type="date" Nullable="false" />
-    <Property Name="납품업체번호" Type="int" Nullable="false" />
+    <Property Name="납품업체번호" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="시스템환경설정">
     <Key>
@@ -642,7 +642,7 @@
       <PropertyRef Name="일반거래처코드" />
     </Key>
     <Property Name="일반거래처코드" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="거래처코드번호" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="거래처코드번호" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="거래처명" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="구분" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="사업자등록번호" Type="nvarchar" MaxLength="20" Nullable="false" />
@@ -672,9 +672,9 @@
     <Key>
       <PropertyRef Name="입고검사번호" />
     </Key>
-    <Property Name="입고검사번호" Type="int" Nullable="false" />
-    <Property Name="발주확인서번호" Type="int" Nullable="false" />
-    <Property Name="자재번호" Type="int" Nullable="false" />
+    <Property Name="입고검사번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="발주확인서번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="자재번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="양품수량" Type="int" Nullable="false" />
     <Property Name="불량수량" Type="int" Nullable="false" />
   </EntityType>
@@ -700,7 +700,7 @@
     <Key>
       <PropertyRef Name="자재번호" />
     </Key>
-    <Property Name="자재번호" Type="int" Nullable="false" />
+    <Property Name="자재번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="자재명" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="안전재교량" Type="int" Nullable="false" />
     <Property Name="재고량" Type="int" Nullable="false" />
@@ -712,15 +712,15 @@
       <PropertyRef Name="제품번호" />
       <PropertyRef Name="자재번호" />
     </Key>
-    <Property Name="제품번호" Type="int" Nullable="false" />
-    <Property Name="자재번호" Type="int" Nullable="false" />
+    <Property Name="제품번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="자재번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="수량" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="자재전표">
     <Key>
       <PropertyRef Name="자재전표번호" />
     </Key>
-    <Property Name="자재전표번호" Type="int" Nullable="false" />
+    <Property Name="자재전표번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="발주확인서번호" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="작업완료지시">
@@ -728,7 +728,7 @@
       <PropertyRef Name="작업완료지시번호" />
     </Key>
     <Property Name="작업완료지시번호" Type="int" Nullable="false" />
-    <Property Name="제품번호" Type="int" Nullable="false" />
+    <Property Name="제품번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="작업완료일" Type="datetime" Nullable="false" />
     <Property Name="수량" Type="int" Nullable="false" />
     <Property Name="생산실적검사여부" Type="int" Nullable="false" />
@@ -738,7 +738,7 @@
       <PropertyRef Name="작업완료지시번호" />
     </Key>
     <Property Name="작업완료지시번호" Type="int" Nullable="false" />
-    <Property Name="제품번호" Type="int" Nullable="false" />
+    <Property Name="제품번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="작업완료일" Type="datetime" Nullable="false" />
     <Property Name="수량" Type="int" Nullable="false" />
     <Property Name="생산실적검사여부" Type="int" Nullable="false" />
@@ -748,28 +748,28 @@
     <Key>
       <PropertyRef Name="작업지시번호" />
     </Key>
-    <Property Name="작업지시번호" Type="int" Nullable="false" />
-    <Property Name="제품번호" Type="int" Nullable="false" />
+    <Property Name="작업지시번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="제품번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="수량" Type="int" Nullable="false" />
-    <Property Name="작업지시일" Type="datetime" Nullable="false" />
-    <Property Name="작업완료일" Type="int" Nullable="false" />
+    <Property Name="작업지시일" Type="date" Nullable="false" />
+    <Property Name="작업완료일" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="작업지시리스트">
     <Key>
       <PropertyRef Name="작업지시번호" />
       <PropertyRef Name="제품번호" />
     </Key>
-    <Property Name="작업지시번호" Type="int" Nullable="false" />
-    <Property Name="제품번호" Type="int" Nullable="false" />
+    <Property Name="작업지시번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="제품번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="수량" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="작업지시현황">
     <Key>
       <PropertyRef Name="작업지시번호" />
     </Key>
-    <Property Name="작업지시번호" Type="int" Nullable="false" />
+    <Property Name="작업지시번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="생산계획현황번호" Type="int" Nullable="false" />
-    <Property Name="제품번호" Type="int" Nullable="false" />
+    <Property Name="제품번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="수량" Type="nchar" MaxLength="10" />
     <Property Name="작업장번호" Type="nchar" MaxLength="10" />
     <Property Name="작업상태번호" Type="nchar" MaxLength="10" />
@@ -810,7 +810,7 @@
     <Key>
       <PropertyRef Name="제품번호" />
     </Key>
-    <Property Name="제품번호" Type="int" Nullable="false" />
+    <Property Name="제품번호" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="제품명" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="안전재고량" Type="int" />
     <Property Name="재고량" Type="int" />
@@ -950,7 +950,7 @@
         <PropertyRef Name="순번" />
       </Principal>
       <Dependent Role="거래처">
-        <PropertyRef Name="전표리스트ID" />
+        <PropertyRef Name="순번" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1258,18 +1258,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_발주확인리스트_자재전표">
-    <End Role="자재전표" Type="Self.자재전표" Multiplicity="1" />
-    <End Role="발주확인리스트" Type="Self.발주확인리스트" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="자재전표">
-        <PropertyRef Name="자재전표번호" />
-      </Principal>
-      <Dependent Role="발주확인리스트">
-        <PropertyRef Name="발주확인서번호" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_발주확인서_공급업체">
     <End Role="공급업체" Type="Self.공급업체" Multiplicity="1" />
     <End Role="발주확인서" Type="Self.발주확인서" Multiplicity="*" />
@@ -1279,6 +1267,18 @@
       </Principal>
       <Dependent Role="발주확인서">
         <PropertyRef Name="공급업체번호" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_발주확인서_발주서">
+    <End Role="발주서" Type="Self.발주서" Multiplicity="1" />
+    <End Role="발주확인서" Type="Self.발주확인서" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="발주서">
+        <PropertyRef Name="발주번호" />
+      </Principal>
+      <Dependent Role="발주확인서">
+        <PropertyRef Name="발주확인서번호" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1622,6 +1622,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_자재전표_발주확인서">
+    <End Role="발주확인서" Type="Self.발주확인서" Multiplicity="1" />
+    <End Role="자재전표" Type="Self.자재전표" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="발주확인서">
+        <PropertyRef Name="발주확인서번호" />
+      </Principal>
+      <Dependent Role="자재전표">
+        <PropertyRef Name="자재전표번호" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_작업완료지시_제품">
     <End Role="제품" Type="Self.제품" Multiplicity="1" />
     <End Role="작업완료지시" Type="Self.작업완료지시" Multiplicity="*" />
@@ -1912,12 +1924,12 @@
       <End Role="자재" EntitySet="자재" />
       <End Role="발주확인리스트" EntitySet="발주확인리스트" />
     </AssociationSet>
-    <AssociationSet Name="FK_발주확인리스트_자재전표" Association="Self.FK_발주확인리스트_자재전표">
-      <End Role="자재전표" EntitySet="자재전표" />
-      <End Role="발주확인리스트" EntitySet="발주확인리스트" />
-    </AssociationSet>
     <AssociationSet Name="FK_발주확인서_공급업체" Association="Self.FK_발주확인서_공급업체">
       <End Role="공급업체" EntitySet="공급업체" />
+      <End Role="발주확인서" EntitySet="발주확인서" />
+    </AssociationSet>
+    <AssociationSet Name="FK_발주확인서_발주서" Association="Self.FK_발주확인서_발주서">
+      <End Role="발주서" EntitySet="발주서" />
       <End Role="발주확인서" EntitySet="발주확인서" />
     </AssociationSet>
     <AssociationSet Name="FK_부서등록_사업장등록" Association="Self.FK_부서등록_사업장등록">
@@ -2031,6 +2043,10 @@
     <AssociationSet Name="FK_자재명세서_제품" Association="Self.FK_자재명세서_제품">
       <End Role="제품" EntitySet="제품" />
       <End Role="자재명세서" EntitySet="자재명세서" />
+    </AssociationSet>
+    <AssociationSet Name="FK_자재전표_발주확인서" Association="Self.FK_자재전표_발주확인서">
+      <End Role="발주확인서" EntitySet="발주확인서" />
+      <End Role="자재전표" EntitySet="자재전표" />
     </AssociationSet>
     <AssociationSet Name="FK_작업완료지시_제품" Association="Self.FK_작업완료지시_제품">
       <End Role="제품" EntitySet="제품" />

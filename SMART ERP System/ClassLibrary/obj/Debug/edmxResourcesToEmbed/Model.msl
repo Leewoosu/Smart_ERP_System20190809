@@ -5,7 +5,7 @@
       <EntityTypeMapping TypeName="ERPModel.거래처">
         <MappingFragment StoreEntitySet="거래처">
           <ScalarProperty Name="거래처코드번호" ColumnName="거래처코드번호" />
-          <ScalarProperty Name="전표리스트ID" ColumnName="전표리스트ID" />
+          <ScalarProperty Name="순번" ColumnName="순번" />
           <ScalarProperty Name="일자" ColumnName="일자" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -597,7 +597,7 @@
           <ScalarProperty Name="제품번호" ColumnName="제품번호" />
           <ScalarProperty Name="주문수량" ColumnName="주문수량" />
           <ScalarProperty Name="납품업체번호" ColumnName="납품업체번호" />
-          <ScalarProperty Name="주문일" ColumnName="주문일" />
+          <ScalarProperty Name="주무일" ColumnName="주무일" />
           <ScalarProperty Name="납기일" ColumnName="납기일" />
         </MappingFragment>
       </EntityTypeMapping>

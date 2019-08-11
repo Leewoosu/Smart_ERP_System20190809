@@ -26,12 +26,12 @@ namespace ClassLibrary.EntityData
 
         }
 
-        public List<수주> 조회(string 제품이름, string 납품업체이름, int FirstDate, int LastDate)
+        public List<수주> 조회(string 제품이름, string 납품업체이름, DateTime FirstDate, DateTime LastDate)
         {
             using (ERPEntities context = new ERPEntities())
             {
                 var query = from x in context.수주
-                            where x.주문일 <= LastDate && x.주문일 >= FirstDate
+                            where x.주무일 <= LastDate && x.주무일 >= FirstDate
                             select x;
 
                 if (string.IsNullOrEmpty(제품이름) == false)

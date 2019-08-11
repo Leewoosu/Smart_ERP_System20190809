@@ -159,31 +159,14 @@ namespace SMART_ERP_System.MenuUserControl
                         string accountName = DB.계정과목.SearchAccountCode(list[i].계정과목코드번호);
                         dgv전표리스트.Rows[i].Cells[3].Value = accountName;
 
-                        if(list[i].거래처코드번호 != null)
+                        if (list[i].거래처코드번호 != null)
                         {
                             dgv전표리스트.Rows[i].Cells[4].Value = list[i].거래처코드번호;
 
-                            금융거래처등록 resultList1 = DB.거래처.Search(list[i].거래처코드번호) as 금융거래처등록;
-
-                            if(resultList1 == null)
-                            {
-                                일반거래처등록 resultList2 = DB.거래처.Search(list[i].거래처코드번호) as 일반거래처등록;
-
-                                if (resultList2 == null)
-                                    return;
-                                else
-                                {
-                                    dgv전표리스트.Rows[i].Cells[5].Value = ;
-                                    dgv전표리스트.Rows[i].Cells[6].Value = ;
-                                }
-                            }
-                            else
-                            {
-                                dgv전표리스트.Rows[i].Cells[5].Value = resultList1.;
-                                dgv전표리스트.Rows[i].Cells[6].Value = ;
-                            }
+                            DB.거래처.Search(list[i].거래처코드번호, out string name, out string number);
+                            dgv전표리스트.Rows[i].Cells[5].Value = name;
+                            dgv전표리스트.Rows[i].Cells[6].Value = number;
                         }
-
                         dgv전표리스트.Rows[i].Cells[7].Value = list[i].금액;
                         dgv전표리스트.Rows[i].Cells[8].Value = list[i].적요명;
                     }
