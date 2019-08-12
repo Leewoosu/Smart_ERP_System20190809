@@ -29,7 +29,7 @@ namespace ClassLibrary
         public int 안전재교량 { get; set; }
         public int 재고량 { get; set; }
         public int 구매단가 { get; set; }
-        public Nullable<int> 리드타임 { get; set; }
+        public int 리드타임 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<공급업체> 공급업체 { get; set; }

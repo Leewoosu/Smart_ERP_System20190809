@@ -12,7 +12,7 @@ namespace ClassLibrary.EntityData
         {
             using (ERPEntities entities = new ERPEntities())
             {
-                int number = int.Parse(value.ToString());
+                string number = value.ToString();
 
                 var query = from x in entities.전표리스트
                             where x.전표번호 == number

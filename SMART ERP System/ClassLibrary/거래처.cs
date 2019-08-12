@@ -22,6 +22,7 @@ namespace ClassLibrary
         }
     
         public string 거래처코드번호 { get; set; }
+        public int 전표리스트ID { get; set; }
         public int 순번 { get; set; }
         public System.DateTime 일자 { get; set; }
     

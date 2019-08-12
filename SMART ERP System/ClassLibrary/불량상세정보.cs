@@ -16,7 +16,7 @@ namespace ClassLibrary
     {
         public string 불량코드번호 { get; set; }
         public string 검사번호 { get; set; }
-        public Nullable<int> 불량수량 { get; set; }
+        public int 불량수량 { get; set; }
     
         public virtual 불량코드내역 불량코드내역 { get; set; }
         public virtual 생산검사 생산검사 { get; set; }

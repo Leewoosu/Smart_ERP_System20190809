@@ -21,7 +21,7 @@ namespace ClassLibrary
         }
     
         public System.DateTime 일자 { get; set; }
-        public int 자금과목코드번호 { get; set; }
+        public string 자금과목코드번호 { get; set; }
         public string 적요 { get; set; }
         public int 금액 { get; set; }
         public int 잔액 { get; set; }

@@ -76,6 +76,27 @@ namespace ClassLibrary.EntityData
                 }
             }
         }
+        public List<int> Get재고량()
+        {
+            using(ERPEntities context = new ERPEntities())
+            {
+                var query = from x in context.제품                           
+                            select x;
+
+                return query.Select(x => x.재고량).ToList();
+            }
+        }
+
+        public List<제품> Get제품(string 제품번호)
+        {
+            using(ERPEntities context = new ERPEntities())
+            {
+                var query = from x in context.제품
+                            where x.제품번호 == 제품번호
+                            select x;
+                return query.ToList();
+            }
+        }
         #region 제품정보찾기
         
         public string Search품목군(string 제품번호)

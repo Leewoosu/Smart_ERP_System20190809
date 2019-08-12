@@ -21,7 +21,7 @@ namespace ClassLibrary
         }
     
         public System.DateTime 입력날짜 { get; set; }
-        public int 전표번호 { get; set; }
+        public string 전표번호 { get; set; }
         public string 품의내역 { get; set; }
         public string 유형 { get; set; }
         public string 기표번호 { get; set; }

@@ -23,6 +23,7 @@ namespace ClassLibrary
         public string 발주확인서번호 { get; set; }
         public string 공급업체번호 { get; set; }
         public System.DateTime 배송날짜 { get; set; }
+        public string 발주번호 { get; set; }
     
         public virtual 공급업체 공급업체 { get; set; }
         public virtual 발주서 발주서 { get; set; }

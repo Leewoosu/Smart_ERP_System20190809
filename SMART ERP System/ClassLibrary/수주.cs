@@ -19,8 +19,8 @@ namespace ClassLibrary
         public string 제품번호 { get; set; }
         public int 주문수량 { get; set; }
         public string 납품업체번호 { get; set; }
-        public Nullable<System.DateTime> 주무일 { get; set; }
-        public Nullable<System.DateTime> 납기일 { get; set; }
+        public System.DateTime 주문일 { get; set; }
+        public System.DateTime 납기일 { get; set; }
     
         public virtual 납품업체 납품업체 { get; set; }
         public virtual 제품 제품 { get; set; }

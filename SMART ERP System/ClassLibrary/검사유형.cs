@@ -20,7 +20,7 @@ namespace ClassLibrary
             this.생산검사 = new HashSet<생산검사>();
         }
     
-        public string 검사유현번호 { get; set; }
+        public string 검사유형코드 { get; set; }
         public string 검사명 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

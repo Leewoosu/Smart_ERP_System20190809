@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv엑셀 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,6 +47,8 @@
             this.btn삭제 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgv수주 = new System.Windows.Forms.DataGridView();
+            this.btn엑셀 = new System.Windows.Forms.Button();
+            this.btn등록 = new System.Windows.Forms.Button();
             this.수주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주번호2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.제품번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +57,6 @@
             this.주문일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.납기일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bds수주 = new System.Windows.Forms.BindingSource(this.components);
-            this.btn엑셀 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv엑셀)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -67,14 +68,14 @@
             // 
             this.dgv엑셀.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgv엑셀.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv엑셀.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv엑셀.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv엑셀.Location = new System.Drawing.Point(11, 145);
             this.dgv엑셀.Name = "dgv엑셀";
             this.dgv엑셀.RowTemplate.Height = 23;
@@ -131,24 +132,28 @@
             // 
             // LastDate
             // 
-            this.LastDate.Location = new System.Drawing.Point(636, 11);
+            this.LastDate.CustomFormat = "yyyy-MM-dd";
+            this.LastDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.LastDate.Location = new System.Drawing.Point(535, 11);
             this.LastDate.Name = "LastDate";
-            this.LastDate.Size = new System.Drawing.Size(200, 21);
+            this.LastDate.Size = new System.Drawing.Size(100, 21);
             this.LastDate.TabIndex = 15;
             this.LastDate.ValueChanged += new System.EventHandler(this.LastDate_ValueChanged);
             // 
             // FirstDate
             // 
+            this.FirstDate.CustomFormat = "yyyy-MM-dd";
+            this.FirstDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FirstDate.Location = new System.Drawing.Point(410, 11);
             this.FirstDate.Name = "FirstDate";
-            this.FirstDate.Size = new System.Drawing.Size(200, 21);
+            this.FirstDate.Size = new System.Drawing.Size(96, 21);
             this.FirstDate.TabIndex = 14;
             this.FirstDate.ValueChanged += new System.EventHandler(this.FirstDate_ValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(616, 17);
+            this.label6.Location = new System.Drawing.Point(515, 17);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(14, 12);
             this.label6.TabIndex = 13;
@@ -183,7 +188,7 @@
             // 
             // btn조회
             // 
-            this.btn조회.Location = new System.Drawing.Point(659, 4);
+            this.btn조회.Location = new System.Drawing.Point(788, 3);
             this.btn조회.Name = "btn조회";
             this.btn조회.Size = new System.Drawing.Size(75, 23);
             this.btn조회.TabIndex = 7;
@@ -193,7 +198,7 @@
             // 
             // btn변경
             // 
-            this.btn변경.Location = new System.Drawing.Point(740, 4);
+            this.btn변경.Location = new System.Drawing.Point(869, 2);
             this.btn변경.Name = "btn변경";
             this.btn변경.Size = new System.Drawing.Size(75, 23);
             this.btn변경.TabIndex = 8;
@@ -203,7 +208,7 @@
             // 
             // btn삭제
             // 
-            this.btn삭제.Location = new System.Drawing.Point(821, 4);
+            this.btn삭제.Location = new System.Drawing.Point(950, 2);
             this.btn삭제.Name = "btn삭제";
             this.btn삭제.Size = new System.Drawing.Size(75, 23);
             this.btn삭제.TabIndex = 9;
@@ -222,6 +227,7 @@
             // dgv수주
             // 
             this.dgv수주.AutoGenerateColumns = false;
+            this.dgv수주.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv수주.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv수주.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.수주번호DataGridViewTextBoxColumn,
@@ -236,66 +242,13 @@
             this.dgv수주.Location = new System.Drawing.Point(0, 0);
             this.dgv수주.Name = "dgv수주";
             this.dgv수주.RowTemplate.Height = 23;
+            this.dgv수주.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv수주.Size = new System.Drawing.Size(495, 492);
             this.dgv수주.TabIndex = 0;
-            this.dgv수주.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv수주_CellEndEdit_1);
-            // 
-            // 수주번호DataGridViewTextBoxColumn
-            // 
-            this.수주번호DataGridViewTextBoxColumn.DataPropertyName = "수주번호";
-            this.수주번호DataGridViewTextBoxColumn.HeaderText = "수주번호";
-            this.수주번호DataGridViewTextBoxColumn.Name = "수주번호DataGridViewTextBoxColumn";
-            this.수주번호DataGridViewTextBoxColumn.Width = 54;
-            // 
-            // 수주번호2DataGridViewTextBoxColumn
-            // 
-            this.수주번호2DataGridViewTextBoxColumn.DataPropertyName = "수주번호2";
-            this.수주번호2DataGridViewTextBoxColumn.HeaderText = "수주번호2";
-            this.수주번호2DataGridViewTextBoxColumn.Name = "수주번호2DataGridViewTextBoxColumn";
-            this.수주번호2DataGridViewTextBoxColumn.Width = 54;
-            // 
-            // 제품번호DataGridViewTextBoxColumn
-            // 
-            this.제품번호DataGridViewTextBoxColumn.DataPropertyName = "제품번호";
-            this.제품번호DataGridViewTextBoxColumn.HeaderText = "제품번호";
-            this.제품번호DataGridViewTextBoxColumn.Name = "제품번호DataGridViewTextBoxColumn";
-            this.제품번호DataGridViewTextBoxColumn.Width = 54;
-            // 
-            // 주문수량DataGridViewTextBoxColumn
-            // 
-            this.주문수량DataGridViewTextBoxColumn.DataPropertyName = "주문수량";
-            this.주문수량DataGridViewTextBoxColumn.HeaderText = "주문수량";
-            this.주문수량DataGridViewTextBoxColumn.Name = "주문수량DataGridViewTextBoxColumn";
-            this.주문수량DataGridViewTextBoxColumn.Width = 53;
-            // 
-            // 납품업체번호DataGridViewTextBoxColumn
-            // 
-            this.납품업체번호DataGridViewTextBoxColumn.DataPropertyName = "납품업체번호";
-            this.납품업체번호DataGridViewTextBoxColumn.HeaderText = "납품업체번호";
-            this.납품업체번호DataGridViewTextBoxColumn.Name = "납품업체번호DataGridViewTextBoxColumn";
-            this.납품업체번호DataGridViewTextBoxColumn.Width = 54;
-            // 
-            // 주문일DataGridViewTextBoxColumn
-            // 
-            this.주문일DataGridViewTextBoxColumn.DataPropertyName = "주문일";
-            this.주문일DataGridViewTextBoxColumn.HeaderText = "주문일";
-            this.주문일DataGridViewTextBoxColumn.Name = "주문일DataGridViewTextBoxColumn";
-            this.주문일DataGridViewTextBoxColumn.Width = 54;
-            // 
-            // 납기일DataGridViewTextBoxColumn
-            // 
-            this.납기일DataGridViewTextBoxColumn.DataPropertyName = "납기일";
-            this.납기일DataGridViewTextBoxColumn.HeaderText = "납기일";
-            this.납기일DataGridViewTextBoxColumn.Name = "납기일DataGridViewTextBoxColumn";
-            this.납기일DataGridViewTextBoxColumn.Width = 54;
-            // 
-            // bds수주
-            // 
-            this.bds수주.DataSource = typeof(ClassLibrary.수주);
             // 
             // btn엑셀
             // 
-            this.btn엑셀.Location = new System.Drawing.Point(567, 4);
+            this.btn엑셀.Location = new System.Drawing.Point(615, 3);
             this.btn엑셀.Name = "btn엑셀";
             this.btn엑셀.Size = new System.Drawing.Size(86, 23);
             this.btn엑셀.TabIndex = 11;
@@ -303,10 +256,67 @@
             this.btn엑셀.UseVisualStyleBackColor = true;
             this.btn엑셀.Click += new System.EventHandler(this.Btn엑셀_Click);
             // 
+            // btn등록
+            // 
+            this.btn등록.Location = new System.Drawing.Point(707, 3);
+            this.btn등록.Name = "btn등록";
+            this.btn등록.Size = new System.Drawing.Size(75, 23);
+            this.btn등록.TabIndex = 12;
+            this.btn등록.Text = "등록";
+            this.btn등록.UseVisualStyleBackColor = true;
+            this.btn등록.Click += new System.EventHandler(this.btn등록_Click);
+            // 
+            // 수주번호DataGridViewTextBoxColumn
+            // 
+            this.수주번호DataGridViewTextBoxColumn.DataPropertyName = "수주번호";
+            this.수주번호DataGridViewTextBoxColumn.HeaderText = "수주번호";
+            this.수주번호DataGridViewTextBoxColumn.Name = "수주번호DataGridViewTextBoxColumn";
+            // 
+            // 수주번호2DataGridViewTextBoxColumn
+            // 
+            this.수주번호2DataGridViewTextBoxColumn.DataPropertyName = "수주번호2";
+            this.수주번호2DataGridViewTextBoxColumn.HeaderText = "수주번호2";
+            this.수주번호2DataGridViewTextBoxColumn.Name = "수주번호2DataGridViewTextBoxColumn";
+            // 
+            // 제품번호DataGridViewTextBoxColumn
+            // 
+            this.제품번호DataGridViewTextBoxColumn.DataPropertyName = "제품번호";
+            this.제품번호DataGridViewTextBoxColumn.HeaderText = "제품번호";
+            this.제품번호DataGridViewTextBoxColumn.Name = "제품번호DataGridViewTextBoxColumn";
+            // 
+            // 주문수량DataGridViewTextBoxColumn
+            // 
+            this.주문수량DataGridViewTextBoxColumn.DataPropertyName = "주문수량";
+            this.주문수량DataGridViewTextBoxColumn.HeaderText = "주문수량";
+            this.주문수량DataGridViewTextBoxColumn.Name = "주문수량DataGridViewTextBoxColumn";
+            // 
+            // 납품업체번호DataGridViewTextBoxColumn
+            // 
+            this.납품업체번호DataGridViewTextBoxColumn.DataPropertyName = "납품업체번호";
+            this.납품업체번호DataGridViewTextBoxColumn.HeaderText = "납품업체번호";
+            this.납품업체번호DataGridViewTextBoxColumn.Name = "납품업체번호DataGridViewTextBoxColumn";
+            // 
+            // 주문일DataGridViewTextBoxColumn
+            // 
+            this.주문일DataGridViewTextBoxColumn.DataPropertyName = "주문일";
+            this.주문일DataGridViewTextBoxColumn.HeaderText = "주문일";
+            this.주문일DataGridViewTextBoxColumn.Name = "주문일DataGridViewTextBoxColumn";
+            // 
+            // 납기일DataGridViewTextBoxColumn
+            // 
+            this.납기일DataGridViewTextBoxColumn.DataPropertyName = "납기일";
+            this.납기일DataGridViewTextBoxColumn.HeaderText = "납기일";
+            this.납기일DataGridViewTextBoxColumn.Name = "납기일DataGridViewTextBoxColumn";
+            // 
+            // bds수주
+            // 
+            this.bds수주.DataSource = typeof(ClassLibrary.수주);
+            // 
             // 수주등록
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn등록);
             this.Controls.Add(this.btn엑셀);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn삭제);
@@ -358,5 +368,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 주문일DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 납기일DataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn엑셀;
+        private System.Windows.Forms.Button btn등록;
     }
 }

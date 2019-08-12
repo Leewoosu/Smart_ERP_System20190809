@@ -126,7 +126,7 @@ namespace SMART_ERP_System.MenuUserControl
                     string CurrentValue = dataGridView2.Rows[y].Cells[x].Value.ToString();
                     int CursorI = 0;
                     List<자재> 자재list = DB.자재.GetAll();
-                    if (자재list.Where(h => h.자재번호 == int.Parse(CurrentValue)).Count() == 0)
+                    if (자재list.Where(h => h.자재번호 == CurrentValue).Count() == 0)
                     {
                         MessageBox.Show("해당 자재번호는 없는 번호 입니다.");
                         dataGridView2.Rows[y].Cells[x].Value = null;
@@ -178,8 +178,8 @@ namespace SMART_ERP_System.MenuUserControl
                         if (DialogResult.Yes == MessageBox.Show("저장하시겠습니까?", "저장", MessageBoxButtons.YesNo))
                         {
                             자재명세서 자재명세서 = new 자재명세서();
-                            자재명세서.자재번호 = int.Parse(dataGridView2.Rows[y].Cells[x - 1].Value.ToString());
-                            자재명세서.제품번호 = int.Parse(textBox1.Text);
+                            자재명세서.자재번호 = dataGridView2.Rows[y].Cells[x - 1].Value.ToString();
+                            자재명세서.제품번호 = textBox1.Text;
                             자재명세서.수량 = int.Parse(dataGridView2.Rows[y].Cells[x].Value.ToString());
                             DB.자재명세서.Insert(자재명세서);
                             itemCnt++;

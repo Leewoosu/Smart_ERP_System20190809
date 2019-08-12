@@ -11,13 +11,14 @@ using System.IO;
 using System.Data.OleDb;
 using ClassLibrary.EntityData;
 using ClassLibrary;
+using SMART_ERP_System.MenuUserControl;
 
 namespace SMART_ERP_System
 {
     public partial class 수주등록 : UserControl
     {
-        public int firstDate;
-        public int lastDate;
+        public DateTime firstDate;
+        public DateTime lastDate;
         public 수주등록()
         {
             InitializeComponent();
@@ -70,68 +71,117 @@ namespace SMART_ERP_System
 
             oleConn.Close();
             oleConn.Dispose();
+            dgv엑셀.Columns.Add("column0", "비고");
+            UpdataData();
+        }
 
-            InsertDB();
+        public void UpdataData()
+        {
+            int maxRow = dgv엑셀.Rows.Count;
+            수주 orderList = new 수주();
+            List<수주> 수주 = DB.수주.GetAll();
+          
+            if (수주.Count != 0)
+            {
+                for (int j = 0; j < maxRow; j++)
+                {
+                    if (수주.Where(x => x.수주번호 == dgv엑셀.Rows[j].Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.Rows[j].Cells[1].Value.ToString()).Count() >= 1)
+                    {
+                        if (int.Parse(dgv엑셀.Rows[j].Cells[3].Value.ToString()) < int.Parse(수주.Where(x => x.수주번호 == dgv엑셀.Rows[j].Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.Rows[j].Cells[1].Value.ToString()).Select(x => x.주문수량).First().ToString()))
+                            dgv엑셀.Rows[j].Cells[7].Value = "수량 감소";
+
+                        else if (int.Parse(dgv엑셀.Rows[j].Cells[3].Value.ToString()) > int.Parse(수주.Where(x => x.수주번호 == dgv엑셀.Rows[j].Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.Rows[j].Cells[1].Value.ToString()).Select(x => x.주문수량).First().ToString()))
+                            dgv엑셀.Rows[j].Cells[7].Value = "수량 증가";
+
+
+                        if (int.Parse(dgv엑셀.Rows[j].Cells[6].Value.ToString()) < int.Parse(수주.Where(x => x.수주번호 == dgv엑셀.Rows[j].Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.Rows[j].Cells[1].Value.ToString()).Select(x => x.납기일).First().ToString()))
+                            dgv엑셀.Rows[j].Cells[7].Value = "납기일 당겨짐";
+
+                        else if (int.Parse(dgv엑셀.Rows[j].Cells[6].Value.ToString()) > int.Parse(수주.Where(x => x.수주번호 == dgv엑셀.Rows[j].Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.Rows[j].Cells[1].Value.ToString()).Select(x => x.납기일).First().ToString()))
+                            dgv엑셀.Rows[j].Cells[7].Value = "납기일 늦어짐";                       
+
+                    }
+                    else
+                    {
+                        dgv엑셀.Rows[j].Cells[7].Value = "New Data";
+                    }
+                }
+            }
+            else
+            {
+                for (int j = 0; j < maxRow; j++)
+                {
+                    dgv엑셀.Rows[j].Cells[7].Value = "New";
+                }
+            }
         }
 
         public void InsertDB()
         {
-            int maxRow = dgv엑셀.Rows.Count;
-            List<수주> 수주 = DB.수주.GetAll();
             수주 orderList = new 수주();
+            List<수주> 수주 = DB.수주.GetAll();
+            발주등록.BehindSujuListCnt = DB.수주.GetAll().Count;
+            if (수주.Where(x => x.수주번호 == dgv엑셀.CurrentRow.Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.CurrentRow.Cells[1].Value.ToString()).Count() == 0)
+            {              
+                orderList.수주번호 = dgv엑셀.CurrentRow.Cells[0].Value.ToString();
+                orderList.수주번호2 = dgv엑셀.CurrentRow.Cells[1].Value.ToString();
+                orderList.제품번호 = dgv엑셀.CurrentRow.Cells[2].Value.ToString();
+                orderList.주문수량 = int.Parse(dgv엑셀.CurrentRow.Cells[3].Value.ToString());
+                orderList.납품업체번호 = dgv엑셀.CurrentRow.Cells[4].Value.ToString();
+                orderList.주문일 = (DateTime)dgv엑셀.CurrentRow.Cells[5].Value;
+                orderList.납기일 = (DateTime)dgv엑셀.CurrentRow.Cells[6].Value;
 
-            for (int j = 0; j < maxRow; j++)
+                DB.수주.Insert(orderList);
+                MessageBox.Show($"수주번호 {orderList.수주번호} / {orderList.수주번호2} 가 등록되엇습니다.");
+                bds수주.DataSource
+                                = DB.수주.조회(txb품목명.Text, txb납품업체이름.Text, firstDate, lastDate);
+                Register발주();
+            }
+
+            else
+                MessageBox.Show("이미 등록된 수주 데이터 입니다");          
+        }
+
+        void Register발주()
+        {
+            var 수주 = DB.수주.GetAll(); 
+            var Last수주 = 수주[수주.Count - 1]; //최근에 등록된 수주
+            var 자재명세서 = DB.자재명세서.Get자재명세서(Last수주.제품번호); //등록된 수주의 자재명세서           
+            var 자재 = DB.자재.GetAll();
+            var 제품 = DB.제품.Get제품(Last수주.제품번호);
+            var Last제품 = 제품[제품.Count - 1]; //수주받은 제품에 대한 정보
+
+            발주서 발주서 = new 발주서();
+            발주리스트 발주리스트 = new 발주리스트();
+
+            //만들어야할 제품의 갯수
+            Last제품.재고량 = (int)Last제품.재고량 - Last수주.주문수량 - (int)Last제품.안전재고량;
+            
+            for (int i = 0; i < 자재명세서.Count; i++)
             {
-                string Superkey = dgv엑셀.Rows[j].Cells[0].Value.ToString() + dgv엑셀.Rows[j].Cells[1].Value.ToString();
-                int cnt = 0;
-                for (int i = 0; i < 수주.Count; i++)
-                {                   
-                    string DBSuperKey =
-                        dgv엑셀.Rows[i].Cells[0].Value.ToString() + dgv엑셀.Rows[i].Cells[1].Value.ToString();
-
-                    if (Superkey != DBSuperKey)
-                    {
-                        cnt++;
-                        if (cnt == 수주.Count)
-                        {
-                            orderList.수주번호 = dgv엑셀[0, j].Value.ToString();
-                            orderList.수주번호2 = dgv엑셀[1, j].Value.ToString();
-                            orderList.제품번호 = int.Parse(dgv엑셀[2, j].Value.ToString());
-                            orderList.주문수량 = int.Parse(dgv엑셀[3, j].Value.ToString());
-                            orderList.납품업체번호 = int.Parse(dgv엑셀[4, j].Value.ToString());
-                            orderList.주문일 = int.Parse(dgv엑셀[5, j].Value.ToString());
-                            orderList.납기일 = int.Parse(dgv엑셀[6, j].Value.ToString());
-
-                            DB.수주.Insert(orderList);
-                            cnt = 0;
-                        }
-                    }
-                    else break;
-                }
-
-                foreach (var item in 수주)
+                for (int j = 0; j < 자재.Count; j++)
                 {
-                    string DBSuperKey = item.수주번호 + item.수주번호2;
+                    if(자재명세서[i].자재번호 == 자재[j].자재번호)
+                    {                      
+                        if (Last제품.재고량 < 0)
+                            자재[j].재고량 = 자재[j].재고량 + 자재명세서[i].수량 * (int)Last제품.재고량 - 자재[j].안전재교량;
 
-                    if (Superkey == DBSuperKey)
-                    {
-                        if (int.Parse(dgv엑셀.Rows[j].Cells[3].Value.ToString()) < item.주문수량)
-                            dgv엑셀.Rows[j].Cells[7].Value = "다운";
+                        if (자재[j].재고량 < 0)
+                        {
+                            발주서.발주번호 = (DB.발주서.GetAll().Count + 1).ToString();
+                            발주서.공급업체번호 = DB.공급업체.Get공급업체번호(자재명세서[i].자재번호);
+                            발주서.주문날짜 = DateTime.Today;
+                            발주서.납기일 = DateTime.Today;
 
-                        else if (int.Parse(dgv엑셀.Rows[j].Cells[3].Value.ToString()) > item.주문수량)
-                            dgv엑셀.Rows[j].Cells[7].Value = "업";
-
-
-                        if (int.Parse(dgv엑셀.Rows[j].Cells[6].Value.ToString()) < item.납기일)
-                            dgv엑셀.Rows[j].Cells[8].Value = "빨라짐";
-
-                        else if (int.Parse(dgv엑셀.Rows[j].Cells[6].Value.ToString()) > item.납기일)
-                            dgv엑셀.Rows[j].Cells[8].Value = "늦어짐";
-
-                        break;
-                    }
-                }
-
+                            발주리스트.발주번호 = 발주서.발주번호;
+                            발주리스트.자재번호 = 자재명세서[i].자재번호;
+                            발주리스트.수량 = 자재[j].재고량*(-1);
+                            
+                            DB.발주서.Insert(발주서);
+                            DB.발주리스트.Insert(발주리스트);
+                        }
+                    }                   
+                }              
             }
         }
 
@@ -152,11 +202,11 @@ namespace SMART_ERP_System
             {
                 orderList.수주번호 = dgv엑셀.CurrentRow.Cells[0].Value.ToString();
                 orderList.수주번호2 = dgv엑셀.CurrentRow.Cells[1].Value.ToString();
-                orderList.제품번호 = int.Parse(dgv엑셀.CurrentRow.Cells[2].Value.ToString());
+                orderList.제품번호 = dgv엑셀.CurrentRow.Cells[2].Value.ToString();
                 orderList.주문수량 = int.Parse(dgv엑셀.CurrentRow.Cells[3].Value.ToString());
-                orderList.납품업체번호 = int.Parse(dgv엑셀.CurrentRow.Cells[4].Value.ToString());
-                orderList.주문일 = int.Parse(dgv엑셀.CurrentRow.Cells[5].Value.ToString());
-                orderList.납기일 = int.Parse(dgv엑셀.CurrentRow.Cells[6].Value.ToString());
+                orderList.납품업체번호 = dgv엑셀.CurrentRow.Cells[4].Value.ToString();
+                orderList.주문일 = (DateTime)dgv엑셀.CurrentRow.Cells[5].Value;
+                orderList.납기일 = (DateTime)dgv엑셀.CurrentRow.Cells[6].Value;
                 DB.수주.Update(orderList);
 
                 MessageBox.Show("변경하였습니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -176,7 +226,7 @@ namespace SMART_ERP_System
             if (result == DialogResult.OK)
             {
                 DB.수주.Delete(orderList);
-
+                //List<수주> DeleteOrderList = (dgv수주.CurrentRow.DataBoundItem.ToString()).ToList();
                 MessageBox.Show("삭제하였습니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 bds수주.DataSource = DB.수주.GetAll();
             }
@@ -184,18 +234,18 @@ namespace SMART_ERP_System
 
         private void RegisterSujuExcelControl_Load(object sender, EventArgs e)
         {
-            firstDate = int.Parse(FirstDate.Value.ToString("yyyyMMdd"));
-            lastDate = int.Parse(LastDate.Value.ToString("yyyyMMdd"));          
+            firstDate = FirstDate.Value;
+            lastDate = LastDate.Value;
         }
 
         private void FirstDate_ValueChanged(object sender, EventArgs e)
         {
-            firstDate = int.Parse(FirstDate.Value.ToString("yyyyMMdd"));
+            firstDate = FirstDate.Value;
         }
 
         private void LastDate_ValueChanged(object sender, EventArgs e)
         {
-            lastDate = int.Parse(LastDate.Value.ToString("yyyyMMdd"));
+            lastDate = LastDate.Value;
         }
 
         private void Dgv수주_CellEndEdit_1(object sender, DataGridViewCellEventArgs e)
@@ -207,10 +257,10 @@ namespace SMART_ERP_System
                 return;
             if (column == 6)
             {
-                DB.수주.수주등록(dgv수주.CurrentRow.DataBoundItem,
-                    dgv수주.CurrentRow.Cells[0].Value.ToString(),
-                    dgv수주.CurrentRow.Cells[1].Value.ToString());
-                bds수주.DataSource = DB.수주.GetAll();
+                //DB.수주.수주등록(dgv수주.CurrentRow.DataBoundItem,
+                //    dgv수주.CurrentRow.Cells[0].Value.ToString(),
+                //    dgv수주.CurrentRow.Cells[1].Value.ToString());
+                //bds수주.DataSource = DB.수주.GetAll();
             }
 
         }
@@ -233,6 +283,11 @@ namespace SMART_ERP_System
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btn등록_Click(object sender, EventArgs e)
+        {
+            InsertDB();
         }
     }
 

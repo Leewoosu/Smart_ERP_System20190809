@@ -23,7 +23,7 @@ namespace ClassLibrary
         public int 생산계획현황번호 { get; set; }
         public string 작업예정일 { get; set; }
         public string 작업확정일 { get; set; }
-        public Nullable<int> 수량 { get; set; }
+        public int 수량 { get; set; }
         public string 제품번호 { get; set; }
     
         public virtual 제품 제품 { get; set; }
