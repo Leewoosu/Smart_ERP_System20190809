@@ -55,7 +55,7 @@ namespace SMART_ERP_System.MenuUserControl
 
             if (product != null) return;
 
-            if (DB.제품.IsSearch제품번호(int.Parse(dgv제품.CurrentRow.Cells[0].Value.ToString()))) {
+            if (DB.제품.IsSearch제품번호(dgv제품.CurrentRow.Cells[0].Value.ToString())) {
                 MessageBox.Show("등록되어있는 제품번호입니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -76,7 +76,7 @@ namespace SMART_ERP_System.MenuUserControl
 
             if (product == null) return;
 
-            int 제품번호 = int.Parse(dgv제품.CurrentRow.Cells[0].Value.ToString());
+            string 제품번호 = dgv제품.CurrentRow.Cells[0].Value.ToString();
             //제품정보불러오기
             txb제품번호.Text = 제품번호.ToString();
             txb제품명.Text = dgv제품.CurrentRow.Cells[1].Value.ToString();
@@ -98,7 +98,7 @@ namespace SMART_ERP_System.MenuUserControl
         {
             제품 productInfo = new 제품();
 
-            productInfo.제품번호 = int.Parse(txb제품번호.Text);
+            productInfo.제품번호 = txb제품번호.Text;
             productInfo.제품명 = txb제품명.Text;
             productInfo.LOT수량 = int.Parse(txbLOT수량.Text);
             productInfo.검사여부 = cbb검사여부.Text;
@@ -112,7 +112,6 @@ namespace SMART_ERP_System.MenuUserControl
             productInfo.표준원가 = int.Parse(txb표준원가.Text);
             productInfo.품목군 = txb품목군.Text;
             
-
             DB.제품.Insert(productInfo);
             OnButton등록();
         }
@@ -131,7 +130,7 @@ namespace SMART_ERP_System.MenuUserControl
         {
             제품 productInfo = new 제품();
            
-            productInfo.제품번호 = int.Parse(txb제품번호.Text);
+            productInfo.제품번호 = txb제품번호.Text;
             productInfo.제품명 = txb제품명.Text;
             productInfo.LOT수량 = int.Parse(txbLOT수량.Text);
             productInfo.검사여부 = cbb검사여부.Text;

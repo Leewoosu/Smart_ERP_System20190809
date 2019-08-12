@@ -20,7 +20,7 @@ namespace ClassLibrary
             this.기간비용 = new HashSet<기간비용>();
         }
     
-        public int 기간비용계산방법코드번호 { get; set; }
+        public string 기간비용계산방법코드번호 { get; set; }
         public string 관리내역명 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

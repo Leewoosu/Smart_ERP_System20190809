@@ -14,7 +14,7 @@ namespace ClassLibrary
     
     public partial class 급여형태
     {
-        public int 급여형태코드번호 { get; set; }
+        public string 급여형태코드번호 { get; set; }
         public string 급여형태이름 { get; set; }
         public int 급_상여지급_직종코드 { get; set; }
     

@@ -14,7 +14,7 @@ namespace ClassLibrary
     
     public partial class 분기별예산
     {
-        public int 월별예산코드 { get; set; }
+        public string 월별예산코드 { get; set; }
         public int C1월_금액 { get; set; }
         public int C2월_금액 { get; set; }
         public int C3월_금액 { get; set; }
@@ -27,7 +27,7 @@ namespace ClassLibrary
         public int C10월_금액 { get; set; }
         public int C11월_금액 { get; set; }
         public int C12월_금액 { get; set; }
-        public int 예산코드 { get; set; }
+        public string 예산코드 { get; set; }
         public System.DateTime 신청연도 { get; set; }
     
         public virtual 예산 예산 { get; set; }

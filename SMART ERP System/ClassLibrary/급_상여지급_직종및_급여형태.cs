@@ -21,7 +21,7 @@ namespace ClassLibrary
         }
     
         public int 급_상여지급_직종코드 { get; set; }
-        public int 지급번호코드 { get; set; }
+        public string 지급번호코드 { get; set; }
         public string 사업장명 { get; set; }
         public string 직종 { get; set; }
         public System.DateTime 상여지급대상기간_시작일 { get; set; }

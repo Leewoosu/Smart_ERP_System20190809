@@ -14,7 +14,7 @@ namespace ClassLibrary
     
     public partial class 결산자료입력
     {
-        public int 결산자료코드 { get; set; }
+        public string 결산자료코드 { get; set; }
         public string 결산자료구분 { get; set; }
         public string 결산계정코드 { get; set; }
         public string 결산계정적요 { get; set; }

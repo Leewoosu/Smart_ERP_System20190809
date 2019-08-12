@@ -5,15 +5,12 @@ using ClassLibrary.FormHelper;
 using System.Collections.Generic;
 using ClassLibrary;
 using System.Linq;
-using SMART_ERP_System.MenuUserControl;
-using ClassLibrary.EntityData;
+using SMART_ERP_System.Class;
+using System.Runtime.InteropServices;
 
 namespace SMART_ERP_System
 {
-    public static class loginMember
-    {
-        public static string Name { get; set; }
-    }
+    
     public partial class MainForm : MetroForm
     {
         LoginForm loginForm;
@@ -24,12 +21,14 @@ namespace SMART_ERP_System
         {
             InitializeComponent();
             treeView.SetMenuItems(out menuItems);
+            ActiveControl = txbMenuSearch;
+            txbMenuSearch.Focus();
         }
 
         #region Event
         private void MainForm_Load(object sender, EventArgs e)
         {
-            loginMember.Name = loginForm.loginControl.txbEmployeeName.Text;
+            loginMember.EmployeeName = loginForm.loginControl.txbEmployeeName.Text;
             this.Text = loginForm.loginControl.txbEmployeeName.Text +
                 "님 환영합니다.";
         }
@@ -135,6 +134,9 @@ namespace SMART_ERP_System
         {
             MessageBox.Show("Info");
         }
+
+        [DllImport("User32.dll")]
+        public static extern void keybd_event(uint vk, uint scan, uint flags, uint extraInfo);
         private void TxbMenuSearch_KeyUp(object sender, KeyEventArgs e)
         {
             List<string> searchingMenu = new List<string>();
@@ -156,6 +158,15 @@ namespace SMART_ERP_System
                     listBox.Items.Add(item);
                 }
                 listBox.Visible = true;
+            }
+
+            if(e.KeyData == Keys.Down)
+            {
+                listBox.Focus();
+                // VK_DOWN 0x28 : DOWN ARROW key
+                keybd_event((byte)Keys.Down, 0x28, 0x01, 0); // DownUp
+                //keybd_event((byte)Keys.Down, 0x28, 0x00, 0); // Down
+                //keybd_event((byte)Keys.Down, 0x28, 0x02, 0); // Up                
             }
         }
         private void ListBox_DoubleClick(object sender, EventArgs e)
@@ -199,6 +210,12 @@ namespace SMART_ERP_System
                 StartNode = StartNode.NextNode;
             }
             return node;
+        }
+
+        private void ListBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+                ListBox_DoubleClick(listBox.SelectedItem, null);
         }
     }
 }

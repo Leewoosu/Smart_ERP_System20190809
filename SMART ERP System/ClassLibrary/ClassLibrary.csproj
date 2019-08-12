@@ -58,9 +58,22 @@
     <Compile Include="DbContextFactory.cs" />
     <Compile Include="EntityData\DB.cs" />
     <Compile Include="EntityData\EntityData.cs" />
+    <Compile Include="EntityData\거래처Data.cs" />
+    <Compile Include="EntityData\계정과목Data.cs" />
     <Compile Include="EntityData\계정과목등록Data.cs" />
+    <Compile Include="EntityData\공급업체Data.cs" />
+    <Compile Include="EntityData\금융거래처Data.cs" />
+    <Compile Include="EntityData\납품업체Data.cs" />
+    <Compile Include="EntityData\발주리스트Data.cs" />
+    <Compile Include="EntityData\발주서Data.cs" />
     <Compile Include="EntityData\사원등록Data.cs" />
+    <Compile Include="EntityData\생산계획Data.cs" />
+    <Compile Include="EntityData\소요량전개Data.cs" />
     <Compile Include="EntityData\수주Data.cs" />
+    <Compile Include="EntityData\일반거래처Data.cs" />
+    <Compile Include="EntityData\입고검사Data.cs" />
+    <Compile Include="EntityData\자재Data.cs" />
+    <Compile Include="EntityData\자재명세서Data.cs" />
     <Compile Include="EntityData\전표Data.cs" />
     <Compile Include="EntityData\전표리스트Data.cs" />
     <Compile Include="EntityData\제품Data.cs" />
@@ -169,12 +182,6 @@
     <Compile Include="발주서.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="발주확인리스트.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="발주확인서.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="부가세신고서.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -250,6 +257,9 @@
     <Compile Include="입고검사.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="입고검사리스트.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="자금계획달력.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -260,9 +270,6 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="자재명세서.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="자재전표.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="작업완료지시.cs">
@@ -308,6 +315,12 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="프로젝트등록.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="현장실적현황.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="회계처리.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="회사등록.cs">

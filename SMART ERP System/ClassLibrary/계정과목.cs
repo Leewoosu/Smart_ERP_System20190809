@@ -21,7 +21,7 @@ namespace ClassLibrary
             this.전표리스트 = new HashSet<전표리스트>();
         }
     
-        public int 계정과목코드번호 { get; set; }
+        public string 계정과목코드번호 { get; set; }
         public string 계정과목명 { get; set; }
         public string 출력계정명 { get; set; }
         public string 계정구분 { get; set; }
@@ -29,7 +29,7 @@ namespace ClassLibrary
         public string 입력구분 { get; set; }
         public string 필수입력여부 { get; set; }
         public string 비고 { get; set; }
-        public int 그룹코드번호 { get; set; }
+        public string 그룹코드번호 { get; set; }
     
         public virtual 계정과목그룹 계정과목그룹 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

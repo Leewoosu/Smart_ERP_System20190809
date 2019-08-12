@@ -20,9 +20,9 @@ namespace ClassLibrary
             this.수주확인리스트 = new HashSet<수주확인리스트>();
         }
     
-        public int 수주확인번호 { get; set; }
+        public string 수주확인번호 { get; set; }
         public System.DateTime 배달날짜 { get; set; }
-        public int 납품업체번호 { get; set; }
+        public string 납품업체번호 { get; set; }
     
         public virtual 납품업체 납품업체 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

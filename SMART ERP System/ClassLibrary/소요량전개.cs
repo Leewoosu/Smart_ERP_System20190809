@@ -14,8 +14,8 @@ namespace ClassLibrary
     
     public partial class 소요량전개
     {
-        public int 소요량전개번호 { get; set; }
-        public int 자재번호 { get; set; }
+        public string 소요량전개번호 { get; set; }
+        public string 자재번호 { get; set; }
         public int 전개수량 { get; set; }
     
         public virtual 자재 자재 { get; set; }

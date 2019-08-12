@@ -21,13 +21,14 @@ namespace ClassLibrary
         }
     
         public int 전표리스트ID { get; set; }
+        public int 순번 { get; set; }
         public string 구분 { get; set; }
-        public int 계정과목코드번호 { get; set; }
+        public string 계정과목코드번호 { get; set; }
         public string 거래처코드번호 { get; set; }
         public int 금액 { get; set; }
         public string 적요명 { get; set; }
         public System.DateTime 입력날짜 { get; set; }
-        public int 전표번호 { get; set; }
+        public string 전표번호 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<거래처> 거래처 { get; set; }

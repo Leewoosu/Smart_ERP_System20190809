@@ -202,6 +202,7 @@ namespace SMART_ERP_System
             this.listBox.TabIndex = 12;
             this.listBox.Visible = false;
             this.listBox.DoubleClick += new System.EventHandler(this.ListBox_DoubleClick);
+            this.listBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ListBox_KeyUp);
             // 
             // treeView
             // 

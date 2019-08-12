@@ -54,8 +54,6 @@ namespace ClassLibrary
         public virtual DbSet<반품처리서> 반품처리서 { get; set; }
         public virtual DbSet<발주리스트> 발주리스트 { get; set; }
         public virtual DbSet<발주서> 발주서 { get; set; }
-        public virtual DbSet<발주확인리스트> 발주확인리스트 { get; set; }
-        public virtual DbSet<발주확인서> 발주확인서 { get; set; }
         public virtual DbSet<부가세신고서> 부가세신고서 { get; set; }
         public virtual DbSet<부서등록> 부서등록 { get; set; }
         public virtual DbSet<분기별예산> 분기별예산 { get; set; }
@@ -81,11 +79,11 @@ namespace ClassLibrary
         public virtual DbSet<예산> 예산 { get; set; }
         public virtual DbSet<일반거래처등록> 일반거래처등록 { get; set; }
         public virtual DbSet<입고검사> 입고검사 { get; set; }
+        public virtual DbSet<입고검사리스트> 입고검사리스트 { get; set; }
         public virtual DbSet<자금계획달력> 자금계획달력 { get; set; }
         public virtual DbSet<자금과목> 자금과목 { get; set; }
         public virtual DbSet<자재> 자재 { get; set; }
         public virtual DbSet<자재명세서> 자재명세서 { get; set; }
-        public virtual DbSet<자재전표> 자재전표 { get; set; }
         public virtual DbSet<작업완료지시> 작업완료지시 { get; set; }
         public virtual DbSet<작업완료확인서> 작업완료확인서 { get; set; }
         public virtual DbSet<작업지시> 작업지시 { get; set; }
@@ -101,6 +99,8 @@ namespace ClassLibrary
         public virtual DbSet<투입현황1> 투입현황1 { get; set; }
         public virtual DbSet<품목정보> 품목정보 { get; set; }
         public virtual DbSet<프로젝트등록> 프로젝트등록 { get; set; }
+        public virtual DbSet<현장실적현황> 현장실적현황 { get; set; }
+        public virtual DbSet<회계처리> 회계처리 { get; set; }
         public virtual DbSet<회사등록> 회사등록 { get; set; }
     }
 }

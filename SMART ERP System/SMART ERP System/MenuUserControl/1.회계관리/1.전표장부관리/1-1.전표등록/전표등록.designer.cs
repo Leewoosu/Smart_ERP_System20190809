@@ -393,6 +393,7 @@
             // 
             // dgv전표
             // 
+            this.dgv전표.AllowUserToAddRows = false;
             this.dgv전표.AllowUserToResizeColumns = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -420,7 +421,9 @@
             this.dgv전표.RowTemplate.Height = 23;
             this.dgv전표.Size = new System.Drawing.Size(883, 233);
             this.dgv전표.TabIndex = 99;
+            this.dgv전표.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv전표_CellEnter);
             this.dgv전표.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv전표_CellPainting);
+            this.dgv전표.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgv전표_RowPostPaint);
             this.dgv전표.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dgv전표_KeyDown);
             // 
             // CheckColumn
@@ -457,6 +460,7 @@
             this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Column10.HeaderText = "유형";
             this.Column10.Name = "Column10";
+            this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column10.Width = 70;
             // 
             // Column4
