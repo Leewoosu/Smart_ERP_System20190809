@@ -15,10 +15,8 @@ namespace ClassLibrary
     public partial class 회계처리
     {
         public string 회계처리번호 { get; set; }
-        public string 입고확인서번호 { get; set; }
+        public string 입고검사번호 { get; set; }
         public string 공급업체번호 { get; set; }
         public int 금액 { get; set; }
-    
-        public virtual 공급업체 공급업체 { get; set; }
     }
 }

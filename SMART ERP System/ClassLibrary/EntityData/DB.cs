@@ -20,6 +20,7 @@ namespace ClassLibrary.EntityData
         public static 제품Data 제품 { get; } = new 제품Data();
         public static 생산계획Data 생산계획 { get; } = new 생산계획Data();
         public static 납품업체Data 납품업체 { get; } = new 납품업체Data();
+        public static 부서등록Data 부서 { get; } = new 부서등록Data();
         public static 발주서Data 발주서 { get; } = new 발주서Data();
         public static 발주리스트Data 발주리스트 { get; } = new 발주리스트Data();
         public static 자재명세서Data 자재명세서 { get; } = new 자재명세서Data();
@@ -27,5 +28,6 @@ namespace ClassLibrary.EntityData
         public static 소요량전개Data 소요량전개 { get; } = new 소요량전개Data();
         public static 공급업체Data 공급업체 { get; } = new 공급업체Data();
         public static 입고검사Data 입고검사 { get; } = new 입고검사Data();
+        public static 회사등록Data 회사 { get; } = new 회사등록Data();
     }
 }

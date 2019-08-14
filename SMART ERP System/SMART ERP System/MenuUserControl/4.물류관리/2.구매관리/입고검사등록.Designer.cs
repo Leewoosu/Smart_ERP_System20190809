@@ -429,7 +429,7 @@
             // 
             // bds입고검사
             // 
-            this.bds입고검사.DataSource = typeof(ClassLibrary.입고검사);
+            this.bds입고검사.DataSource = typeof(ClassLibrary.입고등록);
             // 
             // 입고검사등록
             // 

@@ -14,7 +14,13 @@ namespace SMART_ERP_System.Class
         public int Day { get; set; }
         public string DayText { get; set; }
 
-        // 연, 월, 일의 해당 날짜가 아닌 경우 해당 월의 마지막날로 입력됨
+        /// <summary>
+        /// 연, 월, 일을 매개변수로 그 해당 일이 맞는지 여부확인
+        /// </summary>
+        /// <param name="iYear"> 년도</param>
+        /// <param name="iMonth"> 월</param>
+        /// <param name="iDay"> 일</param>
+        /// <returns>연, 월, 일의 해당 날짜가 아닌 경우 입력된 해당 월의 마지막날로 입력됨</returns>
         public bool IsDate(int iYear, int iMonth, int iDay)
         {
             if ((DateTime.MinValue.Year > iYear) || (iYear > DateTime.MaxValue.Year))

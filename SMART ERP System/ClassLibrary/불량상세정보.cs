@@ -14,12 +14,12 @@ namespace ClassLibrary
     
     public partial class 불량상세정보
     {
-        public string 입고검사번호 { get; set; }
+        public string 입고등록번호 { get; set; }
         public string 불량코드번호 { get; set; }
         public string 자재번호 { get; set; }
         public int 불량수량 { get; set; }
     
         public virtual 불량코드내역 불량코드내역 { get; set; }
-        public virtual 입고검사리스트 입고검사리스트 { get; set; }
+        public virtual 입고등록리스트 입고등록리스트 { get; set; }
     }
 }

@@ -19,7 +19,8 @@ namespace ClassLibrary
         {
             this.반품처리서 = new HashSet<반품처리서>();
             this.발주서 = new HashSet<발주서>();
-            this.회계처리 = new HashSet<회계처리>();
+            this.발주확인서 = new HashSet<발주확인서>();
+            this.입고등록 = new HashSet<입고등록>();
         }
     
         public string 공급업체번호 { get; set; }
@@ -32,6 +33,8 @@ namespace ClassLibrary
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<발주서> 발주서 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<회계처리> 회계처리 { get; set; }
+        public virtual ICollection<발주확인서> 발주확인서 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<입고등록> 입고등록 { get; set; }
     }
 }

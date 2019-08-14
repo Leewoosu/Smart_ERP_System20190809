@@ -24,6 +24,7 @@ namespace ClassLibrary
         public string 제품번호 { get; set; }
         public bool 자재불출 { get; set; }
         public int 투입수량 { get; set; }
+        public int 불량수량 { get; set; }
         public System.DateTime 투입일 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

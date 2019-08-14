@@ -15,12 +15,11 @@ namespace ClassLibrary
     public partial class 생산계획현황
     {
         public int 생산계획현황번호 { get; set; }
-        public string 작업예정일 { get; set; }
-        public string 작업확정일 { get; set; }
+        public System.DateTime 작업예정일 { get; set; }
+        public System.DateTime 작업확정일 { get; set; }
         public int 수량 { get; set; }
         public string 제품번호 { get; set; }
     
-        public virtual 작업지시현황 작업지시현황 { get; set; }
         public virtual 제품 제품 { get; set; }
     }
 }

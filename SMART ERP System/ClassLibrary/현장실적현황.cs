@@ -16,13 +16,14 @@ namespace ClassLibrary
     {
         public string 관리번호 { get; set; }
         public string 제품번호 { get; set; }
+        public int 실적수량 { get; set; }
+        public Nullable<int> 불량수량 { get; set; }
         public string 설비명 { get; set; }
         public string 공정명 { get; set; }
         public string 작업자 { get; set; }
-        public Nullable<System.DateTime> 작업시작 { get; set; }
-        public Nullable<System.DateTime> 작업종료 { get; set; }
-        public Nullable<int> 실적수량 { get; set; }
-        public Nullable<bool> 완료유무 { get; set; }
+        public System.DateTime 작업시작 { get; set; }
+        public System.DateTime 작업종료 { get; set; }
+        public bool 완료유무 { get; set; }
     
         public virtual 작업지시현황 작업지시현황 { get; set; }
         public virtual 투입현황1 투입현황1 { get; set; }

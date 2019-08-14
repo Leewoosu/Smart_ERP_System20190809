@@ -29,6 +29,7 @@ namespace SMART_ERP_System
         private void MainForm_Load(object sender, EventArgs e)
         {
             loginMember.EmployeeName = loginForm.loginControl.txbEmployeeName.Text;
+            loginMember.EmployeeCode = loginForm.loginControl.txbEmployeeCode.Text;
             this.Text = loginForm.loginControl.txbEmployeeName.Text +
                 "님 환영합니다.";
         }
@@ -123,12 +124,6 @@ namespace SMART_ERP_System
                 }
                 metroTabControl.SelectedIndex = CurrentPageNumber;
             }
-        }
-        private void BtnMenuSearch_Click(object sender, EventArgs e)
-        {
-            TreeNode findNode = SearchNode(txbMenuSearch.Text, treeView.TopNode);
-            listBox.Visible = false;
-            findNode.ExpandAll();
         }
         private void BtnInfo_Click(object sender, EventArgs e)
         {

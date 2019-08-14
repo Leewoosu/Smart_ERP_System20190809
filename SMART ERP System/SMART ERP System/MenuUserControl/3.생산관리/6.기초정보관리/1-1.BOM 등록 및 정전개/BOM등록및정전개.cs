@@ -189,7 +189,7 @@ namespace SMART_ERP_System.MenuUserControl
                             dataGridView2.Rows[y].Cells[x].Value = null;
                             dataGridView2.Rows[y].Cells[x - 1].Value = null;
                         }
-
+                        
                     }
                 }
 

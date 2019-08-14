@@ -13,5 +13,6 @@ namespace SMART_ERP_System.Class
         public static int RowCnt { get; set; }
         public static int ColumnIndex { get; set; }
         public static int RowIndex { get; set; }
+        public static int LoadCnt { get; set; }
     }
 }

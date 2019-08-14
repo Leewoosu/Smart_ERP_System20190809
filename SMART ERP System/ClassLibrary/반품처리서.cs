@@ -19,6 +19,6 @@ namespace ClassLibrary
         public string 입고검사서번호 { get; set; }
     
         public virtual 공급업체 공급업체 { get; set; }
-        public virtual 입고검사 입고검사 { get; set; }
+        public virtual 입고등록 입고등록 { get; set; }
     }
 }

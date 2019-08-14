@@ -157,3 +157,5 @@ C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_E
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuUserControl.프로젝트등록.resources
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\ko\EntityFramework.resources.dll
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MainForm.resources
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MainForm_Control.MenuControl.resources
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuForm.resources

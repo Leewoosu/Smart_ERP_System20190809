@@ -18,7 +18,7 @@ namespace ClassLibrary
         public 발주서()
         {
             this.발주리스트 = new HashSet<발주리스트>();
-            this.입고검사 = new HashSet<입고검사>();
+            this.발주확인서 = new HashSet<발주확인서>();
         }
     
         public string 발주번호 { get; set; }
@@ -30,6 +30,6 @@ namespace ClassLibrary
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<발주리스트> 발주리스트 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<입고검사> 입고검사 { get; set; }
+        public virtual ICollection<발주확인서> 발주확인서 { get; set; }
     }
 }

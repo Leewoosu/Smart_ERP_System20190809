@@ -20,7 +20,6 @@ namespace ClassLibrary
             this.공급업체 = new HashSet<공급업체>();
             this.발주리스트 = new HashSet<발주리스트>();
             this.소요량전개 = new HashSet<소요량전개>();
-            this.입고검사리스트 = new HashSet<입고검사리스트>();
             this.자재명세서 = new HashSet<자재명세서>();
         }
     
@@ -37,8 +36,6 @@ namespace ClassLibrary
         public virtual ICollection<발주리스트> 발주리스트 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<소요량전개> 소요량전개 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<입고검사리스트> 입고검사리스트 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<자재명세서> 자재명세서 { get; set; }
     }
