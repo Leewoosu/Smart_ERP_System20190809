@@ -14,11 +14,11 @@ namespace ClassLibrary
     
     public partial class 반품처리서
     {
-        public int 반품처리서번호 { get; set; }
-        public int 공급업체번호 { get; set; }
-        public int 입고검사서번호 { get; set; }
+        public string 반품처리서번호 { get; set; }
+        public string 공급업체번호 { get; set; }
+        public string 입고검사서번호 { get; set; }
     
         public virtual 공급업체 공급업체 { get; set; }
-        public virtual 입고검사 입고검사 { get; set; }
+        public virtual 입고등록 입고등록 { get; set; }
     }
 }

@@ -20,16 +20,21 @@ namespace ClassLibrary
             this.반품처리서 = new HashSet<반품처리서>();
             this.발주서 = new HashSet<발주서>();
             this.발주확인서 = new HashSet<발주확인서>();
+            this.입고등록 = new HashSet<입고등록>();
         }
     
-        public int 공급업체번호 { get; set; }
+        public string 공급업체번호 { get; set; }
         public string 공급업체명 { get; set; }
+        public string 자재번호 { get; set; }
     
+        public virtual 자재 자재 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<반품처리서> 반품처리서 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<발주서> 발주서 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<발주확인서> 발주확인서 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<입고등록> 입고등록 { get; set; }
     }
 }

@@ -14,21 +14,13 @@ namespace ClassLibrary
     
     public partial class 생산검사
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public 생산검사()
-        {
-            this.불량상세정보 = new HashSet<불량상세정보>();
-        }
-    
-        public int 생산검사번호 { get; set; }
-        public int 생산실적번호 { get; set; }
-        public int 검사유형번호 { get; set; }
+        public string 생산검사번호 { get; set; }
+        public string 생산실적번호 { get; set; }
+        public string 검사유형번호 { get; set; }
         public int 양품수량 { get; set; }
         public int 불량수량 { get; set; }
     
         public virtual 검사유형 검사유형 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<불량상세정보> 불량상세정보 { get; set; }
         public virtual 생산실적현황 생산실적현황 { get; set; }
     }
 }

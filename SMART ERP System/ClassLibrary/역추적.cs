@@ -14,7 +14,7 @@ namespace ClassLibrary
     
     public partial class 역추적
     {
-        public int 역추적ID { get; set; }
+        public string 역추적코드 { get; set; }
         public int 번호 { get; set; }
         public string 세무유형 { get; set; }
         public int 공급가액 { get; set; }

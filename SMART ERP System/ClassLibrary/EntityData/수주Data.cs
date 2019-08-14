@@ -8,25 +8,8 @@ using System.Windows.Forms;
 namespace ClassLibrary.EntityData
 {
     public class 수주Data : EntityData<수주>
-    {
-        public void 수주등록(object 수주값, string 수주번호, string 수주번호2)
-        {
-            int cnt = 수주정보(수주번호, 수주번호2).Count;
-
-            if (cnt != 0)
-            {
-                MessageBox.Show("이미등록되어있는 기본키입니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            수주 Order = 수주값 as 수주;
-            if (수주값 == null) return;
-
-            DB.수주.Insert(Order);
-            MessageBox.Show("등록되었습니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        }
-
-        public List<수주> 조회(string 제품이름, string 납품업체이름, int FirstDate, int LastDate)
+    {      
+        public List<수주> 조회(string 제품이름, string 납품업체이름, DateTime FirstDate, DateTime LastDate)
         {
             using (ERPEntities context = new ERPEntities())
             {
@@ -63,29 +46,26 @@ namespace ClassLibrary.EntityData
                 return query.ToList();
 
             }
-        }
-
-        public List<수주> Search(string 수주번호, string 수주번호2)
+        }       
+        
+        public List<string> Get제품번호()
         {
-            using (ERPEntities context = new ERPEntities())
+            using(ERPEntities context = new ERPEntities())
             {
                 var query = from x in context.수주
-                            where x.수주번호 == 수주번호 && x.수주번호2 == 수주번호2
                             select x;
 
-                return query.ToList();
+                return query.Select(x=>x.제품번호).ToList();
             }
         }
-
-        public List<수주> 수주정보(string 수주번호, string 수주번호2)
+        public List<int> Get주문수량()
         {
             using (ERPEntities context = new ERPEntities())
             {
                 var query = from x in context.수주
-                            where x.수주번호 == 수주번호 && x.수주번호2 == 수주번호2
                             select x;
 
-                return query.ToList();
+                return query.Select(x => x.주문수량).ToList();
             }
         }
     }

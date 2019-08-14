@@ -15,7 +15,7 @@ namespace ClassLibrary
     public partial class 작업완료확인서
     {
         public int 작업완료지시번호 { get; set; }
-        public int 제품번호 { get; set; }
+        public string 제품번호 { get; set; }
         public System.DateTime 작업완료일 { get; set; }
         public int 수량 { get; set; }
         public int 생산실적검사여부 { get; set; }

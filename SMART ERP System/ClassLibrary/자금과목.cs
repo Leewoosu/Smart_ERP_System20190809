@@ -20,7 +20,7 @@ namespace ClassLibrary
             this.자금계획달력 = new HashSet<자금계획달력>();
         }
     
-        public int 자금과목코드번호 { get; set; }
+        public string 자금과목코드번호 { get; set; }
         public string 자금과목명 { get; set; }
         public string 구분 { get; set; }
     

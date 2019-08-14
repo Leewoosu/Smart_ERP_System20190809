@@ -155,5 +155,9 @@ C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_E
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuUserControl.일반거래처등록.resources
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuUserControl.품목등록.resources
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuUserControl.프로젝트등록.resources
-C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.loginMember.resources
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\ko\EntityFramework.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MainForm.resources
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuForm.resources
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MainForm_Control.거래처구분Control.resources
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MainForm_Control.계정코드구분Control.resources
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\ko\EntityFramework.SqlServer.resources.dll

@@ -14,10 +14,20 @@ namespace ClassLibrary
     
     public partial class 투입현황1
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public 투입현황1()
+        {
+            this.현장실적현황 = new HashSet<현장실적현황>();
+        }
+    
         public string 관리번호 { get; set; }
-        public string 품목번호 { get; set; }
+        public string 제품번호 { get; set; }
         public bool 자재불출 { get; set; }
         public int 투입수량 { get; set; }
+        public int 불량수량 { get; set; }
         public System.DateTime 투입일 { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<현장실적현황> 현장실적현황 { get; set; }
     }
 }

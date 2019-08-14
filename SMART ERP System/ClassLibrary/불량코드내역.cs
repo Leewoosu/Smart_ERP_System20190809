@@ -20,7 +20,7 @@ namespace ClassLibrary
             this.불량상세정보 = new HashSet<불량상세정보>();
         }
     
-        public int 불량코드번호 { get; set; }
+        public string 불량코드번호 { get; set; }
         public string 불량명 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -14,7 +14,7 @@ namespace ClassLibrary
     
     public partial class 메뉴별권한설정
     {
-        public int 메뉴별권한설정코드 { get; set; }
+        public string 메뉴별권한설정코드 { get; set; }
         public string 조회권한 { get; set; }
         public bool 변경 { get; set; }
         public bool 삭제 { get; set; }

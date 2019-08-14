@@ -18,15 +18,18 @@ namespace ClassLibrary
         public 발주서()
         {
             this.발주리스트 = new HashSet<발주리스트>();
+            this.발주확인서 = new HashSet<발주확인서>();
         }
     
-        public int 발주번호 { get; set; }
-        public Nullable<int> 공급업체번호 { get; set; }
-        public string 주문날짜 { get; set; }
-        public string 납기일 { get; set; }
+        public string 발주번호 { get; set; }
+        public string 공급업체번호 { get; set; }
+        public System.DateTime 주문날짜 { get; set; }
+        public System.DateTime 납기일 { get; set; }
     
         public virtual 공급업체 공급업체 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<발주리스트> 발주리스트 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<발주확인서> 발주확인서 { get; set; }
     }
 }

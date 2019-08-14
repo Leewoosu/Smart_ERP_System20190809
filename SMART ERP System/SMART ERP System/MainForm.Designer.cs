@@ -41,7 +41,6 @@ namespace SMART_ERP_System
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.btnMenuSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txbMenuSearch = new System.Windows.Forms.TextBox();
             this.listBox = new System.Windows.Forms.ListBox();
@@ -152,7 +151,6 @@ namespace SMART_ERP_System
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.btnMenuSearch);
             this.splitContainer3.Panel1.Controls.Add(this.label2);
             this.splitContainer3.Panel1.Controls.Add(this.txbMenuSearch);
             // 
@@ -163,16 +161,6 @@ namespace SMART_ERP_System
             this.splitContainer3.Size = new System.Drawing.Size(188, 659);
             this.splitContainer3.SplitterDistance = 38;
             this.splitContainer3.TabIndex = 6;
-            // 
-            // btnMenuSearch
-            // 
-            this.btnMenuSearch.Location = new System.Drawing.Point(121, 7);
-            this.btnMenuSearch.Name = "btnMenuSearch";
-            this.btnMenuSearch.Size = new System.Drawing.Size(42, 22);
-            this.btnMenuSearch.TabIndex = 4;
-            this.btnMenuSearch.Text = "Go";
-            this.btnMenuSearch.UseVisualStyleBackColor = true;
-            this.btnMenuSearch.Click += new System.EventHandler(this.BtnMenuSearch_Click);
             // 
             // label2
             // 
@@ -202,6 +190,7 @@ namespace SMART_ERP_System
             this.listBox.TabIndex = 12;
             this.listBox.Visible = false;
             this.listBox.DoubleClick += new System.EventHandler(this.ListBox_DoubleClick);
+            this.listBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ListBox_KeyUp);
             // 
             // treeView
             // 
@@ -262,7 +251,6 @@ namespace SMART_ERP_System
         private System.Windows.Forms.Button btnInfo;
 
         private MetroFramework.Controls.MetroTabControl metroTabControl;
-        private Button btnMenuSearch;
         private ListBox listBox;
     }
 }

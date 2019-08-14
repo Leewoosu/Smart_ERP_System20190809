@@ -72,6 +72,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\InputDate.cs" />
+    <Compile Include="Class\LoginMember.cs" />
+    <Compile Include="Class\MenuLists.cs" />
+    <Compile Include="Class\전표단위.cs" />
+    <Compile Include="Class\전표리스트단위.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,9 +89,35 @@
     <Compile Include="MainForm_Control\LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm_Control\금융거래처구분Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm_Control\금융거래처구분Control.Designer.cs">
+      <DependentUpon>금융거래처구분Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm_Control\계정코드구분Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm_Control\계정코드구분Control.Designer.cs">
+      <DependentUpon>계정코드구분Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm_Control\일반거래처구분Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm_Control\일반거래처구분Control.Designer.cs">
+      <DependentUpon>일반거래처구분Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuUserControl\1.회계관리\1.전표장부관리\1-1.전표등록\전표등록.cs">
       <SubType>UserControl</SubType>
@@ -443,6 +474,18 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_Control\금융거래처구분Control.resx">
+      <DependentUpon>금융거래처구분Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_Control\계정코드구분Control.resx">
+      <DependentUpon>계정코드구분Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_Control\일반거래처구분Control.resx">
+      <DependentUpon>일반거래처구분Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuUserControl\1.회계관리\1.전표장부관리\1-1.전표등록\전표등록.resx">
       <DependentUpon>전표등록.cs</DependentUpon>
     </EmbeddedResource>
@@ -626,7 +669,14 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ClassLibrary.거래처.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.계정과목.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.계정과목그룹.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.금융거래처등록.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.부서등록.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.사원등록.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.일반거래처등록.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.회사등록.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
