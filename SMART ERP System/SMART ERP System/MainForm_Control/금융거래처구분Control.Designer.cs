@@ -119,6 +119,7 @@
             this.dgv거래처List.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv거래처List.Size = new System.Drawing.Size(447, 333);
             this.dgv거래처List.TabIndex = 7;
+            this.dgv거래처List.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv거래처List_CellDoubleClick);
             this.dgv거래처List.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgv거래처List_RowPostPaint);
             this.dgv거래처List.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dgv거래처List_KeyDown);
             // 
@@ -186,11 +187,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txbSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgv거래처List;
         private System.Windows.Forms.BindingSource 금융거래처등록BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 금융거래처코드DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 금융거래처명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 계좌번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 사업자등록번호DataGridViewTextBoxColumn;
+        public System.Windows.Forms.DataGridView dgv거래처List;
     }
 }

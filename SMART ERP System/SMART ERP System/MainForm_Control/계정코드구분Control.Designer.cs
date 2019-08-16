@@ -115,6 +115,7 @@
             this.dgv계정과목List.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv계정과목List.Size = new System.Drawing.Size(316, 333);
             this.dgv계정과목List.TabIndex = 7;
+            this.dgv계정과목List.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv계정과목List_CellDoubleClick);
             this.dgv계정과목List.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgv계정과목List_RowPostPaint);
             this.dgv계정과목List.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvList_KeyDown);
             // 
@@ -163,9 +164,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txbSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgv계정과목List;
         private System.Windows.Forms.DataGridViewTextBoxColumn 계정과목코드번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 계정과목명DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 계정과목BindingSource;
+        public System.Windows.Forms.DataGridView dgv계정과목List;
     }
 }

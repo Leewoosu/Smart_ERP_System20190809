@@ -33,5 +33,27 @@ namespace ClassLibrary.EntityData
                 }
             }
         }
+
+        public string Search(string customerCode)
+        {
+            using (ERPEntities entities = new ERPEntities())
+            {
+                string code = entities.거래처.Where(x => x.거래처코드번호 == customerCode).ToList().Select(x => x.거래처코드번호).FirstOrDefault();
+
+                string name1 = DB.금융거래처.Search(code, out bool isEqual1);
+                string name2 = DB.일반거래처.Search(code, out bool isEqual2);
+
+                if (isEqual1 == true)
+                {
+                    return name1;
+                }
+                else if (isEqual2 == true)
+                {
+                    return name2;
+                }
+                else
+                    return null;
+            }
+        }
     }
 }

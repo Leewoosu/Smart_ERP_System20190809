@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ClassLibrary.EntityData
@@ -19,6 +20,17 @@ namespace ClassLibrary.EntityData
                 else return true;
             }
         }
+
+        public List<string> Get품목군()
+        {
+            using (ERPEntities entities = new ERPEntities())
+            {
+                var list = entities.제품.Select(x => x.품목군).ToList();
+
+               return list.Distinct().ToList();
+            }
+        }
+
         public bool IsSearch제품명(string 제품명)
         {
             using (ERPEntities context = new ERPEntities())

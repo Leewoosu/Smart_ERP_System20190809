@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ClassLibrary.EntityData;
 using System.Runtime.InteropServices;
 using SMART_ERP_System.Class;
+using ClassLibrary;
 
 namespace SMART_ERP_System.MainForm_Control
 {
@@ -39,7 +40,12 @@ namespace SMART_ERP_System.MainForm_Control
 
         private void TxbSearch_TextChanged(object sender, EventArgs e)
         {
+            List<일반거래처등록> list = DB.일반거래처.SearchCode(txbSearch.Text);
 
+            if (list != null)
+            {
+                일반거래처등록BindingSource.DataSource = list;
+            }
         }
 
         private void Dgv거래처List_KeyDown(object sender, KeyEventArgs e)
@@ -50,14 +56,29 @@ namespace SMART_ERP_System.MainForm_Control
 
                 string customerCode = dgv거래처List.CurrentRow.Cells[0].Value.ToString();
                 string customerName = dgv거래처List.CurrentRow.Cells[1].Value.ToString();
-                string accontNumber = dgv거래처List.CurrentRow.Cells[2].Value.ToString();
-                string corporateRegistrationNumber = dgv거래처List.CurrentRow.Cells[3].Value.ToString();
+                string corporateRegistrationNumber = dgv거래처List.CurrentRow.Cells[2].Value.ToString();
 
-                //전표리스트단위
+                전표리스트단위.GeneralCustomerCode = customerCode;
+                전표리스트단위.GeneralCustomerName = customerName;
+                전표리스트단위.GeneralCorporateRegistrationNumber = corporateRegistrationNumber;
 
                 menuForm.Close();
                 keybd_event((byte)Keys.Enter, 0x0D, 0x01, 0); // DownUp
             }
+        }
+
+        private void Dgv거래처List_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string customerCode = dgv거래처List.CurrentRow.Cells[0].Value.ToString();
+            string customerName = dgv거래처List.CurrentRow.Cells[1].Value.ToString();
+            string corporateRegistrationNumber = dgv거래처List.CurrentRow.Cells[2].Value.ToString();
+
+            전표리스트단위.GeneralCustomerCode = customerCode;
+            전표리스트단위.GeneralCustomerName = customerName;
+            전표리스트단위.GeneralCorporateRegistrationNumber = corporateRegistrationNumber;
+
+            menuForm.Close();
+            keybd_event((byte)Keys.Enter, 0x0D, 0x01, 0); // DownUp
         }
     }
 }

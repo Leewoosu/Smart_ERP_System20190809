@@ -7,6 +7,7 @@ using ClassLibrary;
 using System.Linq;
 using SMART_ERP_System.Class;
 using System.Runtime.InteropServices;
+using System.Drawing;
 
 namespace SMART_ERP_System
 {
@@ -41,6 +42,7 @@ namespace SMART_ERP_System
         {
             if (metroTabControl.TabCount != 0)
             {
+                int tabindex = metroTabControl.SelectedIndex;
                 foreach (UserControl userControl in controls)
                 {
                     if (userControl.Name == metroTabControl.SelectedTab.Text)
@@ -50,6 +52,7 @@ namespace SMART_ERP_System
                     }
                 }
                 metroTabControl.TabPages.Remove(metroTabControl.SelectedTab);
+                metroTabControl.SelectedIndex = tabindex - 1;
             }
         }
         private void BtnPrint_Click(object sender, EventArgs e)
@@ -209,6 +212,58 @@ namespace SMART_ERP_System
         {
             if (e.KeyData == Keys.Enter)
                 ListBox_DoubleClick(listBox.SelectedItem, null);
+        }
+
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
+        public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);
+        private const int MOUSEEVENTF_LEFTDOWN = 0x02;
+        private const int MOUSEEVENTF_LEFTUP = 0x04;
+        private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
+        private const int MOUSEEVENTF_RIGHTUP = 0x10;
+        private void MetroTabControl_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right)
+            {
+                EventHandler eventHandler = new EventHandler(TabControl_TypeMenuClick);
+
+                mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+                MenuItem[] items =
+                {
+                    new MenuItem("모두 닫기", eventHandler),
+                    new MenuItem("닫기", eventHandler)
+                    };
+
+
+                ContextMenu = new ContextMenu(items);
+                mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+                ContextMenu.Show(metroTabControl, new Point(e.X, e.Y));
+            }
+            else
+            {
+                if (ContextMenu != null)
+                    ContextMenu.Dispose();
+            }
+        }
+
+        private void TabControl_TypeMenuClick(object obj, EventArgs e)
+        {
+            MenuItem menuItem = (MenuItem)obj;
+            string str = menuItem.Text;
+
+            if (str == "모두 닫기")
+            {
+                metroTabControl.TabPages.Clear();
+                if (ContextMenu != null)
+                    ContextMenu.Dispose();
+            }
+
+            if(str == "닫기")
+            {
+                metroTabControl.TabPages.Remove(metroTabControl.SelectedTab);
+                if (ContextMenu != null)
+                    ContextMenu.Dispose();
+            }
         }
     }
 }

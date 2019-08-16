@@ -34,10 +34,10 @@
             this.txbSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv거래처List = new System.Windows.Forms.DataGridView();
-            this.일반거래처등록BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.일반거래처코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.거래처명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.사업자등록번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.일반거래처등록BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -117,12 +117,9 @@
             this.dgv거래처List.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv거래처List.Size = new System.Drawing.Size(447, 333);
             this.dgv거래처List.TabIndex = 7;
+            this.dgv거래처List.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv거래처List_CellDoubleClick);
             this.dgv거래처List.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgv거래처List_RowPostPaint);
             this.dgv거래처List.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dgv거래처List_KeyDown);
-            // 
-            // 일반거래처등록BindingSource
-            // 
-            this.일반거래처등록BindingSource.DataSource = typeof(ClassLibrary.일반거래처등록);
             // 
             // 일반거래처코드DataGridViewTextBoxColumn
             // 
@@ -149,6 +146,10 @@
             this.사업자등록번호DataGridViewTextBoxColumn.ReadOnly = true;
             this.사업자등록번호DataGridViewTextBoxColumn.Width = 130;
             // 
+            // 일반거래처등록BindingSource
+            // 
+            this.일반거래처등록BindingSource.DataSource = typeof(ClassLibrary.일반거래처등록);
+            // 
             // 일반거래처구분Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -174,10 +175,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txbSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgv거래처List;
         private System.Windows.Forms.DataGridViewTextBoxColumn 일반거래처코드DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 거래처명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 사업자등록번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 일반거래처등록BindingSource;
+        public System.Windows.Forms.DataGridView dgv거래처List;
     }
 }

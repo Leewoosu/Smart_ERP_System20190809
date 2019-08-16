@@ -215,16 +215,20 @@
     <Property Name="사업장주소" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="사업장번지" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="사업장전화번호" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="프로젝트" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="거래처분류" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="금융기관코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="금융기관명" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="예금종류" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="예금명" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="예금주" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="계좌개설일" Type="DateTime" Precision="0" />
-    <Property Name="거래시작일" Type="DateTime" Precision="0" />
     <Property Name="거래종료일" Type="DateTime" Precision="0" />
     <NavigationProperty Name="거래처" Relationship="Self.FK_금융거래처등록_거래처" FromRole="금융거래처등록" ToRole="거래처" />
+  </EntityType>
+  <EntityType Name="금융기관">
+    <Key>
+      <PropertyRef Name="금융기관코드" />
+    </Key>
+    <Property Name="금융기관코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="금융기관명" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityType Name="급_상여지급_급여구분">
     <Key>
@@ -722,6 +726,14 @@
     <Property Name="부가세" Type="Int32" Nullable="false" />
     <NavigationProperty Name="세무유형1" Relationship="Self.FK_역추적_세무유형" FromRole="역추적" ToRole="세무유형" />
   </EntityType>
+  <EntityType Name="예금종류">
+    <Key>
+      <PropertyRef Name="예금종류코드" />
+    </Key>
+    <Property Name="예금종류코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="예금내역명" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="비고" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
   <EntityType Name="예산">
     <Key>
       <PropertyRef Name="예산코드" />
@@ -767,18 +779,6 @@
     <Property Name="사업장전화번호" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="거래시작일" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="거래종료일" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="계약거래시작일" Type="DateTime" Precision="0" />
-    <Property Name="계약거래종료일" Type="DateTime" Precision="0" />
-    <Property Name="계약거래형태" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="게약거래금액" Type="Int32" Nullable="false" />
-    <Property Name="매입거래금융기관" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="매입거래처" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="매입거래예금주" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="매입거래계좌번호" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="매출거래은행코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="매출거래처" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="매출거래계좌번호" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="자금결제및수금관리예정일" Type="DateTime" Precision="0" />
     <NavigationProperty Name="거래처" Relationship="Self.FK_일반거래처등록_거래처" FromRole="일반거래처등록" ToRole="거래처" />
   </EntityType>
   <EntityType Name="입고등록">
@@ -1131,6 +1131,16 @@
     <Property Name="설립연월일" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="개업연월일" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="폐업연월일" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="공지사항">
+    <Key>
+      <PropertyRef Name="날짜" />
+      <PropertyRef Name="제목" />
+      <PropertyRef Name="내용" />
+    </Key>
+    <Property Name="날짜" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="제목" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="내용" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <Association Name="FK_거래처_자금계획달력">
     <End Role="자금계획달력" Type="Self.자금계획달력" Multiplicity="1" />
@@ -1911,6 +1921,7 @@
     <EntitySet Name="근로소득별세부사항" EntityType="Self.근로소득별세부사항" />
     <EntitySet Name="근태결과" EntityType="Self.근태결과" />
     <EntitySet Name="금융거래처등록" EntityType="Self.금융거래처등록" />
+    <EntitySet Name="금융기관" EntityType="Self.금융기관" />
     <EntitySet Name="급_상여지급_급여구분" EntityType="Self.급_상여지급_급여구분" />
     <EntitySet Name="급_상여지급_일자등록" EntityType="Self.급_상여지급_일자등록" />
     <EntitySet Name="급_상여지급_직종및_급여형태" EntityType="Self.급_상여지급_직종및_급여형태" />
@@ -1949,6 +1960,7 @@
     <EntitySet Name="시스템환경설정" EntityType="Self.시스템환경설정" />
     <EntitySet Name="업무용승용차_차량등록" EntityType="Self.업무용승용차_차량등록" />
     <EntitySet Name="역추적" EntityType="Self.역추적" />
+    <EntitySet Name="예금종류" EntityType="Self.예금종류" />
     <EntitySet Name="예산" EntityType="Self.예산" />
     <EntitySet Name="원가보고서" EntityType="Self.원가보고서" />
     <EntitySet Name="일반거래처등록" EntityType="Self.일반거래처등록" />
@@ -1979,6 +1991,7 @@
     <EntitySet Name="현장실적현황" EntityType="Self.현장실적현황" />
     <EntitySet Name="회계처리" EntityType="Self.회계처리" />
     <EntitySet Name="회사등록" EntityType="Self.회사등록" />
+    <EntitySet Name="공지사항" EntityType="Self.공지사항" />
     <AssociationSet Name="FK_거래처_자금계획달력" Association="Self.FK_거래처_자금계획달력">
       <End Role="자금계획달력" EntitySet="자금계획달력" />
       <End Role="거래처" EntitySet="거래처" />

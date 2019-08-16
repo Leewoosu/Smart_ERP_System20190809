@@ -41,6 +41,7 @@ namespace ClassLibrary
         public virtual DbSet<근로소득별세부사항> 근로소득별세부사항 { get; set; }
         public virtual DbSet<근태결과> 근태결과 { get; set; }
         public virtual DbSet<금융거래처등록> 금융거래처등록 { get; set; }
+        public virtual DbSet<금융기관> 금융기관 { get; set; }
         public virtual DbSet<급_상여지급_급여구분> 급_상여지급_급여구분 { get; set; }
         public virtual DbSet<급_상여지급_일자등록> 급_상여지급_일자등록 { get; set; }
         public virtual DbSet<급_상여지급_직종및_급여형태> 급_상여지급_직종및_급여형태 { get; set; }
@@ -79,6 +80,7 @@ namespace ClassLibrary
         public virtual DbSet<시스템환경설정> 시스템환경설정 { get; set; }
         public virtual DbSet<업무용승용차_차량등록> 업무용승용차_차량등록 { get; set; }
         public virtual DbSet<역추적> 역추적 { get; set; }
+        public virtual DbSet<예금종류> 예금종류 { get; set; }
         public virtual DbSet<예산> 예산 { get; set; }
         public virtual DbSet<원가보고서> 원가보고서 { get; set; }
         public virtual DbSet<일반거래처등록> 일반거래처등록 { get; set; }
@@ -109,5 +111,6 @@ namespace ClassLibrary
         public virtual DbSet<현장실적현황> 현장실적현황 { get; set; }
         public virtual DbSet<회계처리> 회계처리 { get; set; }
         public virtual DbSet<회사등록> 회사등록 { get; set; }
+        public virtual DbSet<공지사항> 공지사항 { get; set; }
     }
 }

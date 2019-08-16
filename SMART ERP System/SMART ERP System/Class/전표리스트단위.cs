@@ -16,9 +16,12 @@ namespace SMART_ERP_System.Class
         public static int LoadCnt { get; set; }
         public static string AccountCode { get; set; }
         public static string AccountName { get; set; }
-        public static string CustomerCode { get; set; }
-        public static string CustomerName { get; set; }
-        public static string AccontNumber { get; set; }
-        public static string CorporateRegistrationNumber { get; set; }
+        public static string FinanceCustomerCode { get; set; }
+        public static string FinanceCustomerName { get; set; }
+        public static string FinanceAccontNumber { get; set; }
+        public static string FinanceCorporateRegistrationNumber { get; set; }
+        public static string GeneralCustomerCode { get; set; }
+        public static string GeneralCustomerName { get; set; }
+        public static string GeneralCorporateRegistrationNumber { get; set; }
     }
 }

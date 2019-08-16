@@ -24,20 +24,35 @@ namespace ClassLibrary.EntityData
             }
         }
 
-        public List<금융거래처등록> SearchCode(string code)
+        public string Search(string customerCode, out bool isEqual)
+        {
+            using (ERPEntities entities = new ERPEntities())
+            {
+                var list = entities.금융거래처등록.Where(x => x.거래처코드번호 == customerCode).ToList();
+
+                if (list == null)
+                    isEqual = false;
+                else
+                    isEqual = true;
+
+                return list.Select(x => x.금융거래처명).FirstOrDefault();
+            }
+        }
+
+        public List<금융거래처등록> SearchCode(string text)
         {
             using (ERPEntities entities = new ERPEntities())
             {
                 var list = entities.금융거래처등록.ToList();
 
-                int.TryParse(code, out int result);
+                int.TryParse(text, out int result);
 
                 if (result == 0)
                 {
-                    return entities.금융거래처등록.Where(x => x.금융거래처명.Replace(" ", "").StartsWith(code)).ToList();
+                    return entities.금융거래처등록.Where(x => x.금융거래처명.Replace(" ", "").StartsWith(text)).ToList();
                 }
 
-                return entities.금융거래처등록.Where(x => x.금융거래처코드.StartsWith(code)).ToList();
+                return entities.금융거래처등록.Where(x => x.금융거래처코드.StartsWith(text)).ToList();
             }
         }
     }

@@ -76,6 +76,7 @@
     <Compile Include="EntityData\자재Data.cs" />
     <Compile Include="EntityData\자재명세서Data.cs" />
     <Compile Include="EntityData\전표Data.cs" />
+    <Compile Include="EntityData\전표리스트.cs" />
     <Compile Include="EntityData\전표리스트Data.cs" />
     <Compile Include="EntityData\제품Data.cs" />
     <Compile Include="EntityData\회사등록Data.cs" />
@@ -133,6 +134,9 @@
     <Compile Include="공제별세부사항.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="공지사항.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="과세별세액.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -143,6 +147,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="금융거래처등록.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="금융기관.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="급_상여지급_급여구분.cs">
@@ -257,6 +264,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="역추적.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="예금종류.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="예산.cs">

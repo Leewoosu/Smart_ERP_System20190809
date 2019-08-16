@@ -204,15 +204,20 @@
           <ScalarProperty Name="사업장주소" ColumnName="사업장주소" />
           <ScalarProperty Name="사업장번지" ColumnName="사업장번지" />
           <ScalarProperty Name="사업장전화번호" ColumnName="사업장전화번호" />
-          <ScalarProperty Name="프로젝트" ColumnName="프로젝트" />
-          <ScalarProperty Name="거래처분류" ColumnName="거래처분류" />
-          <ScalarProperty Name="금융기관코드" ColumnName="금융기관코드" />
+          <ScalarProperty Name="금융기관명" ColumnName="금융기관명" />
           <ScalarProperty Name="예금종류" ColumnName="예금종류" />
           <ScalarProperty Name="예금명" ColumnName="예금명" />
           <ScalarProperty Name="예금주" ColumnName="예금주" />
           <ScalarProperty Name="계좌개설일" ColumnName="계좌개설일" />
-          <ScalarProperty Name="거래시작일" ColumnName="거래시작일" />
           <ScalarProperty Name="거래종료일" ColumnName="거래종료일" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="금융기관">
+      <EntityTypeMapping TypeName="ERPModel.금융기관">
+        <MappingFragment StoreEntitySet="금융기관">
+          <ScalarProperty Name="금융기관코드" ColumnName="금융기관코드" />
+          <ScalarProperty Name="금융기관명" ColumnName="금융기관명" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -680,6 +685,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="예금종류">
+      <EntityTypeMapping TypeName="ERPModel.예금종류">
+        <MappingFragment StoreEntitySet="예금종류">
+          <ScalarProperty Name="예금종류코드" ColumnName="예금종류코드" />
+          <ScalarProperty Name="예금내역명" ColumnName="예금내역명" />
+          <ScalarProperty Name="비고" ColumnName="비고" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="예산">
       <EntityTypeMapping TypeName="ERPModel.예산">
         <MappingFragment StoreEntitySet="예산">
@@ -723,18 +737,6 @@
           <ScalarProperty Name="사업장전화번호" ColumnName="사업장전화번호" />
           <ScalarProperty Name="거래시작일" ColumnName="거래시작일" />
           <ScalarProperty Name="거래종료일" ColumnName="거래종료일" />
-          <ScalarProperty Name="계약거래시작일" ColumnName="계약거래시작일" />
-          <ScalarProperty Name="계약거래종료일" ColumnName="계약거래종료일" />
-          <ScalarProperty Name="계약거래형태" ColumnName="계약거래형태" />
-          <ScalarProperty Name="게약거래금액" ColumnName="게약거래금액" />
-          <ScalarProperty Name="매입거래금융기관" ColumnName="매입거래금융기관" />
-          <ScalarProperty Name="매입거래처" ColumnName="매입거래처" />
-          <ScalarProperty Name="매입거래예금주" ColumnName="매입거래예금주" />
-          <ScalarProperty Name="매입거래계좌번호" ColumnName="매입거래계좌번호" />
-          <ScalarProperty Name="매출거래은행코드" ColumnName="매출거래은행코드" />
-          <ScalarProperty Name="매출거래처" ColumnName="매출거래처" />
-          <ScalarProperty Name="매출거래계좌번호" ColumnName="매출거래계좌번호" />
-          <ScalarProperty Name="자금결제및수금관리예정일" ColumnName="자금결제및수금관리예정일" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1067,6 +1069,15 @@
           <ScalarProperty Name="설립연월일" ColumnName="설립연월일" />
           <ScalarProperty Name="개업연월일" ColumnName="개업연월일" />
           <ScalarProperty Name="폐업연월일" ColumnName="폐업연월일" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="공지사항">
+      <EntityTypeMapping TypeName="ERPModel.공지사항">
+        <MappingFragment StoreEntitySet="공지사항">
+          <ScalarProperty Name="날짜" ColumnName="날짜" />
+          <ScalarProperty Name="제목" ColumnName="제목" />
+          <ScalarProperty Name="내용" ColumnName="내용" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

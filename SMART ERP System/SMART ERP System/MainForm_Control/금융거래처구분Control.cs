@@ -42,10 +42,10 @@ namespace SMART_ERP_System.MainForm_Control
                 string accontNumber = dgv거래처List.CurrentRow.Cells[2].Value.ToString();
                 string corporateRegistrationNumber = dgv거래처List.CurrentRow.Cells[3].Value.ToString();
 
-                전표리스트단위.CustomerCode = customerCode;
-                전표리스트단위.CustomerName = customerName;
-                전표리스트단위.AccontNumber = accontNumber;
-                전표리스트단위.CorporateRegistrationNumber = corporateRegistrationNumber;
+                전표리스트단위.FinanceCustomerCode = customerCode;
+                전표리스트단위.FinanceCustomerName = customerName;
+                전표리스트단위.FinanceAccontNumber = accontNumber;
+                전표리스트단위.FinanceCorporateRegistrationNumber = corporateRegistrationNumber;
 
                 menuForm.Close();
                 keybd_event((byte)Keys.Enter, 0x0D, 0x01, 0); // DownUp
@@ -68,6 +68,22 @@ namespace SMART_ERP_System.MainForm_Control
             dgv거래처List.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv거래처List.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv거래처List.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private void Dgv거래처List_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string customerCode = dgv거래처List.CurrentRow.Cells[0].Value.ToString();
+            string customerName = dgv거래처List.CurrentRow.Cells[1].Value.ToString();
+            string accontNumber = dgv거래처List.CurrentRow.Cells[2].Value.ToString();
+            string corporateRegistrationNumber = dgv거래처List.CurrentRow.Cells[3].Value.ToString();
+
+            전표리스트단위.FinanceCustomerCode = customerCode;
+            전표리스트단위.FinanceCustomerName = customerName;
+            전표리스트단위.FinanceAccontNumber = accontNumber;
+            전표리스트단위.FinanceCorporateRegistrationNumber = corporateRegistrationNumber;
+
+            menuForm.Close();
+            keybd_event((byte)Keys.Enter, 0x0D, 0x01, 0); // DownUp
         }
     }
 }

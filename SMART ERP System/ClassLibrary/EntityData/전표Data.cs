@@ -23,6 +23,8 @@ namespace ClassLibrary.EntityData
                 if (list == null)
                     return null;
 
+                list = list.OrderBy(x => int.Parse(x.전표번호)).ToList();
+
                 return list;
             }
         }
@@ -36,7 +38,7 @@ namespace ClassLibrary.EntityData
         /// <param name="i">개수</param>
         public void FillIn전표List(DateTime dateTime, DataGridView gridView, List<전표> 전표s, int cnt)
         {
-            for (int i = 0; i < cnt; i++)
+            for (int i = 0; i < cnt+1; i++)
             {
                 전표 전표 = new 전표();
 
@@ -66,7 +68,7 @@ namespace ClassLibrary.EntityData
         {
             resultIndex = new List<int>();
 
-            for (int i = 0; i < cnt; i++)
+            for (int i = 0; i < cnt+1; i++)
             {
                 // 모두 일치하면 변경사항 없음
                 if (

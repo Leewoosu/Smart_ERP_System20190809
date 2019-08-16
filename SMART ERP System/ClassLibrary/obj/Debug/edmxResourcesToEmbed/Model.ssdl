@@ -138,6 +138,18 @@
     <Property Name="지급명세서 작성" Type="nvarchar" MaxLength="5" Nullable="false" />
     <Property Name="귀속연도" Type="date" Nullable="false" />
   </EntityType>
+  <!--생성 중 오류 발생:
+경고 6002: 테이블/뷰 'ERP.dbo.공지사항'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
+  <EntityType Name="공지사항">
+    <Key>
+      <PropertyRef Name="날짜" />
+      <PropertyRef Name="제목" />
+      <PropertyRef Name="내용" />
+    </Key>
+    <Property Name="날짜" Type="datetime" Nullable="false" />
+    <Property Name="제목" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="내용" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="과세별세액">
     <Key>
       <PropertyRef Name="일반과세ID" />
@@ -191,15 +203,19 @@
     <Property Name="사업장주소" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="사업장번지" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="사업장전화번호" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="프로젝트" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="거래처분류" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="금융기관코드" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="금융기관명" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="예금종류" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="예금명" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="예금주" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="계좌개설일" Type="date" />
-    <Property Name="거래시작일" Type="date" />
     <Property Name="거래종료일" Type="date" />
+  </EntityType>
+  <EntityType Name="금융기관">
+    <Key>
+      <PropertyRef Name="금융기관코드" />
+    </Key>
+    <Property Name="금융기관코드" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="금융기관명" Type="nvarchar" MaxLength="30" Nullable="false" />
   </EntityType>
   <EntityType Name="급/상여지급 급여구분">
     <Key>
@@ -644,6 +660,14 @@
     <Property Name="공급가액" Type="int" Nullable="false" />
     <Property Name="부가세" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="예금종류">
+    <Key>
+      <PropertyRef Name="예금종류코드" />
+    </Key>
+    <Property Name="예금종류코드" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="예금내역명" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="비고" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
   <EntityType Name="예산">
     <Key>
       <PropertyRef Name="예산코드" />
@@ -688,18 +712,6 @@
     <Property Name="사업장전화번호" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="거래시작일" Type="date" Nullable="false" />
     <Property Name="거래종료일" Type="date" Nullable="false" />
-    <Property Name="계약거래시작일" Type="date" />
-    <Property Name="계약거래종료일" Type="date" />
-    <Property Name="계약거래형태" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="게약거래금액" Type="int" Nullable="false" />
-    <Property Name="매입거래금융기관" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="매입거래처" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="매입거래예금주" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="매입거래계좌번호" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="매출거래은행코드" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="매출거래처" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="매출거래계좌번호" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="자금결제및수금관리예정일" Type="date" />
   </EntityType>
   <EntityType Name="입고등록">
     <Key>
@@ -1813,6 +1825,7 @@
     <EntitySet Name="근로소득별세부사항" EntityType="Self.근로소득별세부사항" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="근태결과" EntityType="Self.근태결과" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="금융거래처등록" EntityType="Self.금융거래처등록" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="금융기관" EntityType="Self.금융기관" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="급/상여지급 급여구분" EntityType="Self.급/상여지급 급여구분" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="급/상여지급 일자등록" EntityType="Self.급/상여지급 일자등록" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="급/상여지급 직종및 급여형태" EntityType="Self.급/상여지급 직종및 급여형태" Schema="dbo" store:Type="Tables" />
@@ -1852,6 +1865,7 @@
     <EntitySet Name="시스템환경설정" EntityType="Self.시스템환경설정" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="업무용승용차 차량등록" EntityType="Self.업무용승용차 차량등록" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="역추적" EntityType="Self.역추적" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="예금종류" EntityType="Self.예금종류" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="예산" EntityType="Self.예산" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="원가보고서" EntityType="Self.원가보고서" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="일반거래처등록" EntityType="Self.일반거래처등록" Schema="dbo" store:Type="Tables" />
@@ -1882,6 +1896,13 @@
     <EntitySet Name="현장실적현황" EntityType="Self.현장실적현황" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="회계처리" EntityType="Self.회계처리" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="회사등록" EntityType="Self.회사등록" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="공지사항" EntityType="Self.공지사항" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [공지사항].[날짜] AS [날짜], 
+    [공지사항].[제목] AS [제목], 
+    [공지사항].[내용] AS [내용]
+    FROM [dbo].[공지사항] AS [공지사항]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_거래처_자금계획달력" Association="Self.FK_거래처_자금계획달력">
       <End Role="자금계획달력" EntitySet="자금계획달력" />
       <End Role="거래처" EntitySet="거래처" />

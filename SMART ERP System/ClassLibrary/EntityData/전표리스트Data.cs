@@ -12,19 +12,50 @@ namespace ClassLibrary.EntityData
         /// <summary>
         /// 전표번호와 일치하는 전표리스트를 가져옴
         /// </summary>
-        /// <param name="value"> 전표번호</param>
+        /// <param name="number"> 전표번호</param>
         /// <returns> 전표리스트 반환</returns>
-        public List<전표리스트> SearchList(string value)
+        public List<전표리스트> SearchList(DateTime date, string number)
         {
             using (ERPEntities entities = new ERPEntities())
             {
                 var query = from x in entities.전표리스트
-                            where x.전표.전표번호 == value
+                            where x.전표.전표번호 == number
                             select x;
 
                 List<전표리스트> list = query.ToList();
 
+                list = list.Where(x => x.입력날짜.ToShortDateString() == date.ToShortDateString()).ToList();
+
                 return list;
+            }
+        }
+
+        public List<전표리스트> SearchPeriod(DateTime dtpFrom, DateTime dtpTo)
+        {
+            using (ERPEntities entities = new ERPEntities())
+            {
+                var query = from x in entities.전표리스트
+                            where dtpFrom < x.입력날짜 && x.입력날짜 < dtpTo
+                            select new
+                            {
+                                x,
+                                계정과목명 = x.계정과목.계정과목명,
+                                거래처명 = "",
+                                전표상태 = x.전표.승인상태,
+                                전표유형 = x.전표.유형
+                            };
+
+                var list = query.ToList();
+                
+                foreach (var item in list)
+                {
+                    item.x.계정과목명 = item.계정과목명;
+                    item.x.전표상태 = item.전표상태;
+                    item.x.전표유형 = item.전표유형;
+                    item.x.거래처명 = DB.거래처.Search(item.x.거래처코드번호);
+                }
+
+                return list.ConvertAll(x => x.x);
             }
         }
 
@@ -38,7 +69,7 @@ namespace ClassLibrary.EntityData
         /// <param name="i">해당 개수</param>
         public void FillIn전표리스트List(DateTime dateTime, DataGridView gridView, List<전표리스트> 전표리스트s, string number, int cnt)
         {
-            for (int i = 0; i < cnt; i++)
+            for (int i = 0; i < cnt+1; i++)
             {
                 if (gridView.Rows[i].Cells[gridView.Columns.Count - 1].Value != null)
                 {
@@ -94,7 +125,7 @@ namespace ClassLibrary.EntityData
         {
             result = new List<int>();
 
-            for (int i = 0; i < cnt; i++)
+            for (int i = 0; i < cnt+1; i++)
             {
                 if (
                     (listForCheck2[i].전표번호 == 전표리스트s[i].전표번호) &&

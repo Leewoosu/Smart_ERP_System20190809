@@ -676,6 +676,9 @@
     <None Include="Properties\DataSources\ClassLibrary.부서등록.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.사원등록.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.일반거래처등록.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.전표.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.전표리스트.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.제품.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.회사등록.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

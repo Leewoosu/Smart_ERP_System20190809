@@ -63,5 +63,17 @@ namespace SMART_ERP_System.MainForm_Control
             dgv계정과목List.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv계정과목List.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
+
+        private void Dgv계정과목List_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string accountCode = dgv계정과목List.CurrentRow.Cells[0].Value.ToString();
+            string accountName = dgv계정과목List.CurrentRow.Cells[1].Value.ToString();
+
+            전표리스트단위.AccountCode = accountCode;
+            전표리스트단위.AccountName = accountName;
+
+            menuForm.Close();
+            keybd_event((byte)Keys.Enter, 0x0D, 0x01, 0); // DownUp
+        }
     }
 }

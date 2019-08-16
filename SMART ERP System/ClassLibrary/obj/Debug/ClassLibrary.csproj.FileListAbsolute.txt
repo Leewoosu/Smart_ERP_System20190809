@@ -23,3 +23,4 @@ C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Debug\es\DevExpre
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Debug\ja\DevExpress.Xpo.v19.1.resources.dll
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Debug\ru\DevExpress.Xpo.v19.1.resources.dll
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Debug\ko\EntityFramework.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Debug\ko\EntityFramework.SqlServer.resources.dll
