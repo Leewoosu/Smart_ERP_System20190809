@@ -25,5 +25,23 @@ namespace ClassLibrary.EntityData
                 employeeCnt = entity.사원등록.Where(x => x.사원코드 == id && x.암호 == pwd).ToList().Count;
             }
         }
+
+        public void Search(string EmployeeCode, out string code, out string name)
+        {
+            using (ERPEntities entities = new ERPEntities())
+            {
+                code = entities.사원등록.Where(x => x.사원코드 == EmployeeCode).ToList().Select(x => x.사원코드).FirstOrDefault();
+
+                name = entities.사원등록.Where(x => x.사원코드 == EmployeeCode).ToList().Select(x => x.사원명).FirstOrDefault();
+            }
+        }
+
+        public string SearchChangedValue(string value)
+        {
+            using (ERPEntities entities = new ERPEntities())
+            {
+                return entities.사원등록.Where(x => x.사원코드 == value).ToList().Select(x => x.사원명).FirstOrDefault();
+            }
+        }
     }
 }

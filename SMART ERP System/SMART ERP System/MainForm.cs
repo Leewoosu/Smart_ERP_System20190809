@@ -5,17 +5,24 @@ using ClassLibrary.FormHelper;
 using System.Collections.Generic;
 using ClassLibrary;
 using System.Linq;
-using SMART_ERP_System.MenuUserControl;
-using ClassLibrary.EntityData;
+using SMART_ERP_System.Class;
+using System.Runtime.InteropServices;
+using System.Drawing;
 
 namespace SMART_ERP_System
-{
-    public static class loginMember
-    {
-        public static string Name { get; set; }
-    }
+{    
     public partial class MainForm : MetroForm
     {
+        [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
+        public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);
+        private const int MOUSEEVENTF_LEFTDOWN = 0x02;
+        private const int MOUSEEVENTF_LEFTUP = 0x04;
+        private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
+        private const int MOUSEEVENTF_RIGHTUP = 0x10;
+
+        [DllImport("User32.dll")]
+        public static extern void keybd_event(uint vk, uint scan, uint flags, uint extraInfo);
+
         LoginForm loginForm;
         List<메뉴등록> menuItems;
         List<UserControl> controls;
@@ -24,12 +31,15 @@ namespace SMART_ERP_System
         {
             InitializeComponent();
             treeView.SetMenuItems(out menuItems);
+            ActiveControl = txbMenuSearch;
+            txbMenuSearch.Focus();
         }
 
         #region Event
         private void MainForm_Load(object sender, EventArgs e)
         {
-            loginMember.Name = loginForm.loginControl.txbEmployeeName.Text;
+            loginMember.EmployeeName = loginForm.loginControl.txbEmployeeName.Text;
+            loginMember.EmployeeCode = loginForm.loginControl.txbEmployeeCode.Text;
             this.Text = loginForm.loginControl.txbEmployeeName.Text +
                 "님 환영합니다.";
         }
@@ -41,6 +51,7 @@ namespace SMART_ERP_System
         {
             if (metroTabControl.TabCount != 0)
             {
+                int tabindex = metroTabControl.SelectedIndex;
                 foreach (UserControl userControl in controls)
                 {
                     if (userControl.Name == metroTabControl.SelectedTab.Text)
@@ -50,6 +61,7 @@ namespace SMART_ERP_System
                     }
                 }
                 metroTabControl.TabPages.Remove(metroTabControl.SelectedTab);
+                metroTabControl.SelectedIndex = tabindex - 1;
             }
         }
         private void BtnPrint_Click(object sender, EventArgs e)
@@ -125,16 +137,11 @@ namespace SMART_ERP_System
                 metroTabControl.SelectedIndex = CurrentPageNumber;
             }
         }
-        private void BtnMenuSearch_Click(object sender, EventArgs e)
-        {
-            TreeNode findNode = SearchNode(txbMenuSearch.Text, treeView.TopNode);
-            listBox.Visible = false;
-            findNode.ExpandAll();
-        }
         private void BtnInfo_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Info");
         }
+        
         private void TxbMenuSearch_KeyUp(object sender, KeyEventArgs e)
         {
             List<string> searchingMenu = new List<string>();
@@ -156,6 +163,13 @@ namespace SMART_ERP_System
                     listBox.Items.Add(item);
                 }
                 listBox.Visible = true;
+            }
+
+            if(e.KeyData == Keys.Down)
+            {
+                listBox.Focus();
+                // VK_DOWN 0x28 : DOWN ARROW key
+                keybd_event((byte)Keys.Down, 0x28, 0x01, 0); // DownUp            
             }
         }
         private void ListBox_DoubleClick(object sender, EventArgs e)
@@ -199,6 +213,57 @@ namespace SMART_ERP_System
                 StartNode = StartNode.NextNode;
             }
             return node;
+        }
+
+        private void ListBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+                ListBox_DoubleClick(listBox.SelectedItem, null);
+        }
+        
+        private void MetroTabControl_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right)
+            {
+                EventHandler eventHandler = new EventHandler(TabControl_TypeMenuClick);
+
+                mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+                MenuItem[] items =
+                {
+                    new MenuItem("모두 닫기", eventHandler),
+                    new MenuItem("닫기", eventHandler)
+                    };
+
+
+                ContextMenu = new ContextMenu(items);
+                mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+                ContextMenu.Show(metroTabControl, new Point(e.X, e.Y));
+            }
+            else
+            {
+                if (ContextMenu != null)
+                    ContextMenu.Dispose();
+            }
+        }
+
+        private void TabControl_TypeMenuClick(object obj, EventArgs e)
+        {
+            MenuItem menuItem = (MenuItem)obj;
+            string str = menuItem.Text;
+
+            if (str == "모두 닫기")
+            {
+                metroTabControl.TabPages.Clear();
+                if (ContextMenu != null)
+                    ContextMenu.Dispose();
+            }
+
+            if(str == "닫기")
+            {
+                metroTabControl.TabPages.Remove(metroTabControl.SelectedTab);
+                if (ContextMenu != null)
+                    ContextMenu.Dispose();
+            }
         }
     }
 }

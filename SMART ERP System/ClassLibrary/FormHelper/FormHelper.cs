@@ -1,4 +1,4 @@
-﻿using ClassLibrary.EntityData;
+﻿using ClassLibrary;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

@@ -14,8 +14,8 @@ namespace ClassLibrary
     
     public partial class 작업지시리스트
     {
-        public int 작업지시번호 { get; set; }
-        public int 제품번호 { get; set; }
+        public string 작업지시번호 { get; set; }
+        public string 제품번호 { get; set; }
         public int 수량 { get; set; }
     
         public virtual 작업지시 작업지시 { get; set; }

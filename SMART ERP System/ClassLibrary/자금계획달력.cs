@@ -14,20 +14,12 @@ namespace ClassLibrary
     
     public partial class 자금계획달력
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public 자금계획달력()
-        {
-            this.거래처 = new HashSet<거래처>();
-        }
-    
         public System.DateTime 일자 { get; set; }
-        public int 자금과목코드번호 { get; set; }
+        public string 자금과목코드번호 { get; set; }
         public string 적요 { get; set; }
         public int 금액 { get; set; }
         public int 잔액 { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<거래처> 거래처 { get; set; }
         public virtual 자금과목 자금과목 { get; set; }
     }
 }

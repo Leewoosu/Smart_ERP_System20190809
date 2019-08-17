@@ -44,7 +44,6 @@ namespace SMART_ERP_System
             this.loginControl.Name = "loginControl";
             this.loginControl.Size = new System.Drawing.Size(438, 274);
             this.loginControl.TabIndex = 0;
-            this.loginControl.Load += new System.EventHandler(this.LoginControl_Load);
             // 
             // LoginForm
             // 

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibrary.EntityData;
+using ClassLibrary;
 
 namespace SMART_ERP_System.MenuUserControl
 {
@@ -14,17 +16,20 @@ namespace SMART_ERP_System.MenuUserControl
     {
         public 소요량전개()
         {
-            InitializeComponent();
+            InitializeComponent();          
+        }
+        
+        public void MaterialCalculate()
+        {           
+            DB.소요량전개.Register소요량();
+            bds소요량전개.DataSource = DB.소요량전개.GetAll();
         }
 
-        private void 소요량전개_Click(object sender, EventArgs e)
+       
+
+        private void btn소요량전개_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void 물류_구매관리_Load(object sender, EventArgs e)
-        {
-
+            MaterialCalculate();
         }
     }
 }

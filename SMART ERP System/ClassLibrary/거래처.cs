@@ -22,10 +22,11 @@ namespace ClassLibrary
         }
     
         public string 거래처코드번호 { get; set; }
-        public int 전표리스트ID { get; set; }
+        public string 전표번호 { get; set; }
+        public System.DateTime 입력날짜 { get; set; }
+        public int 순번 { get; set; }
         public System.DateTime 일자 { get; set; }
     
-        public virtual 자금계획달력 자금계획달력 { get; set; }
         public virtual 전표리스트 전표리스트 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<금융거래처등록> 금융거래처등록 { get; set; }

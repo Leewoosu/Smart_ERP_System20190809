@@ -41,12 +41,13 @@ namespace SMART_ERP_System
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.btnMenuSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txbMenuSearch = new System.Windows.Forms.TextBox();
             this.listBox = new System.Windows.Forms.ListBox();
             this.treeView = new System.Windows.Forms.TreeView();
             this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -63,6 +64,7 @@ namespace SMART_ERP_System
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(20, 60);
             this.splitContainer1.Name = "splitContainer1";
@@ -70,6 +72,8 @@ namespace SMART_ERP_System
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnSearch);
+            this.splitContainer1.Panel1.Controls.Add(this.btnDelete);
             this.splitContainer1.Panel1.Controls.Add(this.btnInfo);
             this.splitContainer1.Panel1.Controls.Add(this.btnClose);
             this.splitContainer1.Panel1.Controls.Add(this.btnPrint);
@@ -84,32 +88,35 @@ namespace SMART_ERP_System
             // 
             // btnInfo
             // 
-            this.btnInfo.Location = new System.Drawing.Point(1113, 0);
+            this.btnInfo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnInfo.Location = new System.Drawing.Point(1113, 1);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(56, 45);
+            this.btnInfo.Size = new System.Drawing.Size(56, 38);
             this.btnInfo.TabIndex = 8;
             this.btnInfo.Text = "정보";
-            this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnInfo.UseVisualStyleBackColor = false;
             this.btnInfo.Click += new System.EventHandler(this.BtnInfo_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(983, 0);
+            this.btnClose.BackColor = System.Drawing.SystemColors.Control;
+            this.btnClose.Location = new System.Drawing.Point(983, 1);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(56, 45);
+            this.btnClose.Size = new System.Drawing.Size(56, 38);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "닫기";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(1051, 0);
+            this.btnPrint.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPrint.Location = new System.Drawing.Point(1051, 1);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(56, 45);
+            this.btnPrint.Size = new System.Drawing.Size(56, 38);
             this.btnPrint.TabIndex = 5;
             this.btnPrint.Text = "출력";
-            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
             // 
             // label1
@@ -152,7 +159,6 @@ namespace SMART_ERP_System
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.btnMenuSearch);
             this.splitContainer3.Panel1.Controls.Add(this.label2);
             this.splitContainer3.Panel1.Controls.Add(this.txbMenuSearch);
             // 
@@ -163,16 +169,6 @@ namespace SMART_ERP_System
             this.splitContainer3.Size = new System.Drawing.Size(188, 659);
             this.splitContainer3.SplitterDistance = 38;
             this.splitContainer3.TabIndex = 6;
-            // 
-            // btnMenuSearch
-            // 
-            this.btnMenuSearch.Location = new System.Drawing.Point(121, 7);
-            this.btnMenuSearch.Name = "btnMenuSearch";
-            this.btnMenuSearch.Size = new System.Drawing.Size(42, 22);
-            this.btnMenuSearch.TabIndex = 4;
-            this.btnMenuSearch.Text = "Go";
-            this.btnMenuSearch.UseVisualStyleBackColor = true;
-            this.btnMenuSearch.Click += new System.EventHandler(this.BtnMenuSearch_Click);
             // 
             // label2
             // 
@@ -202,6 +198,7 @@ namespace SMART_ERP_System
             this.listBox.TabIndex = 12;
             this.listBox.Visible = false;
             this.listBox.DoubleClick += new System.EventHandler(this.ListBox_DoubleClick);
+            this.listBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ListBox_KeyUp);
             // 
             // treeView
             // 
@@ -220,6 +217,27 @@ namespace SMART_ERP_System
             this.metroTabControl.Size = new System.Drawing.Size(1044, 655);
             this.metroTabControl.TabIndex = 0;
             this.metroTabControl.UseSelectable = true;
+            this.metroTabControl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MetroTabControl_MouseClick);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDelete.Location = new System.Drawing.Point(859, 1);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(56, 38);
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSearch.Location = new System.Drawing.Point(797, 1);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(56, 38);
+            this.btnSearch.TabIndex = 10;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -248,6 +266,11 @@ namespace SMART_ERP_System
 
         }
 
+        private void BtnSearch_Click(object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
@@ -262,8 +285,9 @@ namespace SMART_ERP_System
         private System.Windows.Forms.Button btnInfo;
 
         private MetroFramework.Controls.MetroTabControl metroTabControl;
-        private Button btnMenuSearch;
         private ListBox listBox;
+        private Button btnSearch;
+        private Button btnDelete;
     }
 }
 
