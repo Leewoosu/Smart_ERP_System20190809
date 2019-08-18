@@ -54,6 +54,7 @@
           <ScalarProperty Name="계정과목코드번호" ColumnName="계정과목코드번호" />
           <ScalarProperty Name="계정과목명" ColumnName="계정과목명" />
           <ScalarProperty Name="출력계정명" ColumnName="출력계정명" />
+          <ScalarProperty Name="관련계정코드" ColumnName="관련계정코드" />
           <ScalarProperty Name="계정구분" ColumnName="계정구분" />
           <ScalarProperty Name="차대구분" ColumnName="차대구분" />
           <ScalarProperty Name="입력구분" ColumnName="입력구분" />

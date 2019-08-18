@@ -19,7 +19,7 @@ namespace ClassLibrary.FormHelper
                 Screen.PrimaryScreen.Bounds.Height / 2 - form.Size.Height / 2);
         }
 
-        public static void SetMenuItems(this TreeView treeView, 
+        public static void SetMenuItems(this TreeView treeView,
             out List<메뉴등록> menuItems)
         {
             using (ERPEntities entity = new ERPEntities())
@@ -44,7 +44,7 @@ namespace ClassLibrary.FormHelper
             }
         }
 
-        public static void SetMenuItemsByAccount(this TreeView treeView, 
+        public static void SetMenuItemsByAccount(this TreeView treeView,
             out List<계정과목등록> MenuItems)
         {
             using (ERPEntities entity = new ERPEntities())
@@ -62,8 +62,10 @@ namespace ClassLibrary.FormHelper
                     int check = treeView.Nodes.Find(item.PrentKey, true).Length;
                     if (check > 0)
                     {
-                        int inputNum = treeView.Nodes.Find(item.PrentKey, true).Length - 1;
-                        treeView.Nodes.Find(item.PrentKey, true)[inputNum].Nodes.Add(item.CodeNum, item.Title);
+                        if (int.Parse(item.CodeNum) < 10000)
+                            treeView.Nodes.Find(item.PrentKey, true)[check - 1].Nodes.Add(item.CodeNum, item.Title);
+                        else
+                            treeView.Nodes.Find(item.PrentKey, true)[check - 1].Nodes.Add(item.CodeNum, item.CodeNum + " " + item.Title);
                     }
                 }
             }

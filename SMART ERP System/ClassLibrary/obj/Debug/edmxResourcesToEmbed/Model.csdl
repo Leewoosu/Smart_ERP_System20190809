@@ -55,6 +55,7 @@
     <Property Name="계정과목코드번호" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="계정과목명" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="출력계정명" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="관련계정코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="계정구분" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="차대구분" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="입력구분" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />

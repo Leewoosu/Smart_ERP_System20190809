@@ -24,6 +24,7 @@ namespace ClassLibrary
         public string 계정과목코드번호 { get; set; }
         public string 계정과목명 { get; set; }
         public string 출력계정명 { get; set; }
+        public string 관련계정코드 { get; set; }
         public string 계정구분 { get; set; }
         public string 차대구분 { get; set; }
         public string 입력구분 { get; set; }

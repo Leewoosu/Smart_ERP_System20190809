@@ -518,6 +518,8 @@ namespace SMART_ERP_System.MenuUserControl
                     DB.전표리스트.Delete(전표리스트);
                 }
             }
+
+            //if(e.KeyData)
         }
 
         /// <summary>
@@ -613,7 +615,9 @@ namespace SMART_ERP_System.MenuUserControl
                     dgv전표리스트.Controls.Remove(label);
                     label.Dispose();
                 }
-                keybd_event((byte)Keys.Enter, 0x0D, 0x01, 0);
+               //keybd_event((byte)Keys.Enter, 0x0D, 0x01, 0);
+                전표리스트단위.RowIndex = dgv전표리스트.CurrentCell.RowIndex;
+                dgv전표리스트.CurrentCell = dgv전표리스트.Rows[전표리스트단위.RowIndex].Cells[2];
             }
 
             // 3번째 열 입력 후 5번째 열로 이동
@@ -639,7 +643,8 @@ namespace SMART_ERP_System.MenuUserControl
             전표리스트단위.Index = dgv전표리스트.CurrentRow.Index;
             전표리스트단위.RowIndex = dgv전표리스트.CurrentCell.RowIndex;
 
-            if (dgv전표리스트.Rows[전표리스트단위.RowIndex].Cells[1].ColumnIndex == 1)
+            //if (dgv전표리스트.Rows[전표리스트단위.RowIndex].Cells[1].ColumnIndex == 1)
+            if (dgv전표리스트.Rows[전표리스트단위.RowIndex].Cells[1].ColumnIndex == e.ColumnIndex)
             {
                 var cellRectangle = dgv전표리스트.GetCellDisplayRectangle(1, 전표리스트단위.Index, true);
                

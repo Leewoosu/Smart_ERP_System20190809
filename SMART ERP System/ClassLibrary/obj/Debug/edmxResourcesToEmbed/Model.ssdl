@@ -51,6 +51,7 @@
     <Property Name="계정과목코드번호" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="계정과목명" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="출력계정명" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="관련계정코드" Type="nvarchar" MaxLength="20" />
     <Property Name="계정구분" Type="nvarchar" MaxLength="15" Nullable="false" />
     <Property Name="차대구분" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="입력구분" Type="nvarchar" MaxLength="10" />

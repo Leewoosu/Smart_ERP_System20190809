@@ -56,6 +56,7 @@
           <Property Name="계정과목코드번호" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="계정과목명" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="출력계정명" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="관련계정코드" Type="nvarchar" MaxLength="20" />
           <Property Name="계정구분" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="차대구분" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="입력구분" Type="nvarchar" MaxLength="10" />
@@ -2237,6 +2238,7 @@
           <Property Name="계정과목코드번호" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="계정과목명" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="출력계정명" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="관련계정코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="계정구분" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="차대구분" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="입력구분" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -4498,6 +4500,7 @@
                 <ScalarProperty Name="계정과목코드번호" ColumnName="계정과목코드번호" />
                 <ScalarProperty Name="계정과목명" ColumnName="계정과목명" />
                 <ScalarProperty Name="출력계정명" ColumnName="출력계정명" />
+                <ScalarProperty Name="관련계정코드" ColumnName="관련계정코드" />
                 <ScalarProperty Name="계정구분" ColumnName="계정구분" />
                 <ScalarProperty Name="차대구분" ColumnName="차대구분" />
                 <ScalarProperty Name="입력구분" ColumnName="입력구분" />
@@ -5556,7 +5559,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="없음" />

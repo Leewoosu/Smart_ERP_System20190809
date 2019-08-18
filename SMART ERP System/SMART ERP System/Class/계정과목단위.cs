@@ -10,5 +10,7 @@ namespace SMART_ERP_System.Class
     {
         public static string AccountCode { get; set; }
         public static string AccountName { get; set; }
+        public static string SearchingCode { get; set; }
+        public static string SelectAccountName { get; set; }
     }
 }
