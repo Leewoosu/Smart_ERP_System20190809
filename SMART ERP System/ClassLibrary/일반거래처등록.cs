@@ -27,19 +27,7 @@ namespace ClassLibrary
         public string 사업장번지 { get; set; }
         public string 사업장전화번호 { get; set; }
         public System.DateTime 거래시작일 { get; set; }
-        public System.DateTime 거래종료일 { get; set; }
-        public Nullable<System.DateTime> 계약거래시작일 { get; set; }
-        public Nullable<System.DateTime> 계약거래종료일 { get; set; }
-        public string 계약거래형태 { get; set; }
-        public int 게약거래금액 { get; set; }
-        public string 매입거래금융기관 { get; set; }
-        public string 매입거래처 { get; set; }
-        public string 매입거래예금주 { get; set; }
-        public string 매입거래계좌번호 { get; set; }
-        public string 매출거래은행코드 { get; set; }
-        public string 매출거래처 { get; set; }
-        public string 매출거래계좌번호 { get; set; }
-        public Nullable<System.DateTime> 자금결제및수금관리예정일 { get; set; }
+        public Nullable<System.DateTime> 거래종료일 { get; set; }
     
         public virtual 거래처 거래처 { get; set; }
     }

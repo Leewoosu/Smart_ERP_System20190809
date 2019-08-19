@@ -20,7 +20,7 @@ namespace ClassLibrary
             this.계정과목 = new HashSet<계정과목>();
         }
     
-        public int 그룹코드번호 { get; set; }
+        public string 그룹코드번호 { get; set; }
         public string 그룹명 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

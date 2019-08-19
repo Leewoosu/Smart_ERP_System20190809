@@ -17,16 +17,21 @@ namespace SMART_ERP_System
         private PrintDocument prtDoc = new PrintDocument();
         private PrinterSettings prtSet = new PrinterSettings();
         private PageSettings pgSet = new PageSettings();
+        Bitmap memoryImage;
 
         public PrintForm()
         {
             InitializeComponent();
+
+            printPreviewControl.Document = prtDoc;
         }
 
         private void BtnPrint_Click(object sender, EventArgs e)
         {
             prtDoc.PrinterSettings = prtSet;
             prtDoc.DefaultPageSettings = pgSet;
+            prtDoc.PrintPage += new PrintPageEventHandler(printDoc_PrintPage);
+            CaptureScreen();
 
             PrintDialog prtDialog = new PrintDialog();
             prtDialog.Document = prtDoc;
@@ -54,14 +59,14 @@ namespace SMART_ERP_System
 
             PrintPreviewDialog prtPreviewDialog = new PrintPreviewDialog();
             prtDoc.PrintPage += new PrintPageEventHandler(printDoc_PrintPage);
-            prtPreviewDialog.Document = prtDoc;
+            prtPreviewDialog.Document = printPreviewControl.Document;
             prtPreviewDialog.ShowDialog();
         }
 
         // 프린트 핸들러
         void printDoc_PrintPage(object sender, PrintPageEventArgs e)
         {
-            String textToPrint = ".Net Printing is Easy";
+            String textToPrint = "Printing.......";
             Font printFont = new Font("Courier New", 40);
             int leftMargin = e.MarginBounds.Left;
             int topMargin = e.MarginBounds.Top;
@@ -69,9 +74,17 @@ namespace SMART_ERP_System
             float height = e.PageSettings.PaperSize.Height;
 
             //// 이미지는 각자 경로로 변경
-            Image img = Image.FromFile(@"C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\Resources\print-preview.png");
-            e.Graphics.DrawImage(img, 0, 0, (int)width, (int)height);
+            e.Graphics.DrawImage(memoryImage, 0, 0, (int)width, (int)height);
             e.Graphics.DrawString(textToPrint, printFont, Brushes.Red, 50, 100);
+        }
+
+        private void CaptureScreen()
+        {
+            Graphics myGraphics = this.CreateGraphics();
+            Size s = this.Size;
+            memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
+            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
+            memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
         }
     }
 }

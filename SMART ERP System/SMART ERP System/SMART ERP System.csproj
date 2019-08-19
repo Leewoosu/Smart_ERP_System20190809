@@ -72,6 +72,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\계정과목단위.cs" />
+    <Compile Include="Class\전표단위.cs" />
+    <Compile Include="Class\전표리스트단위.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,9 +87,41 @@
     <Compile Include="MainForm_Control\LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm_Control\계정합계Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm_Control\계정합계Control.Designer.cs">
+      <DependentUpon>계정합계Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm_Control\금융거래처구분Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm_Control\금융거래처구분Control.Designer.cs">
+      <DependentUpon>금융거래처구분Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm_Control\계정코드구분Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm_Control\계정코드구분Control.Designer.cs">
+      <DependentUpon>계정코드구분Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm_Control\일반거래처구분Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm_Control\일반거래처구분Control.Designer.cs">
+      <DependentUpon>일반거래처구분Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeHelperForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeHelperForm.Designer.cs">
+      <DependentUpon>CodeHelperForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuUserControl\1.회계관리\1.전표장부관리\1-1.전표등록\전표등록.cs">
       <SubType>UserControl</SubType>
@@ -443,6 +478,21 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_Control\계정합계Control.resx">
+      <DependentUpon>계정합계Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_Control\금융거래처구분Control.resx">
+      <DependentUpon>금융거래처구분Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_Control\계정코드구분Control.resx">
+      <DependentUpon>계정코드구분Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_Control\일반거래처구분Control.resx">
+      <DependentUpon>일반거래처구분Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeHelperForm.resx">
+      <DependentUpon>CodeHelperForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuUserControl\1.회계관리\1.전표장부관리\1-1.전표등록\전표등록.resx">
       <DependentUpon>전표등록.cs</DependentUpon>
     </EmbeddedResource>
@@ -626,7 +676,20 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ClassLibrary.거래처.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.계정과목.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.계정과목그룹.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.금융거래처등록.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.부서등록.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.사원등록.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.손익계산서.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.일반거래처등록.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.재무상태표.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.전표.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.전표리스트.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.제품.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.합계잔액시산표.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.회사등록.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -683,6 +746,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

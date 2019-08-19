@@ -41,10 +41,5 @@ namespace SMART_ERP_System
                 mainForm.Show();
             }
         }
-
-        private void LoginControl_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

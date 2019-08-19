@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
@@ -76,12 +77,22 @@
             this.label21 = new System.Windows.Forms.Label();
             this.textBox32 = new System.Windows.Forms.TextBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv발주리스트 = new System.Windows.Forms.DataGridView();
+            this.자재번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bds발주리스트 = new System.Windows.Forms.BindingSource(this.components);
+            this.dgv발주서 = new System.Windows.Forms.DataGridView();
+            this.발주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.공급업체번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.주문날짜DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.납기일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bds발주서 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv발주리스트)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds발주리스트)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv발주서)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds발주서)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -110,7 +121,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox1.Location = new System.Drawing.Point(7, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1018, 108);
@@ -229,7 +240,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label15.Location = new System.Drawing.Point(39, 23);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(49, 11);
@@ -239,7 +250,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.Location = new System.Drawing.Point(645, 26);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(27, 11);
@@ -272,7 +283,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.Location = new System.Drawing.Point(315, 74);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 11);
@@ -282,7 +293,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(39, 50);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 11);
@@ -292,7 +303,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.Location = new System.Drawing.Point(333, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 11);
@@ -302,7 +313,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.Location = new System.Drawing.Point(323, 48);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 11);
@@ -362,6 +373,7 @@
             this.button5.TabIndex = 51;
             this.button5.Text = "청구적용조회";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // groupBox2
             // 
@@ -381,7 +393,7 @@
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.textBox32);
             this.groupBox2.Controls.Add(this.textBox36);
-            this.groupBox2.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox2.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox2.Location = new System.Drawing.Point(7, 561);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1018, 79);
@@ -411,7 +423,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(513, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 11);
@@ -421,7 +433,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label12.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label12.Location = new System.Drawing.Point(296, 50);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(49, 11);
@@ -431,7 +443,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label16.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label16.Location = new System.Drawing.Point(513, 26);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(60, 11);
@@ -455,7 +467,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label14.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label14.Location = new System.Drawing.Point(296, 26);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(49, 11);
@@ -479,7 +491,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.Location = new System.Drawing.Point(72, 50);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 11);
@@ -489,7 +501,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.Location = new System.Drawing.Point(72, 26);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(38, 11);
@@ -499,7 +511,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label20.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label20.Location = new System.Drawing.Point(6, 50);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(49, 11);
@@ -509,7 +521,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label21.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label21.Location = new System.Drawing.Point(6, 26);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(49, 11);
@@ -530,31 +542,92 @@
             this.textBox36.Size = new System.Drawing.Size(156, 20);
             this.textBox36.TabIndex = 28;
             // 
-            // dataGridView2
+            // dgv발주리스트
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(7, 355);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1018, 200);
-            this.dataGridView2.TabIndex = 88;
+            this.dgv발주리스트.AutoGenerateColumns = false;
+            this.dgv발주리스트.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv발주리스트.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv발주리스트.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.자재번호DataGridViewTextBoxColumn,
+            this.수량DataGridViewTextBoxColumn});
+            this.dgv발주리스트.DataSource = this.bds발주리스트;
+            this.dgv발주리스트.Location = new System.Drawing.Point(7, 355);
+            this.dgv발주리스트.Name = "dgv발주리스트";
+            this.dgv발주리스트.RowTemplate.Height = 23;
+            this.dgv발주리스트.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv발주리스트.Size = new System.Drawing.Size(1018, 200);
+            this.dgv발주리스트.TabIndex = 88;
             // 
-            // dataGridView1
+            // 자재번호DataGridViewTextBoxColumn
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 145);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1018, 204);
-            this.dataGridView1.TabIndex = 87;
+            this.자재번호DataGridViewTextBoxColumn.DataPropertyName = "자재번호";
+            this.자재번호DataGridViewTextBoxColumn.HeaderText = "자재번호";
+            this.자재번호DataGridViewTextBoxColumn.Name = "자재번호DataGridViewTextBoxColumn";
+            // 
+            // 수량DataGridViewTextBoxColumn
+            // 
+            this.수량DataGridViewTextBoxColumn.DataPropertyName = "수량";
+            this.수량DataGridViewTextBoxColumn.HeaderText = "수량";
+            this.수량DataGridViewTextBoxColumn.Name = "수량DataGridViewTextBoxColumn";
+            // 
+            // bds발주리스트
+            // 
+            this.bds발주리스트.DataSource = typeof(ClassLibrary.발주리스트);
+            // 
+            // dgv발주서
+            // 
+            this.dgv발주서.AutoGenerateColumns = false;
+            this.dgv발주서.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv발주서.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv발주서.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.발주번호DataGridViewTextBoxColumn,
+            this.공급업체번호DataGridViewTextBoxColumn,
+            this.주문날짜DataGridViewTextBoxColumn,
+            this.납기일DataGridViewTextBoxColumn});
+            this.dgv발주서.DataSource = this.bds발주서;
+            this.dgv발주서.Location = new System.Drawing.Point(7, 145);
+            this.dgv발주서.Name = "dgv발주서";
+            this.dgv발주서.RowTemplate.Height = 23;
+            this.dgv발주서.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv발주서.Size = new System.Drawing.Size(1018, 204);
+            this.dgv발주서.TabIndex = 87;
+            this.dgv발주서.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv발주서_CellClick);
+            // 
+            // 발주번호DataGridViewTextBoxColumn
+            // 
+            this.발주번호DataGridViewTextBoxColumn.DataPropertyName = "발주번호";
+            this.발주번호DataGridViewTextBoxColumn.HeaderText = "발주번호";
+            this.발주번호DataGridViewTextBoxColumn.Name = "발주번호DataGridViewTextBoxColumn";
+            // 
+            // 공급업체번호DataGridViewTextBoxColumn
+            // 
+            this.공급업체번호DataGridViewTextBoxColumn.DataPropertyName = "공급업체번호";
+            this.공급업체번호DataGridViewTextBoxColumn.HeaderText = "공급업체번호";
+            this.공급업체번호DataGridViewTextBoxColumn.Name = "공급업체번호DataGridViewTextBoxColumn";
+            // 
+            // 주문날짜DataGridViewTextBoxColumn
+            // 
+            this.주문날짜DataGridViewTextBoxColumn.DataPropertyName = "주문날짜";
+            this.주문날짜DataGridViewTextBoxColumn.HeaderText = "주문날짜";
+            this.주문날짜DataGridViewTextBoxColumn.Name = "주문날짜DataGridViewTextBoxColumn";
+            // 
+            // 납기일DataGridViewTextBoxColumn
+            // 
+            this.납기일DataGridViewTextBoxColumn.DataPropertyName = "납기일";
+            this.납기일DataGridViewTextBoxColumn.HeaderText = "납기일";
+            this.납기일DataGridViewTextBoxColumn.Name = "납기일DataGridViewTextBoxColumn";
+            // 
+            // bds발주서
+            // 
+            this.bds발주서.DataSource = typeof(ClassLibrary.발주서);
             // 
             // 발주등록
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv발주리스트);
+            this.Controls.Add(this.dgv발주서);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.groupBox1);
@@ -564,12 +637,15 @@
             this.Controls.Add(this.label1);
             this.Name = "발주등록";
             this.Size = new System.Drawing.Size(1044, 645);
+            this.Load += new System.EventHandler(this.발주등록_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv발주리스트)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds발주리스트)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv발주서)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds발주서)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -625,7 +701,15 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox32;
         private System.Windows.Forms.TextBox textBox36;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv발주리스트;
+        private System.Windows.Forms.DataGridView dgv발주서;
+        private System.Windows.Forms.BindingSource bds발주리스트;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 발주번호DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 공급업체번호DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 주문날짜DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 납기일DataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bds발주서;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 자재번호DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 수량DataGridViewTextBoxColumn;
     }
 }

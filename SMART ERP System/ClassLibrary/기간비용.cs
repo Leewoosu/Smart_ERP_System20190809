@@ -28,7 +28,7 @@ namespace ClassLibrary
         public System.DateTime 해지일자 { get; set; }
         public int 환급금액 { get; set; }
         public string 해지사유 { get; set; }
-        public int 기간비용계산방법코드번호 { get; set; }
+        public string 기간비용계산방법코드번호 { get; set; }
     
         public virtual 기간비용계산방법 기간비용계산방법 { get; set; }
     }

@@ -20,7 +20,7 @@ namespace ClassLibrary
             this.급_상여지급_직종및_급여형태 = new HashSet<급_상여지급_직종및_급여형태>();
         }
     
-        public int 지급번호코드 { get; set; }
+        public string 지급번호코드 { get; set; }
         public bool 급여구분 { get; set; }
         public string 입사자상여계산_방법 { get; set; }
         public string 입사자상여계산_기준일_수 { get; set; }

@@ -17,7 +17,6 @@ namespace ClassLibrary
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public 사원등록()
         {
-            this.고정자산 = new HashSet<고정자산>();
             this.급여계산 = new HashSet<급여계산>();
             this.부서등록 = new HashSet<부서등록>();
             this.사용자권한설정 = new HashSet<사용자권한설정>();
@@ -34,8 +33,6 @@ namespace ClassLibrary
         public string 비상연락망 { get; set; }
         public string 암호 { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<고정자산> 고정자산 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<급여계산> 급여계산 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

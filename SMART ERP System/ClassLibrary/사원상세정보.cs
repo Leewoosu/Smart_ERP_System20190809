@@ -15,7 +15,7 @@ namespace ClassLibrary
     public partial class 사원상세정보
     {
         public string 사원코드 { get; set; }
-        public byte[] 사원사진 { get; set; }
+        public string 사원사진 { get; set; }
         public string 사원이름_영문_ { get; set; }
         public string 내외국인구분 { get; set; }
         public string 주민등록번호 { get; set; }

@@ -14,16 +14,9 @@ namespace ClassLibrary
     
     public partial class 자재전표
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public 자재전표()
-        {
-            this.발주확인리스트 = new HashSet<발주확인리스트>();
-        }
-    
-        public int 자재전표번호 { get; set; }
+        public string 자재전표번호 { get; set; }
         public int 발주확인서번호 { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<발주확인리스트> 발주확인리스트 { get; set; }
+        public virtual 발주확인서 발주확인서 { get; set; }
     }
 }

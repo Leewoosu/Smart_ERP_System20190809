@@ -28,59 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dtpModificationDate = new System.Windows.Forms.DateTimePicker();
+            this.txb내용연수 = new System.Windows.Forms.TextBox();
+            this.txb경비구분 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dtp수정일자 = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
-            this.dtpInputDate = new System.Windows.Forms.DateTimePicker();
+            this.dtp입력일자 = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.txbGeneralDepreciation = new System.Windows.Forms.TextBox();
+            this.txb일반상각비 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txbAcquisitionQuantity = new System.Windows.Forms.TextBox();
+            this.txb취득수 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txb당기말상각누계액 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbbDurableYears = new System.Windows.Forms.ComboBox();
-            this.cbbDepreciationMethod = new System.Windows.Forms.ComboBox();
+            this.cbb상각방법 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txb전기말상각누계액 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txbAcquisitionCost = new System.Windows.Forms.TextBox();
+            this.txb취득원가 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.txbNote = new System.Windows.Forms.TextBox();
+            this.txb비고 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txbEmployeeName = new System.Windows.Forms.TextBox();
-            this.cbbEmployeeCode = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txbModelName = new System.Windows.Forms.TextBox();
+            this.txb모델명 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.txbProductionCompanyName = new System.Windows.Forms.TextBox();
+            this.txb제작사명 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txbSize = new System.Windows.Forms.TextBox();
+            this.txb규격 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txbSupplierName = new System.Windows.Forms.TextBox();
+            this.txb구입처명 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txbAccountName = new System.Windows.Forms.TextBox();
-            this.cbbAccountCode = new System.Windows.Forms.ComboBox();
+            this.txb고정자산계정명 = new System.Windows.Forms.TextBox();
+            this.cbb고정자산계정코드 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvList = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txbCompanyName = new System.Windows.Forms.TextBox();
-            this.cbbCompanyCode = new System.Windows.Forms.ComboBox();
+            this.고정자산dgv = new System.Windows.Forms.DataGridView();
+            this.txb회사명 = new System.Windows.Forms.TextBox();
+            this.cbb회사코드 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnStatementForm = new System.Windows.Forms.Button();
@@ -89,28 +77,35 @@
             this.btnStatementSearch = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.고정자산코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.고정자산명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.계정과목코드번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.취득일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.처리여부DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.고정자산bds = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.고정자산dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.고정자산bds)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.tabControl2);
-            this.groupBox1.Controls.Add(this.txbAccountName);
-            this.groupBox1.Controls.Add(this.cbbAccountCode);
+            this.groupBox1.Controls.Add(this.txb고정자산계정명);
+            this.groupBox1.Controls.Add(this.cbb고정자산계정코드);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dgvList);
-            this.groupBox1.Controls.Add(this.txbCompanyName);
-            this.groupBox1.Controls.Add(this.cbbCompanyCode);
+            this.groupBox1.Controls.Add(this.고정자산dgv);
+            this.groupBox1.Controls.Add(this.txb회사명);
+            this.groupBox1.Controls.Add(this.cbb회사코드);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnStatementForm);
@@ -137,29 +132,25 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.label22);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.txb내용연수);
+            this.tabPage2.Controls.Add(this.txb경비구분);
             this.tabPage2.Controls.Add(this.label20);
-            this.tabPage2.Controls.Add(this.dtpModificationDate);
+            this.tabPage2.Controls.Add(this.dtp수정일자);
             this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.dtpInputDate);
+            this.tabPage2.Controls.Add(this.dtp입력일자);
             this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.txbGeneralDepreciation);
+            this.tabPage2.Controls.Add(this.txb일반상각비);
             this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.txbAcquisitionQuantity);
+            this.tabPage2.Controls.Add(this.txb취득수);
             this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.txb당기말상각누계액);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.cbbDurableYears);
-            this.tabPage2.Controls.Add(this.cbbDepreciationMethod);
+            this.tabPage2.Controls.Add(this.cbb상각방법);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.textBox10);
+            this.tabPage2.Controls.Add(this.txb전기말상각누계액);
             this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.txbAcquisitionCost);
+            this.tabPage2.Controls.Add(this.txb취득원가);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -169,119 +160,138 @@
             this.tabPage2.Text = "주요등록사항";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dtpModificationDate
+            // txb내용연수
             // 
-            this.dtpModificationDate.Location = new System.Drawing.Point(158, 402);
-            this.dtpModificationDate.Name = "dtpModificationDate";
-            this.dtpModificationDate.Size = new System.Drawing.Size(173, 21);
-            this.dtpModificationDate.TabIndex = 108;
+            this.txb내용연수.Location = new System.Drawing.Point(313, 170);
+            this.txb내용연수.Name = "txb내용연수";
+            this.txb내용연수.Size = new System.Drawing.Size(70, 21);
+            this.txb내용연수.TabIndex = 115;
+            // 
+            // txb경비구분
+            // 
+            this.txb경비구분.Location = new System.Drawing.Point(158, 208);
+            this.txb경비구분.Name = "txb경비구분";
+            this.txb경비구분.Size = new System.Drawing.Size(70, 21);
+            this.txb경비구분.TabIndex = 110;
+            // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label20.Location = new System.Drawing.Point(98, 211);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(130, 22);
+            this.label20.TabIndex = 109;
+            this.label20.Text = "경비구분";
+            // 
+            // dtp수정일자
+            // 
+            this.dtp수정일자.CustomFormat = "yyyy-MM-dd";
+            this.dtp수정일자.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp수정일자.Location = new System.Drawing.Point(158, 399);
+            this.dtp수정일자.Name = "dtp수정일자";
+            this.dtp수정일자.Size = new System.Drawing.Size(173, 21);
+            this.dtp수정일자.TabIndex = 108;
             // 
             // label13
             // 
             this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(98, 405);
+            this.label13.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(98, 402);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(130, 18);
             this.label13.TabIndex = 107;
             this.label13.Text = "수정일자";
             // 
-            // dtpInputDate
+            // dtp입력일자
             // 
-            this.dtpInputDate.Location = new System.Drawing.Point(158, 366);
-            this.dtpInputDate.Name = "dtpInputDate";
-            this.dtpInputDate.Size = new System.Drawing.Size(173, 21);
-            this.dtpInputDate.TabIndex = 106;
+            this.dtp입력일자.CustomFormat = "yyyy-MM-dd";
+            this.dtp입력일자.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp입력일자.Location = new System.Drawing.Point(158, 360);
+            this.dtp입력일자.Name = "dtp입력일자";
+            this.dtp입력일자.Size = new System.Drawing.Size(173, 21);
+            this.dtp입력일자.TabIndex = 106;
             // 
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(98, 369);
+            this.label11.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(98, 363);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(130, 18);
             this.label11.TabIndex = 105;
             this.label11.Text = "입력일자";
             // 
-            // txbGeneralDepreciation
+            // txb일반상각비
             // 
-            this.txbGeneralDepreciation.Location = new System.Drawing.Point(158, 252);
-            this.txbGeneralDepreciation.Name = "txbGeneralDepreciation";
-            this.txbGeneralDepreciation.Size = new System.Drawing.Size(225, 21);
-            this.txbGeneralDepreciation.TabIndex = 104;
-            this.txbGeneralDepreciation.Text = "금액";
+            this.txb일반상각비.Location = new System.Drawing.Point(158, 251);
+            this.txb일반상각비.Name = "txb일반상각비";
+            this.txb일반상각비.Size = new System.Drawing.Size(225, 21);
+            this.txb일반상각비.TabIndex = 104;
             // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(87, 256);
+            this.label7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(87, 255);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(130, 22);
             this.label7.TabIndex = 103;
             this.label7.Text = "일반상각비";
             // 
-            // txbAcquisitionQuantity
+            // txb취득수
             // 
-            this.txbAcquisitionQuantity.Location = new System.Drawing.Point(308, 212);
-            this.txbAcquisitionQuantity.Name = "txbAcquisitionQuantity";
-            this.txbAcquisitionQuantity.Size = new System.Drawing.Size(70, 21);
-            this.txbAcquisitionQuantity.TabIndex = 102;
-            this.txbAcquisitionQuantity.Text = "수량";
+            this.txb취득수.Location = new System.Drawing.Point(313, 208);
+            this.txb취득수.Name = "txb취득수";
+            this.txb취득수.Size = new System.Drawing.Size(70, 21);
+            this.txb취득수.TabIndex = 102;
             // 
             // label10
             // 
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(248, 215);
+            this.label10.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(248, 211);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(130, 22);
             this.label10.TabIndex = 98;
             this.label10.Text = "취득수량";
             // 
-            // textBox4
+            // txb당기말상각누계액
             // 
-            this.textBox4.Location = new System.Drawing.Point(158, 289);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(225, 21);
-            this.textBox4.TabIndex = 97;
-            this.textBox4.Text = "금액";
+            this.txb당기말상각누계액.Location = new System.Drawing.Point(158, 293);
+            this.txb당기말상각누계액.Name = "txb당기말상각누계액";
+            this.txb당기말상각누계액.Size = new System.Drawing.Size(225, 21);
+            this.txb당기말상각누계액.TabIndex = 97;
             // 
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(47, 293);
+            this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(47, 297);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 22);
             this.label6.TabIndex = 96;
             this.label6.Text = "당기말상각누계액";
             // 
-            // cbbDurableYears
+            // cbb상각방법
             // 
-            this.cbbDurableYears.Font = new System.Drawing.Font("Gulim", 10F);
-            this.cbbDurableYears.FormattingEnabled = true;
-            this.cbbDurableYears.Location = new System.Drawing.Point(308, 177);
-            this.cbbDurableYears.Name = "cbbDurableYears";
-            this.cbbDurableYears.Size = new System.Drawing.Size(75, 21);
-            this.cbbDurableYears.TabIndex = 95;
-            this.cbbDurableYears.Text = "연수";
-            // 
-            // cbbDepreciationMethod
-            // 
-            this.cbbDepreciationMethod.Font = new System.Drawing.Font("Gulim", 10F);
-            this.cbbDepreciationMethod.FormattingEnabled = true;
-            this.cbbDepreciationMethod.Location = new System.Drawing.Point(158, 177);
-            this.cbbDepreciationMethod.Name = "cbbDepreciationMethod";
-            this.cbbDepreciationMethod.Size = new System.Drawing.Size(70, 21);
-            this.cbbDepreciationMethod.TabIndex = 94;
-            this.cbbDepreciationMethod.ValueMember = "상각방법코드번호";
+            this.cbb상각방법.DisplayMember = "상각방법코드번호";
+            this.cbb상각방법.Font = new System.Drawing.Font("굴림", 10F);
+            this.cbb상각방법.FormattingEnabled = true;
+            this.cbb상각방법.Items.AddRange(new object[] {
+            "정액법",
+            "정률법"});
+            this.cbb상각방법.Location = new System.Drawing.Point(158, 168);
+            this.cbb상각방법.Name = "cbb상각방법";
+            this.cbb상각방법.Size = new System.Drawing.Size(70, 21);
+            this.cbb상각방법.TabIndex = 94;
+            this.cbb상각방법.ValueMember = "상각방법코드번호";
             // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(248, 181);
+            this.label5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(248, 172);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 22);
             this.label5.TabIndex = 68;
@@ -290,44 +300,42 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(98, 182);
+            this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(98, 173);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 22);
             this.label4.TabIndex = 66;
             this.label4.Text = "상각방법";
             // 
-            // textBox10
+            // txb전기말상각누계액
             // 
-            this.textBox10.Location = new System.Drawing.Point(158, 104);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(225, 21);
-            this.textBox10.TabIndex = 65;
-            this.textBox10.Text = "금액";
+            this.txb전기말상각누계액.Location = new System.Drawing.Point(158, 123);
+            this.txb전기말상각누계액.Name = "txb전기말상각누계액";
+            this.txb전기말상각누계액.Size = new System.Drawing.Size(225, 21);
+            this.txb전기말상각누계액.TabIndex = 65;
             // 
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(47, 108);
+            this.label12.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(47, 127);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(130, 22);
             this.label12.TabIndex = 64;
             this.label12.Text = "전기말상각누계액";
             // 
-            // txbAcquisitionCost
+            // txb취득원가
             // 
-            this.txbAcquisitionCost.Location = new System.Drawing.Point(158, 67);
-            this.txbAcquisitionCost.Name = "txbAcquisitionCost";
-            this.txbAcquisitionCost.Size = new System.Drawing.Size(225, 21);
-            this.txbAcquisitionCost.TabIndex = 51;
-            this.txbAcquisitionCost.Text = "금액";
+            this.txb취득원가.Location = new System.Drawing.Point(158, 78);
+            this.txb취득원가.Name = "txb취득원가";
+            this.txb취득원가.Size = new System.Drawing.Size(225, 21);
+            this.txb취득원가.TabIndex = 51;
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(98, 71);
+            this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(98, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 22);
             this.label3.TabIndex = 49;
@@ -335,18 +343,15 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.txbNote);
+            this.tabPage3.Controls.Add(this.txb비고);
             this.tabPage3.Controls.Add(this.label19);
-            this.tabPage3.Controls.Add(this.txbEmployeeName);
-            this.tabPage3.Controls.Add(this.cbbEmployeeCode);
-            this.tabPage3.Controls.Add(this.label18);
-            this.tabPage3.Controls.Add(this.txbModelName);
+            this.tabPage3.Controls.Add(this.txb모델명);
             this.tabPage3.Controls.Add(this.label17);
-            this.tabPage3.Controls.Add(this.txbProductionCompanyName);
+            this.tabPage3.Controls.Add(this.txb제작사명);
             this.tabPage3.Controls.Add(this.label16);
-            this.tabPage3.Controls.Add(this.txbSize);
+            this.tabPage3.Controls.Add(this.txb규격);
             this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Controls.Add(this.txbSupplierName);
+            this.tabPage3.Controls.Add(this.txb구입처명);
             this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -356,279 +361,162 @@
             this.tabPage3.Text = "추가등록사항";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // txbNote
+            // txb비고
             // 
-            this.txbNote.Location = new System.Drawing.Point(146, 332);
-            this.txbNote.Name = "txbNote";
-            this.txbNote.Size = new System.Drawing.Size(225, 21);
-            this.txbNote.TabIndex = 64;
+            this.txb비고.Location = new System.Drawing.Point(146, 301);
+            this.txb비고.Name = "txb비고";
+            this.txb비고.Size = new System.Drawing.Size(225, 21);
+            this.txb비고.TabIndex = 64;
             // 
             // label19
             // 
             this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(108, 336);
+            this.label19.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label19.Location = new System.Drawing.Point(108, 305);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(79, 22);
             this.label19.TabIndex = 63;
             this.label19.Text = "비고";
             // 
-            // txbEmployeeName
+            // txb모델명
             // 
-            this.txbEmployeeName.Location = new System.Drawing.Point(237, 289);
-            this.txbEmployeeName.Name = "txbEmployeeName";
-            this.txbEmployeeName.Size = new System.Drawing.Size(82, 21);
-            this.txbEmployeeName.TabIndex = 62;
-            this.txbEmployeeName.Text = "사원명";
-            // 
-            // cbbEmployeeCode
-            // 
-            this.cbbEmployeeCode.Font = new System.Drawing.Font("Gulim", 10F);
-            this.cbbEmployeeCode.FormattingEnabled = true;
-            this.cbbEmployeeCode.Location = new System.Drawing.Point(148, 289);
-            this.cbbEmployeeCode.Name = "cbbEmployeeCode";
-            this.cbbEmployeeCode.Size = new System.Drawing.Size(80, 21);
-            this.cbbEmployeeCode.TabIndex = 61;
-            this.cbbEmployeeCode.Text = "사원코드";
-            // 
-            // label18
-            // 
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(98, 293);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(79, 22);
-            this.label18.TabIndex = 60;
-            this.label18.Text = "관리자";
-            // 
-            // txbModelName
-            // 
-            this.txbModelName.Location = new System.Drawing.Point(148, 237);
-            this.txbModelName.Name = "txbModelName";
-            this.txbModelName.Size = new System.Drawing.Size(225, 21);
-            this.txbModelName.TabIndex = 59;
-            this.txbModelName.Text = "모델명";
+            this.txb모델명.Location = new System.Drawing.Point(148, 250);
+            this.txb모델명.Name = "txb모델명";
+            this.txb모델명.Size = new System.Drawing.Size(225, 21);
+            this.txb모델명.TabIndex = 59;
             // 
             // label17
             // 
             this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(110, 241);
+            this.label17.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label17.Location = new System.Drawing.Point(110, 254);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(79, 22);
             this.label17.TabIndex = 58;
             this.label17.Text = "모델";
             // 
-            // txbProductionCompanyName
+            // txb제작사명
             // 
-            this.txbProductionCompanyName.Location = new System.Drawing.Point(148, 132);
-            this.txbProductionCompanyName.Name = "txbProductionCompanyName";
-            this.txbProductionCompanyName.Size = new System.Drawing.Size(225, 21);
-            this.txbProductionCompanyName.TabIndex = 57;
-            this.txbProductionCompanyName.Text = "제작사명";
+            this.txb제작사명.Location = new System.Drawing.Point(148, 145);
+            this.txb제작사명.Name = "txb제작사명";
+            this.txb제작사명.Size = new System.Drawing.Size(225, 21);
+            this.txb제작사명.TabIndex = 57;
             // 
             // label16
             // 
             this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(97, 136);
+            this.label16.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label16.Location = new System.Drawing.Point(97, 149);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(79, 22);
             this.label16.TabIndex = 56;
             this.label16.Text = "제작사";
             // 
-            // txbSize
+            // txb규격
             // 
-            this.txbSize.Location = new System.Drawing.Point(148, 183);
-            this.txbSize.Name = "txbSize";
-            this.txbSize.Size = new System.Drawing.Size(225, 21);
-            this.txbSize.TabIndex = 55;
-            this.txbSize.Text = "크기";
+            this.txb규격.Location = new System.Drawing.Point(148, 196);
+            this.txb규격.Name = "txb규격";
+            this.txb규격.Size = new System.Drawing.Size(225, 21);
+            this.txb규격.TabIndex = 55;
             // 
             // label15
             // 
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(110, 187);
+            this.label15.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(110, 200);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(79, 22);
             this.label15.TabIndex = 54;
             this.label15.Text = "규격";
             // 
-            // txbSupplierName
+            // txb구입처명
             // 
-            this.txbSupplierName.Location = new System.Drawing.Point(148, 83);
-            this.txbSupplierName.Name = "txbSupplierName";
-            this.txbSupplierName.Size = new System.Drawing.Size(225, 21);
-            this.txbSupplierName.TabIndex = 53;
-            this.txbSupplierName.Text = "구입처명";
+            this.txb구입처명.Location = new System.Drawing.Point(148, 96);
+            this.txb구입처명.Name = "txb구입처명";
+            this.txb구입처명.Size = new System.Drawing.Size(225, 21);
+            this.txb구입처명.TabIndex = 53;
             // 
             // label14
             // 
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(97, 87);
+            this.label14.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label14.Location = new System.Drawing.Point(97, 100);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(79, 22);
             this.label14.TabIndex = 52;
             this.label14.Text = "구입처";
             // 
-            // txbAccountName
+            // txb고정자산계정명
             // 
-            this.txbAccountName.Location = new System.Drawing.Point(434, 76);
-            this.txbAccountName.Name = "txbAccountName";
-            this.txbAccountName.Size = new System.Drawing.Size(82, 21);
-            this.txbAccountName.TabIndex = 94;
-            this.txbAccountName.Text = "계정명";
+            this.txb고정자산계정명.Location = new System.Drawing.Point(434, 76);
+            this.txb고정자산계정명.Name = "txb고정자산계정명";
+            this.txb고정자산계정명.Size = new System.Drawing.Size(82, 21);
+            this.txb고정자산계정명.TabIndex = 94;
+            this.txb고정자산계정명.Text = "계정명";
             // 
-            // cbbAccountCode
+            // cbb고정자산계정코드
             // 
-            this.cbbAccountCode.Font = new System.Drawing.Font("Gulim", 10F);
-            this.cbbAccountCode.FormattingEnabled = true;
-            this.cbbAccountCode.Location = new System.Drawing.Point(346, 76);
-            this.cbbAccountCode.Name = "cbbAccountCode";
-            this.cbbAccountCode.Size = new System.Drawing.Size(80, 21);
-            this.cbbAccountCode.TabIndex = 93;
-            this.cbbAccountCode.Text = "계정코드";
+            this.cbb고정자산계정코드.Font = new System.Drawing.Font("굴림", 10F);
+            this.cbb고정자산계정코드.FormattingEnabled = true;
+            this.cbb고정자산계정코드.Location = new System.Drawing.Point(346, 76);
+            this.cbb고정자산계정코드.Name = "cbb고정자산계정코드";
+            this.cbb고정자산계정코드.Size = new System.Drawing.Size(80, 21);
+            this.cbb고정자산계정코드.TabIndex = 93;
+            this.cbb고정자산계정코드.Text = "계정코드";
+            this.cbb고정자산계정코드.SelectedValueChanged += new System.EventHandler(this.Cbb고정자산계정코드_SelectedValueChanged);
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Font = new System.Drawing.Font("Gulim", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(272, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 22);
             this.label1.TabIndex = 92;
             this.label1.Text = "자산유형";
             // 
-            // dgvList
+            // 고정자산dgv
             // 
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12});
-            this.dgvList.Location = new System.Drawing.Point(13, 105);
-            this.dgvList.Name = "dgvList";
-            this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(540, 512);
-            this.dgvList.TabIndex = 91;
+            this.고정자산dgv.AutoGenerateColumns = false;
+            this.고정자산dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.고정자산dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.고정자산코드DataGridViewTextBoxColumn,
+            this.고정자산명DataGridViewTextBoxColumn,
+            this.계정과목코드번호DataGridViewTextBoxColumn,
+            this.취득일DataGridViewTextBoxColumn,
+            this.처리여부DataGridViewTextBoxColumn});
+            this.고정자산dgv.DataSource = this.고정자산bds;
+            this.고정자산dgv.Location = new System.Drawing.Point(13, 105);
+            this.고정자산dgv.Name = "고정자산dgv";
+            this.고정자산dgv.RowTemplate.Height = 23;
+            this.고정자산dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.고정자산dgv.Size = new System.Drawing.Size(540, 512);
+            this.고정자산dgv.TabIndex = 91;
+            this.고정자산dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.고정자산dgv_CellContentClick);
             // 
-            // Column1
+            // txb회사명
             // 
-            this.Column1.FillWeight = 99.8811F;
-            this.Column1.HeaderText = "결의일";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 70;
+            this.txb회사명.Location = new System.Drawing.Point(172, 77);
+            this.txb회사명.Name = "txb회사명";
+            this.txb회사명.Size = new System.Drawing.Size(82, 21);
+            this.txb회사명.TabIndex = 90;
+            this.txb회사명.Text = "회사명";
             // 
-            // Column2
+            // cbb회사코드
             // 
-            this.Column2.FillWeight = 85.5817F;
-            this.Column2.HeaderText = "순번";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 60;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 112.2143F;
-            this.Column3.HeaderText = "기표일자";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 79;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 84.57403F;
-            this.Column4.HeaderText = "구분";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 59;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 85.51608F;
-            this.Column5.HeaderText = "코드";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 60;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 138.2009F;
-            this.Column6.HeaderText = "계정과목명";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 97;
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 101.6041F;
-            this.Column7.HeaderText = "코드";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 71;
-            // 
-            // Column8
-            // 
-            this.Column8.FillWeight = 115.938F;
-            this.Column8.HeaderText = "거래처명";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 81;
-            // 
-            // Column9
-            // 
-            this.Column9.FillWeight = 90.67206F;
-            this.Column9.HeaderText = "적요";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 64;
-            // 
-            // Column10
-            // 
-            this.Column10.FillWeight = 86.24908F;
-            this.Column10.HeaderText = "차변";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 60;
-            // 
-            // Column11
-            // 
-            this.Column11.FillWeight = 84.78826F;
-            this.Column11.HeaderText = "대변";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 60;
-            // 
-            // Column12
-            // 
-            this.Column12.FillWeight = 114.7804F;
-            this.Column12.HeaderText = "출력일자";
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 80;
-            // 
-            // txbCompanyName
-            // 
-            this.txbCompanyName.Location = new System.Drawing.Point(172, 77);
-            this.txbCompanyName.Name = "txbCompanyName";
-            this.txbCompanyName.Size = new System.Drawing.Size(82, 21);
-            this.txbCompanyName.TabIndex = 90;
-            this.txbCompanyName.Text = "회사명";
-            // 
-            // cbbCompanyCode
-            // 
-            this.cbbCompanyCode.Font = new System.Drawing.Font("Gulim", 10F);
-            this.cbbCompanyCode.FormattingEnabled = true;
-            this.cbbCompanyCode.Location = new System.Drawing.Point(86, 77);
-            this.cbbCompanyCode.Name = "cbbCompanyCode";
-            this.cbbCompanyCode.Size = new System.Drawing.Size(80, 21);
-            this.cbbCompanyCode.TabIndex = 89;
-            this.cbbCompanyCode.Text = "회사코드";
+            this.cbb회사코드.Font = new System.Drawing.Font("굴림", 10F);
+            this.cbb회사코드.FormattingEnabled = true;
+            this.cbb회사코드.Location = new System.Drawing.Point(86, 77);
+            this.cbb회사코드.Name = "cbb회사코드";
+            this.cbb회사코드.Size = new System.Drawing.Size(80, 21);
+            this.cbb회사코드.TabIndex = 89;
+            this.cbb회사코드.Text = "회사코드";
+            this.cbb회사코드.SelectedValueChanged += new System.EventHandler(this.Cbb회사코드_SelectedValueChanged);
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Font = new System.Drawing.Font("Gulim", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(18, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 22);
@@ -637,7 +525,7 @@
             // 
             // label8
             // 
-            this.label8.Font = new System.Drawing.Font("GulimChe", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Font = new System.Drawing.Font("굴림체", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.Location = new System.Drawing.Point(57, 34);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(103, 27);
@@ -698,58 +586,69 @@
             this.richTextBox2.TabIndex = 81;
             this.richTextBox2.Text = "";
             // 
-            // textBox1
+            // button1
             // 
-            this.textBox1.Location = new System.Drawing.Point(158, 212);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(70, 21);
-            this.textBox1.TabIndex = 110;
+            this.button1.Location = new System.Drawing.Point(730, 76);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 96;
+            this.button1.Text = "등록";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.등록btn_Click);
             // 
-            // label20
+            // button2
             // 
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label20.Location = new System.Drawing.Point(98, 215);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(130, 22);
-            this.label20.TabIndex = 109;
-            this.label20.Text = "경비구분";
+            this.button2.Location = new System.Drawing.Point(811, 76);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 97;
+            this.button2.Text = "삭제";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.삭제btn_Click);
             // 
-            // textBox2
+            // button3
             // 
-            this.textBox2.Location = new System.Drawing.Point(158, 139);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(225, 21);
-            this.textBox2.TabIndex = 112;
-            this.textBox2.Text = "금액";
+            this.button3.Location = new System.Drawing.Point(892, 77);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 98;
+            this.button3.Text = "수정";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.수정btn_Click);
             // 
-            // label21
+            // 고정자산코드DataGridViewTextBoxColumn
             // 
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label21.Location = new System.Drawing.Point(60, 143);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(130, 22);
-            this.label21.TabIndex = 111;
-            this.label21.Text = "전기말장부가액";
+            this.고정자산코드DataGridViewTextBoxColumn.DataPropertyName = "고정자산코드";
+            this.고정자산코드DataGridViewTextBoxColumn.HeaderText = "고정자산코드";
+            this.고정자산코드DataGridViewTextBoxColumn.Name = "고정자산코드DataGridViewTextBoxColumn";
             // 
-            // textBox3
+            // 고정자산명DataGridViewTextBoxColumn
             // 
-            this.textBox3.Location = new System.Drawing.Point(159, 325);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(225, 21);
-            this.textBox3.TabIndex = 114;
-            this.textBox3.Text = "금액";
+            this.고정자산명DataGridViewTextBoxColumn.DataPropertyName = "고정자산명";
+            this.고정자산명DataGridViewTextBoxColumn.HeaderText = "고정자산명";
+            this.고정자산명DataGridViewTextBoxColumn.Name = "고정자산명DataGridViewTextBoxColumn";
             // 
-            // label22
+            // 계정과목코드번호DataGridViewTextBoxColumn
             // 
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(61, 329);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(130, 22);
-            this.label22.TabIndex = 113;
-            this.label22.Text = "당기말장부가액";
+            this.계정과목코드번호DataGridViewTextBoxColumn.DataPropertyName = "계정과목코드번호";
+            this.계정과목코드번호DataGridViewTextBoxColumn.HeaderText = "계정과목코드번호";
+            this.계정과목코드번호DataGridViewTextBoxColumn.Name = "계정과목코드번호DataGridViewTextBoxColumn";
+            // 
+            // 취득일DataGridViewTextBoxColumn
+            // 
+            this.취득일DataGridViewTextBoxColumn.DataPropertyName = "취득일";
+            this.취득일DataGridViewTextBoxColumn.HeaderText = "취득일";
+            this.취득일DataGridViewTextBoxColumn.Name = "취득일DataGridViewTextBoxColumn";
+            // 
+            // 처리여부DataGridViewTextBoxColumn
+            // 
+            this.처리여부DataGridViewTextBoxColumn.DataPropertyName = "처리여부";
+            this.처리여부DataGridViewTextBoxColumn.HeaderText = "처리여부";
+            this.처리여부DataGridViewTextBoxColumn.Name = "처리여부DataGridViewTextBoxColumn";
+            // 
+            // 고정자산bds
+            // 
+            this.고정자산bds.DataSource = typeof(ClassLibrary.고정자산);
             // 
             // 고정자산등록
             // 
@@ -758,6 +657,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "고정자산등록";
             this.Size = new System.Drawing.Size(1044, 645);
+            this.Load += new System.EventHandler(this.고정자산등록_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabControl2.ResumeLayout(false);
@@ -765,7 +665,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.고정자산dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.고정자산bds)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -775,56 +676,40 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DateTimePicker dtpModificationDate;
+        private System.Windows.Forms.DateTimePicker dtp수정일자;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dtpInputDate;
+        private System.Windows.Forms.DateTimePicker dtp입력일자;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txbGeneralDepreciation;
+        private System.Windows.Forms.TextBox txb일반상각비;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txbAcquisitionQuantity;
+        private System.Windows.Forms.TextBox txb취득수;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txb당기말상각누계액;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbbDurableYears;
-        private System.Windows.Forms.ComboBox cbbDepreciationMethod;
+        private System.Windows.Forms.ComboBox cbb상각방법;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txb전기말상각누계액;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txbAcquisitionCost;
+        private System.Windows.Forms.TextBox txb취득원가;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox txbNote;
+        private System.Windows.Forms.TextBox txb비고;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txbEmployeeName;
-        private System.Windows.Forms.ComboBox cbbEmployeeCode;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txbModelName;
+        private System.Windows.Forms.TextBox txb모델명;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txbProductionCompanyName;
+        private System.Windows.Forms.TextBox txb제작사명;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txbSize;
+        private System.Windows.Forms.TextBox txb규격;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txbSupplierName;
+        private System.Windows.Forms.TextBox txb구입처명;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txbAccountName;
-        private System.Windows.Forms.ComboBox cbbAccountCode;
+        private System.Windows.Forms.TextBox txb고정자산계정명;
+        private System.Windows.Forms.ComboBox cbb고정자산계정코드;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.TextBox txbCompanyName;
-        private System.Windows.Forms.ComboBox cbbCompanyCode;
+        private System.Windows.Forms.DataGridView 고정자산dgv;
+        private System.Windows.Forms.TextBox txb회사명;
+        private System.Windows.Forms.ComboBox cbb회사코드;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnStatementForm;
@@ -833,11 +718,17 @@
         private System.Windows.Forms.Button btnStatementSearch;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txb경비구분;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.BindingSource 고정자산bds;
+        private System.Windows.Forms.TextBox txb내용연수;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 고정자산코드DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 고정자산명DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 계정과목코드번호DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 취득일DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 처리여부DataGridViewTextBoxColumn;
     }
 }

@@ -24,14 +24,11 @@ namespace ClassLibrary
         public string 사업장주소 { get; set; }
         public string 사업장번지 { get; set; }
         public string 사업장전화번호 { get; set; }
-        public string 프로젝트 { get; set; }
-        public string 거래처분류 { get; set; }
-        public string 금융기관코드 { get; set; }
+        public string 금융기관명 { get; set; }
         public string 예금종류 { get; set; }
         public string 예금명 { get; set; }
         public string 예금주 { get; set; }
         public Nullable<System.DateTime> 계좌개설일 { get; set; }
-        public Nullable<System.DateTime> 거래시작일 { get; set; }
         public Nullable<System.DateTime> 거래종료일 { get; set; }
     
         public virtual 거래처 거래처 { get; set; }

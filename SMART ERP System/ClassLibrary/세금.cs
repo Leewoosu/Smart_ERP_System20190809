@@ -20,7 +20,7 @@ namespace ClassLibrary
             this.급여 = new HashSet<급여>();
         }
     
-        public int 세금코드 { get; set; }
+        public string 세금코드 { get; set; }
         public int 국민연금 { get; set; }
         public int 건강보험 { get; set; }
         public int 산재보험 { get; set; }
