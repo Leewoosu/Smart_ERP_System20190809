@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txb내용연수 = new System.Windows.Forms.TextBox();
@@ -67,6 +70,12 @@
             this.cbb고정자산계정코드 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.고정자산dgv = new System.Windows.Forms.DataGridView();
+            this.고정자산코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.고정자산명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.계정과목코드번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.취득일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.처리여부DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.고정자산bds = new System.Windows.Forms.BindingSource(this.components);
             this.txb회사명 = new System.Windows.Forms.TextBox();
             this.cbb회사코드 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -77,15 +86,6 @@
             this.btnStatementSearch = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.고정자산코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.고정자산명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.계정과목코드번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.취득일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.처리여부DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.고정자산bds = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -119,6 +119,36 @@
             this.groupBox1.Size = new System.Drawing.Size(1041, 651);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(892, 77);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 98;
+            this.button3.Text = "수정";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.수정btn_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(811, 76);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 97;
+            this.button2.Text = "삭제";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.삭제btn_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(730, 76);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 96;
+            this.button1.Text = "등록";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.등록btn_Click);
             // 
             // tabControl2
             // 
@@ -494,6 +524,40 @@
             this.고정자산dgv.TabIndex = 91;
             this.고정자산dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.고정자산dgv_CellContentClick);
             // 
+            // 고정자산코드DataGridViewTextBoxColumn
+            // 
+            this.고정자산코드DataGridViewTextBoxColumn.DataPropertyName = "고정자산코드";
+            this.고정자산코드DataGridViewTextBoxColumn.HeaderText = "고정자산코드";
+            this.고정자산코드DataGridViewTextBoxColumn.Name = "고정자산코드DataGridViewTextBoxColumn";
+            // 
+            // 고정자산명DataGridViewTextBoxColumn
+            // 
+            this.고정자산명DataGridViewTextBoxColumn.DataPropertyName = "고정자산명";
+            this.고정자산명DataGridViewTextBoxColumn.HeaderText = "고정자산명";
+            this.고정자산명DataGridViewTextBoxColumn.Name = "고정자산명DataGridViewTextBoxColumn";
+            // 
+            // 계정과목코드번호DataGridViewTextBoxColumn
+            // 
+            this.계정과목코드번호DataGridViewTextBoxColumn.DataPropertyName = "계정과목코드번호";
+            this.계정과목코드번호DataGridViewTextBoxColumn.HeaderText = "계정과목코드번호";
+            this.계정과목코드번호DataGridViewTextBoxColumn.Name = "계정과목코드번호DataGridViewTextBoxColumn";
+            // 
+            // 취득일DataGridViewTextBoxColumn
+            // 
+            this.취득일DataGridViewTextBoxColumn.DataPropertyName = "취득일";
+            this.취득일DataGridViewTextBoxColumn.HeaderText = "취득일";
+            this.취득일DataGridViewTextBoxColumn.Name = "취득일DataGridViewTextBoxColumn";
+            // 
+            // 처리여부DataGridViewTextBoxColumn
+            // 
+            this.처리여부DataGridViewTextBoxColumn.DataPropertyName = "처리여부";
+            this.처리여부DataGridViewTextBoxColumn.HeaderText = "처리여부";
+            this.처리여부DataGridViewTextBoxColumn.Name = "처리여부DataGridViewTextBoxColumn";
+            // 
+            // 고정자산bds
+            // 
+            this.고정자산bds.DataSource = typeof(ClassLibrary.고정자산);
+            // 
             // txb회사명
             // 
             this.txb회사명.Location = new System.Drawing.Point(172, 77);
@@ -585,70 +649,6 @@
             this.richTextBox2.Size = new System.Drawing.Size(1021, 32);
             this.richTextBox2.TabIndex = 81;
             this.richTextBox2.Text = "";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(730, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 96;
-            this.button1.Text = "등록";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.등록btn_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(811, 76);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 97;
-            this.button2.Text = "삭제";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.삭제btn_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(892, 77);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 98;
-            this.button3.Text = "수정";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.수정btn_Click);
-            // 
-            // 고정자산코드DataGridViewTextBoxColumn
-            // 
-            this.고정자산코드DataGridViewTextBoxColumn.DataPropertyName = "고정자산코드";
-            this.고정자산코드DataGridViewTextBoxColumn.HeaderText = "고정자산코드";
-            this.고정자산코드DataGridViewTextBoxColumn.Name = "고정자산코드DataGridViewTextBoxColumn";
-            // 
-            // 고정자산명DataGridViewTextBoxColumn
-            // 
-            this.고정자산명DataGridViewTextBoxColumn.DataPropertyName = "고정자산명";
-            this.고정자산명DataGridViewTextBoxColumn.HeaderText = "고정자산명";
-            this.고정자산명DataGridViewTextBoxColumn.Name = "고정자산명DataGridViewTextBoxColumn";
-            // 
-            // 계정과목코드번호DataGridViewTextBoxColumn
-            // 
-            this.계정과목코드번호DataGridViewTextBoxColumn.DataPropertyName = "계정과목코드번호";
-            this.계정과목코드번호DataGridViewTextBoxColumn.HeaderText = "계정과목코드번호";
-            this.계정과목코드번호DataGridViewTextBoxColumn.Name = "계정과목코드번호DataGridViewTextBoxColumn";
-            // 
-            // 취득일DataGridViewTextBoxColumn
-            // 
-            this.취득일DataGridViewTextBoxColumn.DataPropertyName = "취득일";
-            this.취득일DataGridViewTextBoxColumn.HeaderText = "취득일";
-            this.취득일DataGridViewTextBoxColumn.Name = "취득일DataGridViewTextBoxColumn";
-            // 
-            // 처리여부DataGridViewTextBoxColumn
-            // 
-            this.처리여부DataGridViewTextBoxColumn.DataPropertyName = "처리여부";
-            this.처리여부DataGridViewTextBoxColumn.HeaderText = "처리여부";
-            this.처리여부DataGridViewTextBoxColumn.Name = "처리여부DataGridViewTextBoxColumn";
-            // 
-            // 고정자산bds
-            // 
-            this.고정자산bds.DataSource = typeof(ClassLibrary.고정자산);
             // 
             // 고정자산등록
             // 

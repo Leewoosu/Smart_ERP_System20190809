@@ -47,7 +47,7 @@ namespace SMART_ERP_System.MenuUserControl
             if (cbb회사코드.SelectedIndex != -1)
             {
                 txb회사명.Text = DB.회사.SearchChangedValue(cbb회사코드.Text);
-                고정자산bds.DataSource = DB.고정자산.GetAll();
+                고정자산bds.DataSource = DB.고정자산.회사검색(txb회사명.Text);
             }
             else
                 고정자산bds.DataSource = DB.고정자산.GetAll();
@@ -60,7 +60,7 @@ namespace SMART_ERP_System.MenuUserControl
             if(cbb고정자산계정코드.SelectedIndex != -1)
             {
                 txb고정자산계정명.Text = DB.고정자산계정과목.SearchangedValue(cbb고정자산계정코드.Text);
-                고정자산bds.DataSource = DB.고정자산.GetAll();
+                고정자산bds.DataSource = DB.고정자산.검색(txb고정자산계정명.Text);
             }
             else
                 고정자산bds.DataSource = DB.고정자산.GetAll();

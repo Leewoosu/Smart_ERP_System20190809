@@ -301,6 +301,7 @@ namespace SMART_ERP_System.MenuUserControl
                 }
             }
             dgv전표.Rows[e.RowIndex].Cells[1].Value = txb일.Text;
+            dgv전표.Columns[8].DefaultCellStyle.Format = "###,##0";
         }
 
         private void Dgv전표_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -321,6 +322,8 @@ namespace SMART_ERP_System.MenuUserControl
             dgv전표리스트.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             if (dgv전표리스트.Rows[e.RowIndex].Cells[0].Value == null)
                 dgv전표리스트.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+
+            dgv전표.Columns[7].DefaultCellStyle.Format = "###,##0";
         }
 
         private void Dgv전표리스트_KeyDown(object sender, KeyEventArgs e)
@@ -570,9 +573,11 @@ namespace SMART_ERP_System.MenuUserControl
         /// </summary>
         public void SetDefaultBy전표()
         {
-            dgv전표.Rows[전표단위.Index].Cells[2].Value = $"0000{전표단위.Index + 1}";
+
+            dgv전표.Rows[전표단위.Index].Cells[2].Value = 
+                
             dgv전표.Rows[전표단위.Index].Cells[5].Value
-                = $"{input.Date.ToString("yyyyMMdd")}" + "-" + $"0000{전표단위.Index + 1}";
+                = $"{input.Date.ToString("yyyyMMdd")}" + "-" + string.Format("{0:D5}", (전표단위.Index + 1));
 
             dgv전표.Rows[전표단위.Index].Cells[6].Value = "미결";
             dgv전표.Rows[전표단위.Index].Cells[7].Value = loginMember.EmployeeName;

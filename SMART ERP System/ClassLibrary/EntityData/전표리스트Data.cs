@@ -81,6 +81,57 @@ namespace ClassLibrary.EntityData
             }
         }
 
+        public List<전표리스트> SearchPeriod(DateTime dtpTo)
+        {
+            using (ERPEntities entities = new ERPEntities())
+            {
+                var query = from x in entities.전표리스트
+                            where x.입력날짜 <= dtpTo.Date
+                            select new
+                            {
+                                x,
+                                x.계정과목.계정과목명,
+                                차변 = 0,
+                                대변 = 0,
+                                차변합계 = 0,
+                                대변합계 = 0,
+                                건수 = 0,
+                                전표상태 = x.전표.승인상태,
+                                전표유형 = x.전표.유형
+                            };
+
+                var list = query.ToList();
+                
+                foreach (var item in list)
+                {
+                    item.x.계정과목명 = item.계정과목명;
+                    item.x.전표상태 = item.전표상태;
+                    item.x.전표유형 = item.전표유형;
+                    item.x.거래처명 = DB.거래처.Search(item.x.거래처코드번호);
+
+                    if (item.x.구분 == "차변" || item.x.구분 == "입금")
+                    {
+                        item.x.차변 = list.Select(x => x.x.금액).FirstOrDefault();
+                    }
+                    else
+                    {
+                        item.x.차변 = null;
+                    }
+
+                    if (item.x.구분 == "대변" || item.x.구분 == "출금")
+                    {
+                        item.x.대변 = list.Select(x => x.x.금액).FirstOrDefault();
+                    }
+                    else
+                    {
+                        item.x.대변 = null;
+                    }
+                }
+
+                return list.ConvertAll(x => x.x);
+            }
+        }
+
         /// <summary>
         /// 기존 데이터의 변경여부 확인을 위해 리스트에 채움
         /// </summary>

@@ -48,6 +48,7 @@ namespace SMART_ERP_System
             this.listBox = new System.Windows.Forms.ListBox();
             this.treeView = new System.Windows.Forms.TreeView();
             this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
+            this.bgWorker = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -249,6 +250,11 @@ namespace SMART_ERP_System
             this.metroTabControl.UseSelectable = true;
             this.metroTabControl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MetroTabControl_MouseClick);
             // 
+            // bgWorker
+            // 
+            this.bgWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgWorker_DoWork);
+            this.bgWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BgWorker_RunWorkerCompleted);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -298,6 +304,7 @@ namespace SMART_ERP_System
         private ListBox listBox;
         private Button btnSearch;
         private Button btnDelete;
+        private System.ComponentModel.BackgroundWorker bgWorker;
     }
 }
 

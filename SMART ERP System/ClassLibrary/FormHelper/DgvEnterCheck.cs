@@ -9,7 +9,7 @@ namespace ClassLibrary
 {
     public class DgvEnterCheck : DataGridView
     {
-        int itemCnt;
+        int itemCnt = 0;
 
         public void DataGridView_KeyDown(object sender, KeyEventArgs e)
         {

@@ -44,33 +44,45 @@ namespace SMART_ERP_System
             DataSet data = new DataSet();
 
             string strQuery = "SELECT * FROM [Sheet1$]";  // 엑셀 시트명 Sheet1의 모든 데이터를 가져오기
-            OleDbConnection oleConn = new OleDbConnection(connectionString);
-            oleConn.Open();
 
-            OleDbCommand oleCmd = new OleDbCommand(strQuery, oleConn);
-            OleDbDataAdapter dataAdapter = new OleDbDataAdapter(oleCmd);
+            OleDbConnection oleConn = null;
+            DataTable dataTable = null;
+            OleDbCommand oleCmd = null;
+            OleDbDataAdapter dataAdapter = null;
 
-            DataTable dataTable = new DataTable();
-            dataAdapter.Fill(dataTable);
-            data.Tables.Add(dataTable);
-
-            dgv.DataSource = data.Tables[0].DefaultView;
-
-            // 데이터에 맞게 칼럼 사이즈 조정하기
-            for (int i = 0; i < dgv.Columns.Count; i++)
+            try
             {
-                dgv.AutoResizeColumn(i, DataGridViewAutoSizeColumnMode.AllCells);
+                oleConn = new OleDbConnection(connectionString);
+                oleConn.Open();
+
+                oleCmd = new OleDbCommand(strQuery, oleConn);
+                dataAdapter = new OleDbDataAdapter(oleCmd);
+
+                dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                data.Tables.Add(dataTable);
+
+                dgv.DataSource = data.Tables[0].DefaultView;
+
+                // 데이터에 맞게 칼럼 사이즈 조정하기
+                for (int i = 0; i < dgv.Columns.Count; i++)
+                {
+                    dgv.AutoResizeColumn(i, DataGridViewAutoSizeColumnMode.AllCells);
+                }
+                dgv.AllowUserToAddRows = false;  // 빈레코드 표시 안하기
+                dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
+                //dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // 화면크기에 맞춰 채우기
             }
-            dgv.AllowUserToAddRows = false;  // 빈레코드 표시 안하기
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
-            //dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // 화면크기에 맞춰 채우기
+            finally
+            {
+                dataTable?.Dispose();
+                dataAdapter?.Dispose();
+                oleCmd?.Dispose();
 
-            dataTable.Dispose();
-            dataAdapter.Dispose();
-            oleCmd.Dispose();
-
-            oleConn.Close();
-            oleConn.Dispose();
+                oleConn.Close();
+                oleConn?.Dispose();
+            }
+            
             dgv엑셀.Columns.Add("column0", "비고");
             UpdataData();
         }
@@ -80,7 +92,7 @@ namespace SMART_ERP_System
             int maxRow = dgv엑셀.Rows.Count;
             수주 orderList = new 수주();
             List<수주> 수주 = DB.수주.GetAll();
-          
+
             if (수주.Count != 0)
             {
                 for (int j = 0; j < maxRow; j++)
@@ -98,7 +110,7 @@ namespace SMART_ERP_System
                             dgv엑셀.Rows[j].Cells[7].Value = "납기일 당겨짐";
 
                         else if (int.Parse(dgv엑셀.Rows[j].Cells[6].Value.ToString()) > int.Parse(수주.Where(x => x.수주번호 == dgv엑셀.Rows[j].Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.Rows[j].Cells[1].Value.ToString()).Select(x => x.납기일).First().ToString()))
-                            dgv엑셀.Rows[j].Cells[7].Value = "납기일 늦어짐";                       
+                            dgv엑셀.Rows[j].Cells[7].Value = "납기일 늦어짐";
 
                     }
                     else
@@ -122,7 +134,7 @@ namespace SMART_ERP_System
             List<수주> 수주 = DB.수주.GetAll();
             발주등록.BehindSujuListCnt = DB.수주.GetAll().Count;
             if (수주.Where(x => x.수주번호 == dgv엑셀.CurrentRow.Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.CurrentRow.Cells[1].Value.ToString()).Count() == 0)
-            {              
+            {
                 orderList.수주번호 = dgv엑셀.CurrentRow.Cells[0].Value.ToString();
                 orderList.수주번호2 = dgv엑셀.CurrentRow.Cells[1].Value.ToString();
                 orderList.제품번호 = dgv엑셀.CurrentRow.Cells[2].Value.ToString();
@@ -139,12 +151,12 @@ namespace SMART_ERP_System
             }
 
             else
-                MessageBox.Show("이미 등록된 수주 데이터 입니다");          
+                MessageBox.Show("이미 등록된 수주 데이터 입니다");
         }
 
         void Register발주()
         {
-            var 수주 = DB.수주.GetAll(); 
+            var 수주 = DB.수주.GetAll();
             var Last수주 = 수주[수주.Count - 1]; //최근에 등록된 수주
             var 자재명세서 = DB.자재명세서.Get자재명세서(Last수주.제품번호); //등록된 수주의 자재명세서           
             var 자재 = DB.자재.GetAll();
@@ -156,13 +168,13 @@ namespace SMART_ERP_System
 
             //만들어야할 제품의 갯수
             Last제품.재고량 = (int)Last제품.재고량 - Last수주.주문수량 - (int)Last제품.안전재고량;
-            
+
             for (int i = 0; i < 자재명세서.Count; i++)
             {
                 for (int j = 0; j < 자재.Count; j++)
                 {
-                    if(자재명세서[i].자재번호 == 자재[j].자재번호)
-                    {                      
+                    if (자재명세서[i].자재번호 == 자재[j].자재번호)
+                    {
                         //if (Last제품.재고량 < 0)
                         //    자재[j].재고량 = 자재[j].재고량 + 자재명세서[i].수량 * (int)Last제품.재고량 - 자재[j].안전재교량;
 
@@ -175,13 +187,13 @@ namespace SMART_ERP_System
 
                             발주리스트.발주번호 = 발주서.발주번호;
                             발주리스트.자재번호 = 자재명세서[i].자재번호;
-                            발주리스트.수량 = 자재[j].재고량*(-1);
-                            
+                            발주리스트.수량 = 자재[j].재고량 * (-1);
+
                             DB.발주서.Insert(발주서);
                             DB.발주리스트.Insert(발주리스트);
                         }
-                    }                   
-                }              
+                    }
+                }
             }
         }
 

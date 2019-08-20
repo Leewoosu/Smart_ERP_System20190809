@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 using System.Drawing;
 
 namespace SMART_ERP_System
-{    
+{
     public partial class MainForm : MetroForm
     {
         [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
@@ -25,14 +25,13 @@ namespace SMART_ERP_System
 
         LoginForm loginForm;
         List<메뉴등록> menuItems;
-        List<UserControl> controls;
-
+        UserControlList UserControlList = new UserControlList();
         public MainForm()
         {
             InitializeComponent();
             treeView.SetMenuItems(out menuItems);
-            ActiveControl = txbMenuSearch;
-            txbMenuSearch.Focus();
+
+            bgWorker.WorkerSupportsCancellation = true;
         }
 
         #region Event
@@ -56,12 +55,13 @@ namespace SMART_ERP_System
             if (metroTabControl.TabCount != 0)
             {
                 int tabindex = metroTabControl.SelectedIndex;
-                foreach (UserControl userControl in controls)
-                {
-                    if (userControl.Name == metroTabControl.SelectedTab.Text)
-                    {
 
-                        userControl.Dispose();
+                foreach (KeyValuePair<string, UserControl> userControl in UserControlList.DicUserControls)
+                {
+                    if (userControl.Key == metroTabControl.SelectedTab.Text)
+                    {
+                        userControl.Value.Hide();
+                        userControl.Value.Refresh();
                     }
                 }
                 metroTabControl.TabPages.Remove(metroTabControl.SelectedTab);
@@ -76,8 +76,7 @@ namespace SMART_ERP_System
         }
         private void TreeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            UserControlList UserControlList = new UserControlList();
-            UserControlList.AddControls(out controls);
+            bgWorker.RunWorkerAsync();
 
             TreeView treeView = (TreeView)sender;
 
@@ -89,23 +88,22 @@ namespace SMART_ERP_System
 
             if (i == 0)
             {
-                foreach (UserControl control in controls)
+                bool res = UserControlList.DicUserControls.TryGetValue(SerchName, out UserControl control);
+
+                if (res == true)
                 {
-                    if (SerchName == control.Name)                   
-                    {
-                        TabPage tabPage = new TabPage();
+                    TabPage tabPage = new TabPage();
 
-                        tabPage.Text = $"{control.Name}";
-                        metroTabControl.TabPages.Add(tabPage);
+                    tabPage.Text = $"{control.Name}";
+                    metroTabControl.TabPages.Add(tabPage);
 
-                        control.Parent = tabPage;
-                        control.Show();
-                        control.Dock = DockStyle.Fill;
-                        metroTabControl.SelectedTab = tabPage;
-                        metroTabControl.Focus();
-                        SendKeys.Send("{TAB}");
-                        return;
-                    }
+                    control.Parent = tabPage;
+                    control.Show();
+                    control.Dock = DockStyle.Fill;
+                    metroTabControl.SelectedTab = tabPage;
+                    metroTabControl.Focus();
+                    SendKeys.Send("{TAB}");
+                    return;
                 }
             }
             else
@@ -122,24 +120,24 @@ namespace SMART_ERP_System
                         return;
                     }
                 }
-                
+
                 metroTabControl.Visible = true;
 
-                foreach (var control in controls)
-                {
-                    if (SerchName == control.Name)
-                    {
-                        TabPage tabPage = new TabPage();
-                        tabPage.Text = $"{control.Name}";
-                        metroTabControl.TabPages.Add(tabPage);
+                bool res = UserControlList.DicUserControls.TryGetValue(SerchName, out UserControl control);
 
-                        control.Parent = tabPage;
-                        control.Show();
-                        control.Dock = DockStyle.Fill;
-                        metroTabControl.SelectedTab = tabPage;
-                        return;
-                    }
+                if (res == true)
+                {
+                    TabPage tabPage = new TabPage();
+                    tabPage.Text = $"{control.Name}";
+                    metroTabControl.TabPages.Add(tabPage);
+
+                    control.Parent = tabPage;
+                    control.Show();
+                    control.Dock = DockStyle.Fill;
+                    metroTabControl.SelectedTab = tabPage;
+                    return;
                 }
+
                 metroTabControl.SelectedIndex = CurrentPageNumber;
             }
         }
@@ -147,7 +145,7 @@ namespace SMART_ERP_System
         {
             MessageBox.Show("Info");
         }
-        
+
         private void TxbMenuSearch_KeyUp(object sender, KeyEventArgs e)
         {
             List<string> searchingMenu = new List<string>();
@@ -171,7 +169,7 @@ namespace SMART_ERP_System
                 listBox.Visible = true;
             }
 
-            if(e.KeyData == Keys.Down)
+            if (e.KeyData == Keys.Down)
             {
                 listBox.Focus();
                 // VK_DOWN 0x28 : DOWN ARROW key
@@ -226,10 +224,10 @@ namespace SMART_ERP_System
             if (e.KeyData == Keys.Enter)
                 ListBox_DoubleClick(listBox.SelectedItem, null);
         }
-        
+
         private void MetroTabControl_MouseClick(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right)
             {
                 EventHandler eventHandler = new EventHandler(TabControl_TypeMenuClick);
 
@@ -264,11 +262,35 @@ namespace SMART_ERP_System
                     ContextMenu.Dispose();
             }
 
-            if(str == "닫기")
+            if (str == "닫기")
             {
                 metroTabControl.TabPages.Remove(metroTabControl.SelectedTab);
                 if (ContextMenu != null)
                     ContextMenu.Dispose();
+            }
+        }
+
+        private void BgWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            // 작업이 취소 되었을 경우
+            if ((bgWorker.CancellationPending == true))
+            {
+                e.Cancel = true;
+                return;
+            }
+            else
+            {
+
+            }
+        }
+
+        private void BgWorker_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            // 에러가 있는지 체크
+            if (e.Error != null)
+            {
+                MessageBox.Show(e.Error.Message, "Error");
+                return;
             }
         }
     }

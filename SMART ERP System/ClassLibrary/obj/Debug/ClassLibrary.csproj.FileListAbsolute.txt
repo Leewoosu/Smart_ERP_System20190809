@@ -5,7 +5,6 @@ C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Debug\EntityFrame
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Debug\EntityFramework.xml
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\obj\Debug\ClassLibrary.csprojAssemblyReference.cache
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\obj\Debug\ClassLibrary.csproj.CopyComplete
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\obj\Debug\ClassLibrary.dll
@@ -24,3 +23,4 @@ C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Debug\ja\DevExpre
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Debug\ru\DevExpress.Xpo.v19.1.resources.dll
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Debug\ko\EntityFramework.resources.dll
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Debug\ko\EntityFramework.SqlServer.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\obj\Debug\ClassLibrary.csprojAssemblyReference.cache

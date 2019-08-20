@@ -46,20 +46,6 @@
             this.txb차변잔액총액 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgv합계잔액시산표 = new System.Windows.Forms.DataGridView();
-            this.차변잔액 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.차변합계 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.계정과목 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.대변합계 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.대변잔액 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.차변잔액DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.차변합계DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.계정과목DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.대변합계DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.대변잔액DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.기간DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.합계잔액시산표NoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.합계잔액시산표리스트DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.합계잔액시산표BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -69,6 +55,11 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.차변잔액 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.차변합계 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.계정과목 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.대변합계 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.대변잔액 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -262,6 +253,8 @@
             // 
             this.dgv합계잔액시산표.AllowUserToAddRows = false;
             this.dgv합계잔액시산표.AllowUserToDeleteRows = false;
+            this.dgv합계잔액시산표.AllowUserToResizeColumns = false;
+            this.dgv합계잔액시산표.AllowUserToResizeRows = false;
             this.dgv합계잔액시산표.AutoGenerateColumns = false;
             this.dgv합계잔액시산표.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv합계잔액시산표.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -270,16 +263,7 @@
             this.차변합계,
             this.계정과목,
             this.대변합계,
-            this.대변잔액,
-            this.noDataGridViewTextBoxColumn,
-            this.차변잔액DataGridViewTextBoxColumn,
-            this.차변합계DataGridViewTextBoxColumn,
-            this.계정과목DataGridViewTextBoxColumn,
-            this.대변합계DataGridViewTextBoxColumn,
-            this.대변잔액DataGridViewTextBoxColumn,
-            this.기간DataGridViewTextBoxColumn,
-            this.합계잔액시산표NoDataGridViewTextBoxColumn,
-            this.합계잔액시산표리스트DataGridViewTextBoxColumn});
+            this.대변잔액});
             this.dgv합계잔액시산표.DataSource = this.합계잔액시산표BindingSource;
             this.dgv합계잔액시산표.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgv합계잔액시산표.Location = new System.Drawing.Point(0, 0);
@@ -294,109 +278,6 @@
             this.dgv합계잔액시산표.ColumnWidthChanged += new System.Windows.Forms.DataGridViewColumnEventHandler(this.Dgv합계잔액시산표_ColumnWidthChanged);
             this.dgv합계잔액시산표.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Dgv합계잔액시산표_Scroll);
             this.dgv합계잔액시산표.Paint += new System.Windows.Forms.PaintEventHandler(this.Dgv합계잔액시산표_Paint);
-            // 
-            // 차변잔액
-            // 
-            this.차변잔액.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.차변잔액.DataPropertyName = "차변잔액";
-            this.차변잔액.HeaderText = "차변잔액";
-            this.차변잔액.Name = "차변잔액";
-            this.차변잔액.ReadOnly = true;
-            // 
-            // 차변합계
-            // 
-            this.차변합계.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.차변합계.DataPropertyName = "차변합계";
-            this.차변합계.HeaderText = "차변합계";
-            this.차변합계.Name = "차변합계";
-            this.차변합계.ReadOnly = true;
-            // 
-            // 계정과목
-            // 
-            this.계정과목.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.계정과목.DataPropertyName = "계정과목";
-            this.계정과목.HeaderText = "계정과목";
-            this.계정과목.Name = "계정과목";
-            this.계정과목.ReadOnly = true;
-            // 
-            // 대변합계
-            // 
-            this.대변합계.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.대변합계.DataPropertyName = "대변합계";
-            this.대변합계.HeaderText = "대변합계";
-            this.대변합계.Name = "대변합계";
-            this.대변합계.ReadOnly = true;
-            // 
-            // 대변잔액
-            // 
-            this.대변잔액.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.대변잔액.DataPropertyName = "대변잔액";
-            this.대변잔액.HeaderText = "대변잔액";
-            this.대변잔액.Name = "대변잔액";
-            this.대변잔액.ReadOnly = true;
-            // 
-            // noDataGridViewTextBoxColumn
-            // 
-            this.noDataGridViewTextBoxColumn.DataPropertyName = "No";
-            this.noDataGridViewTextBoxColumn.HeaderText = "No";
-            this.noDataGridViewTextBoxColumn.Name = "noDataGridViewTextBoxColumn";
-            this.noDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 차변잔액DataGridViewTextBoxColumn
-            // 
-            this.차변잔액DataGridViewTextBoxColumn.DataPropertyName = "차변잔액";
-            this.차변잔액DataGridViewTextBoxColumn.HeaderText = "차변잔액";
-            this.차변잔액DataGridViewTextBoxColumn.Name = "차변잔액DataGridViewTextBoxColumn";
-            this.차변잔액DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 차변합계DataGridViewTextBoxColumn
-            // 
-            this.차변합계DataGridViewTextBoxColumn.DataPropertyName = "차변합계";
-            this.차변합계DataGridViewTextBoxColumn.HeaderText = "차변합계";
-            this.차변합계DataGridViewTextBoxColumn.Name = "차변합계DataGridViewTextBoxColumn";
-            this.차변합계DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 계정과목DataGridViewTextBoxColumn
-            // 
-            this.계정과목DataGridViewTextBoxColumn.DataPropertyName = "계정과목";
-            this.계정과목DataGridViewTextBoxColumn.HeaderText = "계정과목";
-            this.계정과목DataGridViewTextBoxColumn.Name = "계정과목DataGridViewTextBoxColumn";
-            this.계정과목DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 대변합계DataGridViewTextBoxColumn
-            // 
-            this.대변합계DataGridViewTextBoxColumn.DataPropertyName = "대변합계";
-            this.대변합계DataGridViewTextBoxColumn.HeaderText = "대변합계";
-            this.대변합계DataGridViewTextBoxColumn.Name = "대변합계DataGridViewTextBoxColumn";
-            this.대변합계DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 대변잔액DataGridViewTextBoxColumn
-            // 
-            this.대변잔액DataGridViewTextBoxColumn.DataPropertyName = "대변잔액";
-            this.대변잔액DataGridViewTextBoxColumn.HeaderText = "대변잔액";
-            this.대변잔액DataGridViewTextBoxColumn.Name = "대변잔액DataGridViewTextBoxColumn";
-            this.대변잔액DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 기간DataGridViewTextBoxColumn
-            // 
-            this.기간DataGridViewTextBoxColumn.DataPropertyName = "기간";
-            this.기간DataGridViewTextBoxColumn.HeaderText = "기간";
-            this.기간DataGridViewTextBoxColumn.Name = "기간DataGridViewTextBoxColumn";
-            this.기간DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 합계잔액시산표NoDataGridViewTextBoxColumn
-            // 
-            this.합계잔액시산표NoDataGridViewTextBoxColumn.DataPropertyName = "합계잔액시산표No";
-            this.합계잔액시산표NoDataGridViewTextBoxColumn.HeaderText = "합계잔액시산표No";
-            this.합계잔액시산표NoDataGridViewTextBoxColumn.Name = "합계잔액시산표NoDataGridViewTextBoxColumn";
-            this.합계잔액시산표NoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 합계잔액시산표리스트DataGridViewTextBoxColumn
-            // 
-            this.합계잔액시산표리스트DataGridViewTextBoxColumn.DataPropertyName = "합계잔액시산표리스트";
-            this.합계잔액시산표리스트DataGridViewTextBoxColumn.HeaderText = "합계잔액시산표리스트";
-            this.합계잔액시산표리스트DataGridViewTextBoxColumn.Name = "합계잔액시산표리스트DataGridViewTextBoxColumn";
-            this.합계잔액시산표리스트DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 합계잔액시산표BindingSource
             // 
@@ -485,6 +366,46 @@
             this.label9.Size = new System.Drawing.Size(1025, 1);
             this.label9.TabIndex = 92;
             // 
+            // 차변잔액
+            // 
+            this.차변잔액.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.차변잔액.DataPropertyName = "차변잔액";
+            this.차변잔액.HeaderText = "차변잔액";
+            this.차변잔액.Name = "차변잔액";
+            this.차변잔액.ReadOnly = true;
+            // 
+            // 차변합계
+            // 
+            this.차변합계.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.차변합계.DataPropertyName = "차변합계";
+            this.차변합계.HeaderText = "차변합계";
+            this.차변합계.Name = "차변합계";
+            this.차변합계.ReadOnly = true;
+            // 
+            // 계정과목
+            // 
+            this.계정과목.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.계정과목.DataPropertyName = "계정과목";
+            this.계정과목.HeaderText = "계정과목";
+            this.계정과목.Name = "계정과목";
+            this.계정과목.ReadOnly = true;
+            // 
+            // 대변합계
+            // 
+            this.대변합계.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.대변합계.DataPropertyName = "대변합계";
+            this.대변합계.HeaderText = "대변합계";
+            this.대변합계.Name = "대변합계";
+            this.대변합계.ReadOnly = true;
+            // 
+            // 대변잔액
+            // 
+            this.대변잔액.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.대변잔액.DataPropertyName = "대변잔액";
+            this.대변잔액.HeaderText = "대변잔액";
+            this.대변잔액.Name = "대변잔액";
+            this.대변잔액.ReadOnly = true;
+            // 
             // 합계잔액시산표
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -535,21 +456,12 @@
         private System.Windows.Forms.TextBox txb차변잔액총액;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.BindingSource 합계잔액시산표BindingSource;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource 회사등록BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 차변잔액;
         private System.Windows.Forms.DataGridViewTextBoxColumn 차변합계;
         private System.Windows.Forms.DataGridViewTextBoxColumn 계정과목;
         private System.Windows.Forms.DataGridViewTextBoxColumn 대변합계;
         private System.Windows.Forms.DataGridViewTextBoxColumn 대변잔액;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 차변잔액DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 차변합계DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 계정과목DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 대변합계DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 대변잔액DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 기간DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 합계잔액시산표NoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 합계잔액시산표리스트DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 회사등록BindingSource;
     }
 }

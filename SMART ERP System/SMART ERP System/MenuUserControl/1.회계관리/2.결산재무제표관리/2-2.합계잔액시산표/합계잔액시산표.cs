@@ -28,6 +28,11 @@ namespace SMART_ERP_System.MenuUserControl
             for (int j = 0; j < dgv합계잔액시산표.ColumnCount; j++)
             {
                 dgv합계잔액시산표.Columns[j].Width = 203;
+                if (j != 2)
+                {
+                    dgv합계잔액시산표.Columns[j].DefaultCellStyle.Format = "###,##0";
+                    dgv합계잔액시산표.Columns[j].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                }
             }
 
             dgv합계잔액시산표.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
@@ -98,6 +103,8 @@ namespace SMART_ERP_System.MenuUserControl
             if (e.KeyData == Keys.Enter)
             {
                 합계잔액시산표BindingSource.DataSource = DB.합계잔액시산표.GetAll().Where(x => x.기간.ToShortDateString() == dtp입력날짜.Value.ToShortDateString()).ToList();
+
+                dgv합계잔액시산표.Rows[3].Cells[1].Value = DB.전표리스트.SearchPeriod(dtp입력날짜.Value).Where(x => x.계정과목코드번호 == "51100").Sum(x => x.차변);
             }
         }
 
