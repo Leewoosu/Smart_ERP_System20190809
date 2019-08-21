@@ -15,15 +15,6 @@ C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\EntityF
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\EntityFramework.xml
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\DevExpress.Data.v19.1.dll
-C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\DevExpress.Printing.v19.1.Core.dll
-C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\DevExpress.TreeMap.v19.1.Core.dll
-C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\DevExpress.Utils.v19.1.dll
-C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\DevExpress.XtraEditors.v19.1.dll
-C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\DevExpress.XtraLayout.v19.1.dll
-C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\DevExpress.XtraPrinting.v19.1.dll
-C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\DevExpress.XtraTreeList.v19.1.dll
-C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\DevExpress.XtraTreeMap.v19.1.dll
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\DevExpress.Pdf.v19.1.Core.dll
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\DevExpress.Sparkline.v19.1.Core.dll
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\DevExpress.XtraBars.v19.1.dll
