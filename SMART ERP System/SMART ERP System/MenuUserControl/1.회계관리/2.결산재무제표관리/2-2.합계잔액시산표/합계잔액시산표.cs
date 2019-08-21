@@ -102,9 +102,43 @@ namespace SMART_ERP_System.MenuUserControl
         {
             if (e.KeyData == Keys.Enter)
             {
-                합계잔액시산표BindingSource.DataSource = DB.합계잔액시산표.GetAll().Where(x => x.기간.ToShortDateString() == dtp입력날짜.Value.ToShortDateString()).ToList();
+               합계잔액시산표BindingSource.DataSource = DB.합계잔액시산표.GetAll().Where(x => x.기간 <= dtp입력날짜.Value).ToList();
 
-                dgv합계잔액시산표.Rows[3].Cells[1].Value = DB.전표리스트.SearchPeriod(dtp입력날짜.Value).Where(x => x.계정과목코드번호 == "51100").Sum(x => x.차변);
+                string comparer;
+                long? left = 0;
+                long? right = 0;
+                long leftTotal = 0;
+                long rightTotal = 0;
+                var list = DB.전표리스트.SearchPeriod(dtp입력날짜.Value);
+
+                for (int i = 0; i < dgv합계잔액시산표.RowCount; i++)
+                {
+                    comparer = dgv합계잔액시산표.Rows[i].Cells[2].Value.ToString();
+
+                    if (i < 39)
+                    {
+                       left = list.Where(x => x.계정과목명.Replace(" ", "") == comparer.Replace(" ", "")).Sum(x => x.차변);
+
+                        if (left != 0)
+                        {
+                            dgv합계잔액시산표.Rows[i].Cells[1].Value = left;
+                            leftTotal += long.Parse(dgv합계잔액시산표.Rows[i].Cells[1].Value.ToString());
+                        }
+                    }
+                    else
+                    {
+                        right = list.Where(x => x.계정과목명.Replace(" ", "") == comparer.Replace(" ", "")).Sum(x => x.대변);
+
+                        if (right != 0)
+                        {
+                            dgv합계잔액시산표.Rows[i].Cells[3].Value = right;
+                            rightTotal += long.Parse(dgv합계잔액시산표.Rows[i].Cells[3].Value.ToString());
+                        }
+                    }
+                }
+
+                txb차변합계총액.Text = leftTotal.ToString("###,##0");
+                txb대변합계총액.Text = rightTotal.ToString("###,##0");
             }
         }
 

@@ -33,9 +33,9 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void SetData()
         {
-            회사등록BindingSource.DataSource = DB.회사.GetAll();
-            사원등록BindingSource.DataSource = DB.사원등록.GetAll();
-            부서등록BindingSource.DataSource = DB.부서.GetAll();
+            회사등록BindingSource.DataSource = DB.회사.GetAll().Select(x=>x.회사코드);
+            사원등록BindingSource.DataSource = DB.사원등록.GetAll().Select(x => x.사원코드);
+            부서등록BindingSource.DataSource = DB.부서.GetAll().Select(x => x.부서코드);
             cbb전표구분.DataSource = MenuLists.separations;
             cbb전표유형.DataSource = MenuLists.types;
             cbb전표상태.DataSource = MenuLists.status;

@@ -53,20 +53,20 @@
             this.txb사업자등록번호 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.일반거래처코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.거래처코드번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.거래처명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.구분DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.일반거래처등록bds = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.txb거래처명 = new System.Windows.Forms.TextBox();
             this.cbb거래처코드 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.일반거래처코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.거래처코드번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.거래처명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.구분DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -94,7 +94,7 @@
             this.tabControl1.Location = new System.Drawing.Point(408, 63);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(617, 575);
+            this.tabControl1.Size = new System.Drawing.Size(617, 538);
             this.tabControl1.TabIndex = 99;
             // 
             // tabPage1
@@ -123,7 +123,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(609, 549);
+            this.tabPage1.Size = new System.Drawing.Size(609, 512);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "기본등록사항";
             // 
@@ -316,9 +316,33 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(396, 577);
+            this.dataGridView1.Size = new System.Drawing.Size(396, 538);
             this.dataGridView1.TabIndex = 98;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // 일반거래처코드DataGridViewTextBoxColumn
+            // 
+            this.일반거래처코드DataGridViewTextBoxColumn.DataPropertyName = "일반거래처코드";
+            this.일반거래처코드DataGridViewTextBoxColumn.HeaderText = "코드";
+            this.일반거래처코드DataGridViewTextBoxColumn.Name = "일반거래처코드DataGridViewTextBoxColumn";
+            // 
+            // 거래처코드번호
+            // 
+            this.거래처코드번호.DataPropertyName = "거래처코드번호";
+            this.거래처코드번호.HeaderText = "거래처코드번호";
+            this.거래처코드번호.Name = "거래처코드번호";
+            // 
+            // 거래처명DataGridViewTextBoxColumn
+            // 
+            this.거래처명DataGridViewTextBoxColumn.DataPropertyName = "거래처명";
+            this.거래처명DataGridViewTextBoxColumn.HeaderText = "거래처명";
+            this.거래처명DataGridViewTextBoxColumn.Name = "거래처명DataGridViewTextBoxColumn";
+            // 
+            // 구분DataGridViewTextBoxColumn
+            // 
+            this.구분DataGridViewTextBoxColumn.DataPropertyName = "구분";
+            this.구분DataGridViewTextBoxColumn.HeaderText = "구분";
+            this.구분DataGridViewTextBoxColumn.Name = "구분DataGridViewTextBoxColumn";
             // 
             // 일반거래처등록bds
             // 
@@ -338,6 +362,36 @@
             this.groupBox2.Size = new System.Drawing.Size(1018, 29);
             this.groupBox2.TabIndex = 88;
             this.groupBox2.TabStop = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(811, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 182;
+            this.button3.Text = "수정";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btn일반수정_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(730, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 181;
+            this.button2.Text = "삭제";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btn일반삭체_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(649, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 180;
+            this.button1.Text = "등록";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn일반등록_Click);
             // 
             // txb거래처명
             // 
@@ -382,60 +436,6 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(1018, 1);
             this.label9.TabIndex = 94;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(649, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 180;
-            this.button1.Text = "등록";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btn일반등록_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(730, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 181;
-            this.button2.Text = "삭제";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btn일반삭체_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(811, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 182;
-            this.button3.Text = "수정";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.btn일반수정_Click);
-            // 
-            // 일반거래처코드DataGridViewTextBoxColumn
-            // 
-            this.일반거래처코드DataGridViewTextBoxColumn.DataPropertyName = "일반거래처코드";
-            this.일반거래처코드DataGridViewTextBoxColumn.HeaderText = "코드";
-            this.일반거래처코드DataGridViewTextBoxColumn.Name = "일반거래처코드DataGridViewTextBoxColumn";
-            // 
-            // 거래처코드번호
-            // 
-            this.거래처코드번호.DataPropertyName = "거래처코드번호";
-            this.거래처코드번호.HeaderText = "거래처코드번호";
-            this.거래처코드번호.Name = "거래처코드번호";
-            // 
-            // 거래처명DataGridViewTextBoxColumn
-            // 
-            this.거래처명DataGridViewTextBoxColumn.DataPropertyName = "거래처명";
-            this.거래처명DataGridViewTextBoxColumn.HeaderText = "거래처명";
-            this.거래처명DataGridViewTextBoxColumn.Name = "거래처명DataGridViewTextBoxColumn";
-            // 
-            // 구분DataGridViewTextBoxColumn
-            // 
-            this.구분DataGridViewTextBoxColumn.DataPropertyName = "구분";
-            this.구분DataGridViewTextBoxColumn.HeaderText = "구분";
-            this.구분DataGridViewTextBoxColumn.Name = "구분DataGridViewTextBoxColumn";
             // 
             // 일반거래처등록
             // 

@@ -21,7 +21,6 @@ namespace SMART_ERP_System.MenuUserControl
         public static extern void keybd_event(uint vk, uint scan, uint flags, uint extraInfo);
         private Label label;
         InputDate input;
-       // DgvEnterCheck enterCheck = new DgvEnterCheck();
 
         public 전표등록()
         {
@@ -33,7 +32,6 @@ namespace SMART_ERP_System.MenuUserControl
 
             회사등록BindingSource.DataSource = DB.회사.GetAll();
             txb일.Focus();
-            //dgv전표리스트.KeyDown += enterCheck.DataGridView_KeyDown;
         }
 
         // Dgv전표리스트 구분 코드도움을 위한 라벨 생성
@@ -815,12 +813,8 @@ namespace SMART_ERP_System.MenuUserControl
                 }
             }
 
-            txb차변합계.Text = leftSum.ToString();
-            txb대변합계.Text = rightSum.ToString();
-        }
-
-        private void Dgv전표_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
+            txb차변합계.Text = leftSum.ToString("###,##0");
+            txb대변합계.Text = rightSum.ToString("###,##0");
         }
     }
 }

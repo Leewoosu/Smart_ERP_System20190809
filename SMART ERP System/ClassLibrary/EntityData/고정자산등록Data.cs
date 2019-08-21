@@ -15,5 +15,21 @@ namespace ClassLibrary.EntityData
                 return entities.고정자산.Where(x => x.고정자산코드 == code).ToList().FirstOrDefault();
             }
         }
+
+        public List<회사등록> 회사검색(string code)
+        {
+            using (ERPEntities entities = new ERPEntities())
+            {
+                return entities.회사등록.Where(x => x.회사명 == code).ToList();
+            }
+        }
+
+        public List<고정자산> 검색(string code)
+        {
+            using (ERPEntities entities = new ERPEntities())
+            {
+                return entities.고정자산.Where(x => x.고정자산명 == code).ToList();
+            }
+        }
     }
 }
