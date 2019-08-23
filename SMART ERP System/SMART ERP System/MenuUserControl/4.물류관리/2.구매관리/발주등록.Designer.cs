@@ -28,38 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.DeliveryLastDate = new System.Windows.Forms.DateTimePicker();
+            this.DeliveryFirstDate = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.OrderLastDate = new System.Windows.Forms.DateTimePicker();
+            this.OrderFirstDate = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txb거래처이름 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn조회 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -78,47 +66,35 @@
             this.textBox32 = new System.Windows.Forms.TextBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
             this.dgv발주리스트 = new System.Windows.Forms.DataGridView();
-            this.자재번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bds발주리스트 = new System.Windows.Forms.BindingSource(this.components);
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv발주서 = new System.Windows.Forms.DataGridView();
-            this.발주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.공급업체번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.주문날짜DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.납기일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bds발주서 = new System.Windows.Forms.BindingSource(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv발주리스트)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bds발주리스트)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv발주서)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bds발주서)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox15);
-            this.groupBox1.Controls.Add(this.textBox13);
-            this.groupBox1.Controls.Add(this.textBox14);
+            this.groupBox1.Controls.Add(this.DeliveryLastDate);
+            this.groupBox1.Controls.Add(this.DeliveryFirstDate);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.OrderLastDate);
+            this.groupBox1.Controls.Add(this.OrderFirstDate);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.textBox12);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.txb거래처이름);
             this.groupBox1.Controls.Add(this.textBox7);
             this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -128,183 +104,130 @@
             this.groupBox1.TabIndex = 49;
             this.groupBox1.TabStop = false;
             // 
-            // textBox15
+            // DeliveryLastDate
             // 
-            this.textBox15.Location = new System.Drawing.Point(682, 76);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(180, 20);
-            this.textBox15.TabIndex = 66;
+            this.DeliveryLastDate.CustomFormat = "yyyy-MM-dd";
+            this.DeliveryLastDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DeliveryLastDate.Location = new System.Drawing.Point(515, 72);
+            this.DeliveryLastDate.Name = "DeliveryLastDate";
+            this.DeliveryLastDate.Size = new System.Drawing.Size(99, 20);
+            this.DeliveryLastDate.TabIndex = 69;
             // 
-            // textBox13
+            // DeliveryFirstDate
             // 
-            this.textBox13.Location = new System.Drawing.Point(682, 50);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(66, 20);
-            this.textBox13.TabIndex = 64;
+            this.DeliveryFirstDate.CustomFormat = "yyyy-MM-dd";
+            this.DeliveryFirstDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DeliveryFirstDate.Location = new System.Drawing.Point(366, 72);
+            this.DeliveryFirstDate.Name = "DeliveryFirstDate";
+            this.DeliveryFirstDate.Size = new System.Drawing.Size(103, 20);
+            this.DeliveryFirstDate.TabIndex = 68;
             // 
-            // textBox14
+            // label4
             // 
-            this.textBox14.Location = new System.Drawing.Point(754, 50);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(108, 20);
-            this.textBox14.TabIndex = 65;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(307, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 11);
+            this.label4.TabIndex = 67;
+            this.label4.Text = "납기기간";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(487, 78);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(11, 11);
+            this.label7.TabIndex = 66;
+            this.label7.Text = "~";
+            // 
+            // OrderLastDate
+            // 
+            this.OrderLastDate.CustomFormat = "yyyy-MM-dd";
+            this.OrderLastDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.OrderLastDate.Location = new System.Drawing.Point(515, 46);
+            this.OrderLastDate.Name = "OrderLastDate";
+            this.OrderLastDate.Size = new System.Drawing.Size(99, 20);
+            this.OrderLastDate.TabIndex = 65;
+            // 
+            // OrderFirstDate
+            // 
+            this.OrderFirstDate.CustomFormat = "yyyy-MM-dd";
+            this.OrderFirstDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.OrderFirstDate.Location = new System.Drawing.Point(366, 46);
+            this.OrderFirstDate.Name = "OrderFirstDate";
+            this.OrderFirstDate.Size = new System.Drawing.Size(103, 20);
+            this.OrderFirstDate.TabIndex = 64;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(682, 23);
+            this.textBox1.Location = new System.Drawing.Point(366, 17);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(66, 20);
             this.textBox1.TabIndex = 62;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(754, 23);
+            this.textBox4.Location = new System.Drawing.Point(438, 17);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(108, 20);
             this.textBox4.TabIndex = 63;
             // 
-            // comboBox2
+            // txb거래처이름
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(597, 76);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(75, 19);
-            this.comboBox2.TabIndex = 61;
-            this.comboBox2.Text = "0.품번";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(597, 50);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(75, 19);
-            this.comboBox1.TabIndex = 60;
-            this.comboBox1.Text = "0.품목담당";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(366, 71);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(66, 20);
-            this.textBox11.TabIndex = 58;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(438, 71);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(108, 20);
-            this.textBox12.TabIndex = 59;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(366, 47);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(66, 20);
-            this.textBox9.TabIndex = 56;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(438, 47);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(108, 20);
-            this.textBox10.TabIndex = 57;
+            this.txb거래처이름.Location = new System.Drawing.Point(92, 46);
+            this.txb거래처이름.Name = "txb거래처이름";
+            this.txb거래처이름.Size = new System.Drawing.Size(179, 20);
+            this.txb거래처이름.TabIndex = 57;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(366, 21);
+            this.textBox7.Location = new System.Drawing.Point(92, 17);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(66, 20);
             this.textBox7.TabIndex = 54;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(438, 21);
+            this.textBox8.Location = new System.Drawing.Point(164, 17);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(108, 20);
             this.textBox8.TabIndex = 55;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(92, 44);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(66, 20);
-            this.textBox5.TabIndex = 52;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(164, 44);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(108, 20);
-            this.textBox6.TabIndex = 53;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.Location = new System.Drawing.Point(39, 23);
+            this.label15.Location = new System.Drawing.Point(307, 52);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(49, 11);
             this.label15.TabIndex = 51;
-            this.label15.Text = "발주기간";
+            this.label15.Text = "주문기간";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(645, 26);
+            this.label11.Location = new System.Drawing.Point(329, 20);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(27, 11);
             this.label11.TabIndex = 38;
             this.label11.Text = "사원";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(92, 20);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(77, 20);
-            this.textBox2.TabIndex = 26;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(175, 23);
+            this.label3.Location = new System.Drawing.Point(487, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(11, 11);
             this.label3.TabIndex = 27;
             this.label3.Text = "~";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(195, 20);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(77, 20);
-            this.textBox3.TabIndex = 28;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(315, 74);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 11);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "프로젝트";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(39, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 11);
-            this.label4.TabIndex = 29;
-            this.label4.Text = "관리구분";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(333, 23);
+            this.label5.Location = new System.Drawing.Point(59, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 11);
             this.label5.TabIndex = 31;
@@ -314,7 +237,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(323, 48);
+            this.label6.Location = new System.Drawing.Point(48, 52);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 11);
             this.label6.TabIndex = 33;
@@ -329,24 +252,6 @@
             this.label8.TabIndex = 48;
             this.label8.Text = "발주등록";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(822, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 46;
-            this.button2.Text = "출력내역";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(729, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 23);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "주문적용조회";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -356,24 +261,15 @@
             this.label1.TabIndex = 44;
             this.label1.Text = "label1";
             // 
-            // button4
+            // btn조회
             // 
-            this.button4.Location = new System.Drawing.Point(639, 1);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(87, 23);
-            this.button4.TabIndex = 52;
-            this.button4.Text = "청구일괄적용";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(543, 1);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(92, 23);
-            this.button5.TabIndex = 51;
-            this.button5.Text = "청구적용조회";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            this.btn조회.Location = new System.Drawing.Point(933, 0);
+            this.btn조회.Name = "btn조회";
+            this.btn조회.Size = new System.Drawing.Size(92, 23);
+            this.btn조회.TabIndex = 51;
+            this.btn조회.Text = "청구적용조회";
+            this.btn조회.UseVisualStyleBackColor = true;
+            this.btn조회.Click += new System.EventHandler(this.Btn조회_Click);
             // 
             // groupBox2
             // 
@@ -544,82 +440,70 @@
             // 
             // dgv발주리스트
             // 
-            this.dgv발주리스트.AutoGenerateColumns = false;
+            this.dgv발주리스트.AllowUserToAddRows = false;
             this.dgv발주리스트.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv발주리스트.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv발주리스트.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.자재번호DataGridViewTextBoxColumn,
-            this.수량DataGridViewTextBoxColumn});
-            this.dgv발주리스트.DataSource = this.bds발주리스트;
-            this.dgv발주리스트.Location = new System.Drawing.Point(7, 355);
+            this.Column5,
+            this.Column6});
+            this.dgv발주리스트.Location = new System.Drawing.Point(15, 355);
             this.dgv발주리스트.Name = "dgv발주리스트";
             this.dgv발주리스트.RowTemplate.Height = 23;
-            this.dgv발주리스트.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv발주리스트.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgv발주리스트.Size = new System.Drawing.Size(1018, 200);
             this.dgv발주리스트.TabIndex = 88;
+            this.dgv발주리스트.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv발주리스트_CellEndEdit);
+            this.dgv발주리스트.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dgv발주리스트_KeyDown);
             // 
-            // 자재번호DataGridViewTextBoxColumn
+            // Column5
             // 
-            this.자재번호DataGridViewTextBoxColumn.DataPropertyName = "자재번호";
-            this.자재번호DataGridViewTextBoxColumn.HeaderText = "자재번호";
-            this.자재번호DataGridViewTextBoxColumn.Name = "자재번호DataGridViewTextBoxColumn";
+            this.Column5.HeaderText = "자재";
+            this.Column5.Name = "Column5";
             // 
-            // 수량DataGridViewTextBoxColumn
+            // Column6
             // 
-            this.수량DataGridViewTextBoxColumn.DataPropertyName = "수량";
-            this.수량DataGridViewTextBoxColumn.HeaderText = "수량";
-            this.수량DataGridViewTextBoxColumn.Name = "수량DataGridViewTextBoxColumn";
-            // 
-            // bds발주리스트
-            // 
-            this.bds발주리스트.DataSource = typeof(ClassLibrary.발주리스트);
+            this.Column6.HeaderText = "수량";
+            this.Column6.Name = "Column6";
             // 
             // dgv발주서
             // 
-            this.dgv발주서.AutoGenerateColumns = false;
+            this.dgv발주서.AllowUserToAddRows = false;
             this.dgv발주서.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv발주서.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv발주서.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.발주번호DataGridViewTextBoxColumn,
-            this.공급업체번호DataGridViewTextBoxColumn,
-            this.주문날짜DataGridViewTextBoxColumn,
-            this.납기일DataGridViewTextBoxColumn});
-            this.dgv발주서.DataSource = this.bds발주서;
-            this.dgv발주서.Location = new System.Drawing.Point(7, 145);
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dgv발주서.Location = new System.Drawing.Point(15, 145);
             this.dgv발주서.Name = "dgv발주서";
             this.dgv발주서.RowTemplate.Height = 23;
-            this.dgv발주서.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv발주서.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgv발주서.Size = new System.Drawing.Size(1018, 204);
             this.dgv발주서.TabIndex = 87;
             this.dgv발주서.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv발주서_CellClick);
+            this.dgv발주서.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv발주서_CellEndEdit);
+            this.dgv발주서.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dgv발주서_KeyDown);
             // 
-            // 발주번호DataGridViewTextBoxColumn
+            // Column1
             // 
-            this.발주번호DataGridViewTextBoxColumn.DataPropertyName = "발주번호";
-            this.발주번호DataGridViewTextBoxColumn.HeaderText = "발주번호";
-            this.발주번호DataGridViewTextBoxColumn.Name = "발주번호DataGridViewTextBoxColumn";
+            this.Column1.HeaderText = "발주번호";
+            this.Column1.Name = "Column1";
             // 
-            // 공급업체번호DataGridViewTextBoxColumn
+            // Column2
             // 
-            this.공급업체번호DataGridViewTextBoxColumn.DataPropertyName = "공급업체번호";
-            this.공급업체번호DataGridViewTextBoxColumn.HeaderText = "공급업체번호";
-            this.공급업체번호DataGridViewTextBoxColumn.Name = "공급업체번호DataGridViewTextBoxColumn";
+            this.Column2.HeaderText = "공급처";
+            this.Column2.Name = "Column2";
             // 
-            // 주문날짜DataGridViewTextBoxColumn
+            // Column3
             // 
-            this.주문날짜DataGridViewTextBoxColumn.DataPropertyName = "주문날짜";
-            this.주문날짜DataGridViewTextBoxColumn.HeaderText = "주문날짜";
-            this.주문날짜DataGridViewTextBoxColumn.Name = "주문날짜DataGridViewTextBoxColumn";
+            this.Column3.HeaderText = "주문일";
+            this.Column3.Name = "Column3";
             // 
-            // 납기일DataGridViewTextBoxColumn
+            // Column4
             // 
-            this.납기일DataGridViewTextBoxColumn.DataPropertyName = "납기일";
-            this.납기일DataGridViewTextBoxColumn.HeaderText = "납기일";
-            this.납기일DataGridViewTextBoxColumn.Name = "납기일DataGridViewTextBoxColumn";
-            // 
-            // bds발주서
-            // 
-            this.bds발주서.DataSource = typeof(ClassLibrary.발주서);
+            this.Column4.HeaderText = "납기일";
+            this.Column4.Name = "Column4";
             // 
             // 발주등록
             // 
@@ -628,12 +512,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgv발주리스트);
             this.Controls.Add(this.dgv발주서);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btn조회);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "발주등록";
             this.Size = new System.Drawing.Size(1044, 645);
@@ -643,9 +524,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv발주리스트)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bds발주리스트)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv발주서)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bds발주서)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -654,34 +533,17 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Button btn조회;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txb거래처이름;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -703,13 +565,17 @@
         private System.Windows.Forms.TextBox textBox36;
         private System.Windows.Forms.DataGridView dgv발주리스트;
         private System.Windows.Forms.DataGridView dgv발주서;
-        private System.Windows.Forms.BindingSource bds발주리스트;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 발주번호DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 공급업체번호DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 주문날짜DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 납기일DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource bds발주서;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 자재번호DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 수량DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DateTimePicker DeliveryLastDate;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker OrderLastDate;
+        private System.Windows.Forms.DateTimePicker OrderFirstDate;
+        private System.Windows.Forms.DateTimePicker DeliveryFirstDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

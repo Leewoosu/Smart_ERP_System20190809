@@ -14,6 +14,7 @@ namespace ClassLibrary
     
     public partial class MES현장실적현황
     {
+        public string 실적번호 { get; set; }
         public string 관리번호 { get; set; }
         public string 제품번호 { get; set; }
         public int 실적수량 { get; set; }
@@ -23,9 +24,10 @@ namespace ClassLibrary
         public string 작업자 { get; set; }
         public System.DateTime 작업시작 { get; set; }
         public Nullable<System.DateTime> 작업종료 { get; set; }
+        public Nullable<System.DateTime> 실적등록시간 { get; set; }
         public Nullable<bool> 완료유무 { get; set; }
     
+        public virtual MES불량실적현황 MES불량실적현황 { get; set; }
         public virtual MES투입현황 MES투입현황 { get; set; }
-        public virtual 작업지시현황 작업지시현황 { get; set; }
     }
 }

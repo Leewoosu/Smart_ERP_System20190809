@@ -361,6 +361,7 @@
             this.dgv전표리스트.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv전표리스트_CellEndEdit);
             this.dgv전표리스트.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv전표리스트_CellEnter);
             this.dgv전표리스트.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgv전표리스트_RowPostPaint);
+            this.dgv전표리스트.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dgv전표리스트_KeyDown);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -455,13 +456,14 @@
             this.dgv전표.Name = "dgv전표";
             this.dgv전표.RowHeadersVisible = false;
             this.dgv전표.RowTemplate.Height = 23;
-            this.dgv전표.Size = new System.Drawing.Size(883, 233);
+            this.dgv전표.Size = new System.Drawing.Size(905, 233);
             this.dgv전표.TabIndex = 99;
             this.dgv전표.TabStop = false;
             this.dgv전표.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv전표_CellClick);
             this.dgv전표.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv전표_CellEnter);
             this.dgv전표.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv전표_CellPainting);
             this.dgv전표.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgv전표_RowPostPaint);
+            this.dgv전표.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Dgv전표_Scroll);
             this.dgv전표.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dgv전표_KeyDown);
             // 
             // CheckColumn
@@ -488,10 +490,9 @@
             // 
             // Column3
             // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column3.HeaderText = "품의내역";
             this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
             // 
             // Column10
             // 
@@ -647,16 +648,6 @@
         private System.Windows.Forms.ComboBox cbb월;
         private System.Windows.Forms.Label lbl회계년도;
         public System.Windows.Forms.DataGridView dgv전표;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn CheckColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.BindingSource 회사등록BindingSource;
         private System.Windows.Forms.BindingSource 사원등록BindingSource;
         private System.Windows.Forms.BindingSource 부서등록BindingSource;
@@ -669,5 +660,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn CheckColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }

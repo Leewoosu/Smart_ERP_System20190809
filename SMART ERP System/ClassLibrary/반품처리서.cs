@@ -14,11 +14,20 @@ namespace ClassLibrary
     
     public partial class 반품처리서
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public 반품처리서()
+        {
+            this.반품처리리스트 = new HashSet<반품처리리스트>();
+        }
+    
         public string 반품처리서번호 { get; set; }
         public string 공급업체번호 { get; set; }
         public string 입고검사서번호 { get; set; }
+        public Nullable<System.DateTime> 반품처리날짜 { get; set; }
     
-        public virtual 공급업체 공급업체 { get; set; }
+        public virtual 거래처 거래처 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<반품처리리스트> 반품처리리스트 { get; set; }
         public virtual 입고등록 입고등록 { get; set; }
     }
 }

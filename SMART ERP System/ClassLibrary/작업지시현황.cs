@@ -25,6 +25,6 @@ namespace ClassLibrary
         public string 자재명세번호 { get; set; }
         public string 상태 { get; set; }
     
-        public virtual MES현장실적현황 MES현장실적현황 { get; set; }
+        public virtual 생산계획현황 생산계획현황 { get; set; }
     }
 }

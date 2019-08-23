@@ -14,19 +14,7 @@ namespace ClassLibrary
     
     public partial class 납품업체
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public 납품업체()
-        {
-            this.수주 = new HashSet<수주>();
-            this.수주확인서 = new HashSet<수주확인서>();
-        }
-    
         public string 납품업체번호 { get; set; }
         public string 납품업체명 { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<수주> 수주 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<수주확인서> 수주확인서 { get; set; }
     }
 }

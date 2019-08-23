@@ -9,6 +9,8 @@ using SMART_ERP_System.Class;
 using System.Runtime.InteropServices;
 using System.Drawing;
 using System.Reflection;
+using ClassLibrary.Class;
+using System.Diagnostics;
 
 namespace SMART_ERP_System
 {
@@ -41,7 +43,7 @@ namespace SMART_ERP_System
         {
             loginMember.EmployeeName = loginForm.loginControl.txbEmployeeName.Text;
             loginMember.EmployeeCode = loginForm.loginControl.txbEmployeeCode.Text;
-            this.Text = loginForm.loginControl.txbEmployeeName.Text +
+            lblUser.Text = loginForm.loginControl.txbEmployeeName.Text +
                 "님 환영합니다.";
 
             ImageList imageList = new ImageList();
@@ -71,6 +73,9 @@ namespace SMART_ERP_System
                 metroTabControl.TabPages.Remove(metroTabControl.SelectedTab);
                 metroTabControl.SelectedIndex = tabindex - 1;
             }
+
+            if (metroTabControl.TabCount == 0)
+                pbx메인.Visible = true;
         }
 
         private void BtnPrint_Click(object sender, EventArgs e)
@@ -97,6 +102,8 @@ namespace SMART_ERP_System
                 string name = "SMART_ERP_System.MenuUserControl." + SearchName;
                 Assembly assembly = Assembly.GetExecutingAssembly();
                 Type type = assembly.GetType(name);
+
+                pbx메인.Visible = false;
 
                 if (tabPageCnt == 0)
                 {
@@ -273,6 +280,49 @@ namespace SMART_ERP_System
                 metroTabControl.TabPages.Remove(metroTabControl.SelectedTab);
                 if (ContextMenu != null)
                     ContextMenu.Dispose();
+            }
+        }
+
+        private void NotifyTest_Resize(object sender, EventArgs e)
+        {
+            //윈도우 상태가 Minimized일 경우
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.Visible = false; //창을 보이지 않게 한다.
+
+                this.ShowIcon = false; //작업표시줄에서 제거.
+
+                notifyIcon.Visible = true; //트레이 아이콘을 표시한다.
+            }
+        }
+
+        private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            //Notify Icon을 더블클릭했을시 일어나는 이벤트.
+            this.Visible = true;
+
+            this.ShowIcon = true;
+
+            notifyIcon.Visible = false; //트레이 아이콘을 숨긴다.
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            //ProcessCall();
+            MessageBox.Show(this.Name);
+        }
+
+        [DllImport("user32")]
+        private static extern bool SetForegroundWindow(IntPtr handle);
+        [DllImport("User32")]
+        private static extern int ShowWindow(IntPtr hwnd, int nCmdShow);
+
+        // 프로세스 최상위로 호출
+        private void ProcessCall(string processName)
+        {
+            foreach (Process process in Process.GetProcesses())
+            {
+                if (process.ProcessName == processName)
+                {
+                   ShowWindow(process.MainWindowHandle, 9);
+                }
             }
         }
     }

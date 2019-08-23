@@ -21,8 +21,13 @@ namespace ClassLibrary
         public string 납품업체번호 { get; set; }
         public System.DateTime 주문일 { get; set; }
         public System.DateTime 납기일 { get; set; }
+        public Nullable<int> 출고량 { get; set; }
+        public int 잔량 { get; set; }
+        public int 단가 { get; set; }
+        public int 금액 { get; set; }
+        public bool 출고여부 { get; set; }
     
-        public virtual 납품업체 납품업체 { get; set; }
+        public virtual 거래처 거래처 { get; set; }
         public virtual 제품 제품 { get; set; }
     }
 }

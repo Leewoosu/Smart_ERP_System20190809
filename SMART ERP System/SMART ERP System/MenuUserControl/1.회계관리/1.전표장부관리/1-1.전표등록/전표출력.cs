@@ -19,6 +19,7 @@ namespace SMART_ERP_System.MenuUserControl
     {
         계정합계Control 계정합계Control;
         List<전표리스트> 전표리스트s;
+        string comparer = "전체";
 
         public 전표출력()
         {
@@ -33,9 +34,12 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void SetData()
         {
-            회사등록BindingSource.DataSource = DB.회사.GetAll().Select(x=>x.회사코드);
+            MenuLists.Set();
+
+            회사등록BindingSource.DataSource = DB.회사.GetAll().Select(x => x.회사코드);
             사원등록BindingSource.DataSource = DB.사원등록.GetAll().Select(x => x.사원코드);
             부서등록BindingSource.DataSource = DB.부서.GetAll().Select(x => x.부서코드);
+
             cbb전표구분.DataSource = MenuLists.separations;
             cbb전표유형.DataSource = MenuLists.types;
             cbb전표상태.DataSource = MenuLists.status;
@@ -68,7 +72,7 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void Dgv전표리스트_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            for (int i = 0; i < dgv전표리스트.RowCount - 1; i++)
+            for (int i = 0; i < dgv전표리스트.Columns.Count; i++)
             {
                 dgv전표리스트.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
@@ -76,69 +80,57 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void StartSearch()
         {
-            cbb전표유형.Enabled = true;
-            cbb전표상태.Enabled = true;
-            cbb전표구분.Enabled = true;
-            string comparer = "전체";
-
-            if (cbb전표구분.Text == comparer && cbb전표상태.Text == comparer && cbb전표유형.Text == comparer)
-            {
-                전표리스트s = DB.전표리스트.SearchPeriod(dtpFrom.Value, dtpTo.Value);
-                전표리스트BindingSource.DataSource = 전표리스트s;
-            }
+            전표리스트s = DB.전표리스트.SearchPeriod(dtpFrom.Value, dtpTo.Value);
+            전표리스트BindingSource.DataSource = 전표리스트s;
         }
 
         private void Cbb전표상태_SelectedValueChanged(object sender, EventArgs e)
         {
-            전표리스트s = DB.전표리스트.SearchPeriod(dtpFrom.Value, dtpTo.Value);
-            string comparer = "전체";
-
-            if (cbb전표상태.SelectedValue != null)
-                ChangeSearchingTerms(전표리스트s, comparer);
+            var list = 전표리스트s;
+            if (cbb전표구분.SelectedValue.ToString() != comparer)
+                ChangeSearchingTerms(list, comparer);
         }
 
         private void Cbb전표구분_SelectedValueChanged(object sender, EventArgs e)
         {
-            전표리스트s = DB.전표리스트.SearchPeriod(dtpFrom.Value, dtpTo.Value);
-            string comparer = "전체";
-
-            if (cbb전표구분.SelectedValue != null)
-                ChangeSearchingTerms(전표리스트s, comparer);
+            var list = 전표리스트s;
+            if (cbb전표구분.SelectedValue.ToString() != comparer)
+                ChangeSearchingTerms(list, comparer);
         }
 
         private void Cbb전표유형_SelectedValueChanged(object sender, EventArgs e)
         {
-            전표리스트s = DB.전표리스트.SearchPeriod(dtpFrom.Value, dtpTo.Value);
-            string comparer = "전체";
-
-            if (cbb전표유형.SelectedValue != null)
-                ChangeSearchingTerms(전표리스트s, comparer);
+            var list = 전표리스트s;
+            if (cbb전표구분.SelectedValue.ToString() != comparer)
+                ChangeSearchingTerms(list, comparer);
         }
 
         private void ChangeSearchingTerms(List<전표리스트> 전표리스트s, string comparer)
         {
-            if ((cbb전표상태.Text == comparer)
-                 && (cbb전표구분.Text == comparer)
-                 && (cbb전표유형.Text == comparer))
-            {
-                전표리스트BindingSource.DataSource = 전표리스트s;
-            }
-            else
-            {
-                전표리스트BindingSource.DataSource
-                    = 전표리스트s.Where(x =>
-               x.전표상태 == cbb전표상태.Text &&
-               x.구분 == cbb전표구분.Text &&
-               x.전표유형 == cbb전표유형.Text
-                    ).ToList();
-            }
+            var list = 전표리스트s;
+
+            //if ((cbb전표상태.Text == comparer)
+            // && (cbb전표구분.Text == comparer)
+            // && (cbb전표유형.Text == comparer))
+            //{
+            //    전표리스트BindingSource.DataSource = list;
+            //}
+            //else
+            //{
+            //    전표리스트BindingSource.DataSource
+            //        = list.Where(x =>
+            //   x.전표상태 == cbb전표상태.Text &&
+            //   x.구분 == cbb전표구분.Text &&
+            //   x.전표유형 == cbb전표유형.Text
+            //        ).ToList();
+            //}
 
             if ((cbb전표상태.Text == comparer)
             && (cbb전표구분.Text == comparer)
             && (cbb전표유형.Text != comparer))
             {
                 전표리스트BindingSource.DataSource
-                = 전표리스트s.Where(x => x.전표유형 == cbb전표유형.Text
+                = list.Where(x => x.전표유형 == cbb전표유형.Text
                 ).ToList();
             }
 
@@ -147,7 +139,7 @@ namespace SMART_ERP_System.MenuUserControl
             && (cbb전표유형.Text == comparer))
             {
                 전표리스트BindingSource.DataSource
-                = 전표리스트s.Where(x => x.구분 == cbb전표구분.Text
+                = list.Where(x => x.구분 == cbb전표구분.Text
                 ).ToList();
             }
 
@@ -156,7 +148,7 @@ namespace SMART_ERP_System.MenuUserControl
             && (cbb전표유형.Text == comparer))
             {
                 전표리스트BindingSource.DataSource
-                = 전표리스트s.Where(x => x.전표상태 == cbb전표상태.Text
+                = list.Where(x => x.전표상태 == cbb전표상태.Text
                 ).ToList();
             }
 
@@ -165,7 +157,7 @@ namespace SMART_ERP_System.MenuUserControl
             && (cbb전표유형.Text == comparer))
             {
                 전표리스트BindingSource.DataSource
-                   = 전표리스트s.Where(x => x.전표상태 == cbb전표상태.Text
+                   = list.Where(x => x.전표상태 == cbb전표상태.Text
                    && x.구분 == cbb전표구분.Text
                    ).ToList();
             }
@@ -175,7 +167,7 @@ namespace SMART_ERP_System.MenuUserControl
             && (cbb전표유형.Text != comparer))
             {
                 전표리스트BindingSource.DataSource
-                   = 전표리스트s.Where(x => x.전표상태 == cbb전표상태.Text
+                   = list.Where(x => x.전표상태 == cbb전표상태.Text
                    && x.전표유형 == cbb전표유형.Text
                    ).ToList();
             }
@@ -185,7 +177,7 @@ namespace SMART_ERP_System.MenuUserControl
             && (cbb전표유형.Text != comparer))
             {
                 전표리스트BindingSource.DataSource
-                   = 전표리스트s.Where(x => x.전표상태 == cbb전표상태.Text
+                   = list.Where(x => x.전표상태 == cbb전표상태.Text
                    && x.전표유형 == cbb전표유형.Text
                    ).ToList();
             }
@@ -224,6 +216,8 @@ namespace SMART_ERP_System.MenuUserControl
             if (e.KeyData == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
+                dgv전표리스트.Rows.Clear();
+
                 StartSearch();
             }
         }
@@ -251,6 +245,13 @@ namespace SMART_ERP_System.MenuUserControl
                 e.SuppressKeyPress = true;
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void Dgv전표리스트_Scroll(object sender, ScrollEventArgs e)
+        {
+            Rectangle rtHeader = dgv전표리스트.DisplayRectangle;
+            rtHeader.Height = dgv전표리스트.ColumnHeadersHeight / 2;
+            dgv전표리스트.Invalidate(rtHeader);
         }
     }
 }

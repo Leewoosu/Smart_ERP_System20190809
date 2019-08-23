@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CodeHelperForm));
             this.panel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
@@ -39,13 +40,14 @@
             this.panel.Size = new System.Drawing.Size(306, 379);
             this.panel.TabIndex = 0;
             // 
-            // MenuForm
+            // CodeHelperForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 459);
             this.Controls.Add(this.panel);
-            this.Name = "MenuForm";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "CodeHelperForm";
             this.Text = "코드 도움";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuForm_FormClosing);

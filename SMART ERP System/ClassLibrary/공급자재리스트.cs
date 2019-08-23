@@ -18,7 +18,7 @@ namespace ClassLibrary
         public string 자재번호 { get; set; }
         public Nullable<bool> Dummy { get; set; }
     
-        public virtual 공급업체 공급업체 { get; set; }
+        public virtual 거래처 거래처 { get; set; }
         public virtual 자재 자재 { get; set; }
     }
 }

@@ -19,5 +19,8 @@ namespace ClassLibrary
         public Nullable<int> 불량수량 { get; set; }
         public System.DateTime 등록시간 { get; set; }
         public string 비고 { get; set; }
+        public string 실적번호 { get; set; }
+    
+        public virtual MES현장실적현황 MES현장실적현황 { get; set; }
     }
 }

@@ -16,9 +16,9 @@ namespace ClassLibrary
     {
         public int No { get; set; }
         public string 계정과목 { get; set; }
-        public Nullable<int> 당기금액차변 { get; set; }
-        public Nullable<int> 당기금액대변 { get; set; }
-        public Nullable<int> 전기금액차변 { get; set; }
-        public Nullable<int> 전기금액대변 { get; set; }
+        public Nullable<long> 당기금액차변 { get; set; }
+        public Nullable<long> 당기금액대변 { get; set; }
+        public Nullable<long> 전기금액차변 { get; set; }
+        public Nullable<long> 전기금액대변 { get; set; }
     }
 }

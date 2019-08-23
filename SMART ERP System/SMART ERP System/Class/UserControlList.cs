@@ -51,6 +51,7 @@ namespace SMART_ERP_System
             { "발주등록", 발주등록 },
             { "소요량전개",소요량전개 },
             { "입고검사등록",입고검사등록 },
+            { "입고등록",입고등록 },
             { "입고처리",입고처리 },
             { "청구등록", 청구등록 },
             { "발주현황",발주현황 },
@@ -115,6 +116,7 @@ namespace SMART_ERP_System
         public static 발주등록 발주등록;
         public static 소요량전개 소요량전개;
         public static 입고검사등록 입고검사등록;
+        public static 입고등록 입고등록;
         public static 입고처리 입고처리;
         public static 청구등록 청구등록;
         public static 발주현황 발주현황;

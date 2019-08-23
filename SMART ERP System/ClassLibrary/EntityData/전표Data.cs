@@ -88,5 +88,13 @@ namespace ClassLibrary.EntityData
                     resultIndex.Add(i);
             }
         }
+
+        public List<전표> GetAllMatchedMonth(DateTime firstDay,DateTime lastDay)
+        {
+            using (ERPEntities entities = new ERPEntities())
+            {
+                return entities.전표.Where(x => firstDay.Date <= x.입력날짜 && x.입력날짜 <= lastDay).ToList();
+            }
+        }
     }
 }

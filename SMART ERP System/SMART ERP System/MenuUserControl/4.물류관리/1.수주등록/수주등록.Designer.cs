@@ -1,4 +1,4 @@
-﻿namespace SMART_ERP_System
+﻿namespace SMART_ERP_System.MenuUserControl
 {
     partial class 수주등록
     {
@@ -47,8 +47,6 @@
             this.btn삭제 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgv수주 = new System.Windows.Forms.DataGridView();
-            this.btn엑셀 = new System.Windows.Forms.Button();
-            this.btn등록 = new System.Windows.Forms.Button();
             this.수주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주번호2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.제품번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +55,8 @@
             this.주문일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.납기일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bds수주 = new System.Windows.Forms.BindingSource(this.components);
+            this.btn엑셀 = new System.Windows.Forms.Button();
+            this.btn등록 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv엑셀)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -246,26 +246,6 @@
             this.dgv수주.Size = new System.Drawing.Size(495, 492);
             this.dgv수주.TabIndex = 0;
             // 
-            // btn엑셀
-            // 
-            this.btn엑셀.Location = new System.Drawing.Point(615, 3);
-            this.btn엑셀.Name = "btn엑셀";
-            this.btn엑셀.Size = new System.Drawing.Size(86, 23);
-            this.btn엑셀.TabIndex = 11;
-            this.btn엑셀.Text = "파일불러오기";
-            this.btn엑셀.UseVisualStyleBackColor = true;
-            this.btn엑셀.Click += new System.EventHandler(this.Btn엑셀_Click);
-            // 
-            // btn등록
-            // 
-            this.btn등록.Location = new System.Drawing.Point(707, 3);
-            this.btn등록.Name = "btn등록";
-            this.btn등록.Size = new System.Drawing.Size(75, 23);
-            this.btn등록.TabIndex = 12;
-            this.btn등록.Text = "등록";
-            this.btn등록.UseVisualStyleBackColor = true;
-            this.btn등록.Click += new System.EventHandler(this.btn등록_Click);
-            // 
             // 수주번호DataGridViewTextBoxColumn
             // 
             this.수주번호DataGridViewTextBoxColumn.DataPropertyName = "수주번호";
@@ -311,6 +291,26 @@
             // bds수주
             // 
             this.bds수주.DataSource = typeof(ClassLibrary.수주);
+            // 
+            // btn엑셀
+            // 
+            this.btn엑셀.Location = new System.Drawing.Point(615, 3);
+            this.btn엑셀.Name = "btn엑셀";
+            this.btn엑셀.Size = new System.Drawing.Size(86, 23);
+            this.btn엑셀.TabIndex = 11;
+            this.btn엑셀.Text = "파일불러오기";
+            this.btn엑셀.UseVisualStyleBackColor = true;
+            this.btn엑셀.Click += new System.EventHandler(this.Btn엑셀_Click);
+            // 
+            // btn등록
+            // 
+            this.btn등록.Location = new System.Drawing.Point(707, 3);
+            this.btn등록.Name = "btn등록";
+            this.btn등록.Size = new System.Drawing.Size(75, 23);
+            this.btn등록.TabIndex = 12;
+            this.btn등록.Text = "등록";
+            this.btn등록.UseVisualStyleBackColor = true;
+            this.btn등록.Click += new System.EventHandler(this.btn등록_Click);
             // 
             // 수주등록
             // 

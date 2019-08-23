@@ -20,7 +20,6 @@ namespace ClassLibrary
             this.공정순서 = new HashSet<공정순서>();
             this.생산계획현황 = new HashSet<생산계획현황>();
             this.수주 = new HashSet<수주>();
-            this.수주확인리스트 = new HashSet<수주확인리스트>();
             this.자재명세서 = new HashSet<자재명세서>();
             this.작업완료지시 = new HashSet<작업완료지시>();
             this.작업완료확인서 = new HashSet<작업완료확인서>();
@@ -48,8 +47,6 @@ namespace ClassLibrary
         public virtual ICollection<생산계획현황> 생산계획현황 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<수주> 수주 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<수주확인리스트> 수주확인리스트 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<자재명세서> 자재명세서 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

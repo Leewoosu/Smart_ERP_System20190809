@@ -8,9 +8,9 @@ namespace ClassLibrary.EntityData
 {
     public class 자재명세서Data : EntityData<자재명세서>
     {
-        public List<string> Get자재List()
+        public List<string> Get자재List(string 자재번호)
         {
-            using(ERPEntities context = new ERPEntities())
+            using (ERPEntities context = new ERPEntities())
             {
                 var query = from x in context.자재명세서
                             select x;

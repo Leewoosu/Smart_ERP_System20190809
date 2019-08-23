@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\ImageOpacity.cs" />
     <Compile Include="Class\InputDate.cs" />
     <Compile Include="Class\LoginMember.cs" />
     <Compile Include="Class\MenuLists.cs" />
@@ -60,8 +61,19 @@
     <Compile Include="EntityData\결산자료입력Data.cs" />
     <Compile Include="EntityData\고정자산계정과목Data.cs" />
     <Compile Include="EntityData\고정자산등록Data.cs" />
+    <Compile Include="EntityData\공급자재리스트Data.cs" />
+    <Compile Include="EntityData\반품처리리스트Data.cs" />
+    <Compile Include="EntityData\반품처리서Data.cs" />
+    <Compile Include="EntityData\불량상세정보Data.cs" />
+    <Compile Include="EntityData\불량코드내역Data.cs" />
     <Compile Include="EntityData\손익계산서Data.cs" />
     <Compile Include="EntityData\예금종류Data.cs" />
+    <Compile Include="EntityData\인사정보등록Data.cs" />
+    <Compile Include="EntityData\입고등록Data.cs" />
+    <Compile Include="EntityData\입고등록리스트Data.cs" />
+    <Compile Include="EntityData\자재상세전표Data.cs" />
+    <Compile Include="EntityData\자재전표Data.cs" />
+    <Compile Include="EntityData\작업지시현황Data.cs" />
     <Compile Include="EntityData\재무상태표Data.cs" />
     <Compile Include="EntityData\합계잔액시산표Data.cs" />
     <Compile Include="FormHelper\DbContextFactory.cs" />
@@ -74,9 +86,7 @@
     <Compile Include="EntityData\계정과목Data.cs" />
     <Compile Include="EntityData\계정과목그룹Data.cs" />
     <Compile Include="EntityData\계정과목등록Data.cs" />
-    <Compile Include="EntityData\공급업체Data.cs" />
     <Compile Include="EntityData\금융거래처Data.cs" />
-    <Compile Include="EntityData\납품업체Data.cs" />
     <Compile Include="EntityData\발주리스트Data.cs" />
     <Compile Include="EntityData\발주서Data.cs" />
     <Compile Include="EntityData\부서등록Data.cs" />
@@ -149,9 +159,6 @@
     <Compile Include="고정자산계정과목.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="공급업체.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="공급자재리스트.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -215,6 +222,9 @@
     <Compile Include="메뉴별권한설정.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="반품처리리스트.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="반품처리서.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -222,9 +232,6 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="발주서.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="발주확인서.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="부가세신고서.cs">
@@ -278,12 +285,6 @@
     <Compile Include="수주.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="수주확인리스트.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="수주확인서.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="시스템환경설정.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -321,6 +322,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="자재명세서.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="자재상세전표.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="자재전표.cs">

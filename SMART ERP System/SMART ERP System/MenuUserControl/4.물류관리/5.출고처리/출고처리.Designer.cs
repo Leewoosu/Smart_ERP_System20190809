@@ -33,36 +33,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -73,10 +43,34 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.품번1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.고객이름 = new System.Windows.Forms.TextBox();
+            this.고객번호 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtps = new System.Windows.Forms.DateTimePicker();
+            this.dtpe = new System.Windows.Forms.DateTimePicker();
+            this.품번2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.수주번호1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.수주번호2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.제품번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.주문수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.납품업체번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.주문일 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.납기일 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.출고 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button4
@@ -109,7 +103,7 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 368);
+            this.dataGridView2.Location = new System.Drawing.Point(7, 368);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(1018, 244);
@@ -118,282 +112,20 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 159);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.수주번호1,
+            this.수주번호2,
+            this.제품번호,
+            this.주문수량,
+            this.납품업체번호,
+            this.주문일,
+            this.납기일,
+            this.출고});
+            this.dataGridView1.Location = new System.Drawing.Point(7, 159);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1018, 203);
             this.dataGridView1.TabIndex = 128;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textBox17);
-            this.groupBox1.Controls.Add(this.textBox18);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox16);
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox14);
-            this.groupBox1.Controls.Add(this.textBox15);
-            this.groupBox1.Controls.Add(this.textBox12);
-            this.groupBox1.Controls.Add(this.textBox13);
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.Location = new System.Drawing.Point(7, 35);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1018, 118);
-            this.groupBox1.TabIndex = 127;
-            this.groupBox1.TabStop = false;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(679, 67);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(67, 20);
-            this.textBox17.TabIndex = 139;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(752, 67);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(107, 20);
-            this.textBox18.TabIndex = 140;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(624, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 11);
-            this.label4.TabIndex = 138;
-            this.label4.Text = "프로젝트";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(679, 43);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(67, 20);
-            this.textBox5.TabIndex = 136;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(752, 43);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(107, 20);
-            this.textBox8.TabIndex = 137;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(646, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 11);
-            this.label2.TabIndex = 135;
-            this.label2.Text = "고객";
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(374, 93);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(183, 20);
-            this.textBox16.TabIndex = 134;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(296, 93);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(75, 19);
-            this.comboBox4.TabIndex = 133;
-            this.comboBox4.Text = "0.출고번호";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(89, 70);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(183, 20);
-            this.textBox6.TabIndex = 132;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(11, 70);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(75, 19);
-            this.comboBox2.TabIndex = 131;
-            this.comboBox2.Text = "0.품번";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(11, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(75, 19);
-            this.comboBox1.TabIndex = 130;
-            this.comboBox1.Text = "2.실적담당";
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(679, 17);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(67, 20);
-            this.textBox14.TabIndex = 127;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(752, 17);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(107, 20);
-            this.textBox15.TabIndex = 128;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(377, 67);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(70, 20);
-            this.textBox12.TabIndex = 125;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(453, 67);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(104, 20);
-            this.textBox13.TabIndex = 126;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(377, 44);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(70, 20);
-            this.textBox10.TabIndex = 123;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(453, 44);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(104, 20);
-            this.textBox11.TabIndex = 124;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(377, 19);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(70, 20);
-            this.textBox7.TabIndex = 121;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(453, 19);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(104, 20);
-            this.textBox9.TabIndex = 122;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(92, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(70, 20);
-            this.textBox1.TabIndex = 119;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(168, 44);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(104, 20);
-            this.textBox4.TabIndex = 120;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(322, 70);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 11);
-            this.label10.TabIndex = 83;
-            this.label10.Text = "관리구분";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.Location = new System.Drawing.Point(37, 26);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 11);
-            this.label15.TabIndex = 51;
-            this.label15.Text = "출고기간";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(646, 25);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(27, 11);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "사원";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(92, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(77, 20);
-            this.textBox2.TabIndex = 26;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(175, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(11, 11);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "~";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(195, 22);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(77, 20);
-            this.textBox3.TabIndex = 28;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(344, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 11);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "부서";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(322, 47);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 11);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "출고창고";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
             // 
@@ -427,7 +159,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.Location = new System.Drawing.Point(165, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 11);
@@ -469,7 +201,7 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.Location = new System.Drawing.Point(529, 22);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(82, 11);
@@ -492,6 +224,197 @@
             this.textBox20.Size = new System.Drawing.Size(58, 21);
             this.textBox20.TabIndex = 135;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(175, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(11, 11);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "~";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Location = new System.Drawing.Point(785, 47);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(27, 11);
+            this.label11.TabIndex = 38;
+            this.label11.Text = "사원";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.Location = new System.Drawing.Point(9, 47);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(49, 11);
+            this.label15.TabIndex = 51;
+            this.label15.Text = "출고기간";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(891, 44);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(107, 20);
+            this.textBox15.TabIndex = 128;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(818, 44);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(67, 20);
+            this.textBox14.TabIndex = 127;
+            // 
+            // 품번1
+            // 
+            this.품번1.Location = new System.Drawing.Point(64, 70);
+            this.품번1.Name = "품번1";
+            this.품번1.Size = new System.Drawing.Size(105, 20);
+            this.품번1.TabIndex = 132;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(29, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 11);
+            this.label2.TabIndex = 135;
+            this.label2.Text = "고객";
+            // 
+            // 고객이름
+            // 
+            this.고객이름.Location = new System.Drawing.Point(135, 18);
+            this.고객이름.Name = "고객이름";
+            this.고객이름.ReadOnly = true;
+            this.고객이름.Size = new System.Drawing.Size(107, 20);
+            this.고객이름.TabIndex = 137;
+            // 
+            // 고객번호
+            // 
+            this.고객번호.Location = new System.Drawing.Point(62, 18);
+            this.고객번호.Name = "고객번호";
+            this.고객번호.Size = new System.Drawing.Size(67, 20);
+            this.고객번호.TabIndex = 136;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.품번2);
+            this.groupBox1.Controls.Add(this.dtpe);
+            this.groupBox1.Controls.Add(this.dtps);
+            this.groupBox1.Controls.Add(this.고객번호);
+            this.groupBox1.Controls.Add(this.고객이름);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.품번1);
+            this.groupBox1.Controls.Add(this.textBox14);
+            this.groupBox1.Controls.Add(this.textBox15);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.Location = new System.Drawing.Point(7, 35);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1018, 118);
+            this.groupBox1.TabIndex = 127;
+            this.groupBox1.TabStop = false;
+            // 
+            // dtps
+            // 
+            this.dtps.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtps.Location = new System.Drawing.Point(62, 44);
+            this.dtps.Name = "dtps";
+            this.dtps.Size = new System.Drawing.Size(107, 20);
+            this.dtps.TabIndex = 138;
+            // 
+            // dtpe
+            // 
+            this.dtpe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpe.Location = new System.Drawing.Point(192, 44);
+            this.dtpe.Name = "dtpe";
+            this.dtpe.Size = new System.Drawing.Size(110, 20);
+            this.dtpe.TabIndex = 139;
+            // 
+            // 품번2
+            // 
+            this.품번2.Location = new System.Drawing.Point(192, 70);
+            this.품번2.Name = "품번2";
+            this.품번2.Size = new System.Drawing.Size(110, 20);
+            this.품번2.TabIndex = 140;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(9, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 11);
+            this.label4.TabIndex = 141;
+            this.label4.Text = "품목번호";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(175, 73);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(11, 11);
+            this.label12.TabIndex = 142;
+            this.label12.Text = "~";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(308, 41);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(84, 23);
+            this.button5.TabIndex = 134;
+            this.button5.Text = "조회";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            // 
+            // 수주번호1
+            // 
+            this.수주번호1.HeaderText = "수주번호1";
+            this.수주번호1.Name = "수주번호1";
+            // 
+            // 수주번호2
+            // 
+            this.수주번호2.HeaderText = "수주번호2";
+            this.수주번호2.Name = "수주번호2";
+            // 
+            // 제품번호
+            // 
+            this.제품번호.HeaderText = "제품번호";
+            this.제품번호.Name = "제품번호";
+            // 
+            // 주문수량
+            // 
+            this.주문수량.HeaderText = "주문수량";
+            this.주문수량.Name = "주문수량";
+            // 
+            // 납품업체번호
+            // 
+            this.납품업체번호.HeaderText = "납품업체번호";
+            this.납품업체번호.Name = "납품업체번호";
+            // 
+            // 주문일
+            // 
+            this.주문일.HeaderText = "주문일";
+            this.주문일.Name = "주문일";
+            // 
+            // 납기일
+            // 
+            this.납기일.HeaderText = "납기일";
+            this.납기일.Name = "납기일";
+            // 
+            // 출고
+            // 
+            this.출고.HeaderText = "출고";
+            this.출고.Name = "출고";
+            // 
             // 출고처리
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -509,10 +432,10 @@
             this.Size = new System.Drawing.Size(1044, 645);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,38 +448,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -565,5 +458,29 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox 품번1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox 고객이름;
+        private System.Windows.Forms.TextBox 고객번호;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox 품번2;
+        private System.Windows.Forms.DateTimePicker dtpe;
+        private System.Windows.Forms.DateTimePicker dtps;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 제품번호;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 주문수량;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 납품업체번호;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 주문일;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 납기일;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn 출고;
     }
 }

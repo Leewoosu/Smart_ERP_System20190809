@@ -25,6 +25,7 @@ namespace ClassLibrary
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<MES불량실적현황> MES불량실적현황 { get; set; }
         public virtual DbSet<MES투입현황> MES투입현황 { get; set; }
         public virtual DbSet<MES현장실적현황> MES현장실적현황 { get; set; }
         public virtual DbSet<거래처> 거래처 { get; set; }
@@ -36,7 +37,6 @@ namespace ClassLibrary
         public virtual DbSet<계정과목그룹> 계정과목그룹 { get; set; }
         public virtual DbSet<계정과목등록> 계정과목등록 { get; set; }
         public virtual DbSet<고정자산> 고정자산 { get; set; }
-        public virtual DbSet<공급업체> 공급업체 { get; set; }
         public virtual DbSet<공급자재리스트> 공급자재리스트 { get; set; }
         public virtual DbSet<공정> 공정 { get; set; }
         public virtual DbSet<공정순서> 공정순서 { get; set; }
@@ -57,10 +57,10 @@ namespace ClassLibrary
         public virtual DbSet<납품업체> 납품업체 { get; set; }
         public virtual DbSet<메뉴등록> 메뉴등록 { get; set; }
         public virtual DbSet<메뉴별권한설정> 메뉴별권한설정 { get; set; }
+        public virtual DbSet<반품처리리스트> 반품처리리스트 { get; set; }
         public virtual DbSet<반품처리서> 반품처리서 { get; set; }
         public virtual DbSet<발주리스트> 발주리스트 { get; set; }
         public virtual DbSet<발주서> 발주서 { get; set; }
-        public virtual DbSet<발주확인서> 발주확인서 { get; set; }
         public virtual DbSet<부가세신고서> 부가세신고서 { get; set; }
         public virtual DbSet<부서등록> 부서등록 { get; set; }
         public virtual DbSet<분기별예산> 분기별예산 { get; set; }
@@ -78,8 +78,6 @@ namespace ClassLibrary
         public virtual DbSet<소득_세액공제환경설정> 소득_세액공제환경설정 { get; set; }
         public virtual DbSet<손익계산서> 손익계산서 { get; set; }
         public virtual DbSet<수주> 수주 { get; set; }
-        public virtual DbSet<수주확인리스트> 수주확인리스트 { get; set; }
-        public virtual DbSet<수주확인서> 수주확인서 { get; set; }
         public virtual DbSet<시스템환경설정> 시스템환경설정 { get; set; }
         public virtual DbSet<업무용승용차_차량등록> 업무용승용차_차량등록 { get; set; }
         public virtual DbSet<역추적> 역추적 { get; set; }
@@ -93,6 +91,7 @@ namespace ClassLibrary
         public virtual DbSet<자금과목> 자금과목 { get; set; }
         public virtual DbSet<자재> 자재 { get; set; }
         public virtual DbSet<자재명세서> 자재명세서 { get; set; }
+        public virtual DbSet<자재상세전표> 자재상세전표 { get; set; }
         public virtual DbSet<자재전표> 자재전표 { get; set; }
         public virtual DbSet<작업완료지시> 작업완료지시 { get; set; }
         public virtual DbSet<작업완료확인서> 작업완료확인서 { get; set; }
@@ -113,7 +112,6 @@ namespace ClassLibrary
         public virtual DbSet<합계잔액시산표리스트> 합계잔액시산표리스트 { get; set; }
         public virtual DbSet<회계처리> 회계처리 { get; set; }
         public virtual DbSet<회사등록> 회사등록 { get; set; }
-        public virtual DbSet<MES불량실적현황> MES불량실적현황 { get; set; }
         public virtual DbSet<고정자산계정과목> 고정자산계정과목 { get; set; }
         public virtual DbSet<공지사항> 공지사항 { get; set; }
     }

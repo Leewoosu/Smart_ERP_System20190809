@@ -324,6 +324,12 @@
     <Compile Include="MenuUserControl\4.물류관리\2.구매관리\입고검사등록.Designer.cs">
       <DependentUpon>입고검사등록.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuUserControl\4.물류관리\2.구매관리\입고등록.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuUserControl\4.물류관리\2.구매관리\입고등록.Designer.cs">
+      <DependentUpon>입고등록.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuUserControl\4.물류관리\2.구매관리\입고처리.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -589,6 +595,9 @@
     <EmbeddedResource Include="MenuUserControl\4.물류관리\2.구매관리\입고검사등록.resx">
       <DependentUpon>입고검사등록.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuUserControl\4.물류관리\2.구매관리\입고등록.resx">
+      <DependentUpon>입고등록.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuUserControl\4.물류관리\2.구매관리\입고처리.resx">
       <DependentUpon>입고처리.cs</DependentUpon>
     </EmbeddedResource>
@@ -681,6 +690,7 @@
     <None Include="Properties\DataSources\ClassLibrary.제품.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.합계잔액시산표.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.회사등록.datasource" />
+    <None Include="Properties\DataSources\SMART_ERP_System.Class.MenuLists.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -740,6 +750,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

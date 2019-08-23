@@ -35,7 +35,7 @@ namespace ClassLibrary.EntityData
             using (ERPEntities entities = new ERPEntities())
             {
                 var query = from x in entities.전표리스트
-                            where dtpFrom.Date <= x.입력날짜 && x.입력날짜 <= dtpTo.Date
+                            //where dtpFrom <= x.입력날짜 && x.입력날짜 <= dtpTo
                             select new
                             {
                                 x,
@@ -50,7 +50,9 @@ namespace ClassLibrary.EntityData
                             };
 
                 var list = query.ToList();
-                
+
+                list = list.Where(x => dtpFrom <= x.x.입력날짜 && x.x.입력날짜 <= dtpTo).ToList();
+                MessageBox.Show(list.Count.ToString());
                 foreach (var item in list)
                 {
                     item.x.계정과목명 = item.계정과목명;

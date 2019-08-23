@@ -117,7 +117,10 @@ namespace SMART_ERP_System.MenuUserControl
 
             if (e.KeyData == Keys.F5)
             {
-                treeView.Refresh();
+                treeView.Nodes.Clear();
+                treeView.SetMenuItemsByAccount(out MenuItems);
+
+                TreeView_NodeMouseDoubleClick(treeView, null);
             }
         }
 
@@ -176,21 +179,12 @@ namespace SMART_ERP_System.MenuUserControl
         private void Btn세목추가_Click(object sender, EventArgs e)
         {
             int cnt = treeView.SelectedNode.Nodes.Count;
-            
+
             cnt += int.Parse(treeView.SelectedNode.Name);
             string key = (++cnt).ToString();
-            string defaultName = key + " " + "회사 설정 계정";
+            string defaultName = "회사 설정 계정";
 
             treeView.SelectedNode.Nodes.Add(key, defaultName);
-
-            foreach (Control control in gbx세부항목.Controls)
-            {
-                if ((typeof(TextBox) == control.GetType()) || (typeof(ComboBox) == control.GetType()))
-                {
-                    control.Text = null;
-                    control.Enabled = false;
-                }
-            }
 
             if (DB.계정과목그룹.IsExist(treeView.SelectedNode.Name) == false)
             {
@@ -215,6 +209,8 @@ namespace SMART_ERP_System.MenuUserControl
 
             DB.계정과목등록.Insert(계정과목등록);
             DB.계정과목.Insert(계정과목);
+
+            TreeView_NodeMouseDoubleClick(treeView, null);
         }
 
         private void Btn세목삭제_Click(object sender, EventArgs e)
@@ -231,6 +227,14 @@ namespace SMART_ERP_System.MenuUserControl
             }
 
             treeView.Nodes.Remove(treeView.SelectedNode);
+        }
+
+        private void TreeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            TreeView treeView = (TreeView)sender;
+
+            if (treeView.SelectedNode == null)
+                return;
         }
     }
 }

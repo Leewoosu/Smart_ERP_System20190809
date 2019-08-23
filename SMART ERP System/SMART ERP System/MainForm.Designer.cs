@@ -34,6 +34,8 @@ namespace SMART_ERP_System
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -47,7 +49,10 @@ namespace SMART_ERP_System
             this.txbMenuSearch = new System.Windows.Forms.TextBox();
             this.listBox = new System.Windows.Forms.ListBox();
             this.treeView = new System.Windows.Forms.TreeView();
+            this.pbx메인 = new System.Windows.Forms.PictureBox();
             this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.lblUser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -60,6 +65,7 @@ namespace SMART_ERP_System
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx메인)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -159,10 +165,10 @@ namespace SMART_ERP_System
             // 
             // splitContainer2
             // 
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Location = new System.Drawing.Point(-4, -4);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -171,6 +177,7 @@ namespace SMART_ERP_System
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.pbx메인);
             this.splitContainer2.Panel2.Controls.Add(this.metroTabControl);
             this.splitContainer2.Size = new System.Drawing.Size(1240, 659);
             this.splitContainer2.SplitterDistance = 188;
@@ -239,25 +246,54 @@ namespace SMART_ERP_System
             this.treeView.TabIndex = 2;
             this.treeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView_NodeMouseDoubleClick);
             // 
+            // pbx메인
+            // 
+            this.pbx메인.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbx메인.Image = global::SMART_ERP_System.Properties.Resources.background;
+            this.pbx메인.Location = new System.Drawing.Point(0, 0);
+            this.pbx메인.Name = "pbx메인";
+            this.pbx메인.Size = new System.Drawing.Size(1044, 655);
+            this.pbx메인.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbx메인.TabIndex = 1;
+            this.pbx메인.TabStop = false;
+            // 
             // metroTabControl
             // 
-            this.metroTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl.Location = new System.Drawing.Point(0, 0);
             this.metroTabControl.Name = "metroTabControl";
-            this.metroTabControl.Size = new System.Drawing.Size(1044, 655);
+            this.metroTabControl.Size = new System.Drawing.Size(1045, 655);
             this.metroTabControl.TabIndex = 0;
             this.metroTabControl.UseSelectable = true;
             this.metroTabControl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MetroTabControl_MouseClick);
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "ERP";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseDoubleClick);
+            // 
+            // lblUser
+            // 
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
+            this.lblUser.Location = new System.Drawing.Point(23, 20);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(514, 33);
+            this.lblUser.TabIndex = 11;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1280, 788);
+            this.Controls.Add(this.lblUser);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Resize += new System.EventHandler(this.NotifyTest_Resize);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -272,6 +308,7 @@ namespace SMART_ERP_System
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbx메인)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -298,6 +335,9 @@ namespace SMART_ERP_System
         private ListBox listBox;
         private Button btnSearch;
         private Button btnDelete;
+        private PictureBox pbx메인;
+        private NotifyIcon notifyIcon;
+        private Label lblUser;
     }
 }
 

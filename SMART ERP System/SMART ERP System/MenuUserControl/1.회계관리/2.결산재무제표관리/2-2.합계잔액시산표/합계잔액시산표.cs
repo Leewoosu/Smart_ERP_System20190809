@@ -30,7 +30,7 @@ namespace SMART_ERP_System.MenuUserControl
                 dgv합계잔액시산표.Columns[j].Width = 203;
                 if (j != 2)
                 {
-                    dgv합계잔액시산표.Columns[j].DefaultCellStyle.Format = "###,##0";
+                    dgv합계잔액시산표.Columns[j].DefaultCellStyle.Format = "###,###,##0";
                     dgv합계잔액시산표.Columns[j].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 }
             }
@@ -102,7 +102,7 @@ namespace SMART_ERP_System.MenuUserControl
         {
             if (e.KeyData == Keys.Enter)
             {
-               합계잔액시산표BindingSource.DataSource = DB.합계잔액시산표.GetAll().Where(x => x.기간 <= dtp입력날짜.Value).ToList();
+               합계잔액시산표BindingSource.DataSource = DB.합계잔액시산표.GetAll().Where(x => x.기간 == dtp입력날짜.Value).ToList();
 
                 string comparer;
                 long? left = 0;

@@ -145,6 +145,11 @@ namespace SMART_ERP_System.MenuUserControl
             }
         }
 
+        /// <summary>
+        /// 전표와 연결된 모든 전표리스트를 담음
+        /// </summary>
+        /// <param name="전표">담을 전표</param>
+        /// <param name="list">담을 전표리스트</param>
         private void Fill_InAll_LinkedTo전표(out 전표 전표, out List<전표리스트> list)
         {
             전표 = new 전표();
@@ -179,7 +184,10 @@ namespace SMART_ERP_System.MenuUserControl
                 if (item == str)
                 {
                     dgv전표.Rows[전표단위.Index].Cells[4].Value = str;
-                    dgv전표리스트.Rows.Add();
+                    bool check = IsPossibleToAddByStatementList();
+
+                    if (check == true)
+                        dgv전표리스트.Rows.Add();
                     dgv전표리스트.CurrentCell = dgv전표리스트.Rows[0].Cells[1];
                     dgv전표리스트.Focus();
                 }
@@ -245,6 +253,7 @@ namespace SMART_ERP_System.MenuUserControl
                 if (dgv전표.Rows[전표단위.RowIndex].Cells[3].Value == null)
                 {
                     MessageBox.Show("품의내역을 입력하세요");
+                    keybd_event((byte)Keys.Left, 0x25, 0x01, 0);
                     return;
                 }
 
@@ -275,6 +284,13 @@ namespace SMART_ERP_System.MenuUserControl
             }
         }
 
+        private void Dgv전표_Scroll(object sender, ScrollEventArgs e)
+        {
+            Rectangle rtHeader = dgv전표.DisplayRectangle;
+            rtHeader.Height = dgv전표.ColumnHeadersHeight / 2;
+            dgv전표.Invalidate(rtHeader);
+        }
+
         // 행 추가시 자동으로 일자 입력됨
         // 컬럼 세팅
         private void Dgv전표_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -298,7 +314,8 @@ namespace SMART_ERP_System.MenuUserControl
                     dgv전표.Columns[i].DefaultCellStyle.BackColor = Color.LightBlue;
                 }
             }
-            dgv전표.Rows[e.RowIndex].Cells[1].Value = txb일.Text;
+            if (dgv전표.Rows[e.RowIndex].Cells[1].Value == null)
+                dgv전표.Rows[e.RowIndex].Cells[1].Value = txb일.Text;
             dgv전표.Columns[8].DefaultCellStyle.Format = "###,##0";
         }
 
@@ -343,7 +360,10 @@ namespace SMART_ERP_System.MenuUserControl
                     // 마지막 행 체크 및 그 행의 마지막 열에 데이터가 있을 경우 행 추가
                     if ((전표리스트단위.RowCnt - 1 == 전표리스트단위.RowIndex) && (dgv전표리스트.Rows[전표리스트단위.Index].Cells[전표리스트단위.ColumnCnt - 1].Value != null))
                     {
-                        dgv전표리스트.Rows.Add();
+                        bool check = IsPossibleToAddByStatementList();
+
+                        if (check == true)
+                            dgv전표리스트.Rows.Add();
                     }
                     // 그 행의 마지막 열에 데이터가 있을 경우 행 추가
                     else if (dgv전표리스트.Rows[전표리스트단위.Index].Cells[전표리스트단위.ColumnCnt - 1].Value != null)
@@ -473,6 +493,7 @@ namespace SMART_ERP_System.MenuUserControl
             {
                 if (dgv전표리스트.CurrentCell.ColumnIndex == 2)
                 {
+                    e.SuppressKeyPress = true;
                     계정코드구분Control control = new 계정코드구분Control();
                     CodeHelperForm menuForm = new CodeHelperForm(control);
                     menuForm.SetFormLocation();
@@ -525,6 +546,21 @@ namespace SMART_ERP_System.MenuUserControl
         }
 
         /// <summary>
+        /// 전표리스트에서 행을 추가할 지 여부를 판단
+        /// </summary>
+        /// <returns></returns>
+        private bool IsPossibleToAddByStatementList()
+        {
+            for (int i = 0; i < dgv전표리스트.RowCount; i++)
+            {
+                if (dgv전표리스트.Rows[i].Cells[8].Value != null)
+                    return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
         /// 기존 데이터외의 추가 데이터 Insert
         /// </summary>
         /// <param name="i">Row 인덱스</param>
@@ -567,13 +603,13 @@ namespace SMART_ERP_System.MenuUserControl
         }
 
         /// <summary>
-        /// 전표 기본값 세팅
+        /// 전표의 기본값 세팅
         /// </summary>
         public void SetDefaultBy전표()
         {
 
-            dgv전표.Rows[전표단위.Index].Cells[2].Value = 
-                
+            dgv전표.Rows[전표단위.Index].Cells[2].Value = string.Format("{0:D5}", (전표단위.Index + 1));
+
             dgv전표.Rows[전표단위.Index].Cells[5].Value
                 = $"{input.Date.ToString("yyyyMMdd")}" + "-" + string.Format("{0:D5}", (전표단위.Index + 1));
 
@@ -686,30 +722,69 @@ namespace SMART_ERP_System.MenuUserControl
                 }
 
                 input.Year = int.Parse(lbl회계년도.Text);
-                int.TryParse(txb일.Text, out int result);
-                if (result == 0)
+
+                if (txb일.Text.IsNullOrEmpty())
                 {
-                    MessageBox.Show("잘못된 입력입니다. 다시 입력하시오.");
-                    return;
+                    if (input.IsDate(input.Year, input.Month, 50) == false)
+                    {
+                        input.Date = new DateTime(input.Year, input.Month, int.Parse(input.DayText));
+
+                        DateTime firstDate = new DateTime(input.Year, input.Month, 1);
+
+                        List<전표> list = DB.전표.GetAllMatchedMonth(firstDate, input.Date);
+
+                        if (list != null)
+                        {
+                            FillDataGridViewInList(list);
+
+                            dgv전표.Focus();
+                            bool check = IsPossibleToAddByStatement();
+
+                            if (dgv전표.RowCount == 0)
+                                dgv전표.Rows.Add();
+
+                            if (check == true)
+                                dgv전표.Rows.Add();
+
+                            전표단위.LoadCnt = list.Count - 1;
+                            전표단위.Index = dgv전표.CurrentRow.Index;
+                            전표단위.RowCnt = dgv전표.RowCount;
+                            dgv전표.CurrentCell = dgv전표.Rows[전표단위.Index].Cells[2];
+                        }
+                        else
+                            return;
+                    }
                 }
                 else
-                    input.Day = result;
-
-                if (input.IsDate(input.Year, input.Month, input.Day) == false)
                 {
-                    txb일.Text = input.DayText;
+                    int.TryParse(txb일.Text, out int result);
+                    if (result == 0)
+                    {
+                        MessageBox.Show("잘못된 입력입니다. 다시 입력하시오.");
+                        return;
+                    }
+                    else
+                        input.Day = result;
 
-                    Load전표();
-                }
-                else
-                {
-                    txb일.Text = input.Day.ToString();
+                    if (input.IsDate(input.Year, input.Month, input.Day) == false)
+                    {
+                        txb일.Text = input.DayText;
 
-                    Load전표();
+                        Load전표();
+                    }
+                    else
+                    {
+                        txb일.Text = input.Day.ToString();
+
+                        Load전표();
+                    }
                 }
             }
         }
 
+        /// <summary>
+        /// 입력날짜에 맞는 전표를 불러옴
+        /// </summary>
         private void Load전표()
         {
             input.Date = new DateTime(input.Year, input.Month, int.Parse(txb일.Text));
@@ -721,11 +796,33 @@ namespace SMART_ERP_System.MenuUserControl
             }
 
             dgv전표.Focus();
-            dgv전표.Rows.Add();
+            bool check = IsPossibleToAddByStatement();
+
+            if (dgv전표.RowCount == 0)
+                dgv전표.Rows.Add();
+
+            if (check == true)
+                dgv전표.Rows.Add();
+
             전표단위.LoadCnt = list.Count - 1;
-            전표단위.Index = dgv전표.CurrentRow.Index;
             전표단위.RowCnt = dgv전표.RowCount;
-            dgv전표.CurrentCell = dgv전표.Rows[전표단위.Index].Cells[2];
+            dgv전표.CurrentCell = dgv전표.Rows[0].Cells[2];
+            전표단위.Index = dgv전표.CurrentRow.Index;
+        }
+
+        /// <summary>
+        /// 전표에서 행을 추가할 지 여부를 판단
+        /// </summary>
+        /// <returns></returns>
+        private bool IsPossibleToAddByStatement()
+        {
+            for (int i = 0; i < dgv전표.RowCount; i++)
+            {
+                if (dgv전표.Rows[i].Cells[5].Value != null)
+                    return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -744,7 +841,7 @@ namespace SMART_ERP_System.MenuUserControl
                 dgv전표.Rows[i].Cells[5].Value = list[i].기표번호;
                 dgv전표.Rows[i].Cells[6].Value = list[i].승인상태;
                 dgv전표.Rows[i].Cells[7].Value = list[i].승인자;
-                if (list[i].대차차액 != null)
+                if (list[i].대차차액 != null && list[i].대차차액 != 0)
                     dgv전표.Rows[i].Cells[8].Value = list[i].대차차액;
                 dgv전표.Rows[i].Cells[9].Value = list[i].작업자;
             }

@@ -177,7 +177,6 @@
             // cbb전표상태
             // 
             this.cbb전표상태.DisplayMember = "전표번호";
-            this.cbb전표상태.Enabled = false;
             this.cbb전표상태.Font = new System.Drawing.Font("굴림", 10F);
             this.cbb전표상태.FormattingEnabled = true;
             this.cbb전표상태.Location = new System.Drawing.Point(84, 45);
@@ -190,7 +189,6 @@
             // 
             // cbb전표구분
             // 
-            this.cbb전표구분.Enabled = false;
             this.cbb전표구분.Font = new System.Drawing.Font("굴림", 10F);
             this.cbb전표구분.FormattingEnabled = true;
             this.cbb전표구분.Location = new System.Drawing.Point(215, 46);
@@ -203,7 +201,6 @@
             // cbb전표유형
             // 
             this.cbb전표유형.DisplayMember = "전표번호";
-            this.cbb전표유형.Enabled = false;
             this.cbb전표유형.Font = new System.Drawing.Font("굴림", 10F);
             this.cbb전표유형.FormattingEnabled = true;
             this.cbb전표유형.Location = new System.Drawing.Point(353, 45);
@@ -350,7 +347,6 @@
             // 
             this.dgv전표리스트.AllowUserToAddRows = false;
             this.dgv전표리스트.AllowUserToDeleteRows = false;
-            this.dgv전표리스트.AllowUserToResizeColumns = false;
             this.dgv전표리스트.AllowUserToResizeRows = false;
             this.dgv전표리스트.AutoGenerateColumns = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -383,6 +379,7 @@
             this.dgv전표리스트.TabIndex = 132;
             this.dgv전표리스트.TabStop = false;
             this.dgv전표리스트.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgv전표리스트_RowPostPaint);
+            this.dgv전표리스트.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Dgv전표리스트_Scroll);
             // 
             // 순번DataGridViewTextBoxColumn
             // 

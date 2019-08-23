@@ -81,6 +81,7 @@
             this.Controls.Add(this.btnPrtSet);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.printPreviewControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PrintForm";
             this.Text = "프린트";
             this.ResumeLayout(false);
