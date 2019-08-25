@@ -15,9 +15,9 @@ namespace ClassLibrary
     public partial class 공정순서
     {
         public int 공정번호 { get; set; }
-        public int 제품번호 { get; set; }
-        public Nullable<int> 후공정번호 { get; set; }
-        public Nullable<int> 최초공정번호 { get; set; }
+        public string 제품번호 { get; set; }
+        public int 최초공정번호 { get; set; }
+        public int 후공정 { get; set; }
     
         public virtual 공정 공정 { get; set; }
         public virtual 제품 제품 { get; set; }

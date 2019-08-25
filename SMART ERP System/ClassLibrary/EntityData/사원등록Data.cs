@@ -25,5 +25,84 @@ namespace ClassLibrary.EntityData
                 employeeCnt = entity.사원등록.Where(x => x.사원코드 == id && x.암호 == pwd).ToList().Count;
             }
         }
+
+        public void Search(string EmployeeCode, out string code, out string name)
+        {
+            using (ERPEntities entities = new ERPEntities())
+            {
+                code = entities.사원등록.Where(x => x.사원코드 == EmployeeCode).ToList().Select(x => x.사원코드).FirstOrDefault();
+
+                name = entities.사원등록.Where(x => x.사원코드 == EmployeeCode).ToList().Select(x => x.사원명).FirstOrDefault();
+            }
+        }
+
+        public string SearchChangedValue(string value)
+        {
+            using (ERPEntities entities = new ERPEntities())
+            {
+                return entities.사원등록.Where(x => x.사원코드 == value).ToList().Select(x => x.사원명).FirstOrDefault();
+            }
+        }
+        public bool Is사원코드(string 사원코드)
+        {
+            using (ERPEntities context = new ERPEntities())
+            {
+                var query = from x in context.사원등록
+                            where x.사원코드 == 사원코드
+                            select x;
+
+                if (query.ToList().Count > 0) return true;
+                else return false;
+            }
+        }
+
+        public List<사원등록> Get사원정보(string 사원코드)
+        {
+            using (ERPEntities context = new ERPEntities())
+            {
+                var query = from x in context.사원등록
+                            where x.사원코드 == 사원코드
+                            select x;
+
+                return query.ToList();
+            }
+        }
+        public List<사원등록> Get사원정보(string 사원코드, string 사원명)
+        {
+            using (ERPEntities context = new ERPEntities())
+            {
+                var query = from x in context.사원등록
+                            select x;
+
+                if (string.IsNullOrEmpty(사원코드) == false)
+                {
+                    var query1 = from x in context.사원등록
+                                 where x.부서코드 == 사원코드
+                                 select x;
+
+                    if (string.IsNullOrEmpty(사원명) == false)
+                    {
+                        var query2 = from x in context.사원등록
+                                     where x.사원명 == 사원명
+                                     select x;
+                        return query2.ToList();
+                    }
+                    return query1.ToList();
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(사원명) == false)
+                    {
+                        var query2 = from x in query
+                                     where x.사원명 == 사원명
+                                     select x;
+                        return query2.ToList();
+                    }
+                    return query.ToList();
+                }
+
+
+            }
+        }
     }
 }

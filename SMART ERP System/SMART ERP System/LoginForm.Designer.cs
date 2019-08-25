@@ -44,7 +44,6 @@ namespace SMART_ERP_System
             this.loginControl.Name = "loginControl";
             this.loginControl.Size = new System.Drawing.Size(438, 274);
             this.loginControl.TabIndex = 0;
-            this.loginControl.Load += new System.EventHandler(this.LoginControl_Load);
             // 
             // LoginForm
             // 
@@ -53,6 +52,7 @@ namespace SMART_ERP_System
             this.ClientSize = new System.Drawing.Size(438, 274);
             this.Controls.Add(this.loginControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             this.VisibleChanged += new System.EventHandler(this.LoginForm_VisibleChanged);

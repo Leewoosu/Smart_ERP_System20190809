@@ -10,3 +10,5 @@ C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\obj\Release\ClassLibr
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\obj\Release\ClassLibrary.csproj.CopyComplete
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\obj\Release\ClassLibrary.dll
 C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\obj\Release\ClassLibrary.pdb
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Release\ko\EntityFramework.resources.dll
+C:\Users\301-02\source\repos\SMART ERP System\ClassLibrary\bin\Release\ko\EntityFramework.SqlServer.resources.dll

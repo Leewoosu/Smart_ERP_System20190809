@@ -17,19 +17,35 @@ namespace ClassLibrary
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public 거래처()
         {
+            this.공급자재리스트 = new HashSet<공급자재리스트>();
             this.금융거래처등록 = new HashSet<금융거래처등록>();
+            this.반품처리서 = new HashSet<반품처리서>();
+            this.발주서 = new HashSet<발주서>();
+            this.수주 = new HashSet<수주>();
             this.일반거래처등록 = new HashSet<일반거래처등록>();
+            this.입고등록 = new HashSet<입고등록>();
         }
     
         public string 거래처코드번호 { get; set; }
-        public int 전표리스트ID { get; set; }
-        public System.DateTime 일자 { get; set; }
+        public string 전표번호 { get; set; }
+        public Nullable<System.DateTime> 입력날짜 { get; set; }
+        public Nullable<int> 순번 { get; set; }
+        public Nullable<System.DateTime> 일자 { get; set; }
     
-        public virtual 자금계획달력 자금계획달력 { get; set; }
         public virtual 전표리스트 전표리스트 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<공급자재리스트> 공급자재리스트 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<금융거래처등록> 금융거래처등록 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<반품처리서> 반품처리서 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<발주서> 발주서 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<수주> 수주 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<일반거래처등록> 일반거래처등록 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<입고등록> 입고등록 { get; set; }
     }
 }

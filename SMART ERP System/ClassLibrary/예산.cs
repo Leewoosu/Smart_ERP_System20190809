@@ -20,7 +20,7 @@ namespace ClassLibrary
             this.분기별예산 = new HashSet<분기별예산>();
         }
     
-        public int 예산코드 { get; set; }
+        public string 예산코드 { get; set; }
         public System.DateTime 신청연도 { get; set; }
         public string 예산과목명 { get; set; }
         public int 총액 { get; set; }

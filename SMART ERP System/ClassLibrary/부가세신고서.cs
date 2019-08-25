@@ -18,15 +18,14 @@ namespace ClassLibrary
         public 부가세신고서()
         {
             this.과세별세액 = new HashSet<과세별세액>();
-            this.사업장등록 = new HashSet<사업장등록>();
         }
     
         public System.DateTime 회계기간 { get; set; }
         public int 일반과세ID { get; set; }
+        public string 사업장코드 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<과세별세액> 과세별세액 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<사업장등록> 사업장등록 { get; set; }
+        public virtual 사업장등록 사업장등록 { get; set; }
     }
 }

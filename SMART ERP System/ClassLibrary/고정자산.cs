@@ -20,7 +20,7 @@ namespace ClassLibrary
             this.업무용승용차_차량등록 = new HashSet<업무용승용차_차량등록>();
         }
     
-        public int 고정자산코드 { get; set; }
+        public string 고정자산코드 { get; set; }
         public string 고정자산명 { get; set; }
         public System.DateTime 취득일 { get; set; }
         public string 처리여부 { get; set; }
@@ -36,14 +36,12 @@ namespace ClassLibrary
         public System.DateTime 수정일자 { get; set; }
         public string 구입처 { get; set; }
         public string 제작사 { get; set; }
-        public Nullable<decimal> 규격 { get; set; }
+        public Nullable<int> 규격 { get; set; }
         public string 모델 { get; set; }
-        public string 사원코드 { get; set; }
         public string 비고 { get; set; }
-        public int 계정과목코드번호 { get; set; }
+        public string 계정과목코드번호 { get; set; }
     
         public virtual 계정과목 계정과목 { get; set; }
-        public virtual 사원등록 사원등록 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<업무용승용차_차량등록> 업무용승용차_차량등록 { get; set; }
     }

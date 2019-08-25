@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -40,8 +42,27 @@ namespace ClassLibrary.EntityData
         {
             using (ERPEntities entities = new ERPEntities())
             {
-                entities.Set<T>().Add(entity);
-                entities.SaveChanges();
+                try
+                {
+                    entities.Set<T>().Add(entity);
+                    entities.SaveChanges();
+                }
+                catch (DbEntityValidationException e)
+                {
+                    Exception raise = e;
+                    foreach (var eve in e.EntityValidationErrors)
+                    {
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                   eve.Entry.Entity.ToString(),
+                   ve.ErrorMessage);
+
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
+                }
             }
         }
 
@@ -49,16 +70,55 @@ namespace ClassLibrary.EntityData
         {
             using (ERPEntities entities = new ERPEntities())
             {
-                entities.Entry(entity).State = EntityState.Modified;
-                entities.SaveChanges();
+                try
+                {
+                    entities.Entry(entity).State = EntityState.Modified;
+                    entities.SaveChanges();
+                }
+                catch (DbEntityValidationException e)
+                {
+                    Exception raise = e;
+                    foreach (var eve in e.EntityValidationErrors)
+                    {
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                   eve.Entry.Entity.ToString(),
+                   ve.ErrorMessage);
+
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
+                }
             }
         }
+
         public void Delete(T entity)
         {
             using (ERPEntities entities = new ERPEntities())
             {
-                entities.Entry(entity).State = EntityState.Deleted;
-                entities.SaveChanges();
+                try
+                {
+                    entities.Entry(entity).State = EntityState.Deleted;
+                    entities.SaveChanges();
+                }
+                catch (DbEntityValidationException e)
+                {
+                    Exception raise = e;
+                    foreach (var eve in e.EntityValidationErrors)
+                    {
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                   eve.Entry.Entity.ToString(),
+                   ve.ErrorMessage);
+
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
+                }
             }
         }
     }

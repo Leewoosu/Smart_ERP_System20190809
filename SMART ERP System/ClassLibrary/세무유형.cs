@@ -21,7 +21,7 @@ namespace ClassLibrary
         }
     
         public string 세무유형ID { get; set; }
-        public int 세무유형명 { get; set; }
+        public string 세무유형명 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<역추적> 역추적 { get; set; }

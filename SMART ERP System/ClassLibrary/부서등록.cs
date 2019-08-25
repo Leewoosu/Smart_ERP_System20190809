@@ -17,13 +17,11 @@ namespace ClassLibrary
         public string 부서코드 { get; set; }
         public string 부서명 { get; set; }
         public string 사업장코드 { get; set; }
-        public int 부문코드 { get; set; }
-        public string 부문명 { get; set; }
+        public string 부문코드 { get; set; }
         public System.DateTime 사용시작기간 { get; set; }
         public Nullable<System.DateTime> 사용종료기간 { get; set; }
         public string 사원코드 { get; set; }
     
-        public virtual 사업장등록 사업장등록 { get; set; }
         public virtual 사원등록 사원등록 { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace ClassLibrary
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public 사업장등록()
         {
-            this.부서등록 = new HashSet<부서등록>();
+            this.부가세신고서 = new HashSet<부가세신고서>();
         }
     
         public string 사업장코드 { get; set; }
@@ -32,10 +32,8 @@ namespace ClassLibrary
         public string 관할세무서 { get; set; }
         public System.DateTime 개업년월일 { get; set; }
         public Nullable<System.DateTime> 폐업년월일 { get; set; }
-        public System.DateTime 회계기간 { get; set; }
     
-        public virtual 부가세신고서 부가세신고서 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<부서등록> 부서등록 { get; set; }
+        public virtual ICollection<부가세신고서> 부가세신고서 { get; set; }
     }
 }
