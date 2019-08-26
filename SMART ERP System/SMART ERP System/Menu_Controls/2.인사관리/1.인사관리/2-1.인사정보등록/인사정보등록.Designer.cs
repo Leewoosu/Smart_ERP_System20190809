@@ -41,10 +41,12 @@
             this.label88 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.사원코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.사원명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.부서코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.사원등록BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label86 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -142,9 +144,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.button2 = new System.Windows.Forms.Button();
-            this.사원코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.사원명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.부서코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -312,6 +311,28 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellEnter);
             // 
+            // 사원코드DataGridViewTextBoxColumn
+            // 
+            this.사원코드DataGridViewTextBoxColumn.DataPropertyName = "사원코드";
+            this.사원코드DataGridViewTextBoxColumn.HeaderText = "사원코드";
+            this.사원코드DataGridViewTextBoxColumn.Name = "사원코드DataGridViewTextBoxColumn";
+            this.사원코드DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 사원명DataGridViewTextBoxColumn
+            // 
+            this.사원명DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.사원명DataGridViewTextBoxColumn.DataPropertyName = "사원명";
+            this.사원명DataGridViewTextBoxColumn.HeaderText = "사원명";
+            this.사원명DataGridViewTextBoxColumn.Name = "사원명DataGridViewTextBoxColumn";
+            this.사원명DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 부서코드DataGridViewTextBoxColumn
+            // 
+            this.부서코드DataGridViewTextBoxColumn.DataPropertyName = "부서코드";
+            this.부서코드DataGridViewTextBoxColumn.HeaderText = "부서코드";
+            this.부서코드DataGridViewTextBoxColumn.Name = "부서코드DataGridViewTextBoxColumn";
+            this.부서코드DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // 사원등록BindingSource
             // 
             this.사원등록BindingSource.DataSource = typeof(ClassLibrary.사원등록);
@@ -335,21 +356,10 @@
             this.label87.Text = "인사정보등록";
             this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Location = new System.Drawing.Point(890, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(49, 21);
-            this.button5.TabIndex = 32;
-            this.button5.Text = "수정";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button5_Click);
-            // 
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button8.Location = new System.Drawing.Point(825, 3);
+            this.button8.Location = new System.Drawing.Point(874, 3);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(64, 21);
             this.button8.TabIndex = 35;
@@ -360,7 +370,7 @@
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button10.Location = new System.Drawing.Point(760, 3);
+            this.button10.Location = new System.Drawing.Point(809, 3);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(64, 21);
             this.button10.TabIndex = 37;
@@ -1366,34 +1376,11 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // 사원코드DataGridViewTextBoxColumn
-            // 
-            this.사원코드DataGridViewTextBoxColumn.DataPropertyName = "사원코드";
-            this.사원코드DataGridViewTextBoxColumn.HeaderText = "사원코드";
-            this.사원코드DataGridViewTextBoxColumn.Name = "사원코드DataGridViewTextBoxColumn";
-            this.사원코드DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 사원명DataGridViewTextBoxColumn
-            // 
-            this.사원명DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.사원명DataGridViewTextBoxColumn.DataPropertyName = "사원명";
-            this.사원명DataGridViewTextBoxColumn.HeaderText = "사원명";
-            this.사원명DataGridViewTextBoxColumn.Name = "사원명DataGridViewTextBoxColumn";
-            this.사원명DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 부서코드DataGridViewTextBoxColumn
-            // 
-            this.부서코드DataGridViewTextBoxColumn.DataPropertyName = "부서코드";
-            this.부서코드DataGridViewTextBoxColumn.HeaderText = "부서코드";
-            this.부서코드DataGridViewTextBoxColumn.Name = "부서코드DataGridViewTextBoxColumn";
-            this.부서코드DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // 인사정보등록
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.label87);
@@ -1403,6 +1390,7 @@
             this.Controls.Add(this.groupBox11);
             this.Name = "인사정보등록";
             this.Size = new System.Drawing.Size(1044, 645);
+            this.Load += new System.EventHandler(this.인사정보등록_Load);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.groupBox11.ResumeLayout(false);
@@ -1459,7 +1447,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.BindingSource 사원등록BindingSource;

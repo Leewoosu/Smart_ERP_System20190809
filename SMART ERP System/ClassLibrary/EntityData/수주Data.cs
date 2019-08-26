@@ -9,6 +9,39 @@ namespace ClassLibrary.EntityData
 {
     public class 수주Data : EntityData<수주>
     {
+        public List<수주> Get수주(string Num1, string Num2)
+        {
+            using (ERPEntities context = new ERPEntities())
+            {
+                var query = from x in context.수주
+                            where x.수주번호 == Num1 && x.수주번호2 == Num2
+                            select x;
+
+                return query.ToList();
+            }
+        }
+
+        public List<수주> 납기조회(string 제품이름, string 납품업체이름, DateTime FirstDate, DateTime LastDate)
+        {
+            using (ERPEntities context = new ERPEntities())
+            {
+                var query = from x in context.수주
+                            where x.납기일 <= LastDate && x.납기일 >= FirstDate
+                            select x;
+
+                if (string.IsNullOrEmpty(제품이름) == false)
+                {
+                    var query1 = from x in query
+                                 where x.제품.제품번호.StartsWith(제품이름)
+                                 select x;
+
+                    return query1.ToList();
+                }
+                return query.ToList();
+
+            }
+        }
+
         public List<수주> 조회(string 제품이름, string 납품업체이름, DateTime FirstDate, DateTime LastDate)
         {
             using (ERPEntities context = new ERPEntities())

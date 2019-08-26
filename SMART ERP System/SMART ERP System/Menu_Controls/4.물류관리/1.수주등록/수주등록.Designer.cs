@@ -29,11 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv엑셀 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbb사원코드 = new System.Windows.Forms.ComboBox();
+            this.사원등록BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbb부서코드 = new System.Windows.Forms.ComboBox();
+            this.부서등록BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txb사원명 = new System.Windows.Forms.TextBox();
+            this.txb부서명 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.txb납품업체이름 = new System.Windows.Forms.TextBox();
             this.txb품목명 = new System.Windows.Forms.TextBox();
             this.LastDate = new System.Windows.Forms.DateTimePicker();
@@ -59,6 +67,8 @@
             this.btn등록 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv엑셀)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.사원등록BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.부서등록BindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv수주)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds수주)).BeginInit();
@@ -68,15 +78,15 @@
             // 
             this.dgv엑셀.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgv엑셀.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv엑셀.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv엑셀.Location = new System.Drawing.Point(11, 145);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv엑셀.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv엑셀.Location = new System.Drawing.Point(11, 148);
             this.dgv엑셀.Name = "dgv엑셀";
             this.dgv엑셀.RowTemplate.Height = 23;
             this.dgv엑셀.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -86,7 +96,7 @@
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(7, 27);
+            this.label1.Location = new System.Drawing.Point(7, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1018, 1);
             this.label1.TabIndex = 4;
@@ -94,16 +104,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림체", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(51, 2);
+            this.label2.Font = new System.Drawing.Font("굴림체", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(55, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 21);
+            this.label2.Size = new System.Drawing.Size(93, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "수주등록";
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Controls.Add(this.cbb사원코드);
+            this.groupBox1.Controls.Add(this.cbb부서코드);
+            this.groupBox1.Controls.Add(this.txb사원명);
+            this.groupBox1.Controls.Add(this.txb부서명);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txb납품업체이름);
             this.groupBox1.Controls.Add(this.txb품목명);
             this.groupBox1.Controls.Add(this.LastDate);
@@ -112,31 +128,93 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(7, 35);
+            this.groupBox1.Location = new System.Drawing.Point(7, 41);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1018, 100);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
+            // cbb사원코드
+            // 
+            this.cbb사원코드.DataSource = this.사원등록BindingSource;
+            this.cbb사원코드.FormattingEnabled = true;
+            this.cbb사원코드.Location = new System.Drawing.Point(419, 20);
+            this.cbb사원코드.Name = "cbb사원코드";
+            this.cbb사원코드.Size = new System.Drawing.Size(65, 20);
+            this.cbb사원코드.TabIndex = 77;
+            this.cbb사원코드.SelectedValueChanged += new System.EventHandler(this.ComboBox2_SelectedValueChanged);
+            // 
+            // 사원등록BindingSource
+            // 
+            this.사원등록BindingSource.DataSource = typeof(ClassLibrary.사원등록);
+            // 
+            // cbb부서코드
+            // 
+            this.cbb부서코드.DataSource = this.부서등록BindingSource;
+            this.cbb부서코드.FormattingEnabled = true;
+            this.cbb부서코드.Location = new System.Drawing.Point(143, 20);
+            this.cbb부서코드.Name = "cbb부서코드";
+            this.cbb부서코드.Size = new System.Drawing.Size(65, 20);
+            this.cbb부서코드.TabIndex = 76;
+            this.cbb부서코드.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
+            // 
+            // 부서등록BindingSource
+            // 
+            this.부서등록BindingSource.DataSource = typeof(ClassLibrary.부서등록);
+            // 
+            // txb사원명
+            // 
+            this.txb사원명.Location = new System.Drawing.Point(490, 20);
+            this.txb사원명.Name = "txb사원명";
+            this.txb사원명.Size = new System.Drawing.Size(108, 21);
+            this.txb사원명.TabIndex = 75;
+            // 
+            // txb부서명
+            // 
+            this.txb부서명.Location = new System.Drawing.Point(214, 20);
+            this.txb부서명.Name = "txb부서명";
+            this.txb부서명.Size = new System.Drawing.Size(108, 21);
+            this.txb부서명.TabIndex = 74;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Location = new System.Drawing.Point(363, 23);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 13);
+            this.label11.TabIndex = 73;
+            this.label11.Text = "사원 : ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(80, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.TabIndex = 72;
+            this.label7.Text = "부서 : ";
+            // 
             // txb납품업체이름
             // 
             this.txb납품업체이름.Location = new System.Drawing.Point(143, 56);
             this.txb납품업체이름.Name = "txb납품업체이름";
-            this.txb납품업체이름.Size = new System.Drawing.Size(150, 21);
+            this.txb납품업체이름.Size = new System.Drawing.Size(179, 21);
             this.txb납품업체이름.TabIndex = 17;
             // 
             // txb품목명
             // 
-            this.txb품목명.Location = new System.Drawing.Point(143, 14);
+            this.txb품목명.Location = new System.Drawing.Point(419, 56);
             this.txb품목명.Name = "txb품목명";
-            this.txb품목명.Size = new System.Drawing.Size(150, 21);
+            this.txb품목명.Size = new System.Drawing.Size(179, 21);
             this.txb품목명.TabIndex = 16;
             // 
             // LastDate
             // 
             this.LastDate.CustomFormat = "yyyy-MM-dd";
             this.LastDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.LastDate.Location = new System.Drawing.Point(535, 13);
+            this.LastDate.Location = new System.Drawing.Point(807, 53);
             this.LastDate.Name = "LastDate";
             this.LastDate.Size = new System.Drawing.Size(100, 21);
             this.LastDate.TabIndex = 15;
@@ -146,16 +224,16 @@
             // 
             this.FirstDate.CustomFormat = "yyyy-MM-dd";
             this.FirstDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FirstDate.Location = new System.Drawing.Point(416, 13);
+            this.FirstDate.Location = new System.Drawing.Point(682, 53);
             this.FirstDate.Name = "FirstDate";
-            this.FirstDate.Size = new System.Drawing.Size(96, 21);
+            this.FirstDate.Size = new System.Drawing.Size(99, 21);
             this.FirstDate.TabIndex = 14;
             this.FirstDate.ValueChanged += new System.EventHandler(this.FirstDate_ValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(515, 17);
+            this.label6.Location = new System.Drawing.Point(787, 59);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(14, 12);
             this.label6.TabIndex = 13;
@@ -164,36 +242,36 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(348, 17);
+            this.label5.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(623, 59);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 14);
+            this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 12;
             this.label5.Text = "주문일 : ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(70, 17);
+            this.label3.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(349, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 14);
+            this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 10;
             this.label3.Text = "품목명 :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(30, 59);
+            this.label4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(37, 59);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 14);
+            this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 11;
-            this.label4.Text = "납품업체이름 : ";
+            this.label4.Text = "납품업체명 : ";
             // 
             // btn조회
             // 
-            this.btn조회.Location = new System.Drawing.Point(788, 3);
+            this.btn조회.Location = new System.Drawing.Point(788, 7);
             this.btn조회.Name = "btn조회";
             this.btn조회.Size = new System.Drawing.Size(75, 23);
             this.btn조회.TabIndex = 7;
@@ -203,7 +281,7 @@
             // 
             // btn변경
             // 
-            this.btn변경.Location = new System.Drawing.Point(869, 2);
+            this.btn변경.Location = new System.Drawing.Point(869, 6);
             this.btn변경.Name = "btn변경";
             this.btn변경.Size = new System.Drawing.Size(75, 23);
             this.btn변경.TabIndex = 8;
@@ -213,7 +291,7 @@
             // 
             // btn삭제
             // 
-            this.btn삭제.Location = new System.Drawing.Point(950, 2);
+            this.btn삭제.Location = new System.Drawing.Point(950, 5);
             this.btn삭제.Name = "btn삭제";
             this.btn삭제.Size = new System.Drawing.Size(75, 23);
             this.btn삭제.TabIndex = 9;
@@ -299,7 +377,7 @@
             // 
             // btn엑셀
             // 
-            this.btn엑셀.Location = new System.Drawing.Point(615, 3);
+            this.btn엑셀.Location = new System.Drawing.Point(615, 8);
             this.btn엑셀.Name = "btn엑셀";
             this.btn엑셀.Size = new System.Drawing.Size(86, 23);
             this.btn엑셀.TabIndex = 11;
@@ -309,7 +387,7 @@
             // 
             // btn등록
             // 
-            this.btn등록.Location = new System.Drawing.Point(707, 3);
+            this.btn등록.Location = new System.Drawing.Point(707, 7);
             this.btn등록.Name = "btn등록";
             this.btn등록.Size = new System.Drawing.Size(75, 23);
             this.btn등록.TabIndex = 12;
@@ -337,6 +415,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv엑셀)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.사원등록BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.부서등록BindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv수주)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds수주)).EndInit();
@@ -374,5 +454,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 납기일DataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn엑셀;
         private System.Windows.Forms.Button btn등록;
+        private System.Windows.Forms.ComboBox cbb사원코드;
+        private System.Windows.Forms.ComboBox cbb부서코드;
+        private System.Windows.Forms.TextBox txb사원명;
+        private System.Windows.Forms.TextBox txb부서명;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.BindingSource 사원등록BindingSource;
+        private System.Windows.Forms.BindingSource 부서등록BindingSource;
     }
 }

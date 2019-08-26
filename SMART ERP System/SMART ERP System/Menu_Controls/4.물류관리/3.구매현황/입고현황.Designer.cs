@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbb사원코드 = new System.Windows.Forms.ComboBox();
+            this.사원등록BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbb부서코드 = new System.Windows.Forms.ComboBox();
+            this.부서등록BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txb사원명 = new System.Windows.Forms.TextBox();
+            this.txb부서명 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txb공급업체 = new System.Windows.Forms.TextBox();
             this.OrderLast = new System.Windows.Forms.DateTimePicker();
@@ -58,6 +66,8 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.사원등록BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.부서등록BindingSource)).BeginInit();
             this.tab입고.SuspendLayout();
             this.발주입고.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv발주입고)).BeginInit();
@@ -69,6 +79,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbb사원코드);
+            this.groupBox1.Controls.Add(this.cbb부서코드);
+            this.groupBox1.Controls.Add(this.txb사원명);
+            this.groupBox1.Controls.Add(this.txb부서명);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txb공급업체);
             this.groupBox1.Controls.Add(this.OrderLast);
@@ -80,23 +96,85 @@
             this.groupBox1.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox1.Location = new System.Drawing.Point(7, 29);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1018, 54);
+            this.groupBox1.Size = new System.Drawing.Size(1018, 86);
             this.groupBox1.TabIndex = 109;
             this.groupBox1.TabStop = false;
+            // 
+            // cbb사원코드
+            // 
+            this.cbb사원코드.DataSource = this.사원등록BindingSource;
+            this.cbb사원코드.FormattingEnabled = true;
+            this.cbb사원코드.Location = new System.Drawing.Point(424, 23);
+            this.cbb사원코드.Name = "cbb사원코드";
+            this.cbb사원코드.Size = new System.Drawing.Size(65, 19);
+            this.cbb사원코드.TabIndex = 110;
+            this.cbb사원코드.SelectedValueChanged += new System.EventHandler(this.Cbb사원코드_SelectedValueChanged);
+            // 
+            // 사원등록BindingSource
+            // 
+            this.사원등록BindingSource.DataSource = typeof(ClassLibrary.사원등록);
+            // 
+            // cbb부서코드
+            // 
+            this.cbb부서코드.DataSource = this.부서등록BindingSource;
+            this.cbb부서코드.FormattingEnabled = true;
+            this.cbb부서코드.Location = new System.Drawing.Point(94, 20);
+            this.cbb부서코드.Name = "cbb부서코드";
+            this.cbb부서코드.Size = new System.Drawing.Size(65, 19);
+            this.cbb부서코드.TabIndex = 109;
+            this.cbb부서코드.SelectedValueChanged += new System.EventHandler(this.Cbb부서코드_SelectedValueChanged);
+            // 
+            // 부서등록BindingSource
+            // 
+            this.부서등록BindingSource.DataSource = typeof(ClassLibrary.부서등록);
+            // 
+            // txb사원명
+            // 
+            this.txb사원명.Location = new System.Drawing.Point(496, 22);
+            this.txb사원명.Name = "txb사원명";
+            this.txb사원명.Size = new System.Drawing.Size(108, 20);
+            this.txb사원명.TabIndex = 108;
+            // 
+            // txb부서명
+            // 
+            this.txb부서명.Location = new System.Drawing.Point(165, 20);
+            this.txb부서명.Name = "txb부서명";
+            this.txb부서명.Size = new System.Drawing.Size(108, 20);
+            this.txb부서명.TabIndex = 107;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(378, 25);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(37, 14);
+            this.label11.TabIndex = 106;
+            this.label11.Text = "사원";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(51, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 14);
+            this.label7.TabIndex = 105;
+            this.label7.Text = "부서";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(317, 21);
+            this.label2.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(314, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 12);
+            this.label2.Size = new System.Drawing.Size(104, 14);
             this.label2.TabIndex = 104;
             this.label2.Text = "입고/반품번호";
             // 
             // txb공급업체
             // 
-            this.txb공급업체.Location = new System.Drawing.Point(97, 16);
+            this.txb공급업체.Location = new System.Drawing.Point(95, 57);
             this.txb공급업체.Name = "txb공급업체";
             this.txb공급업체.Size = new System.Drawing.Size(180, 20);
             this.txb공급업체.TabIndex = 103;
@@ -104,7 +182,7 @@
             // OrderLast
             // 
             this.OrderLast.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.OrderLast.Location = new System.Drawing.Point(835, 19);
+            this.OrderLast.Location = new System.Drawing.Point(833, 55);
             this.OrderLast.Name = "OrderLast";
             this.OrderLast.Size = new System.Drawing.Size(96, 20);
             this.OrderLast.TabIndex = 102;
@@ -112,14 +190,14 @@
             // OrderStart
             // 
             this.OrderStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.OrderStart.Location = new System.Drawing.Point(716, 19);
+            this.OrderStart.Location = new System.Drawing.Point(714, 55);
             this.OrderStart.Name = "OrderStart";
             this.OrderStart.Size = new System.Drawing.Size(96, 20);
             this.OrderStart.TabIndex = 101;
             // 
             // txb입고번호
             // 
-            this.txb입고번호.Location = new System.Drawing.Point(413, 19);
+            this.txb입고번호.Location = new System.Drawing.Point(424, 57);
             this.txb입고번호.Name = "txb입고번호";
             this.txb입고번호.Size = new System.Drawing.Size(180, 20);
             this.txb입고번호.TabIndex = 100;
@@ -127,17 +205,17 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(653, 24);
+            this.label15.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(641, 60);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(57, 12);
+            this.label15.Size = new System.Drawing.Size(67, 14);
             this.label15.TabIndex = 51;
             this.label15.Text = "발주기간";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(818, 23);
+            this.label3.Location = new System.Drawing.Point(816, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(11, 11);
             this.label3.TabIndex = 27;
@@ -146,10 +224,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(53, 19);
+            this.label6.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(36, 60);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 12);
+            this.label6.Size = new System.Drawing.Size(52, 14);
             this.label6.TabIndex = 33;
             this.label6.Text = "거래처";
             // 
@@ -186,7 +264,7 @@
             // 
             this.tab입고.Controls.Add(this.발주입고);
             this.tab입고.Controls.Add(this.예외입고);
-            this.tab입고.Location = new System.Drawing.Point(7, 89);
+            this.tab입고.Location = new System.Drawing.Point(7, 121);
             this.tab입고.Name = "tab입고";
             this.tab입고.SelectedIndex = 0;
             this.tab입고.Size = new System.Drawing.Size(1018, 266);
@@ -301,7 +379,7 @@
             this.dgv입고등록리스트.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            this.dgv입고등록리스트.Location = new System.Drawing.Point(9, 380);
+            this.dgv입고등록리스트.Location = new System.Drawing.Point(9, 396);
             this.dgv입고등록리스트.Name = "dgv입고등록리스트";
             this.dgv입고등록리스트.RowTemplate.Height = 23;
             this.dgv입고등록리스트.Size = new System.Drawing.Size(1016, 232);
@@ -329,8 +407,11 @@
             this.Controls.Add(this.label1);
             this.Name = "입고현황";
             this.Size = new System.Drawing.Size(1044, 645);
+            this.Load += new System.EventHandler(this.입고현황_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.사원등록BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.부서등록BindingSource)).EndInit();
             this.tab입고.ResumeLayout(false);
             this.발주입고.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv발주입고)).EndInit();
@@ -372,5 +453,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 반품처리서번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 공급업체번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 반품처리날짜;
+        private System.Windows.Forms.ComboBox cbb사원코드;
+        private System.Windows.Forms.ComboBox cbb부서코드;
+        private System.Windows.Forms.TextBox txb사원명;
+        private System.Windows.Forms.TextBox txb부서명;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.BindingSource 사원등록BindingSource;
+        private System.Windows.Forms.BindingSource 부서등록BindingSource;
     }
 }

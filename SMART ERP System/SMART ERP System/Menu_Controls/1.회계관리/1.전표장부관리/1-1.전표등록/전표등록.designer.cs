@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbb사업장코드 = new System.Windows.Forms.ComboBox();
@@ -140,9 +140,9 @@
             this.cbb사업장코드.DisplayMember = "사업장코드";
             this.cbb사업장코드.Font = new System.Drawing.Font("굴림", 10F);
             this.cbb사업장코드.FormattingEnabled = true;
-            this.cbb사업장코드.Location = new System.Drawing.Point(99, 5);
+            this.cbb사업장코드.Location = new System.Drawing.Point(95, 5);
             this.cbb사업장코드.Name = "cbb사업장코드";
-            this.cbb사업장코드.Size = new System.Drawing.Size(83, 21);
+            this.cbb사업장코드.Size = new System.Drawing.Size(64, 21);
             this.cbb사업장코드.TabIndex = 120;
             this.cbb사업장코드.TabStop = false;
             this.cbb사업장코드.ValueMember = "사업장코드";
@@ -240,9 +240,9 @@
             // txb사업장명
             // 
             this.txb사업장명.Enabled = false;
-            this.txb사업장명.Location = new System.Drawing.Point(190, 5);
+            this.txb사업장명.Location = new System.Drawing.Point(165, 5);
             this.txb사업장명.Name = "txb사업장명";
-            this.txb사업장명.Size = new System.Drawing.Size(82, 21);
+            this.txb사업장명.Size = new System.Drawing.Size(107, 21);
             this.txb사업장명.TabIndex = 123;
             this.txb사업장명.TabStop = false;
             // 
@@ -270,7 +270,7 @@
             // 
             this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label2.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(31, 9);
+            this.label2.Location = new System.Drawing.Point(27, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 22);
             this.label2.TabIndex = 119;
@@ -326,14 +326,14 @@
             this.dgv전표리스트.AllowUserToAddRows = false;
             this.dgv전표리스트.AllowUserToResizeColumns = false;
             this.dgv전표리스트.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv전표리스트.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv전표리스트.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv전표리스트.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv전표리스트.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -427,14 +427,14 @@
             this.dgv전표.AllowUserToAddRows = false;
             this.dgv전표.AllowUserToResizeColumns = false;
             this.dgv전표.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv전표.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv전표.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv전표.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv전표.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CheckColumn,

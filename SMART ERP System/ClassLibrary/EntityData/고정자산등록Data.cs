@@ -28,7 +28,7 @@ namespace ClassLibrary.EntityData
         {
             using (ERPEntities entities = new ERPEntities())
             {
-                return entities.고정자산.Where(x => x.고정자산코드 == code).ToList();
+                return entities.고정자산.Where(x => x.계정과목코드번호 == code).ToList();
             }
         }
     }

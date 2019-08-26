@@ -168,10 +168,10 @@ namespace SMART_ERP_System
             // 
             // splitContainer2
             // 
-            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer2.Location = new System.Drawing.Point(-4, -4);
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -262,9 +262,10 @@ namespace SMART_ERP_System
             // 
             // metroTabControl
             // 
+            this.metroTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl.Location = new System.Drawing.Point(0, 0);
             this.metroTabControl.Name = "metroTabControl";
-            this.metroTabControl.Size = new System.Drawing.Size(1045, 655);
+            this.metroTabControl.Size = new System.Drawing.Size(1044, 655);
             this.metroTabControl.TabIndex = 0;
             this.metroTabControl.UseSelectable = true;
             this.metroTabControl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MetroTabControl_MouseClick);

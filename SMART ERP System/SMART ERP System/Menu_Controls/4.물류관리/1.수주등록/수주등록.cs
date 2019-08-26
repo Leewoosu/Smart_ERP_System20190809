@@ -12,6 +12,7 @@ using System.Data.OleDb;
 using ClassLibrary.EntityData;
 using ClassLibrary;
 using SMART_ERP_System.MenuUserControl;
+using SMART_ERP_System.Class;
 
 namespace SMART_ERP_System.MenuUserControl
 {
@@ -22,6 +23,7 @@ namespace SMART_ERP_System.MenuUserControl
         public 수주등록()
         {
             InitializeComponent();
+            SetData();
         }
 
         public void ImportExcelData_Read(string fileName, DataGridView dgv)
@@ -94,31 +96,25 @@ namespace SMART_ERP_System.MenuUserControl
             {
                 for (int j = 0; j < maxRow; j++)
                 {
+                    
                     if (수주.Where(x => x.수주번호 == dgv엑셀.Rows[j].Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.Rows[j].Cells[1].Value.ToString()).Count() >= 1)
                     {
 
                         if (int.Parse(dgv엑셀.Rows[j].Cells[3].Value.ToString()) < int.Parse(수주.Where(x => x.수주번호 == dgv엑셀.Rows[j].Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.Rows[j].Cells[1].Value.ToString()).Select(x => x.주문수량).First().ToString()))
                             dgv엑셀.Rows[j].Cells[9].Value = "수량 감소 ".ToString();
 
-                        else if (int.Parse(dgv엑셀.Rows[j].Cells[3].Value.ToString()) > int.Parse(수주.Where(x => x.수주번호 == dgv엑셀.Rows[j].Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.Rows[j].Cells[1].Value.ToString()).Select(x => x.주문수량).First().ToString()))
+                        if (int.Parse(dgv엑셀.Rows[j].Cells[3].Value.ToString()) > int.Parse(수주.Where(x => x.수주번호 == dgv엑셀.Rows[j].Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.Rows[j].Cells[1].Value.ToString()).Select(x => x.주문수량).First().ToString()))
                             dgv엑셀.Rows[j].Cells[9].Value = "수량 증가 ".ToString();
-
-
+                           
                         if (DateTime.Parse(dgv엑셀.Rows[j].Cells[8].Value.ToString()).Date < 수주.Where(x => x.수주번호 == dgv엑셀.Rows[j].Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.Rows[j].Cells[1].Value.ToString()).Select(x => x.납기일).First().Date)
-                            dgv엑셀.Rows[j].Cells[9].Value = "납기일 당겨짐".ToString();
+                            dgv엑셀.Rows[j].Cells[9].Value += "납기일 당겨짐".ToString();
 
-
-                        else if (DateTime.Parse(dgv엑셀.Rows[j].Cells[8].Value.ToString()).Date > 수주.Where(x => x.수주번호 == dgv엑셀.Rows[j].Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.Rows[j].Cells[1].Value.ToString()).Select(x => x.납기일).First().Date)
-                            dgv엑셀.Rows[j].Cells[9].Value = "납기일 늦어짐".ToString();
-
-
-                        else
-                            dgv엑셀.Rows[j].Cells[9].Value = "New Data".ToString();
-
-
-
+                        if (DateTime.Parse(dgv엑셀.Rows[j].Cells[8].Value.ToString()).Date > 수주.Where(x => x.수주번호 == dgv엑셀.Rows[j].Cells[0].Value.ToString() && x.수주번호2 == dgv엑셀.Rows[j].Cells[1].Value.ToString()).Select(x => x.납기일).First().Date)
+                            dgv엑셀.Rows[j].Cells[9].Value += "납기일 늦어짐".ToString();
+                        
                     }
-
+                    else
+                        dgv엑셀.Rows[j].Cells[9].Value = "New Data".ToString();
                 }
             }
             else
@@ -155,6 +151,7 @@ namespace SMART_ERP_System.MenuUserControl
                 MessageBox.Show($"수주번호 {orderList.수주번호} / {orderList.수주번호2} 가 등록되엇습니다.");
                 bds수주.DataSource
                                 = DB.수주.조회(txb품목명.Text, txb납품업체이름.Text, firstDate, lastDate);
+                dgv엑셀.CurrentRow.Cells[9].Value = null;
                 Register발주();
             }
 
@@ -167,7 +164,8 @@ namespace SMART_ERP_System.MenuUserControl
 
             var Last수주 = DB.수주.Search수주(dgv엑셀.CurrentRow.Cells[0].Value.ToString(), dgv엑셀.CurrentRow.Cells[1].Value.ToString()).FirstOrDefault(); //최근에 등록된 수주
             var 자재명세서 = DB.자재명세서.Get자재명세서(Last수주.제품번호); //등록된 수주의 자재명세서           
-            var 자재 = DB.자재.GetAll();
+            var 자재 = DB.자재.GetAll(Last수주.제품번호);
+            
             var 제품 = DB.제품.Get제품(Last수주.제품번호);
             var Last제품 = 제품[제품.Count - 1]; //수주받은 제품에 대한 정보
             var 수량 = new List<int>();
@@ -186,23 +184,36 @@ namespace SMART_ERP_System.MenuUserControl
                     {
                         if (Last제품.재고량 < 0)
                         {
-                            자재[j].재고량 = 자재[j].재고량 + 자재명세서[i].수량 * (int)Last제품.재고량 - 자재[j].안전재고량;
+                            자재[j].재고량 = 자재[j].재고량 + 자재명세서[i].수량 * (int)Last제품.재고량; //재공
+                            if(자재[j].재고량 < 0)
+                            {
+                                int preStockAmount = 자재[j].재고량;
+                                자재[j].재고량 = 0;
+                                DB.자재.Update(자재[j]);
+                                자재[j].재고량 = preStockAmount;
+                            }
+                            else
+                                DB.자재.Update(자재[j]);
+
+                            자재[j].재고량 -= 자재[j].안전재고량;
+
                         }
 
                         if (자재[j].재고량 < 0)
                         {
                             발주서 발주서 = new 발주서();
-                            if (DB.발주서.GetCount() == 0) 발주서.발주번호 = "1";
-                            else 발주서.발주번호 = (int.Parse(DB.발주서.GetAll().LastOrDefault().발주번호) + 1).ToString();
+
+                            if(DB.발주서.Search발주서(DateTime.Today).Count == 0)
+                            발주서.발주번호 = DateTime.Today.ToShortDateString().ToString().Replace("-", "").Substring(2, 6) + "001";
+
+                            else 발주서.발주번호 = (int.Parse(DB.발주서.GetAll().Select(x => x.발주번호).LastOrDefault()) + 1).ToString();
                             발주서.공급업체번호 = DB.공급자재리스트.Get공급업체번호(자재명세서[i].자재번호);
                             발주서.주문날짜 = DateTime.Today;
                             발주서.납기일 = Last수주.납기일.AddDays(-Last제품.리드타임 - 자재[j].리드타임);
 
                             list.Add(발주서);
                             수량.Add(자재[j].재고량);
-                            자재List.Add(자재[j].자재번호);
-                            
-                            자재[j].재고량 = 자재[j].재고량 - (자재명세서[i].수량 * (int)Last제품.재고량 - 자재[j].안전재고량);
+                            자재List.Add(자재[j].자재번호);                           
                         }
                     }
                 }
@@ -231,9 +242,7 @@ namespace SMART_ERP_System.MenuUserControl
                     발주리스트.수량 = 수량[i] * (-1);
                     DB.발주리스트.Insert(발주리스트);
                     for (int j = i + 1; j < list.Count; j++)
-                    {
-                        list[j].발주번호 = (int.Parse(DB.발주서.GetAll().LastOrDefault().발주번호) + 1).ToString();
-                    }
+                        list[j].발주번호 = (int.Parse(DB.발주서.GetAll().Select(x => x.발주번호).LastOrDefault()) + 1).ToString();
                 }
                 else
                 {
@@ -297,6 +306,10 @@ namespace SMART_ERP_System.MenuUserControl
         {
             firstDate = FirstDate.Value;
             lastDate = LastDate.Value;
+
+            DB.사원등록.SearchDepartment(loginMember.EmployeeCode, out string code1, out string name1);
+            cbb부서코드.Text = code1;
+            txb부서명.Text = name1;
         }
 
         private void FirstDate_ValueChanged(object sender, EventArgs e)
@@ -344,6 +357,25 @@ namespace SMART_ERP_System.MenuUserControl
                 dgv수주.Rows[i].Cells[2].Value = DB.제품.Get제품(dgv수주.Rows[i].Cells[2].Value.ToString()).Select(x => x.제품명).First().ToString();
                 dgv수주.Rows[i].Cells[4].Value = DB.일반거래처.Get공급업체이름From번호(dgv수주.Rows[i].Cells[4].Value.ToString());
             }
+        }
+
+        private void ComboBox2_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbb사원코드.SelectedValue != null)
+                txb사원명.Text = DB.사원등록.SearchChangedValue(cbb사원코드.SelectedValue.ToString());
+            
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbb부서코드.SelectedValue != null)
+                txb부서명.Text = DB.부서.SearchChangedValue(cbb부서코드.SelectedValue.ToString());
+        }
+
+        private void SetData()
+        {          
+            사원등록BindingSource.DataSource = DB.사원등록.GetAll().Select(x => x.사원코드);
+            부서등록BindingSource.DataSource = DB.부서.GetAll().Select(x => x.부서코드);
         }
     }
 }

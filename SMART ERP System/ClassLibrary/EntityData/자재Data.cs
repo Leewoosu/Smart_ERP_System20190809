@@ -21,6 +21,23 @@ namespace ClassLibrary.EntityData
             }
         }
 
+        public List<자재> GetAll(string 제품번호)
+        {
+            using (ERPEntities context = new ERPEntities())
+            {
+                var query = from x in context.자재명세서
+                            where x.제품번호 == 제품번호
+                            select x;
+
+                var list = query.Select(x => x.자재번호).ToList();
+                var list1 = new List<자재>();
+                for (int i = 0; i < list.Count; i++)
+                    list1.Add(Get자재(list[i]).FirstOrDefault());
+
+                return list1;
+            }
+        }
+
         public List<자재> Get자재번호(string 자재이름)
         {
             using (ERPEntities context = new ERPEntities())

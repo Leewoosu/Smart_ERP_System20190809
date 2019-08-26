@@ -1,16 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ERPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="MES공정별수량">
+    <Key>
+      <PropertyRef Name="관리번호" />
+    </Key>
+    <Property Name="관리번호" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="제품번호" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="절단지시수량" Type="Int32" />
+    <Property Name="벤딩지시수량" Type="Int32" />
+    <Property Name="드릴지시수량" Type="Int32" />
+    <Property Name="용접지시수량" Type="Int32" />
+    <Property Name="절단불량수량" Type="Int32" />
+    <Property Name="벤딩불량수량" Type="Int32" />
+    <Property Name="드릴불량수량" Type="Int32" />
+    <Property Name="용접불량수량" Type="Int32" />
+    <Property Name="실적시간" Type="DateTime" Precision="3" />
+  </EntityType>
   <EntityType Name="MES불량실적현황">
     <Key>
       <PropertyRef Name="실적번호" />
     </Key>
+    <Property Name="실적번호" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="관리번호" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="제품번호" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="불량수량" Type="Int32" />
     <Property Name="등록시간" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="비고" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="실적번호" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="MES현장실적현황" Relationship="Self.FK_MES불량실적현황_MES현장실적현황" FromRole="MES불량실적현황" ToRole="MES현장실적현황" />
+  </EntityType>
+  <EntityType Name="MES상세실적현황">
+    <Key>
+      <PropertyRef Name="실적번호" />
+    </Key>
+    <Property Name="실적번호" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="관리번호" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="공정명" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="공정별실적수량" Type="Int32" />
+    <Property Name="공정별불량수량" Type="Int32" />
+    <Property Name="완료유무" Type="Boolean" />
+    <Property Name="공정별완료시간" Type="DateTime" Precision="3" />
+    <Property Name="작업완료시간" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="MES투입현황">
     <Key>
@@ -224,6 +253,13 @@
     <Property Name="역추적ID" Type="Int32" Nullable="false" />
     <Property Name="회계기간" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="부가세신고서" Relationship="Self.FK_과세별세액_부가세신고서" FromRole="과세별세액" ToRole="부가세신고서" />
+  </EntityType>
+  <EntityType Name="관할세무서">
+    <Key>
+      <PropertyRef Name="관할세무서코드" />
+    </Key>
+    <Property Name="관할세무서코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="관할세무서명" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityType Name="근로소득별세부사항">
     <Key>
@@ -468,8 +504,9 @@
     </Key>
     <Property Name="회계기간" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="일반과세ID" Type="Int32" Nullable="false" />
+    <Property Name="사업장코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="과세별세액" Relationship="Self.FK_과세별세액_부가세신고서" FromRole="부가세신고서" ToRole="과세별세액" />
-    <NavigationProperty Name="사업장등록" Relationship="Self.FK_사업장기본등록사항_부가세신고서" FromRole="부가세신고서" ToRole="사업장등록" />
+    <NavigationProperty Name="사업장등록" Relationship="Self.FK_부가세신고서_사업장등록" FromRole="부가세신고서" ToRole="사업장등록" />
   </EntityType>
   <EntityType Name="부문등록">
     <Key>
@@ -479,7 +516,6 @@
     <Property Name="부문명" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="사용시작기간" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="사용종료기간" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="부서등록" Relationship="Self.FK_부서등록_부문등록" FromRole="부문등록" ToRole="부서등록" />
   </EntityType>
   <EntityType Name="부서등록">
     <Key>
@@ -491,9 +527,7 @@
     <Property Name="부문코드" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="사용시작기간" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="사용종료기간" Type="DateTime" Precision="0" />
-    <Property Name="사원코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="부문등록" Relationship="Self.FK_부서등록_부문등록" FromRole="부서등록" ToRole="부문등록" />
-    <NavigationProperty Name="사업장등록" Relationship="Self.FK_부서등록_사업장등록" FromRole="부서등록" ToRole="사업장등록" />
+    <Property Name="사원코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="사원등록" Relationship="Self.FK_부서등록_사원등록" FromRole="부서등록" ToRole="사원등록" />
   </EntityType>
   <EntityType Name="분기별예산">
@@ -554,9 +588,7 @@
     <Property Name="관할세무서" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="개업년월일" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="폐업년월일" Type="DateTime" Precision="0" />
-    <Property Name="회계기간" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="부가세신고서" Relationship="Self.FK_사업장기본등록사항_부가세신고서" FromRole="사업장등록" ToRole="부가세신고서" />
-    <NavigationProperty Name="부서등록" Relationship="Self.FK_부서등록_사업장등록" FromRole="사업장등록" ToRole="부서등록" />
+    <NavigationProperty Name="부가세신고서" Relationship="Self.FK_부가세신고서_사업장등록" FromRole="사업장등록" ToRole="부가세신고서" />
   </EntityType>
   <EntityType Name="사용자권한설정">
     <Key>
@@ -592,7 +624,7 @@
       <PropertyRef Name="사원코드" />
     </Key>
     <Property Name="사원코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="사원사진" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="사원사진" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="사원이름_영문_" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="내외국인구분" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="주민등록번호" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
@@ -1030,7 +1062,7 @@
     <Property Name="재고량" Type="Int32" Nullable="false" />
     <Property Name="품목군" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="일별생산량" Type="Int32" Nullable="false" />
-    <Property Name="표준원가" Type="Int32" Nullable="false" />
+    <Property Name="표준원가" Type="Int32" />
     <Property Name="실제원가" Type="Int32" Nullable="false" />
     <Property Name="외경" Type="Int32" Nullable="false" />
     <Property Name="층" Type="Int32" Nullable="false" />
@@ -1114,24 +1146,20 @@
       <PropertyRef Name="No" />
       <PropertyRef Name="계정과목" />
     </Key>
-    <Property Name="No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="No" Type="Int32" Nullable="false" />
     <Property Name="차변잔액" Type="Int64" />
     <Property Name="차변합계" Type="Int64" />
     <Property Name="계정과목" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="대변합계" Type="Int64" />
     <Property Name="대변잔액" Type="Int64" />
-    <Property Name="기간" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="합계잔액시산표No" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="합계잔액시산표리스트" Relationship="Self.FK_합계잔액시산표_합계잔액시산표리스트" FromRole="합계잔액시산표" ToRole="합계잔액시산표리스트" />
   </EntityType>
   <EntityType Name="합계잔액시산표리스트">
     <Key>
       <PropertyRef Name="합계잔액시산표No" />
       <PropertyRef Name="기간" />
     </Key>
-    <Property Name="합계잔액시산표No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="합계잔액시산표No" Type="Int32" Nullable="false" />
     <Property Name="기간" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="합계잔액시산표" Relationship="Self.FK_합계잔액시산표_합계잔액시산표리스트" FromRole="합계잔액시산표리스트" ToRole="합계잔액시산표" />
   </EntityType>
   <EntityType Name="회계처리">
     <Key>
@@ -1584,44 +1612,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_사업장기본등록사항_부가세신고서">
-    <End Role="부가세신고서" Type="Self.부가세신고서" Multiplicity="1" />
-    <End Role="사업장등록" Type="Self.사업장등록" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="부가세신고서">
-        <PropertyRef Name="회계기간" />
-      </Principal>
-      <Dependent Role="사업장등록">
-        <PropertyRef Name="회계기간" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_부서등록_부문등록">
-    <End Role="부문등록" Type="Self.부문등록" Multiplicity="1" />
-    <End Role="부서등록" Type="Self.부서등록" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="부문등록">
-        <PropertyRef Name="부문코드" />
-      </Principal>
-      <Dependent Role="부서등록">
-        <PropertyRef Name="부문코드" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_부서등록_사업장등록">
+  <Association Name="FK_부가세신고서_사업장등록">
     <End Role="사업장등록" Type="Self.사업장등록" Multiplicity="1" />
-    <End Role="부서등록" Type="Self.부서등록" Multiplicity="*" />
+    <End Role="부가세신고서" Type="Self.부가세신고서" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="사업장등록">
         <PropertyRef Name="사업장코드" />
       </Principal>
-      <Dependent Role="부서등록">
+      <Dependent Role="부가세신고서">
         <PropertyRef Name="사업장코드" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_부서등록_사원등록">
-    <End Role="사원등록" Type="Self.사원등록" Multiplicity="1" />
+    <End Role="사원등록" Type="Self.사원등록" Multiplicity="0..1" />
     <End Role="부서등록" Type="Self.부서등록" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="사원등록">
@@ -1902,26 +1906,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_합계잔액시산표_합계잔액시산표리스트">
-    <End Role="합계잔액시산표리스트" Type="Self.합계잔액시산표리스트" Multiplicity="1" />
-    <End Role="합계잔액시산표" Type="Self.합계잔액시산표" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="합계잔액시산표리스트">
-        <PropertyRef Name="합계잔액시산표No" />
-        <PropertyRef Name="기간" />
-      </Principal>
-      <Dependent Role="합계잔액시산표">
-        <PropertyRef Name="합계잔액시산표No" />
-        <PropertyRef Name="기간" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="세금급여">
     <End Role="급여" Type="Self.급여" Multiplicity="*" />
     <End Role="세금" Type="Self.세금" Multiplicity="*" />
   </Association>
   <EntityContainer Name="ERPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MES공정별수량" EntityType="Self.MES공정별수량" />
     <EntitySet Name="MES불량실적현황" EntityType="Self.MES불량실적현황" />
+    <EntitySet Name="MES상세실적현황" EntityType="Self.MES상세실적현황" />
     <EntitySet Name="MES투입현황" EntityType="Self.MES투입현황" />
     <EntitySet Name="MES현장실적현황" EntityType="Self.MES현장실적현황" />
     <EntitySet Name="거래처" EntityType="Self.거래처" />
@@ -1938,6 +1930,7 @@
     <EntitySet Name="공정순서" EntityType="Self.공정순서" />
     <EntitySet Name="공제별세부사항" EntityType="Self.공제별세부사항" />
     <EntitySet Name="과세별세액" EntityType="Self.과세별세액" />
+    <EntitySet Name="관할세무서" EntityType="Self.관할세무서" />
     <EntitySet Name="근로소득별세부사항" EntityType="Self.근로소득별세부사항" />
     <EntitySet Name="근태결과" EntityType="Self.근태결과" />
     <EntitySet Name="금융거래처등록" EntityType="Self.금융거래처등록" />
@@ -2143,17 +2136,9 @@
       <End Role="자재" EntitySet="자재" />
       <End Role="발주리스트" EntitySet="발주리스트" />
     </AssociationSet>
-    <AssociationSet Name="FK_사업장기본등록사항_부가세신고서" Association="Self.FK_사업장기본등록사항_부가세신고서">
+    <AssociationSet Name="FK_부가세신고서_사업장등록" Association="Self.FK_부가세신고서_사업장등록">
+      <End Role="사업장등록" EntitySet="사업장등록" />
       <End Role="부가세신고서" EntitySet="부가세신고서" />
-      <End Role="사업장등록" EntitySet="사업장등록" />
-    </AssociationSet>
-    <AssociationSet Name="FK_부서등록_부문등록" Association="Self.FK_부서등록_부문등록">
-      <End Role="부문등록" EntitySet="부문등록" />
-      <End Role="부서등록" EntitySet="부서등록" />
-    </AssociationSet>
-    <AssociationSet Name="FK_부서등록_사업장등록" Association="Self.FK_부서등록_사업장등록">
-      <End Role="사업장등록" EntitySet="사업장등록" />
-      <End Role="부서등록" EntitySet="부서등록" />
     </AssociationSet>
     <AssociationSet Name="FK_부서등록_사원등록" Association="Self.FK_부서등록_사원등록">
       <End Role="사원등록" EntitySet="사원등록" />
@@ -2246,10 +2231,6 @@
     <AssociationSet Name="FK_전표리스트_전표1" Association="Self.FK_전표리스트_전표1">
       <End Role="전표" EntitySet="전표" />
       <End Role="전표리스트" EntitySet="전표리스트" />
-    </AssociationSet>
-    <AssociationSet Name="FK_합계잔액시산표_합계잔액시산표리스트" Association="Self.FK_합계잔액시산표_합계잔액시산표리스트">
-      <End Role="합계잔액시산표리스트" EntitySet="합계잔액시산표리스트" />
-      <End Role="합계잔액시산표" EntitySet="합계잔액시산표" />
     </AssociationSet>
     <AssociationSet Name="세금급여" Association="Self.세금급여">
       <End Role="급여" EntitySet="급여" />

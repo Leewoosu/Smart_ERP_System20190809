@@ -11,6 +11,7 @@ using ClassLibrary.EntityData;
 using SMART_ERP_System.Class;
 using SMART_ERP_System.MainForm_Control;
 using ClassLibrary.FormHelper;
+using ClassLibrary;
 
 namespace SMART_ERP_System.MenuUserControl
 {
@@ -21,7 +22,7 @@ namespace SMART_ERP_System.MenuUserControl
         public 고정자산등록()
         {
             InitializeComponent();
-            
+
         }
 
         public void Load_DepreciationMethod()
@@ -30,7 +31,7 @@ namespace SMART_ERP_System.MenuUserControl
         }
 
         private void 고정자산등록_Load(object sender, EventArgs e)
-        {          
+        {
             Load_DepreciationMethod();
 
             고정자산bds.DataSource = DB.고정자산.GetAll();
@@ -49,7 +50,7 @@ namespace SMART_ERP_System.MenuUserControl
             else
                 고정자산bds.DataSource = DB.고정자산.GetAll();
         }
-        
+
         private void 고정자산dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             ClassLibrary.고정자산 고정자산 = DB.고정자산.SearchCode(dgv고정자산.CurrentRow.Cells[0].Value.ToString());
@@ -208,7 +209,7 @@ namespace SMART_ERP_System.MenuUserControl
                 txb고정자산계정명.Text = 고정자산단위.FixedAssetsName;
             }
 
-            if(e.KeyData == Keys.Enter)
+            if (e.KeyData == Keys.Enter)
             {
                 var list = DB.고정자산계정과목.GetAll();
 
@@ -220,7 +221,19 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void BtnStatementSearch_Click(object sender, EventArgs e)
         {
-            고정자산bds.DataSource = DB.고정자산.검색(txb고정자산계정코드.Text);
+            var list = DB.고정자산.검색(txb고정자산계정코드.Text);
+
+            if (txb고정자산계정코드.Text.IsNullOrEmpty())
+            {
+                고정자산bds.DataSource = DB.고정자산.GetAll();
+            }
+            else
+                고정자산bds.DataSource = list;
+
+            for (int i = 0; i < dgv고정자산.RowCount - 1; i++)
+            {
+                dgv고정자산.Rows[i].Cells[2].Value = DB.고정자산계정과목.Search(dgv고정자산.Rows[i].Cells[2].Value.ToString());
+            }
         }
 
         private void Dgv고정자산_DataError(object sender, DataGridViewDataErrorEventArgs e)

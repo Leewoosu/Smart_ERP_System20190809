@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary.EntityData;
 using ClassLibrary;
+using SMART_ERP_System.Class;
 
 namespace SMART_ERP_System.MenuUserControl
 {
@@ -17,6 +18,7 @@ namespace SMART_ERP_System.MenuUserControl
         public 입고등록()
         {
             InitializeComponent();
+            SetData();
         }
 
         private void Btn조회_Click(object sender, EventArgs e)
@@ -284,6 +286,9 @@ namespace SMART_ERP_System.MenuUserControl
         private void 입고등록_Load(object sender, EventArgs e)
         {
             dgv입고등록.Rows.Add();
+            DB.사원등록.SearchDepartment(loginMember.EmployeeCode, out string code1, out string name1);
+            cbb부서코드.Text = code1;
+            txb부서명.Text = name1;
         }
 
         private void Dgv입고등록_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -653,6 +658,23 @@ namespace SMART_ERP_System.MenuUserControl
                     dgv불량상세정보.Rows.Add();
                 }
             }
+        }
+
+        private void Cbb부서코드_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbb부서코드.SelectedValue != null)
+                txb부서명.Text = DB.부서.SearchChangedValue(cbb부서코드.SelectedValue.ToString());
+        }
+
+        private void Cbb사원코드_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbb사원코드.SelectedValue != null)
+                txb사원명.Text = DB.사원등록.SearchChangedValue(cbb사원코드.SelectedValue.ToString());
+        }
+        private void SetData()
+        {
+            사원등록BindingSource.DataSource = DB.사원등록.GetAll().Select(x => x.사원코드);
+            부서등록BindingSource.DataSource = DB.부서.GetAll().Select(x => x.부서코드);
         }
     }
 }

@@ -318,6 +318,7 @@ namespace SMART_ERP_System.MenuUserControl
                     dgv전표.Columns[i].DefaultCellStyle.BackColor = Color.LightBlue;
                 }
             }
+
             if (dgv전표.Rows[e.RowIndex].Cells[1].Value == null)
                 dgv전표.Rows[e.RowIndex].Cells[1].Value = txb일.Text;
             dgv전표.Columns[8].DefaultCellStyle.Format = "##,##";

@@ -20,6 +20,18 @@ namespace ClassLibrary.EntityData
             }
         }
 
+        public List<발주서> Search발주서(DateTime 주문일)
+        {
+            using (ERPEntities context = new ERPEntities())
+            {
+                var query = from x in context.발주서
+                            where x.주문날짜 == 주문일
+                            select x;
+
+                return query.ToList();
+            }
+        }
+
         public List<발주서> Search발주서(string 거래처이름, DateTime OrderFirstDate,
             DateTime OrderLastDate, DateTime DeliveryFirstDate, DateTime DeliveryLastDate)
         {

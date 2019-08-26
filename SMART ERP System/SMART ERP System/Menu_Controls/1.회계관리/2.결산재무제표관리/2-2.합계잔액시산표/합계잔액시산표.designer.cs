@@ -160,9 +160,9 @@
             // txb사업장명
             // 
             this.txb사업장명.Enabled = false;
-            this.txb사업장명.Location = new System.Drawing.Point(166, 9);
+            this.txb사업장명.Location = new System.Drawing.Point(149, 8);
             this.txb사업장명.Name = "txb사업장명";
-            this.txb사업장명.Size = new System.Drawing.Size(82, 21);
+            this.txb사업장명.Size = new System.Drawing.Size(115, 21);
             this.txb사업장명.TabIndex = 109;
             // 
             // cbb사업장코드
@@ -173,7 +173,7 @@
             this.cbb사업장코드.FormattingEnabled = true;
             this.cbb사업장코드.Location = new System.Drawing.Point(85, 8);
             this.cbb사업장코드.Name = "cbb사업장코드";
-            this.cbb사업장코드.Size = new System.Drawing.Size(75, 21);
+            this.cbb사업장코드.Size = new System.Drawing.Size(58, 21);
             this.cbb사업장코드.TabIndex = 108;
             this.cbb사업장코드.ValueMember = "사업장코드";
             // 

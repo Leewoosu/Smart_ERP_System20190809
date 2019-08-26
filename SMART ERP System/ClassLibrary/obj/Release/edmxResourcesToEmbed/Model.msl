@@ -1,15 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ERPModelStoreContainer" CdmEntityContainer="ERPEntities">
+    <EntitySetMapping Name="MES공정별수량">
+      <EntityTypeMapping TypeName="ERPModel.MES공정별수량">
+        <MappingFragment StoreEntitySet="MES공정별수량">
+          <ScalarProperty Name="관리번호" ColumnName="관리번호" />
+          <ScalarProperty Name="제품번호" ColumnName="제품번호" />
+          <ScalarProperty Name="절단지시수량" ColumnName="절단지시수량" />
+          <ScalarProperty Name="벤딩지시수량" ColumnName="벤딩지시수량" />
+          <ScalarProperty Name="드릴지시수량" ColumnName="드릴지시수량" />
+          <ScalarProperty Name="용접지시수량" ColumnName="용접지시수량" />
+          <ScalarProperty Name="절단불량수량" ColumnName="절단불량수량" />
+          <ScalarProperty Name="벤딩불량수량" ColumnName="벤딩불량수량" />
+          <ScalarProperty Name="드릴불량수량" ColumnName="드릴불량수량" />
+          <ScalarProperty Name="용접불량수량" ColumnName="용접불량수량" />
+          <ScalarProperty Name="실적시간" ColumnName="실적시간" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="MES불량실적현황">
       <EntityTypeMapping TypeName="ERPModel.MES불량실적현황">
         <MappingFragment StoreEntitySet="MES불량실적현황">
+          <ScalarProperty Name="실적번호" ColumnName="실적번호" />
           <ScalarProperty Name="관리번호" ColumnName="관리번호" />
           <ScalarProperty Name="제품번호" ColumnName="제품번호" />
           <ScalarProperty Name="불량수량" ColumnName="불량수량" />
           <ScalarProperty Name="등록시간" ColumnName="등록시간" />
           <ScalarProperty Name="비고" ColumnName="비고" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MES상세실적현황">
+      <EntityTypeMapping TypeName="ERPModel.MES상세실적현황">
+        <MappingFragment StoreEntitySet="MES상세실적현황">
           <ScalarProperty Name="실적번호" ColumnName="실적번호" />
+          <ScalarProperty Name="관리번호" ColumnName="관리번호" />
+          <ScalarProperty Name="공정명" ColumnName="공정명" />
+          <ScalarProperty Name="공정별실적수량" ColumnName="공정별실적수량" />
+          <ScalarProperty Name="공정별불량수량" ColumnName="공정별불량수량" />
+          <ScalarProperty Name="완료유무" ColumnName="완료유무" />
+          <ScalarProperty Name="공정별완료시간" ColumnName="공정별완료시간" />
+          <ScalarProperty Name="작업완료시간" ColumnName="작업완료시간" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -210,6 +241,14 @@
           <ScalarProperty Name="세액" ColumnName="세액" />
           <ScalarProperty Name="역추적ID" ColumnName="역추적ID" />
           <ScalarProperty Name="회계기간" ColumnName="회계기간" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="관할세무서">
+      <EntityTypeMapping TypeName="ERPModel.관할세무서">
+        <MappingFragment StoreEntitySet="관할세무서">
+          <ScalarProperty Name="관할세무서코드" ColumnName="관할세무서코드" />
+          <ScalarProperty Name="관할세무서명" ColumnName="관할세무서명" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -445,6 +484,7 @@
         <MappingFragment StoreEntitySet="부가세신고서">
           <ScalarProperty Name="회계기간" ColumnName="회계기간" />
           <ScalarProperty Name="일반과세ID" ColumnName="일반과세ID" />
+          <ScalarProperty Name="사업장코드" ColumnName="사업장코드" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -525,7 +565,6 @@
           <ScalarProperty Name="관할세무서" ColumnName="관할세무서" />
           <ScalarProperty Name="개업년월일" ColumnName="개업년월일" />
           <ScalarProperty Name="폐업년월일" ColumnName="폐업년월일" />
-          <ScalarProperty Name="회계기간" ColumnName="회계기간" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1061,8 +1100,6 @@
           <ScalarProperty Name="계정과목" ColumnName="계정과목" />
           <ScalarProperty Name="대변합계" ColumnName="대변합계" />
           <ScalarProperty Name="대변잔액" ColumnName="대변잔액" />
-          <ScalarProperty Name="기간" ColumnName="기간" />
-          <ScalarProperty Name="합계잔액시산표No" ColumnName="합계잔액시산표No" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

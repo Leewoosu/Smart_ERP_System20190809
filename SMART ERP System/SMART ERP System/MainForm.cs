@@ -322,18 +322,6 @@ namespace SMART_ERP_System
         [DllImport("User32")]
         private static extern int ShowWindow(IntPtr hwnd, int nCmdShow);
 
-        // 프로세스 최상위로 호출
-        private void ProcessCall(string processName)
-        {
-            foreach (Process process in Process.GetProcesses())
-            {
-                if (process.ProcessName == processName)
-                {
-                    ShowWindow(process.MainWindowHandle, 9);
-                }
-            }
-        }
-
         private void BtnSearch_Click_1(object sender, EventArgs e)
         {
             // Button1_Click(sender, e);

@@ -196,14 +196,14 @@ namespace SMART_ERP_System.MenuUserControl
         {
             List<전표리스트> list = new List<전표리스트>();
 
-            bool isChecked;  
+            bool isChecked;
 
             for (int i = 0; i < dgv전표리스트.RowCount; i++)
             {
                 isChecked = Convert.ToBoolean(dgv전표리스트.Rows[i].Cells[0].Value);
 
                 if (isChecked == true)
-                   // list.Add((전표리스트)dgv전표리스트.Rows[i].DataBoundItem);
+                    // list.Add((전표리스트)dgv전표리스트.Rows[i].DataBoundItem);
                     list.Add(전표리스트s[i]);
             }
 
@@ -307,6 +307,22 @@ namespace SMART_ERP_System.MenuUserControl
             {
                 return;
                 //MessageBox.Show("error.");
+            }
+        }
+
+        private void Dgv전표리스트_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCheckBoxCell chk = dgv전표리스트.Rows[e.RowIndex].Cells["CheckColumn"] as DataGridViewCheckBoxCell;
+
+            bool bChecked = (null != chk && null != chk.Value && true == (bool)chk.Value);
+
+            if (!bChecked)
+            {
+                dgv전표리스트.Rows[e.RowIndex].Cells["CheckColumn"].Value = true;
+            }
+            else
+            {
+                dgv전표리스트.Rows[e.RowIndex].Cells["CheckColumn"].Value = false;
             }
         }
     }

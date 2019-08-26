@@ -82,6 +82,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.textBox17);
             this.groupBox2.Controls.Add(this.label2);
@@ -118,10 +119,10 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(593, 20);
+            this.label2.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(561, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 11);
+            this.label2.Size = new System.Drawing.Size(112, 14);
             this.label2.TabIndex = 79;
             this.label2.Text = "관리단위현재고";
             // 
@@ -145,10 +146,10 @@
             // 
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label21.Location = new System.Drawing.Point(201, 20);
+            this.label21.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label21.Location = new System.Drawing.Point(169, 16);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(82, 11);
+            this.label21.Size = new System.Drawing.Size(112, 14);
             this.label21.TabIndex = 52;
             this.label21.Text = "재고단위현재고";
             // 

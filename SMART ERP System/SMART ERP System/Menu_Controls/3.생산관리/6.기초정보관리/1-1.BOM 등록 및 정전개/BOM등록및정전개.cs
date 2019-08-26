@@ -17,11 +17,13 @@ namespace SMART_ERP_System.MenuUserControl
         string currentvalue;
         int itemCnt;
         List<자재명세서> List = new List<자재명세서>();
-
+        List<자재> 자재List;
         public BOM등록및정전개()
         {
             InitializeComponent();
+
             cbxLocal.Items.Add("EA");
+            cbxLocal.Items.Add("mm");
             cbxLocal.Items.Add("KG");
             cbxJo.Items.Add("생산");
             cbxJo.Items.Add("구매");
@@ -32,16 +34,15 @@ namespace SMART_ERP_System.MenuUserControl
             dataGridView2.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView2.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView2.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            ImageList imageList = new ImageList();
-            imageList.Images.Add(Properties.Resources.folder);
-            treeView1.ImageList = imageList;
+            getList();
         }
 
-        public List<자재명세서> getList()
+
+        public void getList()
         {
+
             List = DB.자재명세서.GetAll();
-            return List;
+            자재List = DB.자재.GetAll();
         }
 
         public void dataGridSerch()
@@ -58,9 +59,9 @@ namespace SMART_ERP_System.MenuUserControl
             }
 
             string material = textBox1.Text;
-            List = List.Where(x => x.제품번호 == material).ToList();
+            var ListDetail = List.Where(x => x.제품번호 == material).OrderBy(x => x.공정순서).ToList();
             int j = 0;
-            foreach (var Item in List)
+            foreach (var Item in ListDetail)
             {
                 dataGridView2.Rows.Add();
                 dataGridView2.Rows[j].Cells[0].Value = j + 1;
@@ -69,38 +70,43 @@ namespace SMART_ERP_System.MenuUserControl
                 dataGridView2.Rows[j].Cells[3].Value = Item.공정순서;
                 dataGridView2.Rows[j++].Cells[4].Value = Item.모품목;
             }
+
+
             itemCnt = j;
             dataGridView2.Focus();
             dataGridView2.CurrentCell = dataGridView2[0, 0];
+
+            foreach (var item in ListDetail)
+            {
+                if (item.모품목 == null)
+                    treeView1.Nodes.Add(item.자재번호, item.자재번호);
+            }
+
+            foreach (var item in ListDetail)
+            {
+                int check = treeView1.Nodes.Find(item.모품목, true).Length;
+                if (check > 0)
+                {
+                    int inputNum = treeView1.Nodes.Find(item.모품목, true).Length - 1;
+                    treeView1.Nodes.Find(item.모품목, true)[inputNum].Nodes.Add(item.자재번호, item.자재번호);
+                }
+            }
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            List = getList();
 
             if (List.Where(x => x.제품번호 == textBox1.Text).Count() > 0)
             {
                 dataGridSerch();
-                foreach (var item in List)
-                {
-                    if (item.모품목 == null)
-                        treeView1.Nodes.Add(item.자재번호, item.자재번호);
-                }
-
-                foreach (var item in List)
-                {
-                    int check = treeView1.Nodes.Find(item.모품목, true).Length;
-                    if (check > 0)
-                    {
-                        int inputNum = treeView1.Nodes.Find(item.모품목, true).Length - 1;
-                        treeView1.Nodes.Find(item.모품목, true)[inputNum].Nodes.Add(item.자재번호, item.자재번호);
-                    }
-                }
             }
             else
             {
+                dataGridView2.Rows.Clear();
                 MessageBox.Show("조건에 해당하는 자재가 없습니다.");
             }
+
         }
 
         private int ZeroChk(DataGridViewCell cell)
@@ -123,13 +129,24 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void edit(string materials)
         {
-            var 자재List = DB.자재.GetAll().Where(y => y.자재번호 == materials).ToList();
-            var 명세서List = DB.자재명세서.GetAll().Where(y => y.자재번호 == materials).ToList();
+            var 자재ListDetail = 자재List.Where(y => y.자재번호 == materials).ToList();
+            var 명세서List = List.Where(y => y.자재번호 == materials).ToList();
             txbMaterialNum.Text = textBox1.Text;
-            txbMaterialName.Text = 자재List[0].자재명.ToString();
-            txbSpac.Text = 자재List[0].구매단가.ToString();
+            txb자재.Text = 명세서List[0].자재번호.ToString();
+            txbMaterialName.Text = 자재ListDetail[0].자재명.ToString();
+            txbPrice.Text = 자재ListDetail[0].구매단가.ToString();
             txbQty.Text = 명세서List[0].수량.ToString();
-           // txbweiht.Text = 자재List[0].무게.ToString();
+            txbProcessNum.Text = 명세서List[0].공정순서.ToString();
+            if (명세서List[0].모품목 == null)
+            {
+                txbPrentM.Text = 명세서List[0].제품번호.ToString();
+            }
+            else
+            {
+                txbPrentM.Text = 명세서List[0].모품목.ToString();
+            }
+
+            cbxLocal.Text = 자재ListDetail[0].단위.ToString();
         }
 
         private void DataGridView2_KeyDown(object sender, KeyEventArgs e)
@@ -176,6 +193,8 @@ namespace SMART_ERP_System.MenuUserControl
                         itemCnt++;
                         DB.자재명세서.Insert(SaveRow);
                         MessageBox.Show("저장되었습니다.");
+                        List = DB.자재명세서.GetAll();
+                        Button1_Click(null, null);
                     }
                 }
             }
@@ -191,6 +210,8 @@ namespace SMART_ERP_System.MenuUserControl
                     dgv.CurrentRow.Cells[yPoint].Value = null;
                 }
             }
+
+
         }
 
         private void DataGridView2_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -200,6 +221,10 @@ namespace SMART_ERP_System.MenuUserControl
             int yPoint = e.ColumnIndex;
             int ColCnt = dgv.ColumnCount - 1;
             int RowCnt = dgv.RowCount - 1;
+
+
+            if (dgv.CurrentRow.Cells[yPoint].Value == null)
+                return;
 
             if (xPoint <= itemCnt - 1 && currentvalue != dgv.CurrentRow.Cells[yPoint].Value.ToString())
             {
@@ -269,14 +294,14 @@ namespace SMART_ERP_System.MenuUserControl
         {
             if (textBox2.Text != "")
             {
-                if (DB.제품.GetAll().Where(x => x.제품번호 == textBox2.Text).Count() < 0)
+                if (List.Where(x => x.제품번호 == textBox2.Text).Count() < 0)
                 {
                     MessageBox.Show("조건에 해당하는 품목이 없습니다.");
                     return;
                 }
             }
 
-            var copyList = DB.자재명세서.GetAll().Where(x => x.제품번호 == textBox1.Text).ToList();
+            var copyList = List.Where(x => x.제품번호 == textBox1.Text).ToList();
 
             foreach (var item in copyList)
             {
@@ -289,6 +314,68 @@ namespace SMART_ERP_System.MenuUserControl
                 Addlist.모품목 = item.모품목;
                 DB.자재명세서.Insert(Addlist);
             }
+
+            List = DB.자재명세서.GetAll();
+            Button1_Click(null, null);
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+
+            자재명세서 UpdateInfo = new 자재명세서();
+
+            UpdateInfo.제품번호 = txbMaterialNum.Text;
+            UpdateInfo.자재번호 = txb자재.Text;
+            UpdateInfo.수량 = int.Parse(txbQty.Text);
+            UpdateInfo.공정순서 = int.Parse(txbProcessNum.Text);
+            UpdateInfo.모품목 = txbPrentM.Text;
+            
+
+
+            if (List.Where(g => g.제품번호 == UpdateInfo.제품번호 && g.자재번호 == UpdateInfo.자재번호).ToList().Count() > 0
+               && UpdateInfo.수량 > 0 && UpdateInfo.공정순서 > 0)
+            {
+                if (자재List.Where(g=>g.자재번호.Trim() == txb자재.Text).Count() == 0)
+                { 
+                    MessageBox.Show("해당 자재는 없는 자재 입니다.");
+                    return;
+                }
+                DB.자재명세서.Update(UpdateInfo);
+                MessageBox.Show($"{UpdateInfo.제품번호}의 기존 {UpdateInfo.자재번호}를 업데이트 하였습니다.");
+            }
+            else if (UpdateInfo.제품번호 != string.Empty && UpdateInfo.자재번호 != string.Empty
+                   && UpdateInfo.수량 > 0 && UpdateInfo.공정순서 > 0)
+            {
+                if (자재List.Where(g => g.자재번호 == UpdateInfo.자재번호).Count() == 0)
+                {
+                    MessageBox.Show("해당 자재는 없는 자재 입니다.");
+                    return;
+                }
+                DB.자재명세서.Insert(UpdateInfo);
+                MessageBox.Show($"{UpdateInfo.제품번호}의 새로운 {UpdateInfo.자재번호}를 업데이트 하였습니다.");
+            }
+
+            else
+                MessageBox.Show("속성을 정확히 입력 하세요!");
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            자재명세서 UpdateInfo = new 자재명세서();
+
+            UpdateInfo.제품번호 = txbMaterialNum.Text;
+            UpdateInfo.자재번호 = txb자재.Text;
+            UpdateInfo.수량 = int.Parse(txbQty.Text);
+            UpdateInfo.공정순서 = int.Parse(txbProcessNum.Text);
+            UpdateInfo.모품목 = txbPrentM.Text;
+
+
+            DB.자재명세서.Delete(UpdateInfo);
+            MessageBox.Show($"{UpdateInfo.제품번호}의 자재번호 : {UpdateInfo.자재번호}가 삭제 되었습니다.");
+
+            List = DB.자재명세서.GetAll();
+            Button1_Click(null, null);
         }
     }
 }
