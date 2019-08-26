@@ -65,6 +65,12 @@ namespace SMART_ERP_System.Class
         public static string SectorName { get; set; }
     }
 
+    public static class 고정자산단위
+    {
+        public static string FixedAssetsCode { get; set; }
+        public static string FixedAssetsName { get; set; }
+    }
+
     public static class 사업장단위
     {
         public static string WorkPlaceCode { get; set; }

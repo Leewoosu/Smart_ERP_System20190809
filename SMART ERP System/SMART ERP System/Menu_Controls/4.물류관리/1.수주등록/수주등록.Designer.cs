@@ -1,4 +1,4 @@
-﻿namespace SMART_ERP_System
+﻿namespace SMART_ERP_System.MenuUserControl
 {
     partial class 수주등록
     {
@@ -94,14 +94,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 10);
+            this.label2.Font = new System.Drawing.Font("굴림체", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(51, 2);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.Size = new System.Drawing.Size(102, 21);
             this.label2.TabIndex = 5;
             this.label2.Text = "수주등록";
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.txb납품업체이름);
             this.groupBox1.Controls.Add(this.txb품목명);
             this.groupBox1.Controls.Add(this.LastDate);
@@ -134,7 +136,7 @@
             // 
             this.LastDate.CustomFormat = "yyyy-MM-dd";
             this.LastDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.LastDate.Location = new System.Drawing.Point(535, 11);
+            this.LastDate.Location = new System.Drawing.Point(535, 13);
             this.LastDate.Name = "LastDate";
             this.LastDate.Size = new System.Drawing.Size(100, 21);
             this.LastDate.TabIndex = 15;
@@ -144,7 +146,7 @@
             // 
             this.FirstDate.CustomFormat = "yyyy-MM-dd";
             this.FirstDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FirstDate.Location = new System.Drawing.Point(410, 11);
+            this.FirstDate.Location = new System.Drawing.Point(416, 13);
             this.FirstDate.Name = "FirstDate";
             this.FirstDate.Size = new System.Drawing.Size(96, 21);
             this.FirstDate.TabIndex = 14;
@@ -162,27 +164,30 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(351, 17);
+            this.label5.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(348, 17);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.Size = new System.Drawing.Size(70, 14);
             this.label5.TabIndex = 12;
             this.label5.Text = "주문일 : ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(73, 17);
+            this.label3.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(70, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 12);
+            this.label3.Size = new System.Drawing.Size(64, 14);
             this.label3.TabIndex = 10;
             this.label3.Text = "품목명 :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 59);
+            this.label4.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(30, 59);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 12);
+            this.label4.Size = new System.Drawing.Size(115, 14);
             this.label4.TabIndex = 11;
             this.label4.Text = "납품업체이름 : ";
             // 

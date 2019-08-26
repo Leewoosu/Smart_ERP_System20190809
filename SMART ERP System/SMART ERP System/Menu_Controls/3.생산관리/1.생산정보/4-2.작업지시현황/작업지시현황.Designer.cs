@@ -45,6 +45,7 @@
             this.dtp작업지시일1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn조회 = new System.Windows.Forms.Button();
             this.cbb사원코드 = new System.Windows.Forms.ComboBox();
             this.txb사원명 = new System.Windows.Forms.TextBox();
             this.cbb부서코드 = new System.Windows.Forms.ComboBox();
@@ -54,7 +55,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn조회 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.작업지시현황BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -146,11 +146,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.dtp작업지시일2);
             this.groupBox1.Controls.Add(this.dtp작업지시일1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.btn조회);
             this.groupBox1.Controls.Add(this.cbb사원코드);
             this.groupBox1.Controls.Add(this.txb사원명);
             this.groupBox1.Controls.Add(this.cbb부서코드);
@@ -183,10 +184,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(553, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 11);
+            this.label3.Size = new System.Drawing.Size(31, 12);
             this.label3.TabIndex = 20;
             this.label3.Text = "사원";
             this.label3.Visible = false;
@@ -194,13 +195,23 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(114, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 11);
+            this.label4.Size = new System.Drawing.Size(31, 12);
             this.label4.TabIndex = 20;
             this.label4.Text = "부서";
             this.label4.Visible = false;
+            // 
+            // btn조회
+            // 
+            this.btn조회.Location = new System.Drawing.Point(922, 12);
+            this.btn조회.Name = "btn조회";
+            this.btn조회.Size = new System.Drawing.Size(51, 26);
+            this.btn조회.TabIndex = 44;
+            this.btn조회.Text = "조회";
+            this.btn조회.UseVisualStyleBackColor = true;
+            this.btn조회.Click += new System.EventHandler(this.btn조회_Click);
             // 
             // cbb사원코드
             // 
@@ -262,48 +273,38 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label8.Location = new System.Drawing.Point(88, 89);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 11);
+            this.label8.Size = new System.Drawing.Size(70, 12);
             this.label8.TabIndex = 31;
             this.label8.Text = "작업지시일";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(553, 52);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 11);
+            this.label6.Size = new System.Drawing.Size(31, 12);
             this.label6.TabIndex = 29;
             this.label6.Text = "품번";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(92, 52);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 11);
+            this.label5.Size = new System.Drawing.Size(57, 12);
             this.label5.TabIndex = 28;
             this.label5.Text = "지시번호";
-            // 
-            // btn조회
-            // 
-            this.btn조회.Location = new System.Drawing.Point(937, 0);
-            this.btn조회.Name = "btn조회";
-            this.btn조회.Size = new System.Drawing.Size(51, 26);
-            this.btn조회.TabIndex = 44;
-            this.btn조회.Text = "조회";
-            this.btn조회.UseVisualStyleBackColor = true;
-            this.btn조회.Click += new System.EventHandler(this.btn조회_Click);
             // 
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.CausesValidation = false;
-            this.label1.Location = new System.Drawing.Point(7, 25);
+            this.label1.Location = new System.Drawing.Point(7, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1018, 1);
             this.label1.TabIndex = 2;
@@ -311,9 +312,10 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(5, 13);
+            this.label10.Font = new System.Drawing.Font("굴림체", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(59, 7);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 12);
+            this.label10.Size = new System.Drawing.Size(148, 21);
             this.label10.TabIndex = 3;
             this.label10.Text = "작업지시현황";
             // 
@@ -329,7 +331,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn조회);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "작업지시현황";
             this.Size = new System.Drawing.Size(1044, 645);

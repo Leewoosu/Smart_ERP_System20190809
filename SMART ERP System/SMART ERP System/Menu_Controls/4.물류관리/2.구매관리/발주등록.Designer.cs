@@ -63,6 +63,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.DeliveryLastDate);
             this.groupBox1.Controls.Add(this.DeliveryFirstDate);
             this.groupBox1.Controls.Add(this.label4);
@@ -90,7 +91,7 @@
             // 
             this.DeliveryLastDate.CustomFormat = "yyyy-MM-dd";
             this.DeliveryLastDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DeliveryLastDate.Location = new System.Drawing.Point(868, 47);
+            this.DeliveryLastDate.Location = new System.Drawing.Point(855, 47);
             this.DeliveryLastDate.Name = "DeliveryLastDate";
             this.DeliveryLastDate.Size = new System.Drawing.Size(99, 20);
             this.DeliveryLastDate.TabIndex = 69;
@@ -107,17 +108,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(660, 53);
+            this.label4.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(645, 49);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 11);
+            this.label4.Size = new System.Drawing.Size(67, 14);
             this.label4.TabIndex = 67;
             this.label4.Text = "납기기간";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(840, 53);
+            this.label7.Location = new System.Drawing.Point(834, 53);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(11, 11);
             this.label7.TabIndex = 66;
@@ -179,20 +180,20 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.Location = new System.Drawing.Point(307, 52);
+            this.label15.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(292, 48);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 11);
+            this.label15.Size = new System.Drawing.Size(67, 14);
             this.label15.TabIndex = 51;
             this.label15.Text = "주문기간";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(329, 20);
+            this.label11.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(324, 20);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(27, 11);
+            this.label11.Size = new System.Drawing.Size(37, 14);
             this.label11.TabIndex = 38;
             this.label11.Text = "사원";
             // 
@@ -208,29 +209,30 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(59, 19);
+            this.label5.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(49, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 11);
+            this.label5.Size = new System.Drawing.Size(37, 14);
             this.label5.TabIndex = 31;
             this.label5.Text = "부서";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(48, 52);
+            this.label6.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(33, 48);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 11);
+            this.label6.Size = new System.Drawing.Size(52, 14);
             this.label6.TabIndex = 33;
             this.label6.Text = "거래처";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(5, 7);
+            this.label8.Font = new System.Drawing.Font("굴림체", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(51, 2);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 12);
+            this.label8.Size = new System.Drawing.Size(102, 21);
             this.label8.TabIndex = 48;
             this.label8.Text = "발주등록";
             // 

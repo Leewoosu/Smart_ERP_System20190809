@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary.EntityData;
 using ClassLibrary;
+using SMART_ERP_System.Class;
 
 namespace SMART_ERP_System.MenuUserControl
 {
@@ -17,6 +18,7 @@ namespace SMART_ERP_System.MenuUserControl
         public 자재등록()
         {
             InitializeComponent();
+            SetData();
         }
 
         private void 자재등록_Load(object sender, EventArgs e)
@@ -24,6 +26,10 @@ namespace SMART_ERP_System.MenuUserControl
             string[] 검사여부 = { "1. 예", "2. 아니요" };
             cbb검사여부.Items.AddRange(검사여부);
             dgv자재.Rows.Add();
+
+            DB.사원등록.SearchDepartment(loginMember.EmployeeCode, out string code1, out string name1);
+            cbb부서코드.Text = code1;
+            txb부서명.Text = name1;
         }
         private void Btn조회_Click(object sender, EventArgs e)
         {
@@ -48,13 +54,13 @@ namespace SMART_ERP_System.MenuUserControl
             productInfo.리드타임 = int.Parse(txb리드타임.Text);
             productInfo.재고량 = int.Parse(txb재고량.Text);
             productInfo.안전재고량 = int.Parse(txb안전재고량.Text);
-            
+
             productInfo.품목군 = txb품목군.Text;
 
             DB.자재.Insert(productInfo);
             MessageBox.Show("등록");
 
-            공급자재리스트.자재번호 = txb자재번호.Text;            
+            공급자재리스트.자재번호 = txb자재번호.Text;
             공급자재리스트.공급업체번호 = DB.일반거래처.Get공급업체번호From이름(txb공급업체.Text).Select(x => x.거래처코드번호).First();
 
             DB.공급자재리스트.Insert(공급자재리스트);
@@ -78,11 +84,11 @@ namespace SMART_ERP_System.MenuUserControl
             productInfo.품목군 = txb품목군.Text;
             if (cbb검사여부.Text == "1.예") productInfo.검사여부 = true;
             else productInfo.검사여부 = false;
-            
+
             productInfo.리드타임 = int.Parse(txb리드타임.Text);
             productInfo.재고량 = int.Parse(txb재고량.Text);
             productInfo.안전재고량 = int.Parse(txb안전재고량.Text);
-            
+
             productInfo.품목군 = txb품목군.Text;
 
             DB.자재.Update(productInfo);
@@ -165,7 +171,7 @@ namespace SMART_ERP_System.MenuUserControl
                     txb리드타임.Text = DB.자재.Search리드타임(자재번호);
                     if (DB.자재.Search검사여부(자재번호) == true)
                         cbb검사여부.Text = "1. 예";
-                    else cbb검사여부.Text = "2. 아니요";                                      
+                    else cbb검사여부.Text = "2. 아니요";
                     txb공급업체.Text = DB.자재.Search공급업체(자재번호);
                     return;
                 }
@@ -188,7 +194,7 @@ namespace SMART_ERP_System.MenuUserControl
                     txb재고량.Text = null;
                     txb리드타임.Text = null;
                     cbb검사여부.Text = null;
-                    
+
                     txb공급업체.Text = null;
                 }
             }
@@ -249,6 +255,23 @@ namespace SMART_ERP_System.MenuUserControl
                 if (i != list.Count - 1)
                     dgv자재.Rows.Add();
             }
+        }
+
+        private void Cbb부서코드_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbb부서코드.SelectedValue != null)
+                txb부서명.Text = DB.부서.SearchChangedValue(cbb부서코드.SelectedValue.ToString());
+        }
+
+        private void Cbb사원코드_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbb사원코드.SelectedValue != null)
+                txb사원명.Text = DB.사원등록.SearchChangedValue(cbb사원코드.SelectedValue.ToString());
+        }
+        private void SetData()
+        {
+            사원등록BindingSource.DataSource = DB.사원등록.GetAll().Select(x => x.사원코드);
+            부서등록BindingSource.DataSource = DB.부서.GetAll().Select(x => x.부서코드);
         }
     }
 }

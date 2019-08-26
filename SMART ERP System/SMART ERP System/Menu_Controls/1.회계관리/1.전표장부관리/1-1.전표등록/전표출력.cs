@@ -36,7 +36,7 @@ namespace SMART_ERP_System.MenuUserControl
         {
             MenuLists.Set();
 
-            회사등록BindingSource.DataSource = DB.회사.GetAll().Select(x => x.회사코드);
+            사업장등록BindingSource.DataSource = DB.사업장.GetAll();
             사원등록BindingSource.DataSource = DB.사원등록.GetAll().Select(x => x.사원코드);
             부서등록BindingSource.DataSource = DB.부서.GetAll().Select(x => x.부서코드);
 
@@ -59,9 +59,9 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void 전표출력_Load(object sender, EventArgs e)
         {
-            txb회사명.Text = DB.회사.Search(cbb회사코드.Text);
+            txb사업장명.Text = DB.사업장.Search(cbb사업장코드.Text);
 
-            DB.부서.Search(loginMember.EmployeeCode, out string code1, out string name1);
+            DB.사원등록.SearchDepartment(loginMember.EmployeeCode, out string code1, out string name1);
             cbb부서코드.Text = code1;
             txb부서명.Text = name1;
 
@@ -298,6 +298,15 @@ namespace SMART_ERP_System.MenuUserControl
             foreach (DataGridViewRow row in dgv전표리스트.Rows)
             {
                 row.Cells["CheckColumn"].Value = ((CheckBox)sender).Checked;
+            }
+        }
+
+        private void Dgv전표리스트_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if (e.Exception != null && e.Context == DataGridViewDataErrorContexts.Commit)
+            {
+                return;
+                //MessageBox.Show("error.");
             }
         }
     }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary.EntityData;
 using ClassLibrary;
+using SMART_ERP_System.Class;
 
 namespace SMART_ERP_System.MenuUserControl
 {
@@ -20,6 +21,7 @@ namespace SMART_ERP_System.MenuUserControl
             string[] 검사여부 = { "1. 예", "2. 아니요" };
             cbbSearch검사여부.Items.AddRange(검사여부);
             cbb검사여부.Items.AddRange(검사여부);
+            SetData();
         }       
 
         private void dgv제품_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -195,7 +197,14 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void 품목등록_Load(object sender, EventArgs e)
         {
+            제품BindingSource.DataSource = DB.제품.GetAll();
+
+            cbb품목군.SelectedIndex = -1;
+
             dgv제품.Rows.Add();
+            DB.사원등록.SearchDepartment(loginMember.EmployeeCode, out string code1, out string name1);
+            cbb부서코드.Text = code1;
+            txb부서명.Text = name1;
         }
 
         private void Dgv제품_KeyDown(object sender, KeyEventArgs e)
@@ -237,7 +246,7 @@ namespace SMART_ERP_System.MenuUserControl
 
         public void 조회()
         {
-            string 품목군 = txbSearch품목군.Text;
+            string 품목군 = cbb품목군.Text;
             string 검사여부 = cbbSearch검사여부.Text;
             var list = DB.제품.Search제품(품목군, 검사여부);
 
@@ -251,6 +260,24 @@ namespace SMART_ERP_System.MenuUserControl
                 if (i != list.Count - 1)
                     dgv제품.Rows.Add();
             }
+        }
+
+        private void Cbb부서코드_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbb부서코드.SelectedValue != null)
+                txb부서명.Text = DB.부서.SearchChangedValue(cbb부서코드.SelectedValue.ToString());
+        }
+
+        private void Cbb사원코드_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cbb사원코드.SelectedValue != null)
+                txb사원명.Text = DB.사원등록.SearchChangedValue(cbb사원코드.SelectedValue.ToString());
+
+        }
+        private void SetData()
+        {
+            사원등록BindingSource.DataSource = DB.사원등록.GetAll().Select(x => x.사원코드);
+            부서등록BindingSource.DataSource = DB.부서.GetAll().Select(x => x.부서코드);
         }
     }
 }

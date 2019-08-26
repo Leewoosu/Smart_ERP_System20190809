@@ -27,10 +27,10 @@ namespace SMART_ERP_System.MenuUserControl
             InitializeComponent();
 
             lbl회계년도.Text = DateTime.Now.Year.ToString();
-            SetControlMenus();
+            SetData();
             SetLabelForCodeHelper();
 
-            회사등록BindingSource.DataSource = DB.회사.GetAll();
+            
             txb일.Focus();
         }
 
@@ -48,8 +48,12 @@ namespace SMART_ERP_System.MenuUserControl
         }
 
         // cbb월 콤보박스에 월의 데이터를 넣음
-        private void SetControlMenus()
+        private void SetData()
         {
+            사업장등록BindingSource.DataSource = DB.사업장.GetAll();
+            사원등록BindingSource.DataSource = DB.사원등록.GetAll();
+            부서등록BindingSource.DataSource = DB.부서.GetAll();
+
             MenuLists.Set();
             cbb월.DataSource = MenuLists.month;
         }
@@ -856,9 +860,9 @@ namespace SMART_ERP_System.MenuUserControl
         // 로드 시 로그인 정보를 가져옴
         private void 전표등록_Load(object sender, EventArgs e)
         {
-            txb회사명.Text = DB.회사.Search(cbb회사코드.Text);
+            txb사업장명.Text = DB.사업장.Search(cbb사업장코드.Text);
 
-            DB.부서.Search(loginMember.EmployeeCode, out string code1, out string name1);
+            DB.사원등록.SearchDepartment(loginMember.EmployeeCode, out string code1, out string name1);
             cbb부서코드.Text = code1;
             txb부서명.Text = name1;
 
@@ -915,6 +919,24 @@ namespace SMART_ERP_System.MenuUserControl
         public void Button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Dgv전표_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if (e.Exception != null && e.Context == DataGridViewDataErrorContexts.Commit)
+            {
+                return;
+                //MessageBox.Show("error.");
+            }
+        }
+
+        private void Dgv전표리스트_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if (e.Exception != null && e.Context == DataGridViewDataErrorContexts.Commit)
+            {
+                return;
+                //MessageBox.Show("error.");
+            }
         }
     }
 }

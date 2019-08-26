@@ -103,6 +103,7 @@ namespace SMART_ERP_System
             this.btnSearch.TabStop = false;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Visible = false;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click_1);
             // 
             // btnDelete
@@ -127,6 +128,7 @@ namespace SMART_ERP_System
             this.btnInfo.TabStop = false;
             this.btnInfo.Text = "정보";
             this.btnInfo.UseVisualStyleBackColor = false;
+            this.btnInfo.Visible = false;
             this.btnInfo.Click += new System.EventHandler(this.BtnInfo_Click);
             // 
             // btnClose

@@ -44,7 +44,6 @@ C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_E
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuUserControl.발주현황.resources
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuUserControl.입고현황.resources
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuUserControl.청구현황.resources
-C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuUserControl.품목단가등록.resources
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuUserControl.출고처리.resources
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuUserControl.업무용승용차차량등록.resources
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuUserControl.소득세액공제환경설정.resources
@@ -90,5 +89,6 @@ C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_E
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MainForm_Control.관할세무서구분Control.resources
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\Newtonsoft.Json.dll
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\bin\Debug\Newtonsoft.Json.xml
-C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.수주등록.resources
 C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuUserControl.매입마감.resources
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MainForm_Control.고정자산구분Control.resources
+C:\Users\301-02\source\repos\SMART ERP System\SMART ERP System\obj\Debug\SMART_ERP_System.MenuUserControl.수주등록.resources

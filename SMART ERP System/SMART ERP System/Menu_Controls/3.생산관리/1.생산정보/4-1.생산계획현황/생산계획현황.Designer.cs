@@ -38,6 +38,7 @@
             this.제품BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtp작업일2 = new System.Windows.Forms.DateTimePicker();
             this.dtp작업일1 = new System.Windows.Forms.DateTimePicker();
+            this.btnSearch1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txb품번 = new System.Windows.Forms.TextBox();
@@ -46,7 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbx부서명 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSearch1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.생산계획현황번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +65,7 @@
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(7, 25);
+            this.label1.Location = new System.Drawing.Point(7, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1018, 1);
             this.label1.TabIndex = 0;
@@ -73,10 +73,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.cbb품목군);
             this.groupBox1.Controls.Add(this.dtp작업일2);
             this.groupBox1.Controls.Add(this.dtp작업일1);
+            this.groupBox1.Controls.Add(this.btnSearch1);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txb품번);
@@ -95,6 +97,7 @@
             // 
             this.groupBox2.Controls.Add(this.radioButton2);
             this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(721, 65);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(135, 47);
@@ -108,7 +111,7 @@
             this.radioButton2.Checked = true;
             this.radioButton2.Location = new System.Drawing.Point(70, 20);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(59, 16);
+            this.radioButton2.Size = new System.Drawing.Size(62, 16);
             this.radioButton2.TabIndex = 20;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "확정일";
@@ -119,7 +122,7 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(5, 20);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(59, 16);
+            this.radioButton1.Size = new System.Drawing.Size(62, 16);
             this.radioButton1.TabIndex = 19;
             this.radioButton1.Text = "예정일";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -154,23 +157,33 @@
             this.dtp작업일1.Size = new System.Drawing.Size(112, 21);
             this.dtp작업일1.TabIndex = 13;
             // 
+            // btnSearch1
+            // 
+            this.btnSearch1.Location = new System.Drawing.Point(721, 21);
+            this.btnSearch1.Name = "btnSearch1";
+            this.btnSearch1.Size = new System.Drawing.Size(55, 23);
+            this.btnSearch1.TabIndex = 8;
+            this.btnSearch1.Text = "조회";
+            this.btnSearch1.UseVisualStyleBackColor = true;
+            this.btnSearch1.Click += new System.EventHandler(this.btnSearch1_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(70, 98);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 11);
+            this.label6.Size = new System.Drawing.Size(44, 12);
             this.label6.TabIndex = 12;
             this.label6.Text = "작업일";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(449, 60);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 11);
+            this.label5.Size = new System.Drawing.Size(44, 12);
             this.label5.TabIndex = 9;
             this.label5.Text = "품목군";
             // 
@@ -185,10 +198,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(81, 59);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 11);
+            this.label4.Size = new System.Drawing.Size(31, 12);
             this.label4.TabIndex = 6;
             this.label4.Text = "품번";
             // 
@@ -204,10 +217,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(460, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 11);
+            this.label3.Size = new System.Drawing.Size(31, 12);
             this.label3.TabIndex = 3;
             this.label3.Text = "사원";
             this.label3.Visible = false;
@@ -224,30 +237,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(81, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 11);
+            this.label2.Size = new System.Drawing.Size(31, 12);
             this.label2.TabIndex = 0;
             this.label2.Text = "부서";
             this.label2.Visible = false;
             // 
-            // btnSearch1
-            // 
-            this.btnSearch1.Location = new System.Drawing.Point(933, 3);
-            this.btnSearch1.Name = "btnSearch1";
-            this.btnSearch1.Size = new System.Drawing.Size(55, 23);
-            this.btnSearch1.TabIndex = 8;
-            this.btnSearch1.Text = "조회";
-            this.btnSearch1.UseVisualStyleBackColor = true;
-            this.btnSearch1.Click += new System.EventHandler(this.btnSearch1_Click);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(5, 13);
+            this.label7.Font = new System.Drawing.Font("굴림체", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(62, 8);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 12);
+            this.label7.Size = new System.Drawing.Size(148, 21);
             this.label7.TabIndex = 2;
             this.label7.Text = "생산계획현황";
             // 
@@ -273,6 +277,7 @@
             this.생산계획현황번호DataGridViewTextBoxColumn.DataPropertyName = "생산계획현황번호";
             this.생산계획현황번호DataGridViewTextBoxColumn.HeaderText = "생산계획현황번호";
             this.생산계획현황번호DataGridViewTextBoxColumn.Name = "생산계획현황번호DataGridViewTextBoxColumn";
+            this.생산계획현황번호DataGridViewTextBoxColumn.Width = 130;
             // 
             // 작업예정일DataGridViewTextBoxColumn
             // 
@@ -310,7 +315,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSearch1);
             this.Name = "생산계획현황";
             this.Size = new System.Drawing.Size(1044, 645);
             this.Load += new System.EventHandler(this.생산계획현황_Load);
@@ -344,15 +348,15 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 생산계획현황BindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 생산계획현황번호DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 작업예정일DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 작업확정일DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 수량DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 제품번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox cbb품목군;
         private System.Windows.Forms.BindingSource 제품BindingSource;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 생산계획현황번호DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 작업예정일DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 작업확정일DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 수량DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 제품번호DataGridViewTextBoxColumn;
     }
 }

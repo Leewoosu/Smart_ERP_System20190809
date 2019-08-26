@@ -71,13 +71,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -162,6 +162,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.textBox22);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label13);
@@ -217,20 +218,20 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label13.Location = new System.Drawing.Point(627, 74);
+            this.label13.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(609, 74);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 11);
+            this.label13.Size = new System.Drawing.Size(67, 14);
             this.label13.TabIndex = 73;
             this.label13.Text = "프로젝트";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(638, 50);
+            this.label4.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(620, 50);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 11);
+            this.label4.Size = new System.Drawing.Size(52, 14);
             this.label4.TabIndex = 72;
             this.label4.Text = "거래처";
             // 
@@ -303,42 +304,42 @@
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(366, 71);
+            this.textBox11.Location = new System.Drawing.Point(378, 71);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(66, 20);
             this.textBox11.TabIndex = 58;
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(438, 71);
+            this.textBox12.Location = new System.Drawing.Point(450, 71);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(108, 20);
             this.textBox12.TabIndex = 59;
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(366, 47);
+            this.textBox9.Location = new System.Drawing.Point(378, 47);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(66, 20);
             this.textBox9.TabIndex = 56;
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(438, 47);
+            this.textBox10.Location = new System.Drawing.Point(450, 47);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(108, 20);
             this.textBox10.TabIndex = 57;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(366, 21);
+            this.textBox7.Location = new System.Drawing.Point(378, 21);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(66, 20);
             this.textBox7.TabIndex = 54;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(438, 21);
+            this.textBox8.Location = new System.Drawing.Point(450, 21);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(108, 20);
             this.textBox8.TabIndex = 55;
@@ -360,20 +361,20 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.Location = new System.Drawing.Point(39, 23);
+            this.label15.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(23, 23);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 11);
+            this.label15.Size = new System.Drawing.Size(67, 14);
             this.label15.TabIndex = 51;
             this.label15.Text = "입고기간";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(649, 27);
+            this.label11.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(636, 27);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(27, 11);
+            this.label11.Size = new System.Drawing.Size(37, 14);
             this.label11.TabIndex = 38;
             this.label11.Text = "사원";
             // 
@@ -403,39 +404,40 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(311, 73);
+            this.label7.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(303, 73);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 11);
+            this.label7.Size = new System.Drawing.Size(67, 14);
             this.label7.TabIndex = 35;
             this.label7.Text = "관리구분";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(333, 26);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 11);
+            this.label5.Size = new System.Drawing.Size(37, 14);
             this.label5.TabIndex = 31;
             this.label5.Text = "부서";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(311, 50);
+            this.label6.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(303, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 11);
+            this.label6.Size = new System.Drawing.Size(67, 14);
             this.label6.TabIndex = 33;
             this.label6.Text = "입고창고";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 11);
+            this.label8.Font = new System.Drawing.Font("굴림체", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(51, 2);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 12);
+            this.label8.Size = new System.Drawing.Size(102, 21);
             this.label8.TabIndex = 93;
             this.label8.Text = "입고처리";
             // 
@@ -474,15 +476,6 @@
             this.panel1.Size = new System.Drawing.Size(1024, 242);
             this.panel1.TabIndex = 101;
             // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(7, 425);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(1024, 168);
-            this.dataGridView3.TabIndex = 102;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -492,6 +485,15 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1024, 242);
             this.dataGridView1.TabIndex = 103;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(7, 425);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 23;
+            this.dataGridView3.Size = new System.Drawing.Size(1024, 168);
+            this.dataGridView3.TabIndex = 102;
             // 
             // 입고처리
             // 
@@ -512,8 +514,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

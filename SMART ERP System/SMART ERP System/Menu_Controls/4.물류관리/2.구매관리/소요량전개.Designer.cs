@@ -68,14 +68,16 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(5, 5);
+            this.label8.Font = new System.Drawing.Font("굴림체", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(51, 2);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 12);
+            this.label8.Size = new System.Drawing.Size(185, 21);
             this.label8.TabIndex = 36;
             this.label8.Text = "소요량전개(MRP)";
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.LastDate);
             this.groupBox1.Controls.Add(this.FirstDate);
@@ -127,20 +129,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(6, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 11);
+            this.label4.Size = new System.Drawing.Size(67, 14);
             this.label4.TabIndex = 50;
             this.label4.Text = "제품이름";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(190, 18);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(27, 11);
+            this.label13.Size = new System.Drawing.Size(37, 14);
             this.label13.TabIndex = 48;
             this.label13.Text = "기간";
             // 

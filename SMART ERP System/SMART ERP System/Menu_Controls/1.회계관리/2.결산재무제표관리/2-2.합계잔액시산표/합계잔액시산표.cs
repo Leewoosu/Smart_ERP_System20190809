@@ -310,6 +310,9 @@ namespace SMART_ERP_System.MenuUserControl
 
                     dgv합계잔액시산표.Rows[inputIndex].Cells[i].Value = x1 + x2 + x3 + x4 + x5;
                 }
+
+                //if (long.Parse(dgv합계잔액시산표.Rows[inputIndex].Cells[i].Value.ToString()) == 0)
+                //    dgv합계잔액시산표.Rows[inputIndex].Cells[i].Value = null;
             }
         }
         
@@ -340,6 +343,9 @@ namespace SMART_ERP_System.MenuUserControl
 
                     dgv합계잔액시산표.Rows[inputIndex].Cells[i].Value = x1 + x2 + x3;
                 }
+
+                //if (long.Parse(dgv합계잔액시산표.Rows[inputIndex].Cells[i].Value.ToString()) == 0)
+                //    dgv합계잔액시산표.Rows[inputIndex].Cells[i].Value = null;
             }
         }
 
@@ -365,7 +371,10 @@ namespace SMART_ERP_System.MenuUserControl
 
                     dgv합계잔액시산표.Rows[inputIndex].Cells[i].Value = x1 + x2;
                 }
-            }
+
+                //if (long.Parse(dgv합계잔액시산표.Rows[inputIndex].Cells[i].Value.ToString()) == 0)
+                //    dgv합계잔액시산표.Rows[inputIndex].Cells[i].Value = null;
+            }            
         }
 
         /// <summary>
@@ -458,10 +467,19 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void 합계잔액시산표_Load(object sender, EventArgs e)
         {
-            회사등록BindingSource.DataSource = DB.회사.GetAll();
+            사업장등록BindingSource.DataSource = DB.사업장.GetAll();
 
-            if (cbb회사코드.SelectedValue != null)
-                txb회사명.Text = DB.회사.Search(cbb회사코드.Text);
+            if (cbb사업장코드.SelectedValue != null)
+                txb사업장명.Text = DB.사업장.Search(cbb사업장코드.Text);
+        }
+
+        private void Dgv합계잔액시산표_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if (e.Exception != null && e.Context == DataGridViewDataErrorContexts.Commit)
+            {
+                return;
+                //MessageBox.Show("error.");
+            }
         }
     }
 }

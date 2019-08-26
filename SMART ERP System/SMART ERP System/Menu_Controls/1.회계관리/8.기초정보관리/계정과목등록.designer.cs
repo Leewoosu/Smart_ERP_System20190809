@@ -90,6 +90,7 @@
             this.groupBox1.Size = new System.Drawing.Size(1042, 651);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
             // 
             // button4
             // 
@@ -135,7 +136,7 @@
             // label9
             // 
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(7, 25);
+            this.label9.Location = new System.Drawing.Point(7, 29);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(1018, 1);
             this.label9.TabIndex = 84;

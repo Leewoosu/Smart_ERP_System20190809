@@ -34,6 +34,7 @@
             this.btn변경 = new System.Windows.Forms.Button();
             this.btn조회 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.dtp퇴사일 = new System.Windows.Forms.DateTimePicker();
             this.dtp입사일 = new System.Windows.Forms.DateTimePicker();
             this.txb사원명 = new System.Windows.Forms.TextBox();
@@ -66,7 +67,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv사원)).BeginInit();
@@ -158,6 +158,16 @@
             this.panel1.Size = new System.Drawing.Size(603, 548);
             this.panel1.TabIndex = 99;
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(106, 289);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2.TabIndex = 22;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
+            // 
             // dtp퇴사일
             // 
             this.dtp퇴사일.Enabled = false;
@@ -193,18 +203,20 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(52, 89);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 12);
+            this.label13.Size = new System.Drawing.Size(44, 12);
             this.label13.TabIndex = 17;
             this.label13.Text = "사원명";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label14.Location = new System.Drawing.Point(52, 42);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(53, 12);
+            this.label14.Size = new System.Drawing.Size(57, 12);
             this.label14.TabIndex = 16;
             this.label14.Text = "사원코드";
             // 
@@ -253,72 +265,80 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label11.Location = new System.Drawing.Point(52, 490);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(29, 12);
+            this.label11.Size = new System.Drawing.Size(31, 12);
             this.label11.TabIndex = 7;
             this.label11.Text = "암호";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label10.Location = new System.Drawing.Point(52, 191);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 12);
+            this.label10.Size = new System.Drawing.Size(57, 12);
             this.label10.TabIndex = 6;
             this.label10.Text = "부서코드";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label7.Location = new System.Drawing.Point(52, 341);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 12);
+            this.label7.Size = new System.Drawing.Size(70, 12);
             this.label7.TabIndex = 5;
             this.label7.Text = "사용자여부";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(52, 391);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 12);
+            this.label6.Size = new System.Drawing.Size(57, 12);
             this.label6.TabIndex = 4;
             this.label6.Text = "조회권한";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(52, 442);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
+            this.label5.Size = new System.Drawing.Size(70, 12);
             this.label5.TabIndex = 3;
             this.label5.Text = "비상연락망";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(52, 242);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 12);
+            this.label4.Size = new System.Drawing.Size(44, 12);
             this.label4.TabIndex = 2;
             this.label4.Text = "입사일";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(52, 292);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.Size = new System.Drawing.Size(44, 12);
             this.label3.TabIndex = 1;
             this.label3.Text = "퇴사일";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(52, 140);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(57, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "영문이름";
             // 
@@ -374,9 +394,10 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.checkBox1.Location = new System.Drawing.Point(636, 9);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(72, 16);
+            this.checkBox1.Size = new System.Drawing.Size(76, 16);
             this.checkBox1.TabIndex = 113;
             this.checkBox1.Text = "사용자만";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -421,7 +442,7 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("굴림체", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(6, 0);
+            this.label8.Location = new System.Drawing.Point(51, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(127, 25);
             this.label8.TabIndex = 97;
@@ -434,16 +455,6 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(1018, 1);
             this.label9.TabIndex = 94;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(106, 289);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 22;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
             // 
             // 사원등록
             // 

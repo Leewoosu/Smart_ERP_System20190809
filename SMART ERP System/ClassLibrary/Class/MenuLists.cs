@@ -15,6 +15,8 @@ namespace SMART_ERP_System.Class
         public static List<string> inputSeparations;
         public static List<string> status;
         public static List<string> types;
+        public static List<string> moneyUnit;
+
         public static Dictionary<int, string> 합계잔액list;
 
         /// <summary>
@@ -39,6 +41,9 @@ namespace SMART_ERP_System.Class
 
             accountSeparations = new List<string>
             { "미사용", "예금", "적금", "일반", "차감", "대여금" };
+
+            moneyUnit = new List<string>
+            { "0.     원", "1. 천  원", "2. 백만원" };
         }
 
         public static void SetDictionary()

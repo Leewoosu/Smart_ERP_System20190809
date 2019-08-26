@@ -72,7 +72,7 @@
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(7, 25);
+            this.label1.Location = new System.Drawing.Point(7, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1018, 1);
             this.label1.TabIndex = 0;
@@ -80,15 +80,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.검색btn);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(7, 35);
+            this.groupBox1.Location = new System.Drawing.Point(7, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1018, 60);
+            this.groupBox1.Size = new System.Drawing.Size(1018, 80);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -130,7 +131,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(403, 20);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(74, 18);
+            this.button3.Size = new System.Drawing.Size(81, 21);
             this.button3.TabIndex = 8;
             this.button3.Text = "BOM 복사";
             this.button3.UseVisualStyleBackColor = true;
@@ -139,19 +140,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(41, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 11);
+            this.label3.Size = new System.Drawing.Size(44, 12);
             this.label3.TabIndex = 0;
             this.label3.Text = "모품목";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 10);
+            this.label2.Font = new System.Drawing.Font("굴림체", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(45, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 12);
+            this.label2.Size = new System.Drawing.Size(208, 21);
             this.label2.TabIndex = 2;
             this.label2.Text = "BOM등록 및 정전개";
             // 
@@ -253,6 +255,7 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(765, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(248, 490);
@@ -271,9 +274,10 @@
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label15.Location = new System.Drawing.Point(134, 117);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(29, 12);
+            this.label15.Size = new System.Drawing.Size(31, 12);
             this.label15.TabIndex = 17;
             this.label15.Text = "단위";
             // 
@@ -287,9 +291,10 @@
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label14.Location = new System.Drawing.Point(6, 169);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(29, 12);
+            this.label14.Size = new System.Drawing.Size(31, 12);
             this.label14.TabIndex = 15;
             this.label14.Text = "무게";
             // 
@@ -332,72 +337,80 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(6, 144);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(29, 12);
+            this.label13.Size = new System.Drawing.Size(31, 12);
             this.label13.TabIndex = 6;
             this.label13.Text = "조달";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label12.Location = new System.Drawing.Point(6, 117);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(29, 12);
+            this.label12.Size = new System.Drawing.Size(31, 12);
             this.label12.TabIndex = 5;
             this.label12.Text = "수량";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label10.Location = new System.Drawing.Point(105, 169);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(22, 12);
+            this.label10.Size = new System.Drawing.Size(24, 12);
             this.label10.TabIndex = 3;
             this.label10.Text = "KG";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label9.Location = new System.Drawing.Point(6, 90);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(29, 12);
+            this.label9.Size = new System.Drawing.Size(31, 12);
             this.label9.TabIndex = 2;
             this.label9.Text = "단가";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label8.Location = new System.Drawing.Point(6, 63);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 12);
+            this.label8.Size = new System.Drawing.Size(31, 12);
             this.label8.TabIndex = 1;
             this.label8.Text = "품명";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
             this.label7.Location = new System.Drawing.Point(6, 36);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 12);
+            this.label7.Size = new System.Drawing.Size(31, 12);
             this.label7.TabIndex = 0;
             this.label7.Text = "품번";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(514, 131);
+            this.label5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(514, 128);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 12);
+            this.label5.Size = new System.Drawing.Size(75, 12);
             this.label5.TabIndex = 11;
             this.label5.Text = "공정 순서도";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 131);
+            this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(10, 128);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 12);
+            this.label6.Size = new System.Drawing.Size(75, 12);
             this.label6.TabIndex = 12;
             this.label6.Text = "BOM정전개";
             // 

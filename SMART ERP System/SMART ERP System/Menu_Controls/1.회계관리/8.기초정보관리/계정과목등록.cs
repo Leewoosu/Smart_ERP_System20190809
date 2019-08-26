@@ -241,5 +241,10 @@ namespace SMART_ERP_System.MenuUserControl
 
             treeView.Nodes.Remove(treeView.SelectedNode);
         }
+
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

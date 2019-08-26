@@ -35,9 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtp입력날짜 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.txb회사명 = new System.Windows.Forms.TextBox();
-            this.cbb회사코드 = new System.Windows.Forms.ComboBox();
-            this.회사등록BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txb사업장명 = new System.Windows.Forms.TextBox();
+            this.cbb사업장코드 = new System.Windows.Forms.ComboBox();
+            this.사업장등록BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txb대변잔액총액 = new System.Windows.Forms.TextBox();
@@ -66,7 +66,7 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.회사등록BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.사업장등록BindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv합계잔액시산표)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.합계잔액시산표BindingSource)).BeginInit();
@@ -116,8 +116,8 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.dtp입력날짜);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.txb회사명);
-            this.groupBox2.Controls.Add(this.cbb회사코드);
+            this.groupBox2.Controls.Add(this.txb사업장명);
+            this.groupBox2.Controls.Add(this.cbb사업장코드);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
@@ -130,7 +130,7 @@
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(974, 17);
+            this.label1.Location = new System.Drawing.Point(968, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 17);
             this.label1.TabIndex = 112;
@@ -140,7 +140,7 @@
             // 
             this.dtp입력날짜.CustomFormat = "yyyy-MM-dd";
             this.dtp입력날짜.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp입력날짜.Location = new System.Drawing.Point(526, 9);
+            this.dtp입력날짜.Location = new System.Drawing.Point(352, 9);
             this.dtp입력날짜.Name = "dtp입력날짜";
             this.dtp입력날짜.Size = new System.Drawing.Size(121, 21);
             this.dtp입력날짜.TabIndex = 111;
@@ -151,42 +151,41 @@
             // 
             this.label12.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label12.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(485, 12);
+            this.label12.Location = new System.Drawing.Point(311, 12);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(42, 22);
             this.label12.TabIndex = 110;
             this.label12.Text = "기간";
             // 
-            // txb회사명
+            // txb사업장명
             // 
-            this.txb회사명.Enabled = false;
-            this.txb회사명.Location = new System.Drawing.Point(333, 9);
-            this.txb회사명.Name = "txb회사명";
-            this.txb회사명.Size = new System.Drawing.Size(82, 21);
-            this.txb회사명.TabIndex = 109;
+            this.txb사업장명.Enabled = false;
+            this.txb사업장명.Location = new System.Drawing.Point(166, 9);
+            this.txb사업장명.Name = "txb사업장명";
+            this.txb사업장명.Size = new System.Drawing.Size(82, 21);
+            this.txb사업장명.TabIndex = 109;
             // 
-            // cbb회사코드
+            // cbb사업장코드
             // 
-            this.cbb회사코드.DataSource = this.회사등록BindingSource;
-            this.cbb회사코드.DisplayMember = "회사코드";
-            this.cbb회사코드.Enabled = false;
-            this.cbb회사코드.Font = new System.Drawing.Font("굴림", 10F);
-            this.cbb회사코드.FormattingEnabled = true;
-            this.cbb회사코드.Location = new System.Drawing.Point(252, 8);
-            this.cbb회사코드.Name = "cbb회사코드";
-            this.cbb회사코드.Size = new System.Drawing.Size(75, 21);
-            this.cbb회사코드.TabIndex = 108;
-            this.cbb회사코드.ValueMember = "회사코드";
+            this.cbb사업장코드.DataSource = this.사업장등록BindingSource;
+            this.cbb사업장코드.DisplayMember = "사업장코드";
+            this.cbb사업장코드.Font = new System.Drawing.Font("굴림", 10F);
+            this.cbb사업장코드.FormattingEnabled = true;
+            this.cbb사업장코드.Location = new System.Drawing.Point(85, 8);
+            this.cbb사업장코드.Name = "cbb사업장코드";
+            this.cbb사업장코드.Size = new System.Drawing.Size(75, 21);
+            this.cbb사업장코드.TabIndex = 108;
+            this.cbb사업장코드.ValueMember = "사업장코드";
             // 
-            // 회사등록BindingSource
+            // 사업장등록BindingSource
             // 
-            this.회사등록BindingSource.DataSource = typeof(ClassLibrary.회사등록);
+            this.사업장등록BindingSource.DataSource = typeof(ClassLibrary.사업장등록);
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label2.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(184, 11);
+            this.label2.Location = new System.Drawing.Point(17, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 22);
             this.label2.TabIndex = 107;
@@ -276,6 +275,7 @@
             this.dgv합계잔액시산표.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.Dgv합계잔액시산표_CellFormatting);
             this.dgv합계잔액시산표.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv합계잔액시산표_CellPainting);
             this.dgv합계잔액시산표.ColumnWidthChanged += new System.Windows.Forms.DataGridViewColumnEventHandler(this.Dgv합계잔액시산표_ColumnWidthChanged);
+            this.dgv합계잔액시산표.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.Dgv합계잔액시산표_DataError);
             this.dgv합계잔액시산표.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Dgv합계잔액시산표_Scroll);
             this.dgv합계잔액시산표.Paint += new System.Windows.Forms.PaintEventHandler(this.Dgv합계잔액시산표_Paint);
             // 
@@ -421,7 +421,7 @@
             this.splitContainer1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.회사등록BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.사업장등록BindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv합계잔액시산표)).EndInit();
@@ -445,8 +445,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dtp입력날짜;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txb회사명;
-        private System.Windows.Forms.ComboBox cbb회사코드;
+        private System.Windows.Forms.TextBox txb사업장명;
+        private System.Windows.Forms.ComboBox cbb사업장코드;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgv합계잔액시산표;
@@ -457,7 +457,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.BindingSource 합계잔액시산표BindingSource;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.BindingSource 회사등록BindingSource;
+        private System.Windows.Forms.BindingSource 사업장등록BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 차변잔액;
         private System.Windows.Forms.DataGridViewTextBoxColumn 차변합계;
         private System.Windows.Forms.DataGridViewTextBoxColumn 계정과목;

@@ -8,6 +8,17 @@ namespace ClassLibrary.EntityData
 {
     public class 사원등록Data : EntityData<사원등록>
     {
+        public void SearchDepartment(string Employeecode, out string code, out string name)
+        {
+            using (ERPEntities entities = new ERPEntities())
+            {
+                string resCode = entities.사원등록.Where(x => x.사원코드 == Employeecode).Select(x => x.부서코드).FirstOrDefault();
+
+                code = resCode;
+                name = entities.부서등록.Where(x => x.부서코드 == resCode).Select(x => x.부서명).FirstOrDefault();    
+            }
+        }
+
         public void Check(string id, out int employeeCnt, out string employeeName)
         {
             using (ERPEntities entity = new ERPEntities())

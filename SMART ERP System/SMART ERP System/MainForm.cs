@@ -59,6 +59,8 @@ namespace SMART_ERP_System
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
+            UserControl removeitem = null;
+
             if (metroTabControl.TabCount != 0)
             {
                 int tabindex = metroTabControl.SelectedIndex;
@@ -67,9 +69,12 @@ namespace SMART_ERP_System
                 {
                     if (control.Name == metroTabControl.SelectedTab.Text)
                     {
-                        control.Dispose();
+                        removeitem = control;
+                        control.Dispose();                        
                     }
                 }
+
+                controls.Remove(removeitem);
 
                 metroTabControl.TabPages.Remove(metroTabControl.SelectedTab);
                 metroTabControl.SelectedIndex = tabindex - 1;
@@ -120,7 +125,9 @@ namespace SMART_ERP_System
                     foreach (UserControl item in controls)
                     {
                         if (item.Name == SearchName)
+                        {                            
                             return;
+                        }
                     }
 
                     // tab 10개 제한
@@ -130,10 +137,11 @@ namespace SMART_ERP_System
                         controls.Add(control);
 
                         MakeTabPage(control);
-                        return;
-                    }
 
-                    metroTabControl.SelectedIndex = CurrentPageNumber;
+                       // metroTabControl.SelectedIndex = CurrentPageNumber;
+                    }
+                    else
+                        return;
                 }
             }
             else
@@ -321,14 +329,14 @@ namespace SMART_ERP_System
             {
                 if (process.ProcessName == processName)
                 {
-                   ShowWindow(process.MainWindowHandle, 9);
+                    ShowWindow(process.MainWindowHandle, 9);
                 }
             }
         }
 
         private void BtnSearch_Click_1(object sender, EventArgs e)
         {
-           // Button1_Click(sender, e);
+            // Button1_Click(sender, e);
         }
     }
 }

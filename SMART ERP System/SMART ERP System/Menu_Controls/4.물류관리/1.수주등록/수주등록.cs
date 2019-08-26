@@ -13,7 +13,7 @@ using ClassLibrary.EntityData;
 using ClassLibrary;
 using SMART_ERP_System.MenuUserControl;
 
-namespace SMART_ERP_System
+namespace SMART_ERP_System.MenuUserControl
 {
     public partial class 수주등록 : UserControl
     {

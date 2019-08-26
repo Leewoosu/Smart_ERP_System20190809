@@ -69,6 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_Controls\고정자산구분Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form_Controls\고정자산구분Control.Designer.cs">
+      <DependentUpon>고정자산구분Control.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,12 +411,6 @@
     <Compile Include="Menu_Controls\4.물류관리\6.회계처리\매입마감.Designer.cs">
       <DependentUpon>매입마감.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu_Controls\4.물류관리\8.기초정보관리\품목단가등록.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Menu_Controls\4.물류관리\8.기초정보관리\품목단가등록.Designer.cs">
-      <DependentUpon>품목단가등록.cs</DependentUpon>
-    </Compile>
     <Compile Include="Menu_Controls\4.물류관리\8.기초정보관리\자재등록.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -486,6 +486,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Class\UserControlList.cs" />
+    <EmbeddedResource Include="Form_Controls\고정자산구분Control.resx">
+      <DependentUpon>고정자산구분Control.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -522,6 +525,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Controls\1.회계관리\1.전표장부관리\1-1.전표등록\전표등록.resx">
       <DependentUpon>전표등록.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Controls\1.회계관리\1.전표장부관리\1-1.전표등록\전표출력.resx">
       <DependentUpon>전표출력.cs</DependentUpon>
@@ -655,9 +659,6 @@
     <EmbeddedResource Include="Menu_Controls\4.물류관리\6.회계처리\매입마감.resx">
       <DependentUpon>매입마감.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu_Controls\4.물류관리\8.기초정보관리\품목단가등록.resx">
-      <DependentUpon>품목단가등록.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Menu_Controls\4.물류관리\8.기초정보관리\자재등록.resx">
       <DependentUpon>자재등록.cs</DependentUpon>
     </EmbeddedResource>
@@ -704,6 +705,7 @@
     <None Include="Properties\DataSources\ClassLibrary.거래처.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.계정과목.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.계정과목그룹.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.고정자산계정과목.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.관할세무서.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.금융거래처등록.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.부문등록.datasource" />

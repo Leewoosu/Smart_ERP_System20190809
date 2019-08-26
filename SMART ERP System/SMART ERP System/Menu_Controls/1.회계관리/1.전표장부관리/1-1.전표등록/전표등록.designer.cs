@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbb회사코드 = new System.Windows.Forms.ComboBox();
-            this.회사등록BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbb사업장코드 = new System.Windows.Forms.ComboBox();
+            this.사업장등록BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbb부서코드 = new System.Windows.Forms.ComboBox();
             this.부서등록BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbb사원코드 = new System.Windows.Forms.ComboBox();
@@ -45,7 +45,7 @@
             this.lbl회계년도 = new System.Windows.Forms.Label();
             this.txb사원명 = new System.Windows.Forms.TextBox();
             this.txb부서명 = new System.Windows.Forms.TextBox();
-            this.txb회사명 = new System.Windows.Forms.TextBox();
+            this.txb사업장명 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.회사등록BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.사업장등록BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.부서등록BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.사원등록BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv전표리스트)).BeginInit();
@@ -115,7 +115,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.groupBox2.Controls.Add(this.cbb회사코드);
+            this.groupBox2.Controls.Add(this.cbb사업장코드);
             this.groupBox2.Controls.Add(this.cbb부서코드);
             this.groupBox2.Controls.Add(this.cbb사원코드);
             this.groupBox2.Controls.Add(this.cbb월);
@@ -124,7 +124,7 @@
             this.groupBox2.Controls.Add(this.lbl회계년도);
             this.groupBox2.Controls.Add(this.txb사원명);
             this.groupBox2.Controls.Add(this.txb부서명);
-            this.groupBox2.Controls.Add(this.txb회사명);
+            this.groupBox2.Controls.Add(this.txb사업장명);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label2);
@@ -134,23 +134,22 @@
             this.groupBox2.TabIndex = 108;
             this.groupBox2.TabStop = false;
             // 
-            // cbb회사코드
+            // cbb사업장코드
             // 
-            this.cbb회사코드.DataSource = this.회사등록BindingSource;
-            this.cbb회사코드.DisplayMember = "회사코드";
-            this.cbb회사코드.Enabled = false;
-            this.cbb회사코드.Font = new System.Drawing.Font("굴림", 10F);
-            this.cbb회사코드.FormattingEnabled = true;
-            this.cbb회사코드.Location = new System.Drawing.Point(99, 5);
-            this.cbb회사코드.Name = "cbb회사코드";
-            this.cbb회사코드.Size = new System.Drawing.Size(83, 21);
-            this.cbb회사코드.TabIndex = 120;
-            this.cbb회사코드.TabStop = false;
-            this.cbb회사코드.ValueMember = "회사코드";
+            this.cbb사업장코드.DataSource = this.사업장등록BindingSource;
+            this.cbb사업장코드.DisplayMember = "사업장코드";
+            this.cbb사업장코드.Font = new System.Drawing.Font("굴림", 10F);
+            this.cbb사업장코드.FormattingEnabled = true;
+            this.cbb사업장코드.Location = new System.Drawing.Point(99, 5);
+            this.cbb사업장코드.Name = "cbb사업장코드";
+            this.cbb사업장코드.Size = new System.Drawing.Size(83, 21);
+            this.cbb사업장코드.TabIndex = 120;
+            this.cbb사업장코드.TabStop = false;
+            this.cbb사업장코드.ValueMember = "사업장코드";
             // 
-            // 회사등록BindingSource
+            // 사업장등록BindingSource
             // 
-            this.회사등록BindingSource.DataSource = typeof(ClassLibrary.회사등록);
+            this.사업장등록BindingSource.DataSource = typeof(ClassLibrary.사업장등록);
             // 
             // cbb부서코드
             // 
@@ -230,7 +229,6 @@
             this.txb사원명.Name = "txb사원명";
             this.txb사원명.Size = new System.Drawing.Size(82, 21);
             this.txb사원명.TabIndex = 127;
-            this.txb사원명.Text = "사원명";
             // 
             // txb부서명
             // 
@@ -238,17 +236,15 @@
             this.txb부서명.Name = "txb부서명";
             this.txb부서명.Size = new System.Drawing.Size(82, 21);
             this.txb부서명.TabIndex = 124;
-            this.txb부서명.Text = "부서명";
             // 
-            // txb회사명
+            // txb사업장명
             // 
-            this.txb회사명.Enabled = false;
-            this.txb회사명.Location = new System.Drawing.Point(190, 5);
-            this.txb회사명.Name = "txb회사명";
-            this.txb회사명.Size = new System.Drawing.Size(82, 21);
-            this.txb회사명.TabIndex = 123;
-            this.txb회사명.TabStop = false;
-            this.txb회사명.Text = "회사명";
+            this.txb사업장명.Enabled = false;
+            this.txb사업장명.Location = new System.Drawing.Point(190, 5);
+            this.txb사업장명.Name = "txb사업장명";
+            this.txb사업장명.Size = new System.Drawing.Size(82, 21);
+            this.txb사업장명.TabIndex = 123;
+            this.txb사업장명.TabStop = false;
             // 
             // label5
             // 
@@ -297,7 +293,6 @@
             this.txb대변합계.Name = "txb대변합계";
             this.txb대변합계.Size = new System.Drawing.Size(172, 21);
             this.txb대변합계.TabIndex = 132;
-            this.txb대변합계.Text = "금액";
             // 
             // label7
             // 
@@ -315,7 +310,6 @@
             this.txb차변합계.Name = "txb차변합계";
             this.txb차변합계.Size = new System.Drawing.Size(172, 21);
             this.txb차변합계.TabIndex = 131;
-            this.txb차변합계.Text = "금액";
             // 
             // label6
             // 
@@ -332,14 +326,14 @@
             this.dgv전표리스트.AllowUserToAddRows = false;
             this.dgv전표리스트.AllowUserToResizeColumns = false;
             this.dgv전표리스트.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv전표리스트.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv전표리스트.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv전표리스트.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv전표리스트.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -360,6 +354,7 @@
             this.dgv전표리스트.TabStop = false;
             this.dgv전표리스트.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv전표리스트_CellEndEdit);
             this.dgv전표리스트.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv전표리스트_CellEnter);
+            this.dgv전표리스트.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.Dgv전표리스트_DataError);
             this.dgv전표리스트.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgv전표리스트_RowPostPaint);
             this.dgv전표리스트.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dgv전표리스트_KeyDown);
             // 
@@ -432,14 +427,14 @@
             this.dgv전표.AllowUserToAddRows = false;
             this.dgv전표.AllowUserToResizeColumns = false;
             this.dgv전표.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv전표.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv전표.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv전표.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv전표.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CheckColumn,
@@ -462,6 +457,7 @@
             this.dgv전표.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv전표_CellClick);
             this.dgv전표.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv전표_CellEnter);
             this.dgv전표.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Dgv전표_CellPainting);
+            this.dgv전표.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.Dgv전표_DataError);
             this.dgv전표.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgv전표_RowPostPaint);
             this.dgv전표.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Dgv전표_Scroll);
             this.dgv전표.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dgv전표_KeyDown);
@@ -610,7 +606,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.회사등록BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.사업장등록BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.부서등록BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.사원등록BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv전표리스트)).EndInit();
@@ -639,17 +635,15 @@
         private System.Windows.Forms.ComboBox cbb사원코드;
         private System.Windows.Forms.ComboBox cbb부서코드;
         private System.Windows.Forms.TextBox txb부서명;
-        private System.Windows.Forms.TextBox txb회사명;
+        private System.Windows.Forms.TextBox txb사업장명;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbb회사코드;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txb일;
         private System.Windows.Forms.ComboBox cbb월;
         private System.Windows.Forms.Label lbl회계년도;
         public System.Windows.Forms.DataGridView dgv전표;
-        private System.Windows.Forms.BindingSource 회사등록BindingSource;
         private System.Windows.Forms.BindingSource 사원등록BindingSource;
         private System.Windows.Forms.BindingSource 부서등록BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -671,5 +665,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.BindingSource 사업장등록BindingSource;
+        private System.Windows.Forms.ComboBox cbb사업장코드;
     }
 }

@@ -135,8 +135,8 @@ namespace SMART_ERP_System.MenuUserControl
             var list = DB.부서.GetAll();
             string startDay, endDay;
 
-            if (e.ColumnIndex == 6 || e.ColumnIndex == 7)
-            {
+            //if (e.ColumnIndex == 6 || e.ColumnIndex == 7)
+            //{
                 for (int i = 0; i < list.Count; i++)
                 {
                     startDay = dgv부서.Rows[i].Cells[6].Value.ToString();
@@ -178,7 +178,7 @@ namespace SMART_ERP_System.MenuUserControl
                         DB.부서.Insert(부서);
                     }
                 }
-            }
+            //}
         }
 
         private void Dgv부서_DataError(object sender, DataGridViewDataErrorEventArgs e)

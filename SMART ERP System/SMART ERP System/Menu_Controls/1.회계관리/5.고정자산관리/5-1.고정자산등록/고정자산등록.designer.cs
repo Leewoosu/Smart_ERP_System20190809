@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txb고정자산계정코드 = new System.Windows.Forms.TextBox();
+            this.btnCodeHelper = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -67,17 +69,17 @@
             this.txb구입처명 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txb고정자산계정명 = new System.Windows.Forms.TextBox();
-            this.cbb고정자산계정코드 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.고정자산dgv = new System.Windows.Forms.DataGridView();
+            this.dgv고정자산 = new System.Windows.Forms.DataGridView();
             this.고정자산코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.고정자산명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.계정과목코드번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.취득일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.처리여부DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.고정자산bds = new System.Windows.Forms.BindingSource(this.components);
-            this.txb회사명 = new System.Windows.Forms.TextBox();
-            this.cbb회사코드 = new System.Windows.Forms.ComboBox();
+            this.txb사업장명 = new System.Windows.Forms.TextBox();
+            this.cbb사업장코드 = new System.Windows.Forms.ComboBox();
+            this.사업장등록BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnStatementForm = new System.Windows.Forms.Button();
@@ -90,22 +92,24 @@
             this.tabControl2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.고정자산dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv고정자산)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.고정자산bds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.사업장등록BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txb고정자산계정코드);
+            this.groupBox1.Controls.Add(this.btnCodeHelper);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.tabControl2);
             this.groupBox1.Controls.Add(this.txb고정자산계정명);
-            this.groupBox1.Controls.Add(this.cbb고정자산계정코드);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.고정자산dgv);
-            this.groupBox1.Controls.Add(this.txb회사명);
-            this.groupBox1.Controls.Add(this.cbb회사코드);
+            this.groupBox1.Controls.Add(this.dgv고정자산);
+            this.groupBox1.Controls.Add(this.txb사업장명);
+            this.groupBox1.Controls.Add(this.cbb사업장코드);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnStatementForm);
@@ -120,9 +124,27 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // txb고정자산계정코드
+            // 
+            this.txb고정자산계정코드.Location = new System.Drawing.Point(344, 76);
+            this.txb고정자산계정코드.Name = "txb고정자산계정코드";
+            this.txb고정자산계정코드.Size = new System.Drawing.Size(82, 21);
+            this.txb고정자산계정코드.TabIndex = 153;
+            this.txb고정자산계정코드.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txb고정자산계정코드_KeyDown);
+            // 
+            // btnCodeHelper
+            // 
+            this.btnCodeHelper.Image = global::SMART_ERP_System.Properties.Resources.findIcon;
+            this.btnCodeHelper.Location = new System.Drawing.Point(425, 75);
+            this.btnCodeHelper.Name = "btnCodeHelper";
+            this.btnCodeHelper.Size = new System.Drawing.Size(22, 23);
+            this.btnCodeHelper.TabIndex = 152;
+            this.btnCodeHelper.UseVisualStyleBackColor = true;
+            this.btnCodeHelper.Click += new System.EventHandler(this.BtnCodeHelper_Click);
+            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(892, 77);
+            this.button3.Location = new System.Drawing.Point(892, 75);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 98;
@@ -132,7 +154,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(811, 76);
+            this.button2.Location = new System.Drawing.Point(811, 75);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 97;
@@ -142,7 +164,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(730, 76);
+            this.button1.Location = new System.Drawing.Point(730, 75);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 96;
@@ -478,22 +500,11 @@
             // 
             // txb고정자산계정명
             // 
-            this.txb고정자산계정명.Location = new System.Drawing.Point(434, 76);
+            this.txb고정자산계정명.Location = new System.Drawing.Point(455, 76);
             this.txb고정자산계정명.Name = "txb고정자산계정명";
             this.txb고정자산계정명.Size = new System.Drawing.Size(82, 21);
             this.txb고정자산계정명.TabIndex = 94;
-            this.txb고정자산계정명.Text = "계정명";
-            // 
-            // cbb고정자산계정코드
-            // 
-            this.cbb고정자산계정코드.Font = new System.Drawing.Font("굴림", 10F);
-            this.cbb고정자산계정코드.FormattingEnabled = true;
-            this.cbb고정자산계정코드.Location = new System.Drawing.Point(346, 76);
-            this.cbb고정자산계정코드.Name = "cbb고정자산계정코드";
-            this.cbb고정자산계정코드.Size = new System.Drawing.Size(80, 21);
-            this.cbb고정자산계정코드.TabIndex = 93;
-            this.cbb고정자산계정코드.Text = "계정코드";
-            this.cbb고정자산계정코드.SelectedValueChanged += new System.EventHandler(this.Cbb고정자산계정코드_SelectedValueChanged);
+            this.txb고정자산계정명.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txb고정자산계정명_KeyDown);
             // 
             // label1
             // 
@@ -505,33 +516,35 @@
             this.label1.TabIndex = 92;
             this.label1.Text = "자산유형";
             // 
-            // 고정자산dgv
+            // dgv고정자산
             // 
-            this.고정자산dgv.AutoGenerateColumns = false;
-            this.고정자산dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.고정자산dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv고정자산.AutoGenerateColumns = false;
+            this.dgv고정자산.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv고정자산.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.고정자산코드DataGridViewTextBoxColumn,
             this.고정자산명DataGridViewTextBoxColumn,
             this.계정과목코드번호DataGridViewTextBoxColumn,
             this.취득일DataGridViewTextBoxColumn,
             this.처리여부DataGridViewTextBoxColumn});
-            this.고정자산dgv.DataSource = this.고정자산bds;
-            this.고정자산dgv.Location = new System.Drawing.Point(13, 105);
-            this.고정자산dgv.Name = "고정자산dgv";
-            this.고정자산dgv.RowTemplate.Height = 23;
-            this.고정자산dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.고정자산dgv.Size = new System.Drawing.Size(540, 512);
-            this.고정자산dgv.TabIndex = 91;
-            this.고정자산dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.고정자산dgv_CellContentClick);
+            this.dgv고정자산.DataSource = this.고정자산bds;
+            this.dgv고정자산.Location = new System.Drawing.Point(13, 105);
+            this.dgv고정자산.Name = "dgv고정자산";
+            this.dgv고정자산.RowTemplate.Height = 23;
+            this.dgv고정자산.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv고정자산.Size = new System.Drawing.Size(540, 512);
+            this.dgv고정자산.TabIndex = 91;
+            this.dgv고정자산.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.고정자산dgv_CellContentClick);
+            this.dgv고정자산.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.Dgv고정자산_DataError);
             // 
             // 고정자산코드DataGridViewTextBoxColumn
             // 
             this.고정자산코드DataGridViewTextBoxColumn.DataPropertyName = "고정자산코드";
-            this.고정자산코드DataGridViewTextBoxColumn.HeaderText = "고정자산코드";
+            this.고정자산코드DataGridViewTextBoxColumn.HeaderText = "코드";
             this.고정자산코드DataGridViewTextBoxColumn.Name = "고정자산코드DataGridViewTextBoxColumn";
             // 
             // 고정자산명DataGridViewTextBoxColumn
             // 
+            this.고정자산명DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.고정자산명DataGridViewTextBoxColumn.DataPropertyName = "고정자산명";
             this.고정자산명DataGridViewTextBoxColumn.HeaderText = "고정자산명";
             this.고정자산명DataGridViewTextBoxColumn.Name = "고정자산명DataGridViewTextBoxColumn";
@@ -539,7 +552,7 @@
             // 계정과목코드번호DataGridViewTextBoxColumn
             // 
             this.계정과목코드번호DataGridViewTextBoxColumn.DataPropertyName = "계정과목코드번호";
-            this.계정과목코드번호DataGridViewTextBoxColumn.HeaderText = "계정과목코드번호";
+            this.계정과목코드번호DataGridViewTextBoxColumn.HeaderText = "계정과목코드";
             this.계정과목코드번호DataGridViewTextBoxColumn.Name = "계정과목코드번호DataGridViewTextBoxColumn";
             // 
             // 취득일DataGridViewTextBoxColumn
@@ -558,24 +571,30 @@
             // 
             this.고정자산bds.DataSource = typeof(ClassLibrary.고정자산);
             // 
-            // txb회사명
+            // txb사업장명
             // 
-            this.txb회사명.Location = new System.Drawing.Point(172, 77);
-            this.txb회사명.Name = "txb회사명";
-            this.txb회사명.Size = new System.Drawing.Size(82, 21);
-            this.txb회사명.TabIndex = 90;
-            this.txb회사명.Text = "회사명";
+            this.txb사업장명.Enabled = false;
+            this.txb사업장명.Location = new System.Drawing.Point(172, 77);
+            this.txb사업장명.Name = "txb사업장명";
+            this.txb사업장명.Size = new System.Drawing.Size(82, 21);
+            this.txb사업장명.TabIndex = 90;
             // 
-            // cbb회사코드
+            // cbb사업장코드
             // 
-            this.cbb회사코드.Font = new System.Drawing.Font("굴림", 10F);
-            this.cbb회사코드.FormattingEnabled = true;
-            this.cbb회사코드.Location = new System.Drawing.Point(86, 77);
-            this.cbb회사코드.Name = "cbb회사코드";
-            this.cbb회사코드.Size = new System.Drawing.Size(80, 21);
-            this.cbb회사코드.TabIndex = 89;
-            this.cbb회사코드.Text = "회사코드";
-            this.cbb회사코드.SelectedValueChanged += new System.EventHandler(this.Cbb회사코드_SelectedValueChanged);
+            this.cbb사업장코드.DataSource = this.사업장등록BindingSource;
+            this.cbb사업장코드.DisplayMember = "사업장코드";
+            this.cbb사업장코드.Font = new System.Drawing.Font("굴림", 10F);
+            this.cbb사업장코드.FormattingEnabled = true;
+            this.cbb사업장코드.Location = new System.Drawing.Point(85, 76);
+            this.cbb사업장코드.Name = "cbb사업장코드";
+            this.cbb사업장코드.Size = new System.Drawing.Size(80, 21);
+            this.cbb사업장코드.TabIndex = 89;
+            this.cbb사업장코드.ValueMember = "사업장코드";
+            this.cbb사업장코드.SelectedValueChanged += new System.EventHandler(this.Cbb회사코드_SelectedValueChanged);
+            // 
+            // 사업장등록BindingSource
+            // 
+            this.사업장등록BindingSource.DataSource = typeof(ClassLibrary.사업장등록);
             // 
             // label2
             // 
@@ -604,6 +623,7 @@
             this.btnStatementForm.TabIndex = 86;
             this.btnStatementForm.Text = "전표양식";
             this.btnStatementForm.UseVisualStyleBackColor = true;
+            this.btnStatementForm.Visible = false;
             // 
             // btnAccountTotal
             // 
@@ -613,6 +633,7 @@
             this.btnAccountTotal.TabIndex = 85;
             this.btnAccountTotal.Text = "계정합계";
             this.btnAccountTotal.UseVisualStyleBackColor = true;
+            this.btnAccountTotal.Visible = false;
             // 
             // btnSortOrder
             // 
@@ -622,15 +643,17 @@
             this.btnSortOrder.TabIndex = 84;
             this.btnSortOrder.Text = "정렬순서";
             this.btnSortOrder.UseVisualStyleBackColor = true;
+            this.btnSortOrder.Visible = false;
             // 
             // btnStatementSearch
             // 
-            this.btnStatementSearch.Location = new System.Drawing.Point(568, 38);
+            this.btnStatementSearch.Location = new System.Drawing.Point(648, 75);
             this.btnStatementSearch.Name = "btnStatementSearch";
             this.btnStatementSearch.Size = new System.Drawing.Size(75, 23);
             this.btnStatementSearch.TabIndex = 83;
-            this.btnStatementSearch.Text = "전표검색";
+            this.btnStatementSearch.Text = "검색";
             this.btnStatementSearch.UseVisualStyleBackColor = true;
+            this.btnStatementSearch.Click += new System.EventHandler(this.BtnStatementSearch_Click);
             // 
             // label9
             // 
@@ -665,8 +688,9 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.고정자산dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv고정자산)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.고정자산bds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.사업장등록BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -705,11 +729,10 @@
         private System.Windows.Forms.TextBox txb구입처명;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txb고정자산계정명;
-        private System.Windows.Forms.ComboBox cbb고정자산계정코드;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView 고정자산dgv;
-        private System.Windows.Forms.TextBox txb회사명;
-        private System.Windows.Forms.ComboBox cbb회사코드;
+        private System.Windows.Forms.DataGridView dgv고정자산;
+        private System.Windows.Forms.TextBox txb사업장명;
+        private System.Windows.Forms.ComboBox cbb사업장코드;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnStatementForm;
@@ -730,5 +753,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 계정과목코드번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 취득일DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 처리여부DataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnCodeHelper;
+        private System.Windows.Forms.TextBox txb고정자산계정코드;
+        private System.Windows.Forms.BindingSource 사업장등록BindingSource;
     }
 }

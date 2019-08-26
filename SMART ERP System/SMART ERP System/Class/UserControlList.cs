@@ -62,7 +62,7 @@ namespace SMART_ERP_System
             { "출고처리",출고처리 },
             { "매입마감", 매입마감 },
             { "자재등록", 자재등록 },
-            { "품목단가등록", 품목단가등록 },
+            //{ "품목단가등록", 품목단가등록 },
             // 시스템관리
             { "시스템사용권한설정",시스템사용권한설정 },
             { "시스템환경설정", 시스템환경설정 },
@@ -127,7 +127,7 @@ namespace SMART_ERP_System
         public static 출고처리 출고처리;
         public static 매입마감 매입마감;
         public static 자재등록 자재등록;
-        public static 품목단가등록 품목단가등록;
+        //public static 품목단가등록 품목단가등록;
         // 시스템관리
         public static 시스템사용권한설정 시스템사용권한설정;
         public static 시스템환경설정 시스템환경설정;

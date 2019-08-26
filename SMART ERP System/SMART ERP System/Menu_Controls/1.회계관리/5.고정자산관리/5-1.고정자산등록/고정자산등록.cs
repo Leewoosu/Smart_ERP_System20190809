@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary.EntityData;
+using SMART_ERP_System.Class;
+using SMART_ERP_System.MainForm_Control;
+using ClassLibrary.FormHelper;
 
 namespace SMART_ERP_System.MenuUserControl
 {
     public partial class 고정자산등록 : UserControl
     {
+        고정자산구분Control 고정자산구분Control;
+
         public 고정자산등록()
         {
             InitializeComponent();
@@ -30,45 +35,24 @@ namespace SMART_ERP_System.MenuUserControl
 
             고정자산bds.DataSource = DB.고정자산.GetAll();
 
-            var list = DB.회사.GetAll();
-            cbb회사코드.DataSource = list.Select(x => x.회사코드).ToList();
-            cbb회사코드.SelectedIndex = -1;
-
-            var list2 = DB.고정자산계정과목.GetAll();
-            cbb고정자산계정코드.DataSource = list2.Select(x => x.고정자산과목코드).ToList();
-            cbb고정자산계정코드.SelectedIndex = -1;
-
-            txb회사명.Text = DB.회사.Search(cbb회사코드.Text);
-            txb고정자산계정명.Text = DB.고정자산계정과목.Search(cbb고정자산계정코드.Text);
+            사업장등록BindingSource.DataSource = DB.사업장.GetAll();
+            txb사업장명.Text = DB.사업장.Search(cbb사업장코드.Text);
         }
 
         private void Cbb회사코드_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (cbb회사코드.SelectedIndex != -1)
+            if (cbb사업장코드.SelectedIndex != -1)
             {
-                txb회사명.Text = DB.회사.SearchChangedValue(cbb회사코드.Text);
-                고정자산bds.DataSource = DB.고정자산.회사검색(txb회사명.Text);
+                txb사업장명.Text = DB.사업장.Search(cbb사업장코드.Text);
+                고정자산bds.DataSource = DB.고정자산.회사검색(txb사업장명.Text);
             }
             else
                 고정자산bds.DataSource = DB.고정자산.GetAll();
         }
-
-
-
-        private void Cbb고정자산계정코드_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if(cbb고정자산계정코드.SelectedIndex != -1)
-            {
-                txb고정자산계정명.Text = DB.고정자산계정과목.SearchangedValue(cbb고정자산계정코드.Text);
-                고정자산bds.DataSource = DB.고정자산.검색(txb고정자산계정명.Text);
-            }
-            else
-                고정자산bds.DataSource = DB.고정자산.GetAll();
-        }
-
+        
         private void 고정자산dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            ClassLibrary.고정자산 고정자산 = DB.고정자산.SearchCode(고정자산dgv.CurrentRow.Cells[0].Value.ToString());
+            ClassLibrary.고정자산 고정자산 = DB.고정자산.SearchCode(dgv고정자산.CurrentRow.Cells[0].Value.ToString());
             txb취득원가.Text = 고정자산.취득원가.ToString();
             txb전기말상각누계액.Text = 고정자산.전기말상각누계액.ToString();
             cbb상각방법.Text = 고정자산.상각방법;
@@ -90,11 +74,11 @@ namespace SMART_ERP_System.MenuUserControl
         public void 고정자산등록Insert()
         {
             ClassLibrary.고정자산 고정자산 = new ClassLibrary.고정자산();
-            고정자산.고정자산코드 = 고정자산dgv.CurrentRow.Cells[0].Value.ToString();
-            고정자산.고정자산명 = 고정자산dgv.CurrentRow.Cells[1].Value.ToString();
-            고정자산.계정과목코드번호 = 고정자산dgv.CurrentRow.Cells[2].Value.ToString();
-            고정자산.취득일 = (DateTime)고정자산dgv.CurrentRow.Cells[3].Value;
-            고정자산.처리여부 = 고정자산dgv.CurrentRow.Cells[4].Value.ToString();
+            고정자산.고정자산코드 = dgv고정자산.CurrentRow.Cells[0].Value.ToString();
+            고정자산.고정자산명 = dgv고정자산.CurrentRow.Cells[1].Value.ToString();
+            고정자산.계정과목코드번호 = dgv고정자산.CurrentRow.Cells[2].Value.ToString();
+            고정자산.취득일 = (DateTime)dgv고정자산.CurrentRow.Cells[3].Value;
+            고정자산.처리여부 = dgv고정자산.CurrentRow.Cells[4].Value.ToString();
             고정자산.취득원가 = int.Parse(txb취득원가.Text);
             고정자산.전기말상각누계액 = int.Parse(txb전기말상각누계액.Text);
             고정자산.상각방법 = cbb상각방법.Text;
@@ -125,11 +109,11 @@ namespace SMART_ERP_System.MenuUserControl
 
             if (result == DialogResult.OK)
             {
-                고정자산.고정자산코드 = 고정자산dgv.CurrentRow.Cells[0].Value.ToString();
-                고정자산.고정자산명 = 고정자산dgv.CurrentRow.Cells[1].Value.ToString();
-                고정자산.계정과목코드번호 = 고정자산dgv.CurrentRow.Cells[2].Value.ToString();
-                고정자산.취득일 = (DateTime)고정자산dgv.CurrentRow.Cells[3].Value;
-                고정자산.처리여부 = 고정자산dgv.CurrentRow.Cells[4].Value.ToString();
+                고정자산.고정자산코드 = dgv고정자산.CurrentRow.Cells[0].Value.ToString();
+                고정자산.고정자산명 = dgv고정자산.CurrentRow.Cells[1].Value.ToString();
+                고정자산.계정과목코드번호 = dgv고정자산.CurrentRow.Cells[2].Value.ToString();
+                고정자산.취득일 = (DateTime)dgv고정자산.CurrentRow.Cells[3].Value;
+                고정자산.처리여부 = dgv고정자산.CurrentRow.Cells[4].Value.ToString();
                 고정자산.취득원가 = int.Parse(txb취득원가.Text);
                 고정자산.전기말상각누계액 = int.Parse(txb전기말상각누계액.Text);
                 고정자산.상각방법 = cbb상각방법.Text;
@@ -156,7 +140,7 @@ namespace SMART_ERP_System.MenuUserControl
         {
 
             ClassLibrary.고정자산 고정자산 = new ClassLibrary.고정자산();
-            고정자산 = 고정자산dgv.CurrentRow.DataBoundItem as ClassLibrary.고정자산;
+            고정자산 = dgv고정자산.CurrentRow.DataBoundItem as ClassLibrary.고정자산;
 
             if (고정자산 == null) return;
 
@@ -186,6 +170,66 @@ namespace SMART_ERP_System.MenuUserControl
             고정자산등록Delete();
         }
 
-    
+        private void BtnCodeHelper_Click(object sender, EventArgs e)
+        {
+            고정자산구분Control = new 고정자산구분Control();
+
+            CodeHelperForm menuForm = new CodeHelperForm(고정자산구분Control);
+            menuForm.ShowDialog();
+
+            txb고정자산계정코드.Text = 고정자산단위.FixedAssetsCode;
+            txb고정자산계정명.Text = 고정자산단위.FixedAssetsName;
+        }
+
+        private void Txb고정자산계정명_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F2)
+            {
+                고정자산구분Control control = new 고정자산구분Control();
+                CodeHelperForm menuForm = new CodeHelperForm(control);
+                menuForm.SetFormLocation();
+                menuForm.ShowDialog();
+
+                txb고정자산계정코드.Text = 고정자산단위.FixedAssetsCode;
+                txb고정자산계정명.Text = 고정자산단위.FixedAssetsName;
+            }
+        }
+
+        private void Txb고정자산계정코드_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F2)
+            {
+                고정자산구분Control control = new 고정자산구분Control();
+                CodeHelperForm menuForm = new CodeHelperForm(control);
+                menuForm.SetFormLocation();
+                menuForm.ShowDialog();
+
+                txb고정자산계정코드.Text = 고정자산단위.FixedAssetsCode;
+                txb고정자산계정명.Text = 고정자산단위.FixedAssetsName;
+            }
+
+            if(e.KeyData == Keys.Enter)
+            {
+                var list = DB.고정자산계정과목.GetAll();
+
+                txb고정자산계정명.Text = list.Where(x => x.고정자산과목코드.StartsWith(txb고정자산계정코드.Text)).Select(x => x.고정자산과목명).FirstOrDefault();
+
+                txb고정자산계정코드.Text = list.Where(x => x.고정자산과목명.StartsWith(txb고정자산계정명.Text)).Select(x => x.고정자산과목코드).FirstOrDefault();
+            }
+        }
+
+        private void BtnStatementSearch_Click(object sender, EventArgs e)
+        {
+            고정자산bds.DataSource = DB.고정자산.검색(txb고정자산계정코드.Text);
+        }
+
+        private void Dgv고정자산_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if (e.Exception != null && e.Context == DataGridViewDataErrorContexts.Commit)
+            {
+                return;
+                //MessageBox.Show("error.");
+            }
+        }
     }
 }

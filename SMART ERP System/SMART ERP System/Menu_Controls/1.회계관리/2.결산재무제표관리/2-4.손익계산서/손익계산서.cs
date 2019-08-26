@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary.EntityData;
 using ClassLibrary.FormHelper;
+using SMART_ERP_System.Class;
 
 namespace SMART_ERP_System.MenuUserControl
 {
@@ -23,6 +24,9 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void SetDataGridView()
         {
+            MenuLists.Set();
+            cbb금액구분.DataSource = MenuLists.moneyUnit;
+
             dgv손익계산서.AutoGenerateColumns = false;
 
             for (int j = 0; j < dgv손익계산서.ColumnCount; j++)
@@ -33,8 +37,6 @@ namespace SMART_ERP_System.MenuUserControl
             dgv손익계산서.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgv손익계산서.ColumnHeadersHeight = dgv손익계산서.ColumnHeadersHeight * 2;
             dgv손익계산서.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter;
-
-            
         }
 
         private void Dtp입력날짜_KeyDown(object sender, KeyEventArgs e)
@@ -193,10 +195,10 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void 손익계산서_Load(object sender, EventArgs e)
         {
-            회사등록BindingSource.DataSource = DB.회사.GetAll();
+            사업장등록BindingSource.DataSource = DB.사업장.GetAll();
 
-            if (cbb회사코드.SelectedValue != null)
-                txb회사명.Text = DB.회사.Search(cbb회사코드.Text);
+            if (cbb사업장코드.SelectedValue != null)
+                txb사업장명.Text = DB.사업장.Search(cbb사업장코드.Text);
         }
 
         private void Dgv손익계산서_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -205,6 +207,20 @@ namespace SMART_ERP_System.MenuUserControl
             dgv손익계산서.Columns[2].DefaultCellStyle.Format = "##,##";
             dgv손익계산서.Columns[3].DefaultCellStyle.Format = "##,##";
             dgv손익계산서.Columns[4].DefaultCellStyle.Format = "##,##";
+        }
+
+        private void Dgv손익계산서_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if (e.Exception != null && e.Context == DataGridViewDataErrorContexts.Commit)
+            {
+                return;
+                //MessageBox.Show("error.");
+            }
+        }
+
+        private void Cbb금액구분_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

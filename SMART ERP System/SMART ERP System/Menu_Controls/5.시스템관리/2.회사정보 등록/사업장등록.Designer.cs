@@ -370,7 +370,7 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("굴림체", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(55, 0);
+            this.label8.Location = new System.Drawing.Point(55, -2);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(171, 25);
             this.label8.TabIndex = 97;
@@ -379,7 +379,7 @@
             // label9
             // 
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(7, 25);
+            this.label9.Location = new System.Drawing.Point(7, 23);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(1018, 1);
             this.label9.TabIndex = 94;
